@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <title>Abo Rashad </title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #0000;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .head  {
+        letter-spacing: 2px;
+        float: left;
+        font-family: 'DM Serif Display', Sans-serif;
+        display: block;
+        text-align: center;
+        padding:10px 0px ;
+        text-decoration: none;
+        font-size: 25px!important; 
+        color: #212832;
+        width: 100%;
+        border-bottom: 1px solid #dddddd;
+        margin-bottom:20px;
+    }
+    #box {
+        border: 1px solid  #58a58f;
+        border-collapse:collapse;
+        margin:0 auto;
+        max-width:700px;
+        min-width:320px;
+        font-family:'Lucida Grande','Lucida Sans Unicode',Verdana,sans-serif;
+        font-size:15px;
+    }
+    #box .header-wrapper {
+        border-collapse:collapse;
+        color:white;
+        padding:20px 30px 10px;
+        background:#58a58f;
+        border: 1px solid  #58a58f;
+        text-align: center;
+    }
+    #box .header-wrapper h1 {
+        font-family:Sans-Serif;
+        font-size:25px;
+        line-height:1.4;
+        margin:0 0 10px;
+        text-align: center;
+    }
+    #box .content-wrapper {
+        border-collapse:collapse;
+        color:#878787;
+        padding:10px 35px;
+        font-weight: 400;
+    }
+    #box .content-wrapper p {
+        font-size:15px;
+        line-height:3;
+        text-align: center;
+    }
+    #box .content-wrapper a {
+        text-decoration: none;
+        color: #58a58f !important;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+    #box .verify-button-wrapper {
+        margin: 20px 0;
+        text-align: center;
+        padding-top: 10px ;
+    }
+    #box .verify-button-wrapper .verify {
+        background-color: #58a58f;
+        border-radius:3px;
+        letter-spacing: 2px;
+        font-weight:bold;
+        padding:6px 14px;
+        text-decoration:none;
+        white-space:nowrap;
+        color:  #fff!important;
+        border: 1px solid  #58a58f;
+    }
+    .footer {
+        float:left;
+        width:100%; 
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #dddddd;
+        font-size: 14px;
+        color: #aaaaaa;
+    }
+    .web {
+        float: left;
+        font-family: 'DM Serif Display', Sans-serif;
+        display: block;
+        text-align: center;
+        padding:10px 0px ;
+        text-decoration: none;
+        font-size: 18px!important; 
+        color: #212832;
+        letter-spacing: 2px;
+        width: 100%;
+        border-bottom: 1px solid #dddddd;
+        margin-bottom:20px;
+    }
+</style>
+</head>
+<body>
+    <div class="head"> Abo Rashad </div>
+    <table id="box" bgcolor="white">
+        <tbody>
+            <tr>
+                <td class="header-wrapper">
+                    <h1>{{ subject }}</h1>
+                </td>
+            </tr>
+            <tr>
+                <td class="content-wrapper">
+                    <p>Dear  {{ name }},</p>
+                    <p>{{ message }}</p>
+                    <div class="verify-button-wrapper">
+                        <a class="verify" href="{{ Link }}" target="_blank">{{ button_action }}</a>
+                    </div>
+                    <p>This message is from <a href="www.aborashad.com" target="_blank">www.Abo Rashad.com</a></p>
+                    <p>Date: {{ current_date }}</p>
+                    <div class="footer">
+                        <p>&copy; Abo Rashad {{ current_year }}. All rights reserved.</p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="web">www.aborashad.com</div>
+</body>
+</html>
