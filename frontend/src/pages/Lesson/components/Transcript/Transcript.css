@@ -1,0 +1,18 @@
+.Transcript-h3{font-size: 25px; }
+.Transcript-p{
+    font-size: 15px;
+    line-height:2;
+    text-align: center;
+}
+
+.Transcript-span{
+    font-size: 15px;
+    font-weight: 500;
+    color: #58a58f;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .Transcript-h3{font-size: 15px;}
+    .Transcript-p{ font-size: 11px;  }
+    .Transcript-span{font-size: 12px; }
+ }

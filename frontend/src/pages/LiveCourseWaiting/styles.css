@@ -1,0 +1,64 @@
+   
+ 
+
+
+ .Live {
+  position: relative;
+  margin-top: 18px;
+
+} 
+.live-Text {
+  color: #000000 !important;
+    font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.live-Container {
+  position: relative;
+  width: 100%;
+  height: 15px;  
+  top: 0px;
+
+} 
+  
+.live-Circle {
+  width: 15px;
+  height: 15px;
+  background-color: #f82626;
+  border-radius: 50%;
+  position: absolute;
+  left: 53px;
+  top: -17px;
+}
+
+
+
+
+ 
+ 
+ .liveBorder {
+   border: 3px solid #f82626;
+   border-radius: 30px;
+   height: 25px;
+   width: 25px;
+   position: absolute;
+   left: 48px;
+   top: -22px;
+   animation: pulsate 2s ease-out infinite; /* Apply animation directly */
+   opacity: 0.0;
+ }
+ 
+ @keyframes pulsate {
+   0% {
+     transform: scale(0.1, 0.1);
+     opacity: 0.0;
+   }
+   50% {
+     opacity: 1.0;
+   }
+   100% {
+     transform: scale(1.2, 1.2);
+     opacity: 0.0;
+   }
+ }
+ 

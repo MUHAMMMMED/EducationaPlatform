@@ -1,0 +1,17 @@
+.Filter_section{
+width: 100%;
+margin-top: 50px;
+float: left;
+background-color: beige;
+}
+.Side{float: left;
+
+    width: 30%;
+}
+.card_list{
+
+    width: 70%;
+ float: left;
+
+
+}

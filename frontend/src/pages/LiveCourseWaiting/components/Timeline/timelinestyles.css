@@ -1,0 +1,415 @@
+* {
+    box-sizing: border-box;
+  }
+
+  .timeline {
+    position: relative;
+    width: 100%;
+   float: left;
+   background-color: #ffffff   ;
+   padding-bottom: 150px;
+   font-family: San Francisco, -apple-system, BlinkMacSystemFont, ".SFNSText-Regular", sans-serif;
+
+
+  }
+  
+
+  .titlecenter{
+    
+    border: 1px solid  #ced0d4;
+    border-bottom: 3px solid  #ced0d4;
+    padding-top:10px;
+    position: absolute;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px  ;
+    padding: 20px;
+    width: 20%;
+    margin-left: 40%;
+    z-index: 3;
+   font-size: 30px;
+   @media (max-width: 768px) {
+    border-radius: 0px 5px 5px 0px  ;
+    width: 85%;
+    margin-left: 8.5%;
+    font-size: 20px;
+    padding: 10px;
+
+
+    
+  }
+
+
+  }
+.timelinerow{
+  width: 70%;
+margin: auto;
+margin-top: 150px;
+@media (max-width: 768px) {
+  width: 100%;
+  margin-top: 100px;
+}
+
+}
+
+
+.h2DATE {
+  display: flex;
+  justify-content: space-between; /* Distribute space evenly between child elements */
+  align-items: center; /* Align items vertically */
+  padding: 5px;
+  color: rgb(68, 68, 68);
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: bold;
+  background-color: #d4eded;
+
+}
+
+.samp {
+  /* display: flex; */
+  align-items: center; /* Align items vertically */
+
+  @media (max-width: 768px) {
+   
+    width: 100%;
+
+    
+    }
+}
+
+.Sampsvg {
+
+  margin-right: 5px; /* Add space between icon and text */
+  font-size: 15px;
+  margin-top:0px;
+  background-color: #fff;
+  padding: 5px  5px  0px  5px  ;
+border-radius:50px;
+
+}
+
+
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #ced0d4;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -4px;
+    border-radius: 50px   ;  
+  }
+  
+  /* Container around content */
+  .timelinecontainer {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .timelinecontainer::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -11px;
+    background-color:  #ced0d4;
+    border: 4px solid  white;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 2;
+    font-size: 12px;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    left: 0;
+    text-align: center;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+    text-align: center;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #ced0d4;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #ced0d4;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid#ced0d4;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #ced0d4 transparent transparent;
+ 
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+ 
+  /* The actual content */
+  .timelinecontent {   
+     border: 1px solid #ced0d4;
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 5px;
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+    left: 31px;
+    }
+    
+    /* Full-width containers */
+    .timelinecontainer {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    }
+    
+    /* Make sure that all arrows are pointing leftwards */
+    .timelinecontainer::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+    }
+  
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+    left: 15px;
+    }
+    
+    /* Make all right containers behave like the left ones */
+    .right {
+    left: 0%;
+
+    }
+  }
+  
+  
+  .Codebutton{
+
+
+    font-size: 16px;
+    width: 250px;
+    margin: auto;
+    color:#1da29d;
+    border: none;
+    padding:10px 0px ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border: 0px solid#1da29d;
+    background-color:#1da29d30;
+    margin-top: 15px;
+  
+    &:hover {
+      background-color: #000001; 
+      border: 2px solid#000001; 
+      color:#ffffff;
+
+
+    }
+    @media (max-width: 768px) {  width: 100%;  padding:10px 0px ;  }}
+   
+
+
+    .no-underline {
+      text-decoration: none;
+    }
+
+
+
+
+ .MaterialLink {
+  font-size: 16px;
+  width: 250px;
+  margin: auto;
+  color:#1da29d;
+  border: none;
+  padding:10px 0px ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid#1da29d;
+  background-color:#ffff;
+  margin-top: 15px;
+
+  &:hover {
+    background-color: #000001;
+    border: 2px solid #000001;
+    color:#ffffff;
+   }
+  @media (max-width: 768px) {width: 100%;padding:10px 0px ;}}
+ 
+
+
+
+
+
+
+
+
+.livebutton{ 
+    display: flex;
+    font-size: 16px;
+    width: 250px;
+    height: 47px;
+    margin: auto;
+    color: #ffffff;
+    border-radius: 0px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color:#1da29d;
+    border: 2px solid#1da29d;
+    padding: 2px;
+    margin-top: 10px;
+ 
+    &:hover {
+      background-color: #000001; 
+      border: 2px solid#000001; 
+    }
+    @media (max-width: 768px) { margin: auto; width:100%;}}
+
+ 
+ 
+
+
+
+.Editbutton{ 
+ 
+  font-size: 16px;
+  width: 250px;
+  margin: auto;
+  color:#ffffff;
+  border: none;
+  padding:10px 0px ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #1da29d;
+  border: 2px solid#1da29d;
+  margin-top: 15px;
+
+  &:hover {
+
+    color:#ffffff;
+    border: 3px solid#1da29d;
+    background-color:#1da29d;
+  }
+  @media (max-width: 768px) {width: 100%;padding:10px 0px ;}}
+ 
+
+
+.Edit{width: 250px;margin: auto;}
+
+ 
+
+
+
+.live-samp{
+  margin-left: 0px;
+  width: 45px;
+  height: 100%;
+  float: left;
+  background-color: #ffffff;
+  border-radius: 2px 50px 50px 2px ;
+
+}
+.live-icon{
+
+  margin-top: 7px;
+  color: #1da29d;
+  font-size: 25px;
+  margin-left:-5px;
+ 
+}
+ 
+.live-text {
+  text-align: center;
+  margin-top: 6px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  margin-left:39px;
+  font-size: 18px;
+}
+
+  
+  
+.live-circle {
+  width: 15px;
+  height: 15px; /* تغيير الارتفاع لتكون نفس قيمة العرض لتحصل على دائرة */
+  background-color: #f83726;
+  border-radius: 50%;
+  position: relative;
+  left:12px;
+  top: 12px;
+}
+
+
+ .live-border {
+   border: 3px solid #f82626;
+   border-radius: 30px;
+   height: 25px;
+   width: 25px;
+   position: relative;
+   left: 7px;
+   top: -8px;
+   animation: pulsate 2s ease-out infinite; /* Apply animation directly */
+   opacity: 0.0;
+ }
+ 
+ @keyframes pulsate {
+   0% {
+     transform: scale(0.1, 0.1);
+     opacity: 0.0;
+   }
+   50% {
+     opacity: 1.0;
+   }
+   100% {
+     transform: scale(1.2, 1.2);
+     opacity: 0.0;
+   }
+ }
+ 
+ 
+
+
+ 

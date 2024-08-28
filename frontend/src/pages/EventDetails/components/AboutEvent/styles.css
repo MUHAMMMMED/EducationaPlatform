@@ -1,0 +1,75 @@
+
+.AboutEvent{
+
+  float: left;
+  width: 100%;
+
+}
+
+
+.About_Event_Row1{
+float: left;
+width: 90%;
+/* border: 1px solid #58a58f;   */
+height: 500px;
+padding: 15px;
+
+@media (max-width: 1200px) {
+  width: 100%;
+
+ 
+}
+}
+ 
+
+.About_Event_Row2{
+
+  float: left;
+  width: 25%;
+  /* border: 1px solid #58a58f;   */
+  height: 500px;
+
+  
+}
+
+
+.fontMedium {
+  font-weight: 600;
+  font-size: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 10px;
+  @media (max-width: 1200px) {
+    font-size: 19px;
+    margin-bottom:  5px;
+
+ 
+  }
+}
+ 
+
+
+.font_p {
+ 
+  font-size: 18px;
+  line-height: 2;
+  padding: 10px;
+  @media (max-width: 1200px) {
+ 
+    font-size: 13px;
+
+  }
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 

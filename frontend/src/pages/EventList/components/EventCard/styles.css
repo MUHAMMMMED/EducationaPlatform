@@ -1,0 +1,235 @@
+ .EventList{
+  float: left;
+  width:100%;
+  margin-bottom:100px;
+ }
+.Event_title{
+  float: left;
+  width:100%;
+  margin-top: 25px;
+  font-size: 35px;
+  color: #58a58f;
+  text-align: center;
+  @media (max-width: 1200px) {
+    font-size: 25px;
+  }
+}
+
+ 
+
+ 
+.Event_containe{
+  position: relative;
+  padding: 0;
+  margin: 0;
+  float: left;
+  width: 50%;
+  margin-top: 30px;
+  margin-left: 25%;
+  margin-bottom: 30px;
+  @media (max-width: 1200px) {
+    width: 100%;
+    display: block;
+
+  }
+
+
+}
+.Even-widget-heading{
+float: left;
+ width: 100%;
+
+}
+
+
+
+.Event_heading-title{
+  padding-top: 20px;
+  text-align: left;
+  width: 100%;
+  font-size: 35px;
+   padding: 0;
+   margin: 0;
+  color: rgb(88, 165, 143);
+ 
+}
+
+ 
+
+  
+ 
+.Event_widget-p{
+  padding-top: 5px;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+  color: #696969;
+  margin-bottom: 0;
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Event_Card{
+  float: left;
+  margin-top: 25px;
+  padding: 18px;
+  width:50%;
+  margin-left: 25%;
+  height: auto;
+  border: 1px solid #58a58f;
+  border-radius: 8px;
+  @media (max-width: 1200px) {
+    width:90%;
+    margin-left: 5%;
+  }
+}
+ 
+
+.flex-EventCard {
+  padding: 0;
+  margin: 0;
+  float: left;
+  font-size: 30px;
+  width:150px;
+  @media (max-width: 1200px) {
+    font-size: 20px;
+  width:90px;
+
+  }
+ } 
+
+
+ 
+.Startdate {
+  background:  #eefbf2;
+  border: 1px solid #dce5e2;
+   color:  #58a58f; 
+  border-radius: 8px;
+  padding:   50px ;
+  text-align: center;
+  @media (max-width: 1200px) {
+    padding: 60px 30px ;
+  }
+}
+
+.Right-EventCard{
+  width: 67%;
+  padding: 0;
+  margin: 0;
+  float: left;
+  margin-left: 15px;
+  @media (max-width: 1200px) {
+    margin-left: 15px;
+    width: 65%;
+  }
+ }
+.Entry-title{
+  float: left;
+  margin-top: 10px;
+  font-size: 20px;
+  width:100%;
+  font-weight: 500;
+  padding-bottom: 20px;
+  height:  50px;
+ 
+  @media (max-width: 1200px) {
+    font-size: 16px; 
+    padding-bottom: 5px;
+    height:  50px;
+    margin-top: 10px;
+
+  }
+
+}
+
+.Event-inf{
+  float: left;
+  width:100%;
+  margin-top: 10px;
+
+  @media (max-width: 1200px) {
+    margin-top: 10px;
+
+  }
+ 
+}
+.Event_Time{
+  margin-top: 5px;
+  float: left;
+  width:60%;
+  font-size: 20px;
+  @media (max-width: 1200px) {
+    width:50%;
+    font-size: 18px;
+
+  }
+}
+.Event_BUT{
+  float: right;
+  width:40%;
+  @media (max-width: 1200px) {
+    width:50%;
+
+  }
+
+}
+ 
+
+ 
+
+  .Even-btN {
+    width:100%;
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    border: none;
+    display: inline-block;
+    /* line-height: 40px; */
+    text-align: center;
+    color: #fff;
+    background: #58a58f;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 5px;
+    margin-top: 5px;
+    @media (max-width:780) {
+      font-size: 10px;
+      width:50%;
+      line-height: 25px;
+
+
+    }
+   
+  }
+ .No_Available{
+
+  float: left;
+ 
+  width: 80%;
+ 
+  color: #58a58f;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+  font-size: 20px;
+  border: 1px solid rgba(48, 146, 85, 0.2);
+  margin-top:50px;
+  margin-bottom:150px;
+
+
+ }

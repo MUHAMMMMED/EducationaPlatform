@@ -1,0 +1,63 @@
+ 
+.button-container {
+    margin-top: 15px;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-left: 0;
+    padding: 0;
+  }
+  .container-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+ 
+  }
+  .Join {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 20px;
+  }
+  
+  .Join:hover {
+    opacity: 0.8;
+  }
+  
+  .icon {
+    margin-right: 5px;
+  }
+  
+  .telegram-button {
+    background-color: #0088cc;
+    color: #fff;
+  }
+  
+  .whatsapp-button {
+    background-color: #25d366;
+    color: #fff;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    /* Apply styles for screens wider than 768px */
+    .button-container {
+      width: 100%;  
+    }
+  
+    .Join {
+      padding: 10px  15px; 
+      margin-right: 10px;  
+      margin-bottom: 0; 
+      font-size: 13px;
+
+    }
+  }
+  

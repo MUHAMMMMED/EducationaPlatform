@@ -1,0 +1,228 @@
+/* .correct{
+    background: #dffff2; 
+    border-color: #00d397;
+    border: 1px solid #00d397;
+
+}
+ .wrong{
+    background: #ffebeb; 
+    border-color: #ff4a4a;
+    border: 1px solid #ff4a4a;
+}
+ */
+
+ 
+ .correct{background:  #00d397;font-weight: 700; float:left;}
+ .wrong{background:   #ff4a4a; font-weight: 700; float:left; } 
+  
+ 
+ .question_p{
+ font-weight: 500;
+ float: left;
+ margin-top:10px;
+ margin-left:5px;
+ margin-bottom:0px;
+ border: 0px solid none!important;
+ height: 100%;
+ }
+ 
+ 
+
+ .quiz-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    @media (max-width: 768px) {
+    
+        margin-top:50px;
+        margin-bottom: 50px;
+
+       }
+
+  }
+
+.span_icon{
+padding: 8px 13px  ;
+border-radius: 50%;
+margin-right: 5px;
+border: 3px solid #fff;
+font-weight: 700;
+@media (max-width: 768px) {
+    padding: 5px 10px  ;
+
+      }
+}
+
+.Completed{    
+    float: left;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 50px;
+
+    font-weight: 700;
+    @media (max-width: 768px) {
+     margin-top:30px;
+     margin-bottom: 20px;
+
+       }
+  }
+
+
+  .score {
+    float: left;
+    font-size: 24px;
+    margin-bottom: 10px;
+    width: 50%;
+    font-weight: 500;
+ 
+    @media (max-width: 768px) {
+        margin-left: 5%;
+        width:90%;
+        margin-top: 10px;
+        margin-bottom:40px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+       }
+  }
+
+  .time {  
+    float: left;
+    font-size: 24px;
+    margin-bottom: 10px;
+    width: 50%;
+    font-weight: 500;
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        margin-left: 5%;
+        width:90%;
+        font-size: 18px;
+
+       }
+  }
+.tries{
+    float: left;
+    font-size: 30px;
+    margin-bottom:50px;
+    width: 100%;
+    text-align: center;
+    padding-top:0px;
+    font-weight: 500;
+    @media (max-width: 768px) {
+        color: #ffffff;
+
+       }
+}
+ .tries_number{
+  color: #d1ae20;
+  font-weight: 700;
+  margin-top: 5px;
+  font-size: 50px;
+ }
+
+
+
+
+
+
+
+
+*,*:after,*:before{
+    box-sizing: border-box;
+    outline: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+     
+    .loader-gradient{
+    position: relative;
+    background: white;
+    overflow: hidden;
+    width:70%;
+
+    /* border: 1px solid #686868; */
+    margin-top: 150px; 
+
+    height: 500px;
+    margin: auto;
+
+    @media (max-width: 768px) {
+ 
+        width:  97%;
+        margin: auto;
+       }
+    
+      @media (max-width: 480px) {
+  
+        width: 97%;
+        margin: auto;
+       }
+      
+    }
+
+
+
+
+
+    .loader-gradient:before{
+    animation: scroll-gradient 1s steps(20, end) infinite forwards;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(117deg, rgba(255,255,255,1) 15%, rgba(246,246,246,1) 46%, rgba(255,255,255,1) 85%);
+    background: -webkit-linear-gradient(117deg, rgba(255,255,255,1) 15%, rgba(246,246,246,1) 46%, rgba(255,255,255,1) 85%);
+    background: linear-gradient(117deg, rgba(255,255,255,1) 15%, rgba(246,246,246,1) 46%, rgba(255,255,255,1) 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+    content: ' ';
+    display: block;
+    height:100%;
+    position: absolute;
+    width:100%;
+  
+
+    will-change: transform;
+    }
+    @keyframes scroll-gradient{
+    0%{
+    transform:translateX(-100%)
+    }
+    100%{
+    transform:translateX(100%)
+    }
+    }
+
+
+    /* label:Container;
+    width:70%;
+    margin: 0 auto;
+    margin-top: 150px; 
+    color: #262626;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 40px 50px;
+   //  background-color: red; 
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #686868;
+    margin-bottom: 150px; 
+
+    @media (max-width: 768px) {
+        /* Apply styles for screens up to 768px wide (typical tablet size)  
+        width:  97%;
+        padding:0px;
+        border-radius: 0px;
+       }
+    
+      @media (max-width: 480px) {
+        /* Apply styles for screens up to 480px wide (typical mobile size)  
+        width: 97%;
+        padding: 0px;
+        border-radius: 0px;
+       }
+    `; */

@@ -1,0 +1,145 @@
+/* styles.css */
+
+.table-container {
+
+  width: 80%;
+  margin: auto;    
+  @media (max-width: 768px) {
+    width: 90%;
+    margin-left: 5%;
+ }
+}
+
+.table-header {
+  float: left;
+  width: 100%;
+  margin: auto; 
+  padding: 8px;  
+  border-radius: 8px;
+   background-color: #58a58f;
+   color: #ffffff;
+ 
+
+}
+.h4{
+  text-align: left;
+ width: 100%;
+ padding:10px;
+ color: #58a58f;
+ margin: auto;
+ font-size: 15px;
+}
+
+.table-body {
+  float: left;
+  width: 100%;
+  margin: auto;
+  padding: 15px; 
+ margin-left: 0%;
+  margin-top: 15px; 
+  margin-bottom: 10px; 
+  @media (max-width: 768px) {
+    width: 100%;
+
+   }
+  
+}
+ 
+.table-row {
+  float: left;
+   margin-top: 10px; 
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   color: #58a58f;
+   border-radius: 8px;
+   padding:5px;
+   margin-bottom: 2px; 
+   width: 100%;
+   margin-left: 0;
+
+ 
+}
+.table-row:hover {
+  background-color:#a1c6bc;
+  color:#fff;
+}
+
+.table-cell1 {
+  float: left;
+  padding: 8px;
+  text-align: left;
+  color: #58a58f;
+  width: 60%;
+ 
+  @media (max-width: 768px) {
+    width: 100%;
+   }
+  
+}
+.table-cell {
+ float: left;
+  padding: 8px;
+  text-align: left;
+  color: #58a58f;
+  width: 20%;
+  @media (max-width: 768px) {
+    width: 50%;
+    text-align: center;
+   }
+}
+.button{
+float: left;
+text-align: center;
+ width: 20%;
+ padding:8px;
+ color: #ffff;
+ margin: auto;
+ font-size: 14px;
+ background-color: #a1c6bc;
+ color: #ffff;
+ text-align:center; 
+ border-radius: 3px;
+ border:none;
+ margin-left:40%;
+ @media (max-width: 768px) {
+  width: 50%;
+  margin-left:25%;
+  font-size: 11px;
+}
+
+}
+button:hover {
+  background-color:#58a58f;
+  color:#fff;
+}
+ 
+ 
+
+
+.samp{
+   padding:5px; 
+   color: #333;
+  margin-left: 5px;
+
+  @media (max-width: 768px) {
+    margin-left: 0px;
+
+  }
+
+}
+
+
+
+.UserGraduate{
+  padding:11px 0px 5px  8px ;
+  background-color: #a1c6bc;
+  border-radius: 50px;
+  color:  #ffffff;
+  margin-right: 8px;
+ 
+  @media (max-width: 768px) {
+    margin-right: 1px;
+    padding:8px 5px 8px  10px ;
+
+  }
+}
+ 

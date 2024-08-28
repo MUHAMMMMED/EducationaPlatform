@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+Disallow: /login/
+
+Allow: /
+
+Sitemap: https://www.smartcardnfc.com/sitemap.xml

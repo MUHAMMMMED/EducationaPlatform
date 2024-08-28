@@ -1,0 +1,36 @@
+
+.Speaker_item{
+    float: left;
+    text-align: center;
+    width: 200px;
+    margin-top: 50px;
+    @media (max-width: 1200px) {
+ 
+        width:100%;
+     
+    
+      }
+}
+
+.image-wrapper{
+  width: 100%;
+ 
+}
+.Speaker_image_wrapper_img{
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    border: 1px solid #58a58f;  
+
+}
+.Speaker_name{
+    padding-top: 10px;
+   font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}
+.Speaker_job{
+    margin: 5px 0 0;
+    color:#58a58f; 
+
+}

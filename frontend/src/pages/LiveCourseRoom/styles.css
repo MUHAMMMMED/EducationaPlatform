@@ -1,0 +1,142 @@
+   
+ 
+.LiveCourseRoomCenter{
+  padding: 0px;
+   width: 30%; 
+  text-align: center;
+  float: left;
+  margin-left: 36%;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight:bold ;
+  @media (max-width: 1200px) {  width: 80%;  margin-left: 10%; }
+}
+
+ 
+ 
+   
+  .loader{
+  position: relative;
+  background: rgb(255, 255, 255);
+  overflow: hidden;
+  width:100%;
+  height: 25px;
+  margin-top: 15px;
+  margin: auto;
+  border-radius: 50px;
+  z-index: 0;
+  
+  }
+
+
+
+
+
+  .loader:before{
+  animation: scroll-gradient 1s steps(20, end) infinite forwards;
+  background: rgb(255,255,255);
+  background: -moz-linear-gradient(117deg, rgba(255,255,255,1) 15%, rgba(246,246,246,1) 46%, rgba(255,255,255,1) 85%);
+  background: -webkit-linear-gradient(117deg, rgba(255,255,255,1) 15%, rgba(246,246,246,1) 46%, rgba(255,255,255,1) 85%);
+  background: linear-gradient(117deg, rgba(255,255,255,1) 15%, rgba(246,246,246,1) 46%, rgba(255,255,255,1) 85%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+  content: ' ';
+  display: block;
+  height:100%;
+  position: absolute;
+  width:100%;
+
+
+  will-change: transform;
+  }
+  @keyframes scroll-gradient{
+  0%{
+  transform:translateX(-100%)
+  }
+  100%{
+  transform:translateX(100%)
+  }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .Live {
+  position: relative;
+  margin-top: 18px;
+
+} 
+.live-Text {
+  color: #000000 !important;
+    font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.live-Container {
+  position: relative;
+  width: 100%;
+  height: 15px;  
+  top: 0px;
+
+} 
+  
+.live-Circle {
+  width: 15px;
+  height: 15px;
+  background-color: #f82626;
+  border-radius: 50%;
+  position: absolute;
+  left: 53px;
+  top: -17px;
+}
+
+
+
+
+ 
+ 
+ .liveBorder {
+   border: 3px solid #f82626;
+   border-radius: 30px;
+   height: 25px;
+   width: 25px;
+   position: absolute;
+   left: 48px;
+   top: -22px;
+   animation: pulsate 2s ease-out infinite; /* Apply animation directly */
+   opacity: 0.0;
+ }
+ 
+ @keyframes pulsate {
+   0% {
+     transform: scale(0.1, 0.1);
+     opacity: 0.0;
+   }
+   50% {
+     opacity: 1.0;
+   }
+   100% {
+     transform: scale(1.2, 1.2);
+     opacity: 0.0;
+   }
+ }
+ 
