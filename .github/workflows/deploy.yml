@@ -34,9 +34,8 @@ jobs:
           REPOSITORY: backendeducation  
           IMAGE_TAG: latest
         run: |
-          set -e  # Exit on any error
           cd backend
-          pwd
+          pwd 
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG
 
@@ -46,7 +45,6 @@ jobs:
           REPOSITORY: frontendeducation  # Ensure repository name is consistent
           IMAGE_TAG: latest
         run: |
-          set -e  # Exit on any error
           cd frontend
           pwd
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
