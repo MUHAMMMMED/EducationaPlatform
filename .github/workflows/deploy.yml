@@ -33,36 +33,21 @@ jobs:
         env:
           REPOSITORY: backendeducation  
           IMAGE_TAG: latest
-
         run: |
-          # cd backend
+          set -e  # Exit on any error
+          cd backend
+          pwd
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
-          if [ $? -ne 0 ]; then
-            echo "Backend Docker image build failed"
-            exit 1
-          fi
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG
-          if [ $? -ne 0 ]; then
-            echo "Backend Docker image push failed"
-            exit 1
-          fi
 
-      # Step 5: Build and push the frontend Docker image
+      # Step 5: Build and push the frontendeducation Docker image
       - name: Build and Push Frontend Docker Image
         env:
-          REPOSITORY: frontendeducationa  
+          REPOSITORY: frontendeducation  # Ensure repository name is consistent
           IMAGE_TAG: latest
         run: |
+          set -e  # Exit on any error
           cd frontend
+          pwd
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
-          if [ $? -ne 0 ]; then
-            echo "Frontend Docker image build failed"
-            exit 1
-          fi
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG
-          if [ $? -ne 0 ]; then
-            echo "Frontend Docker image push failed"
-            exit 1
-          fi
-
- 
