@@ -27,7 +27,7 @@ const QuizComponent = () => {
   const [wrongAnswers, setWrongAnswers] = useState([]);
   const [timer, setTimer] = useState(null);
   const [userInteracted, setUserInteracted] = useState(false);
-  
+
   const optionRefs = [
     useRef(null),
     useRef(null),
@@ -87,8 +87,8 @@ const QuizComponent = () => {
     if (!lock) {
       const currentQuestion = quizData.questions[currentQuestionIndex];
       const Current = parseInt(currentQuestion.correct_option);
-      const targetRef = optionRefs[ans - 1];  
-      if (targetRef && targetRef.current) { 
+      const targetRef = optionRefs[ans - 1];
+      if (targetRef && targetRef.current) {
         targetRef.current.classList.add(ans === Current ? 'correct' : 'wrong');
         if (ans === Current) {
           setLock(true);
@@ -119,7 +119,7 @@ const QuizComponent = () => {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
       setLock(false);
       optionRefs.forEach((ref) => {
-        if (ref.current) {  
+        if (ref.current) {
           ref.current.classList.remove('correct', 'wrong', 'question_p');
         }
       });

@@ -30,17 +30,14 @@ def check_permissions(request):
 def AvailableLiveCourse(request):
     # Filter the LiveCourse objects to include only those that are active
     course = LiveCourse.objects.filter(active=True)
-
     # Serialize the filtered list of active courses
     serializer = LiveCourseSerializer(course, many=True)
 
     # Return the serialized data with a status of 200 OK
     return Response(serializer.data)
 
-
  
 
- 
 @api_view(['GET'])
 def LiveCourse_pay(request, id):
     try:
@@ -50,14 +47,33 @@ def LiveCourse_pay(request, id):
         # Serialize course data
         course_serializer = LiveCourseSerializer(course)
         course_data = course_serializer.data
-        
-        # Return JSON response
-        return Response({'course': course_data})
+
+        # Set is_enrolled to False by default
+        is_enrolled = False
+
+        # Check if the user is authenticated
+        if request.user.is_authenticated:
+            # Fetch the user's live course enrollment
+            user_live = UserLiveCourse.objects.filter(
+                student=request.user, 
+                course_id=id, 
+                status__in=['W', 'L']
+            ).last()
+            if user_live:
+                is_enrolled = True
+            else:
+                pass
+
+        # Return JSON response with both course data and enrollment status
+        return Response({
+            'course': course_data,
+            'is_enrolled': is_enrolled
+        })
         
     except LiveCourse.DoesNotExist:
         return Response({'error': 'Course not found'}, status=404)
-
  
+  
 
 @api_view(['GET'])
 def LiveCourse_Filter(request):
@@ -569,6 +585,8 @@ def live_course_operations(request, pk=None):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
+            print(serializer.errors)
+
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     elif request.method == 'DELETE':
@@ -791,7 +809,6 @@ def LiveCourseRateList(request, id):
     else:
       return Response({'Rate not fuend' }, status=status.HTTP_404_NOT_FOUND)
 
- 
 @api_view(['POST'])
 def create_LiveCourseRate(request):
     if not request.user.is_authenticated:

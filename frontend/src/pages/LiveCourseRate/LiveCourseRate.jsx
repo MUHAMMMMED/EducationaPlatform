@@ -34,11 +34,7 @@ export default function LiveCourseRate() {
   if (error) {
     return <ErrorPage head="Error Occurred" error={error} />;
   }
- 
 
-
- 
-  // If all checks pass, render the reviews and feedback
   return (
     <>
       <div className='Container'>

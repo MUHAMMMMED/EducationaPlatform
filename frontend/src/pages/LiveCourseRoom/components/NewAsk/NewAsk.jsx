@@ -9,7 +9,7 @@ export default function NewAsk({ data, fetchCourse }) {
     course: data.id,
     content: '',
     status: 'live',
- 
+
   });
 
   const handleChange = e => {
@@ -21,7 +21,7 @@ export default function NewAsk({ data, fetchCourse }) {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await AxiosInstance.post(`${Config.baseURL}/LiveCourses/ask/create/`, formData );
+      await AxiosInstance.post(`${Config.baseURL}/LiveCourses/ask/create/`, formData);
 
       fetchCourse();
       setFormData({ ...formData, content: '' });
@@ -30,11 +30,11 @@ export default function NewAsk({ data, fetchCourse }) {
     } catch (error) {
       // Handle error
     }
-  };  
+  };
 
   return (
     <div className="contentContainer">
- 
+
       <form onSubmit={handleSubmit}>
         <div className="boxContainer">
           <textarea
@@ -49,9 +49,8 @@ export default function NewAsk({ data, fetchCourse }) {
           </button>
         </div>
       </form>
- 
+
     </div>
   );
 }
 
- 

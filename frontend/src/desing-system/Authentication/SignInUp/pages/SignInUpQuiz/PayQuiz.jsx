@@ -1,34 +1,66 @@
- 
+
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Config from '../../../../../config';
-import CheckoutQuiz from '../../../../../pages/checkout/CheckoutQuiz';
-import Loading from '../../../../components/Loading';
-import ErrorPage from '../../../../components/Loading/ErrorPage';
-import AxiosInstance from '../../../AxiosInstance';
-import '../../styles.css';
-import Head from './Head';
-import './PhoneNumberForm.css';
+import Config from '../../../../../config'; // Import configuration for API base URL
+import CheckoutQuiz from '../../../../../pages/checkout/CheckoutQuiz'; // Component for handling quiz payment
+import Loading from '../../../../components/Loading'; // Loading spinner component
+import ErrorPage from '../../../../components/Loading/ErrorPage'; // Error page component
+import AxiosInstance from '../../../AxiosInstance'; // Axios instance for API requests
+import '../../styles.css'; // Global styles for the component
+import Head from './Head'; // Component to display exam header
+import './PhoneNumberForm.css'; // Specific styles for the form
 
 export default function PayQuiz() {
-    // Extract exam ID from URL parameters
+    // Extract the exam ID from the URL parameters
     const { id: examId } = useParams();
     const navigate = useNavigate(); // Hook for navigation
-    const [examDetail, setExamDetail] = useState(null); // State to store exam details
-    const [loading, setLoading] = useState(true); // State to manage loading state
-    const [error, setError] = useState(null); // State to handle errors
-    const [isEnrolled, setIsEnrolled] = useState(false); // State to track enrollment status
+
+    // State to manage exam details, loading, error, and enrollment status
+    const [examDetail, setExamDetail] = useState(null); // Store exam details
+    const [loading, setLoading] = useState(true); // Manage loading state
+    const [error, setError] = useState(null); // Handle errors
+    const [isEnrolled, setIsEnrolled] = useState(false); // Track if the user is already enrolled
+
+    // useEffect to handle component mount and fetch exam data
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                // Check if the page has already been refreshed
+                const hasRefreshed = localStorage.getItem('hasRefreshed');
+                if (!hasRefreshed) {
+                    // Set the refresh flag to avoid multiple reloads
+                    localStorage.setItem('hasRefreshed', 'true');
+                    window.location.reload(); // Reload the page if user data isn't available
+                    return;
+                }
+                // Clear the refresh flag after successful data load
+                localStorage.removeItem('hasRefreshed');
+
+                // Check if the user is authenticated and fetch exam details
+                await checkAuthentication();
+                await fetchExamDetail();
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                setError('Error fetching data.'); // Set error message in case of failure
+            } finally {
+                setLoading(false); // Stop loading after data is fetched
+            }
+        };
+
+        fetchData(); // Call fetchData to initiate data fetching
+    }, [examId, navigate]); // Rerun the effect if examId or navigate changes
 
     // Function to fetch exam details from the server
     const fetchExamDetail = async () => {
         try {
-            if (!examId) return; // Exit if examId is not available
+            if (!examId) return; // Exit if no examId is provided
             const response = await AxiosInstance.get(`${Config.baseURL}/Quiz/exam_pay/${examId}/`);
-            setExamDetail(response.data.exam_data); // Set exam details
-            setIsEnrolled(response.data.is_enrolled); // Set enrollment status
+            setExamDetail(response.data.exam_data); // Set exam details in state
+            setIsEnrolled(response.data.is_enrolled); // Update enrollment status
         } catch (error) {
             console.error('Error fetching exam detail:', error);
-            setError('Error fetching exam detail.'); // Set error message on failure
+            setError('Error fetching exam detail.'); // Set error message in case of failure
         }
     };
 
@@ -41,51 +73,43 @@ export default function PayQuiz() {
             setError('User not authenticated.'); // Set error message if authentication fails
         }
     };
-    // useEffect hook to fetch data when component mounts or examId changes
-    useEffect(() => {
-        const fetchData = async () => {
-            await checkAuthentication(); // Check if user is authenticated
-            await fetchExamDetail(); // Fetch exam details
-            setLoading(false); // Update loading state after data is fetched
-        };
-        fetchData();
-    }, [examId]); // Dependencies array with examId to refetch if it changes
 
-    // useEffect hook to navigate to "My Learning" page if the user is already enrolled
+    // useEffect to navigate to "My Learning" if the user is already enrolled
     useEffect(() => {
         if (isEnrolled) {
-            navigate('/MyLearning'); // Redirect to "My Learning" if user is enrolled
+            navigate('/MyLearning'); // Redirect to "My Learning" page if user is enrolled
         }
-    }, [isEnrolled, navigate]); // Dependencies array with isEnrolled and navigate
+    }, [isEnrolled, navigate]); // Re-run effect if enrollment status changes
 
-    // Render loading state
+    // Render the loading state while data is being fetched
     if (loading) {
         return <Loading />;
     }
 
-    // Render error page if there is an error
+    // Render the error page if an error occurs
     if (error) {
         return <ErrorPage head="Error Occurred" error={error} />;
     }
 
-    // Render exam details and checkout component
+    // Render the exam details and payment component
     return (
         <div className='Container'>
             <div className='flex_Container'>
                 <div className='flex_center'>
-                    {/* Render exam header if examDetail is available */}
+                    {/* Render the exam header if examDetail is available */}
                     {examDetail && <Head data={examDetail} />}
+
                     <div className='SigRow'>
                         <div className='Cont_but'>
                             <div className="card-body">
                                 <div className='phone-div'>
-                                    {/* Render CheckoutQuiz component if examDetail is available */}
+                                    {/* Render the CheckoutQuiz component if examDetail is available */}
                                     {examDetail && (
-                                        <CheckoutQuiz 
-                                            Id={examDetail.id} 
-                                            name={examDetail.title} 
-                                            price={examDetail.price} 
-                                            Img={examDetail.card_image} 
+                                        <CheckoutQuiz
+                                            Id={examDetail.id}
+                                            name={examDetail.title}
+                                            price={examDetail.price}
+                                            Img={examDetail.card_image}
                                         />
                                     )}
                                 </div>
@@ -97,4 +121,3 @@ export default function PayQuiz() {
         </div>
     );
 }
-

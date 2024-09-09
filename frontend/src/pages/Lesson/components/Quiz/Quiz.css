@@ -1,26 +1,28 @@
- 
-.correct{background:  #00d397;font-weight: 700; float:left;}
-.wrong{background:   #ff4a4a; font-weight: 700; float:left; } 
- 
-
-.question_p{
-font-weight: 500;
-float: left;
-margin-top:10px;
-margin-left:5px;
-margin-bottom:0px;
-border: 0px solid none!important;
-height: 100%;
-}
-
-.Start-Quiz{ font-size: 25px; margin: -5px;font-weight: 700;}
-
-
-
-
-@media (max-width: 768px) {
-    /* .Start-Quiz{ font-size: 25px; margin: -5px;font-weight: 700;} */
-
-
+ .correct {
+     background: #00d397;
+     font-weight: 700;
+     float: left;
  }
- 
+
+ .wrong {
+     background: #ff4a4a;
+     font-weight: 700;
+     float: left;
+ }
+
+
+ .question_p {
+     font-weight: 500;
+     float: left;
+     margin-top: 10px;
+     margin-left: 5px;
+     margin-bottom: 0px;
+     border: 0px solid none !important;
+     height: 100%;
+ }
+
+ .Start-Quiz {
+     font-size: 25px;
+     margin: -5px;
+     font-weight: 700;
+ }

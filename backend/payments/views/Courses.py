@@ -47,7 +47,6 @@ def check_coupon_code_Courses(request):
     # Return JSON response for unsupported request methods
     return JsonResponse({'error': 'Invalid request method'}, status=405)
   
- 
 @api_view(['POST'])
 def Free_Checkout_Course(request, id):
     try:
@@ -71,15 +70,21 @@ def Free_Checkout_Course(request, id):
         
         # Save the UserCourse object (this line is not necessary as 'get_or_create' already saves the object)
         user_course.save()
-        
-        # Send a confirmation email to the user
-        send_mail(
-            subject="Abo Rashad",  # Subject of the email
-            message=f"Thank you for your purchase!",  # Body of the email
-            from_email=settings.EMAIL_HOST_USER,  # Sender's email address
-            recipient_list=[user.email],  # Recipient's email address
-        )
-        
+         
+        # Try sending a confirmation email, skip if an error occurs
+        try:
+             # Send a confirmation email to the user
+
+            send_mail(
+                subject="Abo Rashad",  # Subject of the email
+                message=f"Thank you for your purchase!",  # Body of the email
+                from_email=settings.EMAIL_HOST_USER,  # Sender's email address
+                recipient_list=[user.email],  # Recipient's email address
+            )
+        except Exception as email_error:
+            # Log the error or handle it in any way needed, but don't stop the process
+            print(f"Email sending failed: {email_error}")
+ 
         # Return a success response indicating the course enrollment was successful
         return JsonResponse({'message': 'Course enrollment successful.'}, status=201)
     

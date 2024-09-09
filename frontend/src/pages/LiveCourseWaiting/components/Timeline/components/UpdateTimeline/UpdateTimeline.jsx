@@ -21,70 +21,53 @@ export default function UpdateTimeline({ data }) {
         complete: true,
     });
 
-  
-    
-      useEffect(() => {
+
+
+    useEffect(() => {
         fetchTimelines();
-      }, []);
-    
-      const fetchTimelines = async () => {
+    }, []);
+
+    const fetchTimelines = async () => {
         try {
-          const response = await axios.get(`${Config.baseURL}/timeline/${id}/`);
-          setTimelines(response.data);
+            const response = await axios.get(`${Config.baseURL}/timeline/${id}/`);
+            setTimelines(response.data);
         } catch (error) {
-          console.error('Error fetching timelines:', error);
+            console.error('Error fetching timelines:', error);
         }
-      };
-    
-      const handleCreateTimeline = async () => {
-        try {
-          const response = await axios.post(`${Config.baseURL}/timeline/`, formData);
-          setTimelines([...timelines, response.data]);
-          setFormData({
-            // Reset formData state after successful creation
-          });
-        } catch (error) {
-          console.error('Error creating timeline:', error);
-        }
-      };
-    
-      const handleUpdateTimeline = async (id, newData) => {
-        try {
-          const response = await axios.put(`${Config.baseURL}/timeline/${id}/`, newData);
-          const updatedTimelines = timelines.map((timeline) =>
-            timeline.id === id ? response.data : timeline
-          );
-          setTimelines(updatedTimelines);
-        } catch (error) {
-          console.error('Error updating timeline:', error);
-        }
-      };
-    
-      const handleDeleteTimeline = async (id) => {
-        try {
-          await axios.delete(`${Config.baseURL}/timeline/${id}/`);
-          setTimelines(timelines.filter((timeline) => timeline.id !== id));
-        } catch (error) {
-          console.error('Error deleting timeline:', error);
-        }
-      };
-    
-      
+    };
 
+    // const handleCreateTimeline = async () => {
+    //   try {
+    //     const response = await axios.post(`${Config.baseURL}/timeline/`, formData);
+    //     setTimelines([...timelines, response.data]);
+    //     setFormData({
+    //       // Reset formData state after successful creation
+    //     });
+    //   } catch (error) {
+    //     console.error('Error creating timeline:', error);
+    //   }
+    // };
 
+    // const handleUpdateTimeline = async (id, newData) => {
+    //   try {
+    //     const response = await axios.put(`${Config.baseURL}/timeline/${id}/`, newData);
+    //     const updatedTimelines = timelines.map((timeline) =>
+    //       timeline.id === id ? response.data : timeline
+    //     );
+    //     setTimelines(updatedTimelines);
+    //   } catch (error) {
+    //     console.error('Error updating timeline:', error);
+    //   }
+    // };
 
-
-
-
-
-
-
-
-
-
-
-
-
+    // const handleDeleteTimeline = async (id) => {
+    //   try {
+    //     await axios.delete(`${Config.baseURL}/timeline/${id}/`);
+    //     setTimelines(timelines.filter((timeline) => timeline.id !== id));
+    //   } catch (error) {
+    //     console.error('Error deleting timeline:', error);
+    //   }
+    // };
 
 
 

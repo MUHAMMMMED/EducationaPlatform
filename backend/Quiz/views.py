@@ -36,24 +36,51 @@ def available_exams(request):
     # Return the serialized data with a 200 OK status
     return Response(serializer.data, status=status.HTTP_200_OK)
  
+ 
+
+
+
 
 @api_view(['GET'])
-def  exam_pay(request, exam_id):
+def exam_pay(request, exam_id):
     try:
         # Fetch the Exam object using the provided course ID
         exam =  Exam.objects.get(id=exam_id)
-        
         # Serialize Exam data
         exam_serializer = ExamToCourseDetailSerializer(exam)
         exam_data = exam_serializer.data
-  
-        # Return JSON response
-        return Response({'exam_data': exam_data},status=status.HTTP_200_OK)
-        
-    except exam.DoesNotExist:
-        return Response({'error': 'exam_data not found'}, status=404)
 
+        # Set is_enrolled to False by default
+        is_enrolled = False
+        # Check if the user is authenticated
+        if request.user.is_authenticated:
+            # Fetch the user's course enrollment
+            user_exam = UserExam.objects.filter(student=request.user,exam_id=exam_id).last()
+            # Check if user courses exist for the given exam_id
+            if user_exam and user_exam.tries > 0:
+              is_enrolled = True
+            else:
+              pass
+
+        # Return JSON response with both course data and enrollment status
+        return Response({
+            'exam_data': exam_data,
+            'is_enrolled': is_enrolled
+        })
+        
+    except Exam.DoesNotExist:
+        return Response({'error': 'exam_data not found'}, status=404)
  
+ 
+
+
+
+
+
+
+
+
+
 @api_view(['GET'])
 def Exam_Filter(request):
     # Retrieve the 'query' parameter from the GET request
@@ -275,7 +302,7 @@ def exams_list(request):
         if serializer.is_valid():  # Check if the request data is valid
             serializer.save()  # Save the new exam
             return Response(serializer.data, status=status.HTTP_201_CREATED)  # Return the serialized data with a 201 Created status
-        
+        print(serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)  # Return validation errors with a 400 Bad Request status
  
 
@@ -552,7 +579,23 @@ def download_users_data(request, id):
     except Exam.DoesNotExist:
         return Response({'error': 'Exam does not exist'}, status=status.HTTP_404_NOT_FOUND)
  
- 
+@api_view(['GET'])
+def  exam_coupon_codes(request, id):
+     # Check permissions
+    error_response = check_permissions(request)
+    if error_response:
+        return error_response
+    try:
+        # Get all coupon codes related to the specified course ID
+        coupon_codes = ExamCouponCode.objects.filter(exam_id=id)
+        serializer = ExamCouponCodeSerializer(coupon_codes, many=True)
+        return Response(serializer.data)
+    except ExamCouponCode.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
 # Define the view for creating a new coupon code for an exam
 @api_view(['POST'])
 def exam_coupon_codes_create(request, id):

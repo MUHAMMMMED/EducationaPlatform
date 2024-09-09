@@ -8,7 +8,7 @@ function CouponCodeForm({ Id, fetchCouponCodes }) {
     Code: '',
     date: '',
     discount: '',
-    Enroll:'1',
+    Enroll: '1',
 
   });
 
@@ -29,7 +29,7 @@ function CouponCodeForm({ Id, fetchCouponCodes }) {
         Code: '',
         date: '',
         discount: '',
-        Enroll:'1',
+        Enroll: '1',
 
       });
     } catch (error) {
@@ -61,17 +61,17 @@ function CouponCodeForm({ Id, fetchCouponCodes }) {
               </label>
             </div>
           </div>
- 
-              <label className='label'> Expiry Date:
-                <input type="date" name="date" value={formData.date} onChange={handleChange} />
-              </label>
-         
+
+          <label className='label'> Expiry Date:
+            <input type="date" name="date" value={formData.date} onChange={handleChange} />
+          </label>
+
 
           <div className="FOrm-container">
-        <label className='label' style={{width:'100%'}}> Enroll :
-        <input type="number"name="Enroll" value={formData.Enroll} onChange={handleChange}/></label> 
-         </div>
- 
+            <label className='label' style={{ width: '100%' }}> Enroll :
+              <input type="number" name="Enroll" value={formData.Enroll} onChange={handleChange} /></label>
+          </div>
+
 
 
           <div className="FOrmContainer" style={{ marginTop: '50px' }}>

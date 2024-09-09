@@ -4,7 +4,7 @@ import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
 
 
-export default function AddToQuiz({ questionId, exams ,fetchQuiz}) {
+export default function AddToQuiz({ questionId, exams, fetchQuiz }) {
   const { id } = useParams();
   const [exam, setExam] = useState('');
   const [loading, setLoading] = useState(false);
@@ -18,7 +18,7 @@ export default function AddToQuiz({ questionId, exams ,fetchQuiz}) {
       setLoading(true);
       if (!id || !exam) return;
 
-      const response = await AxiosInstance.post(`${Config.baseURL}/Quiz/add_question_to_exam/`, {
+      await AxiosInstance.post(`${Config.baseURL}/Quiz/add_question_to_exam/`, {
         exam_id: exam,
         question_id: questionId,
       });

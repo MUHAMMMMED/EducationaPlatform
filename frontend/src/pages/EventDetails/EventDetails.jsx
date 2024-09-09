@@ -12,10 +12,10 @@ import './styles.css';
 
 
 export default function EventDetails() {
-  const { id:Id } = useParams();
+  const { id: Id } = useParams();
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);  
+  const [error, setError] = useState(null);
 
   const fetchEventDetails = async () => {
     try {
@@ -29,13 +29,13 @@ export default function EventDetails() {
       setLoading(false);
     }
   };
- 
+
   useEffect(() => {
     fetchEventDetails();
   }, [Id]);
 
- 
- 
+
+
   if (loading) {
     return <Loading />;
   }
@@ -43,35 +43,35 @@ export default function EventDetails() {
   if (error) {
     return <ErrorPage head="Error Occurred" error={error} />;
   }
- 
+
 
   return (
     <>
-<div className='Container'> 
+      <div className='Container'>
 
- <div className='Event'>
+        <div className='Event'>
 
 
-  <HeadEvent event={event} />
-  <br/><br/> 
- <div className='Event_DownTimer'>
- <DownTimer
- date={event?.date}
- time={event?.start_time} 
- join_meeting={event?.roomId}
- join_meeting_link={event?.join_meeting_link}  
- courseId={event?.id} 
- roomId={event?.roomId} 
- completed={event?.completed} 
- />  
-<br/><br/> 
-{event&& <JoinButtons data={event} />   }
-       
-   </div>
-  <AboutEvent event={event} />
+          <HeadEvent event={event} />
+          <br /><br />
+          <div className='Event_DownTimer'>
+            <DownTimer
+              date={event?.date}
+              time={event?.start_time}
+              join_meeting={event?.roomId}
+              join_meeting_link={event?.join_meeting_link}
+              courseId={event?.id}
+              roomId={event?.roomId}
+              completed={event?.completed}
+            />
+            <br /><br />
+            {event && <JoinButtons data={event} />}
 
-</div>
-</div>
+          </div>
+          <AboutEvent event={event} />
+
+        </div></div>
+
     </>
   );
 }

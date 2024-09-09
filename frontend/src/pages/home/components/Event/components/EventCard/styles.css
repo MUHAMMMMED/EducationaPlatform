@@ -1,134 +1,140 @@
- 
+ .EventCard {
+   float: left;
+   margin-top: 25px;
+   padding: 18px;
+   width: 100%;
+   height: auto;
+   border: 1px solid #58a58f;
+   border-radius: 8px;
+   margin-left: 0;
 
-.EventCard{
- float: left;
-  margin-top: 25px;
-  padding: 18px;
-  width:100%;
-  height: auto;
-  border: 1px solid #58a58f;
-  border-radius: 8px;
-  margin-left: 0;
-  @media (max-width: 1200px) {
-    width:100%;
-    /* height: 130px; */
-    padding: 10px;
-  }
-}
- 
-
-.flex-EventCard {
-  padding: 0;
-  margin: 0;
-  float: left;
-  font-size: 30px;
-  width:150px;
-  @media (max-width: 1200px) {
-    font-size: 20px;
-  width:90px;
-
-  }
- } 
-
-
- 
-.startdate {
-  background:  #eefbf2;
-  border: 1px solid #dce5e2;
-  color:  #58a58f; 
-  border-radius: 8px;
-  padding: 60px 50px ;
-  text-align: center;
-  @media (max-width: 1200px) {
-    padding: 60px 30px ;
-
-
-  }
-}
-
-.Right-EventCard{
-  width: 67%;
-  padding: 0;
-  margin: 0;
-  float: left;
-  margin-left: 15px;
-  @media (max-width: 1200px) {
-    margin-left: 15px;
-    width: 65%;
- 
-  }
+   @media (max-width: 1200px) {
+     width: 100%;
+     /* height: 130px; */
+     padding: 10px;
+   }
  }
-.Entry-title{
-  float: left;
-  margin-top: 20px;
-  font-size: 20px;
-  width:100%;
-  font-weight: 500;
-  padding-bottom: 20px;
-  height: 70px;
- 
-  @media (max-width: 1200px) {
-    font-size: 16px; 
-    padding-bottom: 5px;
-    height: 50px;
-    margin-top: 10px;
-
-  }
-
-}
-
-.Event-inf{
-  float: left;
-  width:100%;
-  margin-top: 5px;
-
-}
-.Event_Time{
-  margin-top: 5px;
-  float: left;
-  width:60%;
-  font-size: 20px;
-  @media (max-width: 1200px) {
-    width:50%;
-    font-size: 18px;
-
-  }
-}
-.Event_BUT{
-  float: right;
-  width:40%;
-  @media (max-width: 1200px) {
-    width:50%;
-  }
-
-}
- 
-
- 
-
-  .Even-btn {
-    width:100%;
-    text-decoration: none;
-    color: inherit;
-    outline: none;
-    border: none;
-    display: inline-block;
-    line-height: 40px;
-    text-align: center;
-    color: #fff;
-    background: #58a58f;
-    border-radius: 4px;
-    font-weight: 400;
-    font-size: 14px;
-
-    @media (max-width:780) {
-      font-size: 10px;
-      padding: 0 8px;
-      width:50%;
-      line-height: 25px;
 
 
-    }
-   
-  }
- 
+ .flex-EventCard {
+   padding: 0;
+   margin: 0;
+   float: left;
+   font-size: 30px;
+   width: 150px;
+
+   @media (max-width: 1200px) {
+     font-size: 20px;
+     width: 90px;
+
+   }
+ }
+
+
+
+ .startdate {
+   background: #eefbf2;
+   border: 1px solid #dce5e2;
+   color: #58a58f;
+   border-radius: 8px;
+   padding: 60px 50px;
+   text-align: center;
+
+   @media (max-width: 1200px) {
+     padding: 60px 30px;
+
+
+   }
+ }
+
+ .Right-EventCard {
+   width: 67%;
+   padding: 0;
+   margin: 0;
+   float: left;
+   margin-left: 15px;
+
+   @media (max-width: 1200px) {
+     margin-left: 15px;
+     width: 65%;
+
+   }
+ }
+
+ .Entry-title {
+   float: left;
+   margin-top: 20px;
+   font-size: 20px;
+   width: 100%;
+   font-weight: 500;
+   padding-bottom: 20px;
+   height: 70px;
+
+   @media (max-width: 1200px) {
+     font-size: 16px;
+     padding-bottom: 5px;
+     height: 50px;
+     margin-top: 10px;
+
+   }
+
+ }
+
+ .Event-inf {
+   float: left;
+   width: 100%;
+   margin-top: 5px;
+
+ }
+
+ .Event_Time {
+   margin-top: 5px;
+   float: left;
+   width: 60%;
+   font-size: 20px;
+
+   @media (max-width: 1200px) {
+     width: 50%;
+     font-size: 18px;
+
+   }
+ }
+
+ .Event_BUT {
+   float: right;
+   width: 40%;
+
+   @media (max-width: 1200px) {
+     width: 50%;
+   }
+
+ }
+
+
+
+
+ .Even-btn {
+   width: 100%;
+   text-decoration: none;
+   color: inherit;
+   outline: none;
+   border: none;
+   display: inline-block;
+   line-height: 40px;
+   text-align: center;
+   color: #fff;
+   background: #58a58f;
+   border-radius: 4px;
+   font-weight: 400;
+   font-size: 14px;
+
+   @media (max-width:780) {
+     font-size: 10px;
+     padding: 0 8px;
+     width: 50%;
+     line-height: 25px;
+
+
+   }
+
+ }

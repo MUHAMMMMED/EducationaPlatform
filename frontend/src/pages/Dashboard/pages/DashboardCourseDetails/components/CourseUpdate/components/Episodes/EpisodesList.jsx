@@ -1,15 +1,13 @@
- 
+
 import React, { useState } from 'react';
 import { CgTranscript } from "react-icons/cg";
 import { FiYoutube } from "react-icons/fi";
 import { MdLiveTv, MdOutlineOndemandVideo, MdOutlineQuiz, MdVideoLibrary } from "react-icons/md";
 import { PiBookOpenTextLight } from "react-icons/pi";
-
 import EpisodeUpdate from './EpisodeUpdate';
 
 export default function EpisodesList({ item, Course, fetchCourse }) {
   const [showMore, setShowMore] = useState(false);
-
   const visibleEpisodes = showMore ? item.episodes : item.episodes.slice(0, 3).sort((a, b) => a.serial_number - b.serial_number);
 
   return (
@@ -22,8 +20,10 @@ export default function EpisodesList({ item, Course, fetchCourse }) {
                 <div style={{ float: 'left', width: '65px' }}><span className='onLine-icon'><MdVideoLibrary /></span></div>
                 <div style={{ float: 'left' }}>
                   <p className="Course_card_title" style={{ textAlign: 'left', fontWeight: '700' }}>
-                    <samp style={{ background: '#000', color: '#fff', padding: ' 3px 8px', borderRadius: '5px', fontSize:
-                      '15px', marginRight: '5px' }}>{episode.serial_number}</samp>{episode.title}  </p>
+                    <samp style={{
+                      background: '#000', color: '#fff', padding: ' 3px 8px', borderRadius: '5px', fontSize:
+                        '15px', marginRight: '5px'
+                    }}>{episode.serial_number}</samp>{episode.title}  </p>
                   <p className="Course_card_amount" style={{ textAlign: 'left', marginTop: '5px', fontWeight: '700', fontSize: '30px', float: 'left' }} >
                     {(episode.is_preview) ? <MdLiveTv /> : ''}  </p>
                 </div>
@@ -54,14 +54,14 @@ export default function EpisodesList({ item, Course, fetchCourse }) {
           </div>
         ))}
       </div>
-      <div className="Course_card_info"style={{alignItems:"center"}}>
-  <div className="Course_cardicon" style={{width:'60%'}}>
-      {!showMore && (
-        <button className='Open_button'  onClick={() => setShowMore(true)}>Show More</button>
-      )}
- </div></div> 
+      <div className="Course_card_info" style={{ alignItems: "center" }}>
+        <div className="Course_cardicon" style={{ width: '60%' }}>
+          {!showMore && (
+            <button className='Open_button' onClick={() => setShowMore(true)}>Show More</button>
+          )}
+        </div></div>
 
- 
+
 
 
 

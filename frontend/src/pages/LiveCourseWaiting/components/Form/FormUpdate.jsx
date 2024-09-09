@@ -1,8 +1,7 @@
- 
+
 import React, { useState } from 'react';
 import Config from '../../../../config';
 import AxiosInstance from '../../../../desing-system/Authentication/AxiosInstance';
-import './Form.css';
 
 const FormUpdate = ({ data, fetchCourse }) => {
   const [showModalEdit, setShowModalEdit] = useState(false);
@@ -25,10 +24,10 @@ const FormUpdate = ({ data, fetchCourse }) => {
     e.preventDefault();
     try {
       await AxiosInstance.put(`${Config.baseURL}/LiveCourses/live-courses/${data.id}/`, formData);
-      fetchCourse();  
-      setShowModalEdit(false);  
+      fetchCourse();
+      setShowModalEdit(false);
     } catch (error) {
-    
+
     }
   };
 
@@ -49,7 +48,7 @@ const FormUpdate = ({ data, fetchCourse }) => {
           <div className="FOrm-container">
             <div className="form-container-half">
 
-            <label className='label'> Telegram Link:  </label>
+              <label className='label'> Telegram Link:  </label>
 
               <textarea
                 name="join_telegram"
@@ -59,7 +58,7 @@ const FormUpdate = ({ data, fetchCourse }) => {
               />
             </div>
             <div className="form-container-half">
-            <label className='label'> Whatsap Link:  </label>
+              <label className='label'> Whatsap Link:  </label>
 
               <textarea
                 name="join_whatsapp"
@@ -72,7 +71,7 @@ const FormUpdate = ({ data, fetchCourse }) => {
 
           <div className="FOrm-container">
             <div className="form-container-half">
-            <label className='label'> waiting Date:  </label>
+              <label className='label'> waiting Date:  </label>
 
               <input
                 type="date"
@@ -84,7 +83,7 @@ const FormUpdate = ({ data, fetchCourse }) => {
             </div>
 
             <div className="form-container-half">
-            <label className='label'> Time:  </label>
+              <label className='label'> Time:  </label>
 
               <input
                 type="time"

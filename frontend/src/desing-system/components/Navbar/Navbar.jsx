@@ -1,105 +1,135 @@
-import React, { useState } from 'react';
-import { BsPostcard } from "react-icons/bs";
-import { GoHome } from "react-icons/go";
-import { LuAirplay, LuLogIn } from "react-icons/lu";
-import { MdOutlineLiveTv, MdOutlineQuiz } from "react-icons/md";
-import { Link, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import AxiosInstance from '../../Authentication/AxiosInstance';
-import OfferMessage from '../OfferMessage/OfferMessage.jsx';
-import NavLink from './NavLink.jsx';
-import SideNav from './SideNav/SideNav';
-import TopSectionBut from './TopSectionBut.jsx';
-import './styles.css';
- 
-   
+
+
+import React, { useContext, useState } from 'react';
+import { BsPostcard } from "react-icons/bs"; // Icon for Tips & Tricks
+import { GoHome } from "react-icons/go"; // Icon for Home
+import { LuAirplay, LuLogIn } from "react-icons/lu"; // Icons for Courses and Login
+import { MdOutlineLiveTv, MdOutlineQuiz } from "react-icons/md"; // Icons for Live Courses and Quizzes
+import { Link, useNavigate } from 'react-router-dom'; // Link for navigation
+import { ToastContainer, toast } from 'react-toastify'; // Toast notifications
+import 'react-toastify/dist/ReactToastify.css'; // Toastify CSS
+import AxiosInstance from '../../Authentication/AxiosInstance'; // Axios instance for API requests
+import { UserContext } from '../../Authentication/UserProvider'; // Context for user data
+import OfferMessage from '../OfferMessage/OfferMessage.jsx'; // Component for offer messages
+import NavLink from './NavLink.jsx'; // Component for navigation link
+import SideNav from './SideNav/SideNav'; // Side navigation component
+import TopSectionBut from './TopSectionBut.jsx'; // Top section buttons component
+import './styles.css'; // Navbar styles
+
 const Navbar = () => {
+  const navigate = useNavigate(); // Hook to navigate programmatically
+  const [showSidebar, setShowSidebar] = useState(false); // State to toggle sidebar
+  const { userData } = useContext(UserContext); // Access user data from context
 
-  const [showSidebar, setShowSidebar] = useState(false);
-  const user = JSON.parse(localStorage.getItem('user'));
-  const navigate = useNavigate();
-  const refresh = JSON.parse(localStorage.getItem('refresh_token'));
+  // // useEffect to handle page reload logic
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       // Check if the page has already been refreshed
+  //       const hasRefreshed = localStorage.getItem('hasRefreshed');
+  //       if (!hasRefreshed) {
+  //         // Set the refresh flag to avoid multiple reloads
+  //         localStorage.setItem('hasRefreshed', 'true');
+  //         window.location.reload(); // Reload the page if userData is not available
+  //         return;
+  //       }
+  //       // Clear the refresh flag after successful data load
+  //       localStorage.removeItem('hasRefreshed');
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error); // Log any errors during fetching
+  //     }
+  //   };
 
+  //   fetchData(); // Call fetchData to handle page refresh logic
+  // }, [navigate]); // The effect depends on the navigate function
+
+  const refresh = JSON.parse(localStorage.getItem('refresh_token')); // Get refresh token from localStorage
+
+  // Function to handle logout
   const handleLogout = async () => {
     try {
       const res = await AxiosInstance.post('/logout/', { refresh_token: refresh });
       if (res.status === 204) {
+        // Clear localStorage on successful logout
         localStorage.removeItem('token');
         localStorage.removeItem('refresh_token');
-        localStorage.removeItem('user'); // Remove user data
-        AxiosInstance.defaults.headers.common['Authorization'] = ''; // Clear token from AxiosInstance
-        navigate('/login');
-        toast.warn('Logout successful');
+        localStorage.removeItem('user');
+        AxiosInstance.defaults.headers.common['Authorization'] = ''; // Remove authorization header
+        navigate('/login'); // Navigate to login page
+        toast.warn('Logout successful'); // Show success toast notification
       }
     } catch (error) {
-      console.error('Logout error:', error);
-      toast.error('Logout failed');
+      console.error('Logout error:', error); // Log any errors during logout
+      toast.error('Logout failed'); // Show error toast notification
     }
   };
 
+  // Function to toggle the sidebar
   const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
+    setShowSidebar(!showSidebar); // Toggle sidebar visibility
   };
 
   return (
     <>
-    <OfferMessage/>
- <div className="logo">
-  <p style={{ textAlign: "center", width: "85%", float: "left"  }}>
- <Link to="/" className='logotext'>Abo Rashad</Link> </p>
- <p style={{ float: "left" , textAlign: "center", width: "15%", padding:'5px',  backgroundColor:'#fff', marginTop:'2px',  }}>
-  <button className='buttonSidebar' onClick={toggleSidebar}>=</button></p>
- </div>
+      <OfferMessage /> {/* Display the offer message component */}
+      <div className="logo">
+        <p style={{ textAlign: "center", width: "85%", float: "left" }}>
+          <Link to="/" className='logotext'>Abo Rashad</Link> {/* Logo with link to home */}
+        </p>
+        <p style={{ float: "left", textAlign: "center", width: "15%", padding: '5px', backgroundColor: '#fff', marginTop: '2px' }}>
+          <button className='buttonSidebar' onClick={toggleSidebar}>=</button> {/* Button to toggle sidebar */}
+        </p>
+      </div>
 
- <SideNav showSidebar={showSidebar} toggleSidebar={toggleSidebar} user={user} handleLogout={handleLogout} />
+      {/* Sidebar component */}
+      <SideNav showSidebar={showSidebar} toggleSidebar={toggleSidebar} handleLogout={handleLogout} userData={userData} />
 
       <div className="topnav">
         <div className='centerNav'>
-        {/* <Link to="/">
-          <img style={{ width: "110px", padding: "0px 20px 0px 20px" }} src='https://upload.wikimedia.org/wikipedia/commons/6/60/Logo-logosu.png' alt="Logo" />
-        </Link> */}
-        <Link to="/" className='LogoText'>Abo Rashad</Link>
-        <Link to="/">Home</Link>
-        <Link to="/AllCourses">All Courses</Link>
-        <Link to="/Courses">Courses</Link>
-        <Link to="/LiveCourses">Live Courses</Link>
-        <Link to="/Quizzes">Quizzes</Link>
-        <Link to="/Events">Events</Link> 
-       <Link to="/Tricks">Tips & Tricks</Link>  
-  
-        {user ? (
-          <>
-             <div class="top-section_Logout">
-             <TopSectionBut/>
-              <div class="top-Logout"  onClick={handleLogout} > Logout </div>  
-         </div>
- 
-          </>
-        ) : (
-          <>
-        <div class="top-section">
-           <Link style={{padding:'0',margin:'0'}} to="/Signup" ><div class=" top-signup" >  Sign Up </div></Link>
-           <Link style={{padding:'0',margin:'0'}} to="/login" ><div class="top-login" > Log in </div> </Link>
-         </div>
-   
-          </>
-        )}
+          <Link to="/" className='LogoText'>Abo Rashad</Link> {/* Link to home */}
+          <Link to="/">Home</Link>
+          <Link to="/AllCourses">All Courses</Link>
+          <Link to="/Courses">Courses</Link>
+          <Link to="/LiveCourses">Live Courses</Link>
+          <Link to="/Quizzes">Quizzes</Link>
+          <Link to="/Events">Events</Link>
+          <Link to="/Tricks">Tips & Tricks</Link>
+
+          {userData ? ( // If user is logged in, show logout and profile options
+            <>
+              <div className="top-section_Logout">
+                <TopSectionBut userData={userData} /> {/* User-specific buttons */}
+                <div className="top-Logout" onClick={handleLogout}> Logout </div> {/* Logout button */}
+              </div>
+            </>
+          ) : ( // If no user, show login and signup links
+            <>
+              <div className="top-section">
+                <Link style={{ padding: '0', margin: '0' }} to="/Signup">
+                  <div className="top-signup">Sign Up</div>
+                </Link>
+                <Link style={{ padding: '0', margin: '0' }} to="/login">
+                  <div className="top-login">Log in</div>
+                </Link>
+              </div>
+            </>
+          )}
         </div>
       </div>
-     <div className='spece_bottom'/>
+
+      {/* Space below the top navbar */}
+      <div className='spece_bottom' />
+
+      {/* Bottom navbar for mobile */}
       <div className="navbarbottom">
-        <Link to="/"><GoHome /> <br /> Home </Link>
+        <Link to="/"><GoHome /><br /> Home</Link>
         <Link to="/Courses"><LuAirplay /><br /> Courses</Link>
-        <Link to="/LiveCourses"><MdOutlineLiveTv /><br />Live Courses</Link>   
+        <Link to="/LiveCourses"><MdOutlineLiveTv /><br />Live Courses</Link>
         <Link to="/Quizzes"><MdOutlineQuiz /><br /> Quizzes</Link>
         <Link to="/Tricks"><BsPostcard /><br /> Tips & Tricks</Link>
-        {user ? (
-        <NavLink/>
-        ) : (
-        <Link to="/login"><LuLogIn /><br /> Login</Link>
-        )}
+        {userData ? <NavLink userData={userData} /> : <Link to="/login"><LuLogIn /><br /> Login</Link>} {/* Conditional login/logout links */}
       </div>
+
       <ToastContainer />
     </>
   );

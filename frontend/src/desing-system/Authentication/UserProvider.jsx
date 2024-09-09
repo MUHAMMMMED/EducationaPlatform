@@ -1,35 +1,33 @@
- 
+import jwtDecode from 'jwt-decode';
 import React, { createContext, useEffect, useState } from 'react';
-import AxiosInstance from './AxiosInstance';
- 
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [userData, setUserData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+    const [userData, setUserData] = useState(null);
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const res = await AxiosInstance.get('/get-something/');
-        setUserData(res.data);
-      } catch (error) {
-        // setError(error.response ? error.response.data : error.message);
-      } finally {
-        setLoading(false);
-      }
+    const displayUserInfo = () => {
+        const accessToken = localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')) : "";
+
+        if (accessToken) {
+            try {
+                const user = jwtDecode(accessToken);
+                setUserData(user);
+            } catch (error) {
+                console.error('Token decoding failed:', error);
+            }
+        } else {
+            console.log('No access token found.');
+        }
     };
- 
-    fetchUserData();
-  }, []);
 
-  return (
-    <UserContext.Provider value={{ userData, loading, error }}>
-      {children}
-    </UserContext.Provider>
-  );
+    useEffect(() => {
+        displayUserInfo();
+    }, []);
+
+    return (
+        <UserContext.Provider value={{ userData }}>
+            {children}
+        </UserContext.Provider>
+    );
 };
-
- 

@@ -1,21 +1,22 @@
 /* YourSliderComponent.css */
 
 .your-slider-container {
-    width: 100%;
-    height: 300px; /* Set your desired height */
+  width: 100%;
+  height: 300px;
+  /* Set your desired height */
+}
+
+.swiper-slideImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Adjust as needed */
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: auto;
   }
-  
-  .swiper-slideImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Adjust as needed */
- 
-    @media (max-width: 768px) {
-      width: 90%;
-      margin: auto;
-   }
 
 
 
-  }
-  
+}

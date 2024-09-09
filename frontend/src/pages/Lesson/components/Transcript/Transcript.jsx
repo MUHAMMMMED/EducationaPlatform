@@ -1,4 +1,4 @@
- 
+
 
 import React, { useState } from 'react';
 import './Transcript.css';
@@ -12,10 +12,10 @@ export default function Transcript({ data }) {
   // Check if content is not null before using split
   const displayContent = content ? (showFullContent ? content : `${content.split(' ').slice(0, 30).join(' ')}...`) : '';
 
-  return ( 
+  return (
     <>
       <h3 className='Transcript-h3'>Transcript</h3>
-      <p   className='Transcript-p'>
+      <p className='Transcript-p'>
         {displayContent}
         {!showFullContent && (
           <span className='Transcript-span'

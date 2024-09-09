@@ -1,4 +1,4 @@
- 
+
 import React, { useState } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
@@ -7,10 +7,10 @@ const RateCreate = ({ user, fetchDate }) => {
     const [formData, setFormData] = useState({
         message: '',
         rate_number: '',
-        student: '',  
+        student: '',
     });
 
- 
+
     const [showModalRateCreate, setShowModalRateCreate] = useState(false);
 
     const handleChange = (e) => {
@@ -18,9 +18,9 @@ const RateCreate = ({ user, fetchDate }) => {
         setFormData({ ...formData, [name]: value });
     };
     const handleStudentSelection = (event) => {
-      setFormData({ ...formData, student: event.target.value });  
-  };
-  
+        setFormData({ ...formData, student: event.target.value });
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -29,7 +29,7 @@ const RateCreate = ({ user, fetchDate }) => {
             setShowModalRateCreate(false);
             fetchDate();
         } catch (error) {
-       
+
         }
     };
 
@@ -51,7 +51,7 @@ const RateCreate = ({ user, fetchDate }) => {
                                 {user.map(stu => (
                                     <option value={stu.id} key={stu.id}>
                                         {stu?.user_full_name}
-                                        </option>
+                                    </option>
                                 ))}
                             </select>
                         </div>
@@ -60,16 +60,16 @@ const RateCreate = ({ user, fetchDate }) => {
                     <div className="FOrm-container">
                         <div className="form-container-half" style={{ width: '100%' }}>
                             <label className='label' htmlFor="message">message:</label>
-                            <textarea name="message" value={formData.message} onChange={handleChange} style={{height:'50px'}} placeholder="message..." />
+                            <textarea name="message" value={formData.message} onChange={handleChange} style={{ height: '50px' }} placeholder="message..." />
                         </div>
                     </div>
                     <div className="FOrm-container">
                         <div className="form-container-half" style={{ width: '100%' }}>
                             <label className='label' htmlFor="message">rate_number:</label>
-                            <input type="number" name="rate_number" value={formData.rate_number} onChange={handleChange} placeholder="rate number 1 : 5" />
+                            <input type="number" className="Number" name="rate_number" value={formData.rate_number} onChange={handleChange} placeholder="rate number 1 : 5" />
                         </div>
                     </div>
-                    <br /><br/>
+                    <br /><br />
                     <div className="FOrmContainer">
                         <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>
                         <div style={{ width: '20%' }}><button className="cancel-button" onClick={handleCloseModal}>Cancel</button></div>

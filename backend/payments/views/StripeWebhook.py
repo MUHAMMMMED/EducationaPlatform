@@ -194,15 +194,21 @@ def handle_checkout_session_Course(session):
 
             course.Enroll += 1
             course.save()
+ 
+        # Try sending a confirmation email, skip if an error occurs
+        try:
+             # Send a confirmation email to the user
 
+            send_mail(
+                subject="Abo Rashad",  # Subject of the email
+                message=f"Thank you for your purchase!",  # Body of the email
+                from_email=settings.EMAIL_HOST_USER,  # Sender's email address
+                recipient_list=[customer_email],  # Recipient's email address
+            )
+        except Exception as email_error:
+            # Log the error or handle it in any way needed, but don't stop the process
+            print(f"Email sending failed: {email_error}")
 
-        # Send email to customer
-        send_mail(
-            subject="Abo Rashad",
-            message=f"Thank you for your purchase!",
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[customer_email],
-        )
  
 
         # Optionally, return the user_course object or perform additional actions
@@ -289,14 +295,22 @@ def handle_checkout_session_LiveCourse(session):
             course.save()
 
 
-      # Send email to customer
-        send_mail(
-            subject="Abo Rashad",
-            message=f"Thank you for your purchase!",
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[customer_email],
-        )
 
+        # Try sending a confirmation email, skip if an error occurs
+        try:
+             # Send a confirmation email to the user
+
+            send_mail(
+                subject="Abo Rashad",  # Subject of the email
+                message=f"Thank you for your purchase!",  # Body of the email
+                from_email=settings.EMAIL_HOST_USER,  # Sender's email address
+                recipient_list=[customer_email],  # Recipient's email address
+            )
+        except Exception as email_error:
+            # Log the error or handle it in any way needed, but don't stop the process
+            print(f"Email sending failed: {email_error}")
+
+ 
 
         # Optionally, return the user_course object or perform additional actions
         return user_course
@@ -381,14 +395,23 @@ def handle_checkout_session_Quiz(session):
             exam.Enroll += 1
             exam.save()
               # Send email to customer
-        send_mail(
-            subject="Abo Rashad",
-            message=f"Thank you for your purchase!",
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[customer_email],
-        )
+  
 
+        # Try sending a confirmation email, skip if an error occurs
+        try:
+             # Send a confirmation email to the user
 
+            send_mail(
+                subject="Abo Rashad",  # Subject of the email
+                message=f"Thank you for your purchase!",  # Body of the email
+                from_email=settings.EMAIL_HOST_USER,  # Sender's email address
+                recipient_list=[customer_email],  # Recipient's email address
+            )
+        except Exception as email_error:
+            # Log the error or handle it in any way needed, but don't stop the process
+            print(f"Email sending failed: {email_error}")
+
+ 
         # Optionally, return the UserExam object or perform additional actions
         return user_exam
 

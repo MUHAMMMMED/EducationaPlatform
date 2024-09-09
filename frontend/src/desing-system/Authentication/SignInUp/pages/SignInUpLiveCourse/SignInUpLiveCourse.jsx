@@ -1,4 +1,4 @@
- 
+
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Config from '../../../../../config';
@@ -9,9 +9,9 @@ import Head from './Head';
 
 
 export default function SignInUpLiveCourse() {
-    const { id:courseId } = useParams();
+    const { id: courseId } = useParams();
     const [courseDetail, setCourseDetail] = useState(null);
-    
+
     const fetchCourseDetail = async () => {
         try {
             if (!courseId) return;
@@ -29,26 +29,25 @@ export default function SignInUpLiveCourse() {
     if (!courseDetail) {
         return <Loading />;
     }
- 
-return (
- <div className='Container'> 
-<div className='flex_Container'> 
- <div className='flex_center'> 
- {courseDetail&&  <Head  data={courseDetail}  />}
 
- <div className='SigRow'>
- <div className='Cont_but'>
- <div class="card-body">
-  <h2 class="card_welcome ">You need to log in first to register for the course.</h2>
-  <div class="btn-wrap">
- <p className='card-body_text'>Create a new account. </p>
- <Link to={`/Signup_LiveCourse/${courseId}/`}> 
-<div class="WRAP"><a class="BTN btn-login" > Create Account </a> </div></Link>
-<p className='card-body_text'>Already have an account? </p>
-<Link to={`/Login_LiveCourse/${courseId}/`}> 
-<div class="WRAP"> <a class="BTN btn-register" >Log in Now</a> </div></Link>
- </div> </div></div></div> </div> </div></div>
+    return (
+        <div className='Container'>
+            <div className='flex_Container'>
+                <div className='flex_center'>
+                    {courseDetail && <Head data={courseDetail} />}
 
-  )
+                    <div className='SigRow'>
+                        <div className='Cont_but'>
+                            <div class="card-body">
+                                <h2 class="card_welcome ">You need to log in first to register for the course.</h2>
+                                <div class="btn-wrap">
+                                    <p className='card-body_text'>Create a new account. </p>
+                                    <Link to={`/Signup_LiveCourse/${courseId}/`}>
+                                        <div class="WRAP"><a class="BTN btn-login" > Create Account </a> </div></Link>
+                                    <p className='card-body_text'>Already have an account? </p>
+                                    <Link to={`/Login_LiveCourse/${courseId}/`}>
+                                        <div class="WRAP"> <a class="BTN btn-register" >Log in Now</a> </div></Link>
+                                </div> </div></div></div> </div> </div></div>
+
+    )
 }
- 

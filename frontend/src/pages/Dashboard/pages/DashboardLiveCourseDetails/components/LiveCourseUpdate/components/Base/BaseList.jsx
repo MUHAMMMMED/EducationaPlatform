@@ -3,11 +3,11 @@ import { IoCreateOutline } from "react-icons/io5";
 import BaseCreate from './BaseCreate';
 import BaseUpdate from './BaseUpdate';
 
-export default function BaseList({liveCourses,fetchCourse}) {
+export default function BaseList({ liveCourses, fetchCourse }) {
   return (
     <>
-     
-    <div className="CourseCard">
+
+      <div className="CourseCard">
         <div className="Course_card_content">
           <div className="Course_card_info">
             <div style={{ float: 'left', width: '65px' }}><span className='onLine-icon'><IoCreateOutline /></span></div>
@@ -18,7 +18,7 @@ export default function BaseList({liveCourses,fetchCourse}) {
           </div>
           <div className="Course_cardicon">
             {liveCourses && liveCourses.base && liveCourses.base.id ? (
-              <BaseUpdate base={liveCourses.base}  timeline={liveCourses.timeline} fetchCourse={fetchCourse} />
+              <BaseUpdate base={liveCourses.base} timeline={liveCourses.timeline} fetchCourse={fetchCourse} />
             ) : (
               liveCourses && liveCourses.id ? (
                 <BaseCreate liveCourses={liveCourses} fetchCourse={fetchCourse} />
@@ -26,9 +26,9 @@ export default function BaseList({liveCourses,fetchCourse}) {
             )}
           </div>
         </div>
-      </div> 
-     
-    
+      </div>
+
+
     </>
   )
 }

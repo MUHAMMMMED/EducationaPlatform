@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
-  
+
 export const ReviewBDIV = styled("div")`
   label: ReviewBDIV;
   float: left;
   width: 100%;
-`; 
- 
+`;
+
 export const Reviewwrapper = styled("div")`
   label:Reviewwrapper;
   border-radius: 10px;
@@ -121,4 +121,3 @@ export const ReviewBtnPrimary = styled("button")`
 
 
 
- 

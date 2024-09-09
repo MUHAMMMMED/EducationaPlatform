@@ -2,7 +2,7 @@ import React, { useState, } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
 
-const UpdatTimelineMeetingForm = ({ base,timeline,fetchCourse }) => {
+const UpdatTimelineMeetingForm = ({ base, timeline, fetchCourse }) => {
     const [showModalBaseUpdate, setShowModalBaseUpdate] = useState(false);
     const [formData, setFormData] = useState({
         Language: base.Language,
@@ -33,21 +33,21 @@ const UpdatTimelineMeetingForm = ({ base,timeline,fetchCourse }) => {
         timeline: base.timeline,
         expired: base.expired,
         sale: base.sale,
-        timeline:'',
+        timeline: '',
         join_telegram_public: base.join_telegram_public,
         join_whatsapp_public: base.join_whatsapp_public,
         title_Course_Definition: base.title_Course_Definition,
-  
-        
+
+
     });
-    
+
     const handleChange = (e) => {
         const { name, value, type, files } = e.target;
         const val = type === 'file' ? files[0] : value;
         setFormData({ ...formData, [name]: val });
     };
- 
- 
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -73,41 +73,41 @@ const UpdatTimelineMeetingForm = ({ base,timeline,fetchCourse }) => {
             console.error('Error updating base:', error);
         }
     };
-     
 
-const handleCloseModal = () => {
-    setShowModalBaseUpdate(false);
-};
+
+    const handleCloseModal = () => {
+        setShowModalBaseUpdate(false);
+    };
 
     return (
-<>
-<button onClick={() => setShowModalBaseUpdate(true)} className="Creat_button">Update</button>
-<div className={`modal ${showModalBaseUpdate ? 'show' : ''}`}>
-<form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
-<h2 style={{ textAlign: 'center', padding: '15px' }}>Update  Timeline Meeting  </h2>
+        <>
+            <button onClick={() => setShowModalBaseUpdate(true)} className="Creat_button">Update</button>
+            <div className={`modal ${showModalBaseUpdate ? 'show' : ''}`}>
+                <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
+                    <h2 style={{ textAlign: 'center', padding: '15px' }}>Update  Timeline Meeting  </h2>
 
- 
- 
- <label htmlFor="date">meeting room</label>
- 
- <select id="timeline" className="select" name="timeline" value={formData.meeting_id} onChange={handleChange}>
- <option  value=''> select meeting </option>
- {timeline && timeline.map(item => (
-  <option key={item.id} value={item.id}>{item.title} </option> ))}
- 
-</select>  
- 
 
-{/* Form buttons */}
-<div className="FOrmContainer">
-<div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>
-<div style={{ width: '20%' }}><button className="cancel-button" onClick={handleCloseModal}>Cancel</button></div>
-</div>
- 
-</form>
-</div>   
-</>
-  );
+
+                    <label htmlFor="date">meeting room</label>
+
+                    <select id="timeline" className="select" name="timeline" value={formData.meeting_id} onChange={handleChange}>
+                        <option value=''> select meeting </option>
+                        {timeline && timeline.map(item => (
+                            <option key={item.id} value={item.id}>{item.title} </option>))}
+
+                    </select>
+
+
+                    {/* Form buttons */}
+                    <div className="FOrmContainer">
+                        <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>
+                        <div style={{ width: '20%' }}><button className="cancel-button" onClick={handleCloseModal}>Cancel</button></div>
+                    </div>
+
+                </form>
+            </div>
+        </>
+    );
 };
 
 export default UpdatTimelineMeetingForm;

@@ -1,4 +1,4 @@
- 
+
 import React, { useCallback, useEffect, useState } from 'react';
 import './DownTimer.css';
 
@@ -32,7 +32,7 @@ function DownTimer({ data }) {
   }, [calculateTimeRemaining]); // Now depends on the memoized calculateTimeRemaining
 
   return (
- 
+
     <>
       {data && data.waitingDate && (
         <section className="section_DownTimer">
@@ -45,24 +45,24 @@ function DownTimer({ data }) {
                       <li className="days_count"><strong>EXPIRED</strong><span></span></li>
                     ) : (
                       <>
-                    
-                        
-                       
 
-                        
-                    <li className="Room_li"><strong>{timeRemaining.days}</strong><span>Days</span></li>
-                    <li className="Room_li"><strong className="dash">:</strong></li>
-                    <li className="Room_li"><strong>{timeRemaining.hours}</strong><span>Hours</span></li>
-                    <li className="Room_li"><strong className="dash">:</strong></li>
-                    <li className="Room_li"><strong>{timeRemaining.minutes}</strong><span>Mins</span></li>
-                    <li className="Room_li"><strong className="dash">:</strong></li>
-                    <li className="Room_li"><strong>{timeRemaining.seconds}</strong><span>Secs</span></li>
+
+
+
+
+                        <li className="Room_li"><strong>{timeRemaining.days}</strong><span>Days</span></li>
+                        <li className="Room_li"><strong className="dash">:</strong></li>
+                        <li className="Room_li"><strong>{timeRemaining.hours}</strong><span>Hours</span></li>
+                        <li className="Room_li"><strong className="dash">:</strong></li>
+                        <li className="Room_li"><strong>{timeRemaining.minutes}</strong><span>Mins</span></li>
+                        <li className="Room_li"><strong className="dash">:</strong></li>
+                        <li className="Room_li"><strong>{timeRemaining.seconds}</strong><span>Secs</span></li>
                       </>
                     )}
                   </ul>
-                  
-                    <div className="discount_value"><strong>Waiting</strong> <span>Room</span></div>
-                  
+
+                  <div className="discount_value"><strong>Waiting</strong> <span>Room</span></div>
+
                 </div>
               </div>
             </div>

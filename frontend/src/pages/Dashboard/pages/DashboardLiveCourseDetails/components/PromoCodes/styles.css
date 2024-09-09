@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -8,17 +9,17 @@
 
 
 
- 
+
 .section_PromoCodes {
-	float: left;
-	margin-top: 15px;
+  float: left;
+  margin-top: 15px;
   margin-bottom: 50px;
   width: 100%;
 
- }
+}
 
 
- .Promo_card {
+.Promo_card {
   float: left;
   width: 23%;
   background: #fff;
@@ -26,26 +27,31 @@
   padding: 15px;
   border-radius: 8px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  border: 1px solid  #58a58f;
+  border: 1px solid #58a58f;
 
-	@media (max-width: 768px) {
-    width:100%;
-  }}
-.Course_card_title{
-margin-left:15px;
-margin-top: 13px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
-.Course_card_amount{
-  margin-left:15px;
-  color: #58a58f!important ;
+
+.Course_card_title {
+  margin-left: 15px;
+  margin-top: 13px;
 }
-  .Promo_card h4 {
-    margin-top: 2px;
+
+.Course_card_amount {
+  margin-left: 15px;
+  color: #58a58f !important;
+}
+
+.Promo_card h4 {
+  margin-top: 2px;
   color: #313233;
   width: 100%;
 
 }
- .Promo_card .card-Main {
+
+.Promo_card .card-Main {
   display: flex;
   justify-content: space-between;
   height: 50px;
@@ -53,14 +59,16 @@ margin-top: 13px;
   margin-top: 5px;
 
 }
- .Promo_card .card-Main span {
+
+.Promo_card .card-Main span {
   color: #1d2357;
   font-size: 45px;
   font-weight: 600;
   width: 50%;
   text-align: left;
- 
+
 }
+
 .Promo_card .card-Main #sale {
   width: 50px;
   color: #58a58f;
@@ -70,10 +78,11 @@ margin-top: 13px;
   font-size: 13px;
   padding: 3px;
   font-weight: 700;
-  border: 2px solid  #58a58f;
+  border: 2px solid #58a58f;
   background-color: #eefbf2;
 }
- .onLine-icon{
+
+.onLine-icon {
   width: 65px;
   height: 65px;
   line-height: 68px;
@@ -89,23 +98,26 @@ margin-top: 13px;
   transition: all 0.3s ease 0s;
   background-color: #eefbf2;
 
- }
-.span_x{
-float: left;
-background-color: #c58d8f;
-color: #fff;
-border-radius: 8px;
-padding:5px 8px;
-margin-right: 10px;
-font-weight: 700;
 }
-.span_x:hover{
+
+.span_x {
+  float: left;
+  background-color: #c58d8f;
+  color: #fff;
+  border-radius: 8px;
+  padding: 5px 8px;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.span_x:hover {
   background-color: #c9484c;
   color: #fff;
 
 }
-.card-date{
-  font-size:14px;
+
+.card-date {
+  font-size: 14px;
   color: #fa0808;
   text-align: left;
   font-weight: 500;

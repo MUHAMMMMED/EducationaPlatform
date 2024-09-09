@@ -39,20 +39,16 @@ export default function TeacherDashboard() {
   return (
     <>
       <div className='Container'>
- 
-
-
-
 
         <div className='Grid'>
- 
-        <div className="Event_widget-containe">
-          <div className="Even-widget-heading">
-            <h2 className="Event_heading-Title"> My Courses</h2>
-          </div>
-         </div>	
 
-          {data&&data.map(item => (
+          <div className="Event_widget-containe">
+            <div className="Even-widget-heading">
+              <h2 className="Event_heading-Title"> My Courses</h2>
+            </div>
+          </div>
+
+          {data && data.map(item => (
             <div key={item.id} className="Teacher_card">
               {item.card_image && <img className="card__img" src={`${Config.baseURL}${item.card_image}`} alt={item.name} />}
               <div className="card__content">
@@ -67,11 +63,10 @@ export default function TeacherDashboard() {
             </div>
           ))}
 
-{data.length === 0 &&    <div className='No_Available'> <BiMessageAltX /> No courses available</div>}
-  
+          {data.length === 0 && <div className='No_Available'> <BiMessageAltX /> No courses available</div>}
+
         </div>
       </div>
     </>
   );
 }
- 

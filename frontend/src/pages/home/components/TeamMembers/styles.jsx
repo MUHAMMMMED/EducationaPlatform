@@ -1,28 +1,28 @@
 
 import styled from "@emotion/styled";
-                                                                                                    
-export const TeamMembersSection = styled ("div")`
+
+export const TeamMembersSection = styled("div")`
    label:TeamMembersSection;
    padding-top:30px;
    float: left;
    width: 100%;
    padding-bottom: 50px;
 
-}
+ 
 
 
 `;
-export const SectionTitle = styled ("div")`
+export const SectionTitle = styled("div")`
    label:SectionTitle;
    padding-top: 5px;
    padding-bottom: 80px;
    padding-bottom: 11px;
    text-align: center !important;
 
-}
+ 
 
 `;
-export const SubTitle = styled ("h4")`
+export const SubTitle = styled("h4")`
    label:SubTitle;
    font-size: 20px;
    font-weight: 500;
@@ -31,10 +31,10 @@ export const SubTitle = styled ("h4")`
    @media (max-width: 768px) { font-size:15px; }
 
 
-}
+ 
 
 `;
-export const SectionName= styled ("h2")`
+export const SectionName = styled("h2")`
    label:SectionName;
    font-size: 35px;
    font-weight: 500;
@@ -43,47 +43,46 @@ export const SectionName= styled ("h2")`
    color:#000;
    @media (max-width: 768px) { font-size:26px; }
  
-}
+ 
 
 `;
 
- 
 
 
-   export const TeamWrapper = styled ("div")`
+
+export const TeamWrapper = styled("div")`
    label:TeamWrapper;
    margin-bottom: -7px;
    margin-top:25px;
 `;
- 
 
 
-export const SingleTeam = styled ("div")`
+
+export const SingleTeam = styled("div")`
    label:single-team ;
    text-align: center;
    margin-top:0px;
    width: 350px;
    margin: 0 auto;
 
-   
-}
-
-`;
  
 
+`;
 
-export const TeamThumbCenterImg = styled ("div")`
+
+
+export const TeamThumbCenterImg = styled("div")`
    label:TeamThumbCenterImg;
     margin: 0 auto;
    
-}  
+ 
 
 `;
 
 
 
 
-export const TeamThumbImg  = styled ("img")`
+export const TeamThumbImg = styled("img")`
    label:TeamThumbImg;
     width: 100%;
    border-radius:10px;
@@ -94,11 +93,11 @@ export const TeamThumbImg  = styled ("img")`
    transition: all 0.3s ease 0s;
    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.07);
 
-}
+ 
 
 `;
 
-export const TeamContent  = styled ("div")`
+export const TeamContent = styled("div")`
    label:TeamContent;
  
    border: 1px solid rgba(48, 146, 85, 0.2);
@@ -110,11 +109,11 @@ export const TeamContent  = styled ("div")`
    z-index: 2;
    background: #fff;
    border-radius: 7px;
-}
+ 
 
 `;
 
-export const TeamName  = styled ("h4")`
+export const TeamName = styled("h4")`
    label:TeamName;
    font-weight: 500;
    font-size: 20px;
@@ -123,20 +122,20 @@ export const TeamName  = styled ("h4")`
    line-height: 1.2;
    color: #1d2733;
 
-}
+ 
 
 `;
-export const TeamDesignation  = styled ("span")`
+export const TeamDesignation = styled("span")`
    label:TeamDesignation;
    display: block;
    font-size: 14px;
    color: #309255;
    margin-top: 10px;
 
-}
+ 
 
 `;
-   
+
 export const No_Available = styled.div`
  
 float: left;

@@ -1,4 +1,4 @@
- 
+
 import React, { useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { GrUpdate } from "react-icons/gr";
@@ -6,10 +6,11 @@ import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
 export default function LearningPathPointUpdate({ item, fetchCourse }) {
   const [showModalPathUpdate, setShowModalPathUpdate] = useState(false);
-  const [formData, setFormData] = useState({  title: item.title, });
-   
+  const [formData, setFormData] = useState({ title: item.title, });
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value }); };
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -17,11 +18,11 @@ export default function LearningPathPointUpdate({ item, fetchCourse }) {
       setShowModalPathUpdate(false);
       fetchCourse();
     } catch (error) {
-     
+
     }
   };
 
-  
+
   const handleDelete = async () => {
     try {
       await AxiosInstance.delete(`${Config.baseURL}/LiveCourses/learning-path-points/${item.id}/`);
@@ -30,17 +31,17 @@ export default function LearningPathPointUpdate({ item, fetchCourse }) {
 
     }
   };
- 
-  const handleCloseModal = () => {setShowModalPathUpdate(false); };
-  
+
+  const handleCloseModal = () => { setShowModalPathUpdate(false); };
+
   return (
     <>
-      <div style={{ float: 'left', width: '65px',  marginRight:'17px'}}onClick={() => setShowModalPathUpdate(true)} >
-        <span className='onLine-icon'><GrUpdate  /></span></div>
-   
-        <div style={{ float: 'left', width: '65px' }}>
+      <div style={{ float: 'left', width: '65px', marginRight: '17px' }} onClick={() => setShowModalPathUpdate(true)} >
+        <span className='onLine-icon'><GrUpdate /></span></div>
+
+      <div style={{ float: 'left', width: '65px' }}>
         <span className='onLine-icon' onClick={handleDelete}><AiOutlineDelete /></span></div>
- 
+
       <div className={`modal ${showModalPathUpdate ? 'show' : ''}`}>
         <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
           <h2 style={{ textAlign: 'center', padding: '15px' }}> LearningPathPoint Update</h2>

@@ -14,7 +14,7 @@ function DownTimer({ date, time, join_meeting, join_meeting_link, courseId, room
   }, []);
 
   function calculateTimeRemaining() {
-    // التحقق مما إذا كانت التواريخ فارغة
+
     if (!date?.trim() || !time?.trim()) {
       return { days: 0, hours: 0, minutes: 0, seconds: 0, expired: true };
     }
@@ -36,7 +36,7 @@ function DownTimer({ date, time, join_meeting, join_meeting_link, courseId, room
 
   return (
     <>
- 
+
 
       {timeRemaining.expired ? (
         join_meeting && (
@@ -70,33 +70,34 @@ function DownTimer({ date, time, join_meeting, join_meeting_link, courseId, room
           <div className="deals_countdown_Down">
             <ul className="countdown_Down unordered_list">
               <>
-                <li className="Room_li">
+                <li className="Room_Li">
                   <strong style={{ width: '100%' }}>{timeRemaining.days}</strong>
                   <span style={{ width: '100%', textAlign: 'center' }}>Days</span>
                 </li>
                 <li>
                   <strong className="dash">:</strong>
                 </li>
-                <li className="Room_li">
+                <li className="Room_Li">
                   <strong style={{ width: '100%' }}>{timeRemaining.hours}</strong>
                   <span style={{ width: '100%', textAlign: 'center' }}>Hours</span>
                 </li>
                 <li>
                   <strong className="dash">:</strong>
                 </li>
-                <li className="Room_li">
+                <li className="Room_Li">
                   <strong style={{ width: '100%' }}>{timeRemaining.minutes}</strong>
                   <span style={{ width: '100%', textAlign: 'center' }}>Mins</span>
                 </li>
                 <li>
                   <strong className="dash">:</strong>
                 </li>
-                <li className="Room_li">
+                <li className="Room_Li">
                   <strong style={{ width: '100%' }}>{timeRemaining.seconds}</strong>
                   <span style={{ width: '100%', textAlign: 'center' }}>Secs</span>
                 </li>
               </>
             </ul>
+
           </div>
         </section>
       )}

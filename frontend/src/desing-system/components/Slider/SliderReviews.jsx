@@ -1,4 +1,4 @@
- 
+
 import React from 'react';
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { GoStarFill } from "react-icons/go";
@@ -23,21 +23,20 @@ import './styles.css';
 
 SwiperCore.use([Autoplay]);
 
-export default function SliderReviews({ratingsList} ) {
- 
- 
-  return (<> 
-  
+export default function SliderReviews({ ratingsList }) {
 
-<Swiper autoplay={{ delay: 2500 }} loop spaceBetween={50}
- slidesPerView={window.innerWidth > 768 ? 3 : 1} 
->
+
+    return (<>
+
+        <Swiper autoplay={{ delay: 2500 }} loop spaceBetween={50}
+            slidesPerView={window.innerWidth > 768 ? 3 : 1}     >
+
             {ratingsList.map((rating, index) => (
                 <SwiperSlide key={index}>
                     <SingleReview>
                         <ReviewAuthor>
                             <AuthorThumb>
-                                <IMG  src={studentImg} alt="Author Thumb" />
+                                <IMG src={studentImg} alt="Author Thumb" />
                                 <i className="icofont-quote-left"></i>
                             </AuthorThumb>
                             <AuthorContent>
@@ -55,10 +54,9 @@ export default function SliderReviews({ratingsList} ) {
                     </SingleReview>
                 </SwiperSlide>
             ))}
- 
- 
-</Swiper></>
-  );
+
+
+        </Swiper></>
+    );
 };
 
- 

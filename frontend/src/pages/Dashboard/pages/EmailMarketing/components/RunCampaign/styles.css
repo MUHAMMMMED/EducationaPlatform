@@ -6,11 +6,12 @@
     float: left;
     border-radius: 5px;
     width: 150px;
-    height:48px;
-    margin-top:-5px;
-    padding-top:0 ;
+    height: 48px;
+    margin-top: -5px;
+    padding-top: 0;
     margin-left: 15px;
 }
+
 .Stop_button {
     background-color: #cd2121;
     border: 1px solid #a55858;
@@ -18,14 +19,19 @@
     float: left;
     border-radius: 5px;
     width: 150px;
-    height:48px;
-    margin-top:-5px;
-    padding-top:0 ;
+    height: 48px;
+    margin-top: -5px;
+    padding-top: 0;
     margin-left: 15px;
 }
 
-.Run_button:hover{ background-color: #000000;} 
-.Stop_button:hover{ background-color: #000000;}
+.Run_button:hover {
+    background-color: #000000;
+}
+
+.Stop_button:hover {
+    background-color: #000000;
+}
 
 
 /* Common styles for the container */
@@ -39,28 +45,31 @@
     width: 100%;
     padding: 15px;
 }
-.Load{
+
+.Load {
     width: 100px;
     float: left;
     margin-left: 5px;
 }
+
 /* Loading styles */
 .loading {
     float: left;
     font-size: 1.5rem;
     color: #555;
     position: relative;
- 
+
 }
 
-.spinner { float: left;
+.spinner {
+    float: left;
     width: 24px;
     height: 24px;
     border: 4px solid #ccc;
     border-top-color: #58a58f;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-    margin-right:  0px;
+    margin-right: 0px;
 }
 
 @keyframes spin {
@@ -70,7 +79,7 @@
 }
 
 /* Error styles */
-.ERror  {
+.ERror {
     color: red;
     background-color: #ffe6e6;
     padding: 10px;
@@ -81,6 +90,6 @@
     margin-left: 0;
 }
 
-.customers{  width: 80px;}
-  
-
+.customers {
+    width: 80px;
+}

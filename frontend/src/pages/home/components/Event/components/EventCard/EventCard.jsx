@@ -50,7 +50,7 @@ export default function EventCard({ events }) {
               <div className="Right-EventCard">
                 <h3 className="Entry-title">{event.title}</h3>
                 <DownTimer date={event.date} time={event.start_time} eventId={event.id} />
-       
+
                 <div className="Event-inf">
                   <div className="Event_Time">
                     <LuCalendarClock /> {formatTime(event.start_time)}
@@ -117,7 +117,7 @@ export default function EventCard({ events }) {
                   <Link to={`/Event/${event?.title}/${event?.id}`}>
 
                     <div className="Event_BUT">
-                    <button className="Even-btn">view more</button>
+                      <button className="Even-btn">view more</button>
                     </div>
                   </Link>
                 </div>

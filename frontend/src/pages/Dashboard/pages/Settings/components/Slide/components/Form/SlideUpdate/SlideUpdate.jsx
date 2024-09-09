@@ -8,7 +8,7 @@ const SlideUpdate = ({ fetchDate, item }) => {
   const [formData, setFormData] = useState({
     top_slider_web: item.top_slider_web,
     top_slider_mobile: item.top_slider_mobile,
-    active: item.active,
+    is_active: item.is_active,
   });
 
   const handleChange = (e) => {
@@ -36,7 +36,7 @@ const SlideUpdate = ({ fetchDate, item }) => {
         }
       }
       // Append 'active' field inside the loop
-      formDataObj.append('active', formData.active);
+      formDataObj.append('is_active', formData.is_active);
 
       await AxiosInstance.put(`${Config.baseURL}/home/slide/${item.id}/`, formDataObj, {
         headers: {
@@ -57,7 +57,7 @@ const SlideUpdate = ({ fetchDate, item }) => {
 
   return (
     <>
-      <div style={{ float: 'left', width: '65px',  marginRight:'17px',marginBottom:'10px'}} onClick={() => setShowModalSlideUpdate(true)}>
+      <div style={{ float: 'left', width: '65px', marginRight: '17px', marginBottom: '10px' }} onClick={() => setShowModalSlideUpdate(true)}>
         <span className='onLine-icon'><GrUpdate /></span>
       </div>
 
@@ -65,27 +65,27 @@ const SlideUpdate = ({ fetchDate, item }) => {
         <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
           <h2 style={{ textAlign: 'center', padding: '15px' }}>Update Slide</h2>
 
-  
-            <label htmlFor="top_slider_web">Image (Web):</label>
-            <input type="file" name="top_slider_web" onChange={handleFileChange} accept="image/*" />
-        
 
-         
-            <label htmlFor="top_slider_mobile">Image (Mobile):</label>
-            <input type="file" name="top_slider_mobile" onChange={handleFileChange} accept="image/*" />
-        
+          <label htmlFor="top_slider_web">Image (Web):</label>
+          <input type="file" name="top_slider_web" onChange={handleFileChange} accept="image/*" />
+
+
+
+          <label htmlFor="top_slider_mobile">Image (Mobile):</label>
+          <input type="file" name="top_slider_mobile" onChange={handleFileChange} accept="image/*" />
+
 
           <div className="Form-container">
-          <div className="form-container-half"> 
+            <div className="form-container-half">
 
-            <label className="label">
-              Active:
-              <input type="checkbox" name="active" checked={formData.active} onChange={handleChange} />
-            </label>
+              <label className="label">
+                Active:
+                <input type="checkbox" name="is_active" checked={formData.is_active} onChange={handleChange} />
+              </label>
 
             </div> </div>
 
-            <div className="FOrmContainer">
+          <div className="FOrmContainer">
             <div style={{ width: '78%' }}>
               <button className="button-form" type="submit">
                 Save
@@ -97,7 +97,7 @@ const SlideUpdate = ({ fetchDate, item }) => {
               </button>
             </div>
           </div>
-     
+
         </form>
       </div>
     </>

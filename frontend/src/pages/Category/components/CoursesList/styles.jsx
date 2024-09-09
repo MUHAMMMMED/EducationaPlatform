@@ -1,7 +1,7 @@
 
 import styled from "@emotion/styled";
-  
-export const List = styled ("div")`
+
+export const List = styled("div")`
    label:List;
     width:100%;
     border: 0px solid #3092552e; 
@@ -12,8 +12,6 @@ export const List = styled ("div")`
 
 
 `;
-
- 
 
 export const ButtonWrapper = styled.div`
   text-align: center;

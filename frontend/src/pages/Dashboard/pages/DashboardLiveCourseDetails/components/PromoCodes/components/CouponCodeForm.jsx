@@ -1,4 +1,4 @@
- import React, { useState } from 'react';
+import React, { useState } from 'react';
 import Config from '../../../../../../../config';
 import AxiosInstance from '../../../../../../../desing-system/Authentication/AxiosInstance';
 
@@ -7,10 +7,10 @@ function CouponCodeForm({ Id, fetchCouponCodes }) {
     course: Id,
     Code: '',
     date: '',
-    Enroll:'1',
+    Enroll: '1',
     discount: ''
   });
- 
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,7 +19,7 @@ function CouponCodeForm({ Id, fetchCouponCodes }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
- 
+
 
       await AxiosInstance.post(`${Config.baseURL}/LiveCourses/live-course-coupon-codes-create/`, formData);
       // After successfully adding a new course definition, refresh the list
@@ -30,7 +30,7 @@ function CouponCodeForm({ Id, fetchCouponCodes }) {
         course: Id,
         Code: '',
         date: '',
-        Enroll:'1',
+        Enroll: '1',
         discount: ''
       });
     } catch (error) {
@@ -62,16 +62,16 @@ function CouponCodeForm({ Id, fetchCouponCodes }) {
               </label>
             </div>
           </div>
-    
-              <label className='label'> Expiry Date::
-                <input type="date" name="date" value={formData.date} onChange={handleChange} />
-              </label>
-           
+
+          <label className='label'> Expiry Date::
+            <input type="date" name="date" value={formData.date} onChange={handleChange} />
+          </label>
+
 
           <div className="FOrm-container">
-        <label className='label' style={{width:'100%'}}> Enroll :
-        <input type="number"name="Enroll" value={formData.Enroll} onChange={handleChange}/></label> 
-         </div>
+            <label className='label' style={{ width: '100%' }}> Enroll :
+              <input type="number" name="Enroll" value={formData.Enroll} onChange={handleChange} /></label>
+          </div>
 
 
           <div className="FOrmContainer" style={{ marginTop: '50px' }}>

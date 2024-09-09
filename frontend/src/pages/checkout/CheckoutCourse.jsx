@@ -1,4 +1,4 @@
- 
+
 import React, { useState } from 'react';
 import Config from '../../config';
 import AxiosInstance from '../../desing-system/Authentication/AxiosInstance';
@@ -9,20 +9,20 @@ import './styles.css';
 const CheckoutCourse = ({ Id, name, price, Img }) => {
     const [couponCode, setCouponCode] = useState('');
     const [discountedPrice, setDiscountedPrice] = useState(price);
-    const [discount, setDiscount  ] = useState(0);
+    const [discount, setDiscount] = useState(0);
     const [error, setError] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
 
     const convertToCents = (price) => Math.round(parseFloat(price) * 100);
-    const  url_Type='Course'
+    const url_Type = 'Course'
     const Items = [
         {
-            id:Id,
+            id: Id,
             price: convertToCents(discountedPrice),
             name,
             img: `${Config.baseURL}${Img}`,
             discount,
-            url_Type ,
+            url_Type,
         }
     ];
 
@@ -82,38 +82,37 @@ const CheckoutCourse = ({ Id, name, price, Img }) => {
 
     return (
         <section>
- {discountedPrice < 1 ? (
-<FreeCheckoutCourse  Id={Id}  />
- ) : (
- <>
-              <CouponWrapper>
-                <DIVInput>
-                  <CouponInput
-                    type="text"
-                    placeholder="Enter coupon code"
-                    value={couponCode}
-                    onChange={(e) => setCouponCode(e.target.value)}
-                  />
-                </DIVInput>
-                <DIVButton>
-                  <CouponButton onClick={handleApplyCoupon}>Apply</CouponButton>
-                </DIVButton>
-                {error && <Error>{error}</Error>}
-                {successMessage && <Success>{successMessage}</Success>}
-              </CouponWrapper>
-              
-              <Form onSubmit={handleSubmit}>
-                <Bay type='submit'>Pay $ {discountedPrice}</Bay>
-              </Form>
-            </>
-          )}
+            {discountedPrice < 1 ? (
+                <FreeCheckoutCourse Id={Id} />
+            ) : (
+                <>
+                    <CouponWrapper>
+                        <DIVInput>
+                            <CouponInput
+                                type="text"
+                                placeholder="Enter coupon code"
+                                value={couponCode}
+                                onChange={(e) => setCouponCode(e.target.value)}
+                            />
+                        </DIVInput>
+                        <DIVButton>
+                            <CouponButton onClick={handleApplyCoupon}>Apply</CouponButton>
+                        </DIVButton>
+                        {error && <Error>{error}</Error>}
+                        {successMessage && <Success>{successMessage}</Success>}
+                    </CouponWrapper>
+
+                    <Form onSubmit={handleSubmit}>
+                        <Bay type='submit'>Pay $ {discountedPrice}</Bay>
+                    </Form>
+                </>
+            )}
         </section>
-      );
-      
-    
+    );
+
+
 };
 
 export default CheckoutCourse;
- 
 
- 
+

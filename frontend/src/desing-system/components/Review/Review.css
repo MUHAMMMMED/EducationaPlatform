@@ -1,71 +1,82 @@
 .review-container {
+  width: 100%;
+  margin: auto;
+  padding: 15px;
+  /* border: 1px solid #ddd; */
+  border-radius: 8px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  margin-bottom: 50px;
+
+  @media (max-width: 768px) {
     width: 100%;
     margin: auto;
-    padding:  15px;
-    /* border: 1px solid #ddd; */
-    border-radius: 8px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    margin-bottom: 50px;
-    @media (max-width: 768px) {
-        width: 100%;
-        margin: auto;
-     }
   }
-  
-  h2 {
-    font-size: 25px;
-    font-weight: 500;
-    color: #212832;
-    font-family: "Gordita";
-    margin-bottom: 5px;
-    margin-top: -5px;
-    text-align: center;
-    @media (max-width: 768px) {
-      font-size: 18px;
+}
 
-   }
- }
- 
-  
-  .rating-section {
- 
-    width: 310px!important;
+h2 {
+  font-size: 25px;
+  font-weight: 500;
+  color: #212832;
+  font-family: "Gordita";
+  margin-bottom: 5px;
+  margin-top: -5px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+
+  }
+}
+
+
+.rating-section {
+  width: 310px !important;
+  margin: auto;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    width: 100%;
     margin: auto;
-     margin-bottom: 20px;
-     @media (max-width: 768px) {
-      width: 100%;
-      margin: auto;
-      margin-bottom: 10px;
-   }
+    margin-bottom: 10px;
   }
-  .star{ width: 10px!important;  }
-  
-    
+}
 
-.custom-star-ratings{
-  width:10px!important;
-  font-size:  5px!important;
+.star {
+  width: 10px !important;
+}
+
+
+
+.custom-star-ratings {
+  width: 10px !important;
+  font-size: 5px !important;
 
 }
 
 
 
-  .star-ratings{
-    width: 310px!important;
-    margin: auto!important;
-    @media (max-width: 768px) {
-      width: 100%!important;
-   }
+.star-ratings {
+  width: 310px !important;
+  margin: auto !important;
+
+  @media (max-width: 768px) {
+    width: 100% !important;
   }
-.widget-svgwidth{width:10px!important;height:10px!important;}
+}
+
+.widget-svgwidth {
+  width: 10px !important;
+  height: 10px !important;
+}
 
 .custom-star-ratings {
-  width: 310px!important;
-    margin: auto!important;
-    @media (max-width: 768px) {
-      width: 100%!important;
+  width: 310px !important;
+  margin: auto !important;
 
-   }
+  @media (max-width: 768px) {
+    width: 100% !important;
+
+  }
 }
 
 /* Adjust font size for smaller screens using media query */
@@ -74,48 +85,53 @@
     font-size: 18px;
   }
 }
- 
 
-  .comment-section {
-   margin-bottom: 15px;
+
+.comment-section {
+  margin-bottom: 15px;
+}
+
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+
+  @media (max-width: 768px) {
+    padding: 8px;
   }
-  
- 
-  textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    resize: vertical;
-    @media (max-width: 768px) {
-      padding:  8px;
-   }
+}
+
+.Submit-button {
+  background-color: #58a58f;
+  color: #fff;
+  padding: 15px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 10px 10px;
+    font-size: 15px;
   }
-  
-  .Submit-button{
-    background-color:#58a58f;
-    color: #fff;
-    padding: 15px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-    width: 100%;
-    @media (max-width: 768px) {
-      padding: 10px 10px;
-      font-size: 15px;
-   }
-  }
-  
-  .Submit-button:hover {
-    background-color:#58a58f;
-  }
-  .Success-message {
-    background-color:#58a58f; /* Bootstrap's success background color */
-    border: 1px solid #d0e9c6; /* Bootstrap's success border color */
-    color: #fff; /* Bootstrap's success text color */
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-  }
-  
+}
+
+.Submit-button:hover {
+  background-color: #58a58f;
+}
+
+.Success-message {
+  background-color: #58a58f;
+  /* Bootstrap's success background color */
+  border: 1px solid #d0e9c6;
+  /* Bootstrap's success border color */
+  color: #fff;
+  /* Bootstrap's success text color */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}

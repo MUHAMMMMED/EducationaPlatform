@@ -7,7 +7,21 @@ from django.template.loader import render_to_string
 from datetime import datetime
 from .models import User, OneTimePassword 
  
+from rest_framework_simplejwt.tokens import RefreshToken
+
+def get_tokens_for_user(user):
+    refresh = RefreshToken.for_user(user)
+    refresh['user_type'] = user.user_type
+    refresh['full_name'] = user.get_full_name
+    refresh['is_active'] = user.is_active
+    return {
+        'refresh': str(refresh),
+        'access': str(refresh.access_token),
+    }
  
+ 
+
+
  
 def send_generated_otp_to_email(email, request): 
     subject = "One time passcode for Email verification"

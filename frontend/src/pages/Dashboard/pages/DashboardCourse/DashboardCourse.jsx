@@ -14,12 +14,12 @@ export default function DashboardCourse() {
   const [data, setData] = useState({ categories: [], instructors: [] });
   const [results, setResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [category, setCategory] = useState('');  
-  const [instructor, setInstructor] = useState('');  
+  const [category, setCategory] = useState('');
+  const [instructor, setInstructor] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const toggleSidebar = () => {   setShowSidebar(!showSidebar); };
-  
+  const toggleSidebar = () => { setShowSidebar(!showSidebar); };
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,19 +42,19 @@ export default function DashboardCourse() {
         const response = await AxiosInstance.get(`${Config.baseURL}/dashboard/filter_courses/`, {
           params: {
             query: searchTerm,
-            category: category,  
-            instructor: instructor,  
+            category: category,
+            instructor: instructor,
           }
         });
-     
+
         setResults(response.data);
       } catch (error) {
-        setError(error.response.data.error  || "You do not have permission to access this data.");
+        setError(error.response.data.error || "You do not have permission to access this data.");
       } finally {
         setLoading(false);
       }
     };
-  
+
     fetchCourses();
   }, [searchTerm, category, instructor]);
 
@@ -77,45 +77,44 @@ export default function DashboardCourse() {
     return <ErrorPage head="Error Occurred" error={error} />;
   }
   return (
-<div className='Dashboard_container'>
-<Sidebar_dashboard showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
+    <div className='Dashboard_container'>
+      <Sidebar_dashboard showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
 
 
-<CourseCreate  categories={data.categories} instructors={data.instructors}  />
- 
-<div className="Course_card">
-<form className="form" >
-<div className="Course_card_content" style={{ padding: '0px 10px 10px 20px ' }}>
-<div className="Course_card_info">
-<input type="text" className='Search' onChange={handleSearch} value={searchTerm} placeholder="Search.." />
-</div>
+      <CourseCreate categories={data.categories} instructors={data.instructors} />
 
-<div className="Course_card_info">
-<select className="Action-Box" onChange={handleInstructorsSelection} value={instructor}>
-<option value=''>Select Teacher</option>          
-{data.instructors.map(inst => (<option value={inst.id} key={inst.id}>{inst.user_full_name}</option>))}
-</select>
+      <div className="Course_card">
+        <form className="form" >
+          <div className="Course_card_content" style={{ padding: '0px 10px 10px 20px ' }}>
+            <div className="Course_card_info">
+              <input type="text" className='Search' onChange={handleSearch} value={searchTerm} placeholder="Search.." />
+            </div>
 
-<select className="Action-Box" onChange={handleCategories} value={category}>
-<option  value='' >Select category</option>
-{data.categories.map(cat => (<option value={cat.id} key={cat.id}>{cat.title}</option>))}
-</select> </div> </div></form>
-         
+            <div className="Course_card_info">
+              <select className="Action-Box" onChange={handleInstructorsSelection} value={instructor}>
+                <option value=''>Select Teacher</option>
+                {data.instructors.map(inst => (<option value={inst.id} key={inst.id}>{inst.user_full_name}</option>))}
+              </select>
 
-</div>
-{results.map(course => (
-<div key={course.id} className="Course_card">
-<div className="Course_card_content">
-<div className="Course_card_info">
-<div style={{ float: 'left', width: '65px' }}><span className='onLine-icon'><RiPresentationLine /></span></div>
-<div style={{ float: 'left' }}>
-<p className="Course_card_title">{course.title}</p>
-<p className="Course_card_amount">{course.author.user_full_name}</p> </div> </div>
-<div className="Course_card_info"><p className="Course_card_title">{course.price}</p></div>
-<div className="Course_cardicon"><Link to={`/dashboard_Course/${course.id}`}><button className="Open_button">Open</button></Link>
-</div></div></div>  ))}
-          
-</div>
+              <select className="Action-Box" onChange={handleCategories} value={category}>
+                <option value='' >Select category</option>
+                {data.categories.map(cat => (<option value={cat.id} key={cat.id}>{cat.title}</option>))}
+              </select> </div> </div></form>
+
+
+      </div>
+      {results.map(course => (
+        <div key={course.id} className="Course_card">
+          <div className="Course_card_content">
+            <div className="Course_card_info">
+              <div style={{ float: 'left', width: '65px' }}><span className='onLine-icon'><RiPresentationLine /></span></div>
+              <div style={{ float: 'left' }}>
+                <p className="Course_card_title">{course.title}</p>
+                <p className="Course_card_amount">{course.author.user_full_name}</p> </div> </div>
+            <div className="Course_card_info"><p className="Course_card_title">{course.price}</p></div>
+            <div className="Course_cardicon"><Link to={`/dashboard_Course/${course.id}`}><button className="Open_button">Open</button></Link>
+            </div></div></div>))}
+
+    </div>
   );
 }
- 

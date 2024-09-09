@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Config from '../../../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../../../desing-system/Authentication/AxiosInstance';
- 
 
-export default function CourseAddToQuiz({ questionId, exams ,fetchQuiz}) {
+
+export default function CourseAddToQuiz({ questionId, exams, fetchQuiz }) {
   const { id } = useParams();
   const [exam, setExam] = useState('');
   const [loading, setLoading] = useState(false);
@@ -18,7 +18,7 @@ export default function CourseAddToQuiz({ questionId, exams ,fetchQuiz}) {
       setLoading(true);
       if (!id || !exam) return;
 
-      const response = await AxiosInstance.post(`${Config.baseURL}/Courses/add_question_to_episode_quiz/`, {
+      await AxiosInstance.post(`${Config.baseURL}/Courses/add_question_to_episode_quiz/`, {
         exam_id: exam,
         question_id: questionId,
       });

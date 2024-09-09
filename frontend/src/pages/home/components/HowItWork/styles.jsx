@@ -1,7 +1,7 @@
 
 import styled from "@emotion/styled";
-                                                                                                    
-export const HowItwork = styled ("div")`
+
+export const HowItwork = styled("div")`
    label:HowItwork;
     width: 100%;
    margin: 0 auto;
@@ -13,7 +13,7 @@ export const HowItwork = styled ("div")`
 `;
 
 
-export const Sectioncenter = styled ("div")`
+export const Sectioncenter = styled("div")`
    label:Sectioncenter;
     width: 100%;
    margin: 0 auto;
@@ -22,10 +22,10 @@ export const Sectioncenter = styled ("div")`
 
 
 `;
-  
 
 
-export const SectionTitle = styled ("div")`
+
+export const SectionTitle = styled("div")`
    label:SectionTitle;
    width: 100%;
    margin: 0 auto;
@@ -33,7 +33,7 @@ export const SectionTitle = styled ("div")`
    text-align:center;
 
 `;
-export const SubTitle = styled ("h5")`
+export const SubTitle = styled("h5")`
    label:SectionTitle;
    font-size: 20px;
    font-weight: 500;
@@ -41,7 +41,7 @@ export const SubTitle = styled ("h5")`
    margin-bottom: 00px;
 
 `;
-export const MainTitle  = styled ("h2")`
+export const MainTitle = styled("h2")`
    label:MainTitle;
    font-size: 35px;
    font-weight: 500;
@@ -52,9 +52,9 @@ export const MainTitle  = styled ("h2")`
   
    
 `;
- 
- 
- 
+
+
+
 export const HowItWorkWrapper = styled("div")`
   /* Base styles */
   label: HowItWorkWrapper; /* This can be removed if not used */
@@ -66,7 +66,7 @@ export const HowItWorkWrapper = styled("div")`
   @media (max-width: 768px) {
     width: 90%;
     margin-left:5%;
-    display: ;
+ 
     flex-wrap: wrap;
     -webkit-box-pack: initial;
     -webkit-justify-content: initial;
@@ -76,10 +76,10 @@ export const HowItWorkWrapper = styled("div")`
 
   }
 `;
- 
 
 
-export const SingleWork  = styled ("div")`
+
+export const SingleWork = styled("div")`
 label:SingleWork;
 padding: 20px;
  width: 300px;
@@ -102,7 +102,7 @@ box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.07);
 
 
 `;
-export const WorkIcon  = styled ("div")`
+export const WorkIcon = styled("div")`
 label:WorkIcon;
 width: 65px;
 height: 65px;
@@ -122,34 +122,34 @@ background-color:#eefbf2;
 `;
 
 
-  
 
 
 
-export const WorkContent  = styled ("div")`
+
+export const WorkContent = styled("div")`
 label:WorkContent;
 padding-top: 13px;
 `;
- 
 
-export const WorkContentTitle  = styled ("h3")`
+
+export const WorkContentTitle = styled("h3")`
 label:WorkContentTitle;
 font-size: 25px;
 font-weight: 500;
 color: #212832;
 margin-bottom: 0;
 `;
-export const WorkContentP  = styled ("p")`
+export const WorkContentP = styled("p")`
 label:WorkContentP;
 font-size: 14px;
 color: #696969;
 margin-bottom: 0;
 margin-top: 15px;
 `;
- 
 
 
-export const WorkArrow  = styled ("p")`
+
+export const WorkArrow = styled("p")`
 label:WorkArrow;
 font-size: 40px;
 color: #58a58f; 

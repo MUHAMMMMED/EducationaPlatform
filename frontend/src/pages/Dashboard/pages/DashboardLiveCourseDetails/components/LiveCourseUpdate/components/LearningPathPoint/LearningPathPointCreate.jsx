@@ -5,11 +5,11 @@ import AxiosInstance from '../../../../../../../../desing-system/Authentication/
 export default function LearningPathPointCreate({ BaseId, fetchCourse }) {
   const [showModalPathCreate, setShowModalPathCreate] = useState(false);
   const [formData, setFormData] = useState({
-    base: BaseId ,
+    base: BaseId,
     title: '',
     point: ''
   });
- 
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -22,9 +22,9 @@ export default function LearningPathPointCreate({ BaseId, fetchCourse }) {
       setShowModalPathCreate(false);
       fetchCourse();
       // Clear the form fields after successful submission
-      setFormData({ base:BaseId,title: '',   });
+      setFormData({ base: BaseId, title: '', });
     } catch (error) {
-     
+
     }
   };
 
@@ -47,7 +47,7 @@ export default function LearningPathPointCreate({ BaseId, fetchCourse }) {
             <div className="form-container-half" style={{ width: '100%' }}>
               <label className='label' htmlFor="title">Title:</label>
               <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Title" />
-            </div>  </div> 
+            </div>  </div>
           {/* Form buttons */}
           <div className="FOrmContainer">
             <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>

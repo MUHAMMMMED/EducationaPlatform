@@ -36,11 +36,11 @@ export default function Room() {
 
   useEffect(() => {
     if (!isLoading && meetingContainerRef.current && data) {
-      const { id, user_full_name ,maxUsers} = data;
-     const userID = Math.floor(Math.random() * 10000+id) + "";
-     const userName = user_full_name + userID;
- 
-      const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomId,  userID, userName);
+      const { id, user_full_name, maxUsers } = data;
+      const userID = Math.floor(Math.random() * 10000 + id) + "";
+      const userName = user_full_name + userID;
+
+      const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomId, userID, userName);
 
       const zp = ZegoUIKitPrebuilt.create(kitToken);
 
@@ -60,13 +60,13 @@ export default function Room() {
           showScreenSharingButton: true,
           showTextChat: true,
           showUserList: true,
-          maxUsers:maxUsers,
+          maxUsers: maxUsers,
           layout: 'Sidebar',
           showLayoutButton: true,
           screenSharingConfig: {
             resolution: ZegoUIKitPrebuilt.ScreenSharingResolution_Auto
           }
-        
+
 
         });
       }
@@ -76,13 +76,13 @@ export default function Room() {
   if (isLoading) {
     return <Loading />;
   }
-  
+
   if (!data || !data.active || !data.is_enrolled) {
     return <Loading />;
   }
-  
+
   return (
     <div className='Container'>
-    <div className="myCallContainer" ref={meetingContainerRef} style={{ width:'100vw', height: '90vh' }}></div></div>
+      <div className="myCallContainer" ref={meetingContainerRef} style={{ width: '100vw', height: '90vh' }}></div></div>
   );
 }

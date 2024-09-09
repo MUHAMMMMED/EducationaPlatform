@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
- 
- export const LinkContainer = styled.div`
+
+export const LinkContainer = styled.div`
  justify-content: center;  
  max-width: 1200px;
  margin: auto;
@@ -31,4 +31,3 @@ export const MaterialLink = styled.a`
 `;
 
 
- 

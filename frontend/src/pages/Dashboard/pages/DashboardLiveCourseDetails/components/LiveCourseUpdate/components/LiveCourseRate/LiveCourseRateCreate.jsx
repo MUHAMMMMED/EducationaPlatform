@@ -1,4 +1,4 @@
- 
+
 import React, { useState } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
@@ -8,7 +8,7 @@ const LiveCourseRateCreate = ({ liveCourses, fetchCourse }) => {
         message: '',
         rate_number: '',
         course: liveCourses.id,
-        student: '',  
+        student: '',
     });
 
     const [showModalRateCreate, setShowModalRateCreate] = useState(false);
@@ -18,9 +18,9 @@ const LiveCourseRateCreate = ({ liveCourses, fetchCourse }) => {
         setFormData({ ...formData, [name]: value });
     };
     const handleStudentSelection = (event) => {
-      setFormData({ ...formData, student: event.target.value }); // Update student in formData
-  };
-  
+        setFormData({ ...formData, student: event.target.value }); // Update student in formData
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -29,7 +29,7 @@ const LiveCourseRateCreate = ({ liveCourses, fetchCourse }) => {
             setShowModalRateCreate(false);
             fetchCourse();
         } catch (error) {
-       
+
         }
     };
 

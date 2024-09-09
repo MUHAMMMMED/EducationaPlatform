@@ -1,4 +1,4 @@
- 
+
 import React from 'react';
 import { WiTime4 } from "react-icons/wi";
 import './Timeline.css';
@@ -52,7 +52,7 @@ const Timeline = ({ data, is_author, fetchCourse }) => {
                   </div>
                   <div className='event-Time'>
                     <WiTime4 /> {formatTime(item.meeting?.start_time)} - {formatTime(item.meeting?.end_time)}
-                  </div> 
+                  </div>
                   <div className="event-but">
                     {item.Lesson_link && (
                       <a href={item.Lesson_link} className="no-underline" target="_blank" rel="noopener">
@@ -72,7 +72,7 @@ const Timeline = ({ data, is_author, fetchCourse }) => {
                     {item.Quiz_Coupon && (
                       <button className='view-details-Coupon'>  Coupon: {item.Quiz_Coupon}</button>
                     )}
-                    {is_author ===  true && (
+                    {is_author === true && (
                       <div className="Edit">
                         <FormUpdate item_id={item.id} meeting={data.meeting} course_id={item.course} fetchCourse={fetchCourse} />
                       </div>

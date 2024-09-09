@@ -17,7 +17,7 @@ export default function StudentsList() {
     const [data, setData] = useState([]);
     const [campaign, setCampaign] = useState('');
     const [save, setSave] = useState('waiting');
- 
+
     const fetchUser = async () => {
         try {
             const response = await AxiosInstance.get(`${Config.baseURL}/EmailMarketing/student_Filter/`, {
@@ -68,7 +68,7 @@ export default function StudentsList() {
                 <form className="form">
                     <div className="Course_card_content" style={{ padding: '0px 10px 10px 20px ' }}>
                         <div className="Course_card_info">
-                            <select className="Action-Box" style={{marginLeft:'0px' }} onChange={(e) => setCampaign(e.target.value)} value={campaign}>
+                            <select className="Action-Box" style={{ marginLeft: '0px' }} onChange={(e) => setCampaign(e.target.value)} value={campaign}>
                                 <option value=''>Select Campaign</option>
                                 {data && data.map(item => (
                                     <option value={item.id} key={item.id}>{item.name}</option>
@@ -79,11 +79,11 @@ export default function StudentsList() {
                             <button type="button" onClick={() => setSave('save')} className="Run_button">Save</button>
                         </div>
 
-                        {results.message &&  <div className="Course_card_info"> <GrCompliance /> {results.message } </div>} 
+                        {results.message && <div className="Course_card_info"> <GrCompliance /> {results.message} </div>}
 
-                       </div>
+                    </div>
                 </form>
-               
+
             </div>
 
             <div className="projects">
@@ -108,27 +108,27 @@ export default function StudentsList() {
                                 <th>Email</th>
                                 <th>Student</th>
                                 <th>User Type</th>
-                             
+
                             </tr>
                         </thead>
                         <tbody>
-                            { results.data.users && results.data.users.slice(0, numDisplayed).map(user => (
-                                <tr key={user.id} style={{color:'#000'}}>
+                            {results.data.users && results.data.users.slice(0, numDisplayed).map(user => (
+                                <tr key={user.id} style={{ color: '#000' }}>
                                     <td><p>{new Date(user.date_joined).toLocaleDateString()}</p><p></p></td>
                                     <td><p>{user.email}</p><p></p></td>
                                     <td class="member">
-                                        <figure style={{ textAlign:'left' }}><img alt="Student" src={studentImg} /></figure>
+                                        <figure style={{ textAlign: 'left' }}><img alt="Student" src={studentImg} /></figure>
                                         <div class="member-info" style={{ textAlign: 'left' }}>
                                             <p>{user.user_full_name}</p><p></p>
                                         </div>
                                     </td>
                                     <td><p>{userTypeMap[user.user_type]}</p></td>
-                            
+
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-                    { results.data.users && results.data.users.length > numDisplayed && (
+                    {results.data.users && results.data.users.length > numDisplayed && (
                         <div className="FleX-container">
                             <div className="div-button">
                                 <button className="view_more" onClick={handleViewMore}>View More</button>

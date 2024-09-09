@@ -1,4 +1,3 @@
-// ApexChart_Location_country.js
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 
@@ -30,7 +29,7 @@ class ApexChart_Location_country extends React.Component {
           style: {
             colors: ['#fff']
           },
-          formatter: function(val, opt) {
+          formatter: function (val, opt) {
             return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val;
           },
           offsetX: 0,
@@ -66,7 +65,7 @@ class ApexChart_Location_country extends React.Component {
           },
           y: {
             title: {
-              formatter: function() {
+              formatter: function () {
                 return '';
               }
             }

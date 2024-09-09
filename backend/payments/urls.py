@@ -9,7 +9,7 @@ from .views.StripeWebhook import*
 
  
 urlpatterns = [
-    path('api/authenticated/', authenticated ),
+    path('authenticated/', authenticated ),
 
     path('Check-CouponCode-Courses/', check_coupon_code_Courses ),
     path('Check-CouponCode-LiveCourse/', check_coupon_code_LiveCourse ),

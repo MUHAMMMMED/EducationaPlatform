@@ -68,6 +68,48 @@ def  Course_pay(request, course_uuid):
     except Course.DoesNotExist:
         return Response({'error': 'Course not found'}, status=404)
   
+ 
+
+@api_view(['GET'])
+def Course_pay(request, course_uuid):
+    try:
+        # Fetch the course object using the provided course UUID
+        course = Course.objects.get(course_uuid=course_uuid)
+        
+        # Serialize course data
+        course_serializer = Course_Serializer(course)
+        course_data = course_serializer.data
+
+        # Set is_enrolled to False by default
+        is_enrolled = False
+
+        # Check if the user is authenticated
+        if request.user.is_authenticated:
+            # Fetch the user's course enrollment
+            user_course = UserCourse.objects.filter(student=request.user, course__course_uuid=course_uuid).last()
+
+            # If the user has a course and is enrolled (status == 'E')
+            if user_course and user_course.status == 'E':
+                is_enrolled = True
+            else:
+                pass
+
+        # Return JSON response with both course data and enrollment status
+        return Response({
+            'course': course_data,
+            'is_enrolled': is_enrolled
+        })
+        
+    except Course.DoesNotExist:
+        return Response({'error': 'Course not found'}, status=404)
+  
+
+
+
+
+
+
+
 @api_view(['GET'])
 def CourseDetail(request, course_uuid):
         # Check if the user is authenticated
@@ -399,13 +441,13 @@ def course_detail_update(request, id):
         if serializer.is_valid():
             # Save the updated course data
             serializer.save()
-
             # Reassign the existing 'course_sections' back to the course
             course.course_sections.set(existing_course_sections)
 
             # Return the updated serialized data
             return Response(serializer.data)
 
+        print(serializer.errors)
         # Return a response with the serializer errors and a 400 Bad Request status
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -786,13 +828,7 @@ def manage_episode_quiz(request, id=None):
         episode_quiz.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework import status
-from uuid import UUID
-from .models import EpisodeQuiz, Question
-from .permissions import check_permissions
-
+ 
 @api_view(['DELETE'])
 def delete_question(request, exam_id, question_id):
     # Check permissions by calling the custom check_permissions function

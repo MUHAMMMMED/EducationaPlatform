@@ -1,38 +1,22 @@
-import React, { useEffect, useState } from 'react';
+ 
+
+import React, { useContext, useState } from 'react'; // Import useContext
 import { FaUsersViewfinder } from "react-icons/fa6";
 import { MdOutlineCampaign } from "react-icons/md";
 import { Link } from 'react-router-dom';
-import AxiosInstance from '../../../../desing-system/Authentication/AxiosInstance';
+import { UserContext } from '../../../../desing-system/Authentication/UserProvider'; // Ensure the context is properly imported
 import ErrorPage from '../../../../desing-system/components/Loading/ErrorPage';
 import Sidebar_dashboard from '../../components/Sidebar_dashboard/Sidebar_dashboard';
 import RunCampaign from './components/RunCampaign/RunCampaign';
 import './styles.css';
- 
+
 export default function EmailMarketing() {
   const [showSidebar, setShowSidebar] = useState(false);
-  const [userData, setUserData] = useState(null);
-  const [error, setError] = useState(null);
+  const { userData } = useContext(UserContext); // Use useContext to get userData
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const res = await AxiosInstance.get('/get-something/');
-        setUserData(res.data);
-      } catch (err) {
-        setError(err.message);
-      }
-    };
-
-    fetchUserData();
-  }, []);
-
-  if (error) {
-    return <ErrorPage head="Error Occurred" error={error} />;
-  }
 
   if (userData && userData.user_type !== 'M') {
     return <ErrorPage head="Access Denied" error="You do not have the required permissions." />;

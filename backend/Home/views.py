@@ -56,19 +56,24 @@ def available_category(request):
     
     # Return the serialized data with a 200 OK status
     return Response(serializer.data, status=status.HTTP_200_OK)
-
+ 
  
 @api_view(['GET'])
 def home(request):
     # Retrieve the first Info object from the database
     info = Info.objects.all().first()
 
-    # Increment the view count for the Info object
-    info.views += 1
-    info.save()
+    # Check if info is None
+    if info is not None:
+        # Increment the view count for the Info object
+        info.views += 1
+        info.save()
 
-    # Serialize the Info object
-    info_data = InfoSerializer(info)
+        # Serialize the Info object
+        info_data = InfoSerializer(info)
+    else:
+        # If no Info object exists, handle the case accordingly
+        info_data = None
 
     # Retrieve and serialize all Slide objects
     slide = Slide.objects.all()
@@ -100,7 +105,7 @@ def home(request):
 
     # Compile all serialized data into a dictionary
     data = {
-        'info': info_data.data,
+        'info': info_data.data if info_data else None,
         'slide': slide_data.data,
         'categories': category_data.data,
         'rate': rate_data.data,
@@ -117,7 +122,6 @@ def home(request):
 def info(request):
     # Retrieve the first Info object from the database
     info = Info.objects.all().first()
-
     # Serialize the Info object
     info_data = InfoSerializer(info)
     # Return the serialized data with a 200 OK status

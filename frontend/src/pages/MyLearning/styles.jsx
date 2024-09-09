@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
- 
-export const LiveContainer = styled ("div")`
+
+export const LiveContainer = styled("div")`
     label:LiveContainer;
     width:100%;
     float:right;
@@ -14,10 +14,10 @@ export const LiveContainer = styled ("div")`
     
 
     `;
- 
-  
-     
-export const LiveContainerRow = styled ("div")`
+
+
+
+export const LiveContainerRow = styled("div")`
 label:LiveContainerRow;
 width:100%;
 float:right;
@@ -35,8 +35,8 @@ margin-top: -50px;
 `;
 
 
-     
-export const Learn_Title = styled ("div")`
+
+export const Learn_Title = styled("div")`
         label:Learn_Title;
         float:left;
         padding-top: 50px;

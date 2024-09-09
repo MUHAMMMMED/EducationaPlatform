@@ -10,8 +10,9 @@ from .utils import  EmailMessage
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 from django.utils import timezone
 from django.template.loader import render_to_string
- 
- 
+from .utils import get_tokens_for_user  
+from django.conf import settings   
+
 class User_Serializer(serializers.ModelSerializer):
     user_full_name = serializers.CharField(source='get_full_name', read_only=True)
     country = serializers.CharField(source='country.dictionary.name', read_only=True)
@@ -110,10 +111,11 @@ class UserRegisterSerializer(serializers.ModelSerializer):
  
 
 
-class VerifyUserEmailSerializer(serializers.Serializer):
-    otp = serializers.CharField()
 
- 
+
+
+
+
 class LoginSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(max_length=155, min_length=6)
     password = serializers.CharField(max_length=68, write_only=True)
@@ -121,29 +123,43 @@ class LoginSerializer(serializers.ModelSerializer):
     access_token = serializers.CharField(max_length=255, read_only=True)
     refresh_token = serializers.CharField(max_length=255, read_only=True)
     user_type = serializers.CharField(read_only=True)
+    is_active = serializers.CharField(read_only=True)
 
     class Meta:
         model = User
-        fields = ['email', 'password', 'full_name', 'access_token', 'refresh_token', 'user_type']
+        fields = ['email', 'password', 'full_name', 'access_token', 'refresh_token', 'user_type', 'is_active']
 
     def validate(self, attrs):
         email = attrs.get('email')
         password = attrs.get('password')
         request = self.context.get('request')
+
+        # Authenticate user
         user = authenticate(request, email=email, password=password)
+
         if not user:
             raise AuthenticationFailed("Invalid credentials, try again")
         if not user.is_verified:
             raise AuthenticationFailed("Email is not verified")
-        tokens = user.tokens()
+
+        # Generate tokens
+        tokens = get_tokens_for_user(user)
+
+        # Return all necessary user details along with tokens
         return {
             'email': user.email,
             'full_name': user.get_full_name,
-            'access_token': str(tokens.get('access')),
-            'refresh_token': str(tokens.get('refresh')),
             'user_type': user.user_type,
+            'is_active': user.is_active,
+            'access_token': tokens.get('access'),
+            'refresh_token': tokens.get('refresh'),
         }
 
+ 
+
+class VerifyUserEmailSerializer(serializers.Serializer):
+    otp = serializers.CharField()
+  
 
 class PasswordResetRequestSerializer(serializers.Serializer):
     email = serializers.EmailField(max_length=255)
@@ -159,7 +175,7 @@ class PasswordResetRequestSerializer(serializers.Serializer):
             token = PasswordResetTokenGenerator().make_token(user)
             # request = self.context.get('request')
             # current_site = get_current_site(request).domain
-            current_site = "localhost:3000"
+            current_site = settings.DOMAIN
 
             abslink = f"http://{current_site}/password-reset-confirm/{uidb64}/{token}"
 
@@ -229,7 +245,6 @@ class LogoutUserSerializer(serializers.Serializer):
 
     def validate(self, attrs):
         self.token = attrs.get('refresh_token')
-
         return attrs
 
     def save(self, **kwargs):

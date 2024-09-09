@@ -1,4 +1,4 @@
- 
+
 import React, { useEffect, useState } from 'react';
 import { GrUpdate } from "react-icons/gr";
 import Config from '../../../../../../config';
@@ -29,7 +29,7 @@ export default function CourseCategories() {
       });
       setCategories(response.data);
     } catch (error) {
-      setError(error.response.data.error  || "You do not have permission to access this data.");
+      setError(error.response.data.error || "You do not have permission to access this data.");
     } finally {
       setLoading(false);
     }
@@ -77,7 +77,7 @@ export default function CourseCategories() {
         </div>
 
         {categories.map(category => (
-          <div className="CourseCard" style={{marginLeft:'15%'}} key={category.id}>
+          <div className="CourseCard" style={{ marginLeft: '15%' }} key={category.id}>
             <div className="Course_card_content">
               <div className="Course_card_info">
                 <div style={{ float: 'left', width: '65px' }}>

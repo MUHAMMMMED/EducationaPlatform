@@ -21,12 +21,12 @@ export default function StudentReviews({ ratingsList }) {
                 <SingleReview key={rating.id}>
                     <ReviewAuthor>
                         <AuthorThumb>
-                            <IMG  alt="Student" src={studentImg}/>  <i className="icofont-quote-left"></i> </AuthorThumb>
- 
+                            <IMG alt="Student" src={studentImg} />  <i className="icofont-quote-left"></i> </AuthorThumb>
+
                         <AuthorContent>
-                            <Name>{rating.user_full_name } </Name>
+                            <Name>{rating.user_full_name} </Name>
                             <SPEN>
-                           
+
                                 {[...Array(parseInt(rating.rate_number))].map((_, index) => (
                                     <GoStarFill key={index} />
                                 ))}
@@ -35,7 +35,7 @@ export default function StudentReviews({ ratingsList }) {
                     </ReviewAuthor>
                     <P>
                         <SPEN> <FaQuoteLeft />-</SPEN> {rating.message}<SPEN > - <FaQuoteRight /></SPEN>
-                       
+
                     </P>
                 </SingleReview>
             ))}

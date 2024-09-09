@@ -37,10 +37,10 @@ const PasswordResetRequest = () => {
     <div className='main-wrapper'>
       <div className='Row1'>
         <div className="login-form">
-       
+
           {isEmailSent ? (
             <p>Please check your email for a link to reset your password.</p>
-          ) : (<> 
+          ) : (<>
             <h3 className="TitlE">Enter your registered email</h3>
             <form onSubmit={handleSubmit}>
 
@@ -63,7 +63,7 @@ const PasswordResetRequest = () => {
         </div>
       </div>        <ToastContainer />
     </div>
-    
+
   );
 }
 

@@ -5,9 +5,7 @@ import ApexChart_Location_country from '../../../../components/ApexChart/ApexCha
 import './styles.css';
 
 
- export default function CountryButtonRegions({region,courseId }) {
- 
-
+export default function CountryButtonRegions({ region, courseId }) {
   const [CityData, setCityData] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
 
@@ -31,30 +29,29 @@ import './styles.css';
   const handleButtonClick = (Region) => {
     setSelectedCity(Region);
   };
-  
 
- 
+
+
 
 
   return (
- <div className='CountryBut'> 
- <div className='CountryBut_flex'>
-  {region&&region.map((item, index)=> (  
-<div><button key={index} className='Country_button' onClick={() => handleButtonClick(item)}>  {item}</button></div>
-))}
+    <div className='CountryBut'>
+      <div className='CountryBut_flex'>
+        {region && region.map((item, index) => (
+          <div><button key={index} className='Country_button' onClick={() => handleButtonClick(item)}>  {item}</button></div>
+        ))}
 
-<div style={{width:'100%', marginTop:'30px', float:'left'}} > 
+        <div style={{ width: '100%', marginTop: '30px', float: 'left' }} >
 
-{CityData &&CityData.cities_count && <ApexChart_Location_country title={ CityData?.City_name} data={CityData.cities_count } />}
-  </div>
- 
-  </div>
-  
-  
-  
-  </div>
- 
-  
-)
+          {CityData && CityData.cities_count && <ApexChart_Location_country title={CityData?.City_name} data={CityData.cities_count} />}
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+  )
 }
- 

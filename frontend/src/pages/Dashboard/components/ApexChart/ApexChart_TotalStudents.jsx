@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-class ApexChart_TotalStudents  extends React.Component {
+class ApexChart_TotalStudents extends React.Component {
   constructor(props) {
     super(props);
 
@@ -36,7 +36,7 @@ class ApexChart_TotalStudents  extends React.Component {
           }
         },
         xaxis: {
-          categories: Object.keys(this.props.data ),
+          categories: Object.keys(this.props.data),
           position: 'top',
           axisBorder: {
             show: false
@@ -86,7 +86,7 @@ class ApexChart_TotalStudents  extends React.Component {
       },
       series: [{
         name: 'Students Count',
-        data: Object.values(this.props.data )
+        data: Object.values(this.props.data)
       }]
     };
   }

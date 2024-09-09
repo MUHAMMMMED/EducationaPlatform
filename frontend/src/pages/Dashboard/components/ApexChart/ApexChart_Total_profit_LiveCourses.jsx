@@ -36,7 +36,7 @@ class ApexChart_Total_profit_LiveCourses extends React.Component {
           }
         },
         xaxis: {
-          categories: Object.keys(this.props.data ),
+          categories: Object.keys(this.props.data),
           position: 'top',
           axisBorder: {
             show: false
@@ -86,7 +86,7 @@ class ApexChart_Total_profit_LiveCourses extends React.Component {
       },
       series: [{
         name: 'Profit',
-        data: Object.values(this.props.data )
+        data: Object.values(this.props.data)
       }]
     };
   }
@@ -104,4 +104,4 @@ class ApexChart_Total_profit_LiveCourses extends React.Component {
 }
 
 export default ApexChart_Total_profit_LiveCourses;
- 
+

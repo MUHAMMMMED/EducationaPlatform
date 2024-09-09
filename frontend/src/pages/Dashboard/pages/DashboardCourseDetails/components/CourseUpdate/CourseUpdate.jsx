@@ -1,4 +1,4 @@
- 
+
 import React, { useEffect, useState } from 'react';
 import { GrUpdate } from "react-icons/gr";
 import { useParams } from 'react-router-dom';
@@ -60,7 +60,7 @@ export default function CourseUpdate() {
         </div>
         <div>{Course.title}</div>
         <div>{Course && Course.id && (<CourseDelete Course={Course} />)}</div>
-      </div>  
+      </div>
 
       <div className="CourseCard">
         <div className="Course_card_content">
@@ -77,13 +77,13 @@ export default function CourseUpdate() {
             {Course && Course.id && (<CourseUpdateForm Course={Course} fetchCourse={fetchCourse} />)}
           </div>
         </div>
-      </div> 
+      </div>
 
-      {Course && Course.freq && <FaqsList Course={Course} fetchCourse={fetchCourse} />}  
+      {Course && Course.freq && <FaqsList Course={Course} fetchCourse={fetchCourse} />}
       {Course && Course.instructors && <SpeakerList Course={Course} fetchCourse={fetchCourse} />}
-      {Course && Course.rate && <RateList Course={Course} fetchCourse={fetchCourse} />}   
+      {Course && Course.rate && <RateList Course={Course} fetchCourse={fetchCourse} />}
       {Course && Course.review && <ReviewList Course={Course} fetchCourse={fetchCourse} />}
-      {Course && <SectionsList Course={Course} fetchCourse={fetchCourse} />} 
+      {Course && <SectionsList Course={Course} fetchCourse={fetchCourse} />}
       {Course && Course.id && (<QuizList Course={Course} fetchCourse={fetchCourse} />)}
     </>
   );

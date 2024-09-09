@@ -14,6 +14,9 @@ from .models import  *
 from rest_framework.views import APIView
 from ipware import get_client_ip
 import ipapi
+ 
+
+
 
 
 def get_location_info(ip_address, user_id):
@@ -126,6 +129,7 @@ class LoginUserView(GenericAPIView):
 
 
 
+ 
 
  
 # Create a view class for handling password reset requests
@@ -146,15 +150,6 @@ class PasswordResetRequestView(GenericAPIView):
 
 
 
-
-from django.contrib.auth.tokens import PasswordResetTokenGenerator
-from django.utils.encoding import smart_str
-from django.utils.http import urlsafe_base64_decode
-from django.contrib.auth.models import User
-from django.utils.encoding import DjangoUnicodeDecodeError
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework.generics import GenericAPIView
 
 # Create a view class for confirming password reset tokens
 class PasswordResetConfirm(GenericAPIView):
@@ -223,40 +218,7 @@ class LogoutApiView(GenericAPIView):
 
 
 
-
- from rest_framework.response import Response
-from rest_framework import status
-from rest_framework.views import APIView
-from rest_framework.permissions import IsAuthenticated
-
-# Create a view class for testing authenticated requests
-class TestingAuthenticatedReq(APIView):
-    # Set the permission classes to restrict access to authenticated users only
-    permission_classes = [IsAuthenticated]
-
-    # Define the HTTP GET method handler for this view
-    def get(self, request):
-        # Check if the request user is not authenticated
-        if not request.user.is_authenticated:
-            # If the user is not authenticated, prepare a response with the relevant information
-            data = {
-                'msg': 'It not works',           # Message indicating the user is not authenticated
-                'user_id': None,                 # No user ID as the user is not authenticated
-                'full_name': None,               # No full name as the user is not authenticated
-                'user_type': None,               # No user type as the user is not authenticated
-                'IsAuthenticated': False,        # Boolean flag indicating the user is not authenticated
-            }
-            # Return a 200 OK response with the above data
-            return Response(data, status=status.HTTP_200_OK)
-
-        # If the user is authenticated, retrieve the user information
-        user = request.user
-        data = {
-            'msg': 'It works',                  # Message indicating the user is authenticated
-            'user_id': user.id,                 # User ID of the authenticated user
-            'full_name': user.get_full_name(),  # Full name of the authenticated user (using the method call for function)
-            'user_type': user.user_type,        # User type of the authenticated user
-            'IsAuthenticated': True,            # Boolean flag indicating the user is authenticated
-        }
-        # Return a 200 OK response with the authenticated user's information
-        return Response(data, status=status.HTTP_200_OK)
+ 
+ 
+ 
+ 

@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { GrUpdate } from "react-icons/gr";

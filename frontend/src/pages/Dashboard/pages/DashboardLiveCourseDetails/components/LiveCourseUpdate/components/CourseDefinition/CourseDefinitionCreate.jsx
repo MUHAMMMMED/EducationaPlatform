@@ -6,7 +6,7 @@ import AxiosInstance from '../../../../../../../../desing-system/Authentication/
 export default function CourseDefinitionCreate({ BaseId, fetchCourse }) {
   const [showModalDefinitionCreate, setShowModalDefinitionCreate] = useState(false);
   const [formData, setFormData] = useState({
-    base: BaseId ,
+    base: BaseId,
     title: '',
     description: ''
   });
@@ -23,15 +23,15 @@ export default function CourseDefinitionCreate({ BaseId, fetchCourse }) {
       setShowModalDefinitionCreate(false);
       fetchCourse();
       // Clear the form fields after successful submission
-      setFormData({ base:BaseId ,title: '', description: '' });
+      setFormData({ base: BaseId, title: '', description: '' });
     } catch (error) {
       console.error('Error creating course definition:', error);
       // Optionally, you can handle errors here (e.g., show an error message)
     }
   };
 
-  const handleCloseModal = () => { setShowModalDefinitionCreate(false);  };
-  
+  const handleCloseModal = () => { setShowModalDefinitionCreate(false); };
+
 
   return (
     <>

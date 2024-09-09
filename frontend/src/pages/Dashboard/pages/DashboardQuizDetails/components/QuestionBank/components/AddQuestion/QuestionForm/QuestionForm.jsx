@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Config from '../../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../../desing-system/Authentication/AxiosInstance';
- 
+
 const QuestionForm = ({ data, creator, fetchQuestions }) => {
   const [formData, setFormData] = useState({
     creator: creator,
@@ -83,7 +83,7 @@ const QuestionForm = ({ data, creator, fetchQuestions }) => {
           <h2 style={{ textAlign: 'center', padding: '15px' }}>Create New</h2>
           <label>
             Question Content:
-            <input type="text" name="question_content" style={{height:'100px'}} value={formData.question_content} onChange={handleChange}   />
+            <input type="text" name="question_content" style={{ height: '100px' }} value={formData.question_content} onChange={handleChange} />
           </label>
 
           <div className="FOrm-container">
@@ -152,23 +152,23 @@ const QuestionForm = ({ data, creator, fetchQuestions }) => {
             </div>
           </div>
 
-        
-        
-              <label>
-                Category:
-                <select className='form-Select' name="category" value={formData.category} onChange={handleChange}required>
-                  <option value="">Select category</option>
-                  {data.category && data.category.map(ex => (<option value={ex.id} key={ex.id}>{ex.title}</option>))}
-                </select>
-              </label>
-              <br/> <br/> <br/>
-         
+
+
+          <label>
+            Category:
+            <select className='form-Select' name="category" value={formData.category} onChange={handleChange} required>
+              <option value="">Select category</option>
+              {data.category && data.category.map(ex => (<option value={ex.id} key={ex.id}>{ex.title}</option>))}
+            </select>
+          </label>
+          <br /> <br /> <br />
+
 
           <div className="FOrmContainer">
             <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>
             <div style={{ width: '20%' }}><button className="cancel-button" onClick={handleCloseModal}>Cancel</button></div>
           </div>
-        </form>  
+        </form>
       </div>
     </div>
   );

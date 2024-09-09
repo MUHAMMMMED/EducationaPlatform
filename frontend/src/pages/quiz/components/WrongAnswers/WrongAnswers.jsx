@@ -1,4 +1,4 @@
- 
+
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Config from '../../../../config';
@@ -8,14 +8,14 @@ import './WrongAnswers.css';
 
 const WrongAnswers = () => {
     const [submissions, setSubmissions] = useState([]);
-    const { id:examId } = useParams();
+    const { id: examId } = useParams();
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchSubmissions = async () => {
             try {
                 if (!examId) return;
-                const response = await AxiosInstance.get(`${Config.baseURL}/Quiz/exam_submission_list/${examId}/` );
+                const response = await AxiosInstance.get(`${Config.baseURL}/Quiz/exam_submission_list/${examId}/`);
                 setSubmissions(response.data);
                 setIsLoading(false);
             } catch (error) {
@@ -52,8 +52,10 @@ const WrongAnswers = () => {
                     </li>
                 ))}
             </ul>
-            <Link to={`/MyQuizzes/${examId}`}><button className='Button' >back</button> </Link>
+            <Link to={`/MyQuizzes/${submissions?.exam?.title}/${examId}`}><button className='Button' >back</button> </Link>
         </div>
     );
 };
 export default WrongAnswers;
+
+

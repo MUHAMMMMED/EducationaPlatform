@@ -27,12 +27,12 @@ export default function QuizList({ Course, fetchCourse }) {
             <p className="Course_card_amount">Add</p>
           </div>
         </div>
-        <div className="Course_cardicon">  
-          {Course && <QuizCreate Course={Course} fetchCourse={fetchCourse}/> }
+        <div className="Course_cardicon">
+          {Course && <QuizCreate Course={Course} fetchCourse={fetchCourse} />}
         </div>
-      </div> 
+      </div>
 
-      {Course && Course.EpisodeQuiz && Course.EpisodeQuiz.slice(0, displayCount).map((item) => (  
+      {Course && Course.EpisodeQuiz && Course.EpisodeQuiz.slice(0, displayCount).map((item) => (
         <div className="CourseCard" key={item.id} style={{ width: '100%', marginLeft: '0', marginTop: '1', border: '1px solid #ddd;' }}>
           <div className="Course_card_content">
             <div className="Course_card_info">
@@ -44,21 +44,21 @@ export default function QuizList({ Course, fetchCourse }) {
                 <p className="Course_card_amount">{item.description}</p>
               </div>
             </div>
-            <div className="Course_cardicon">  
+            <div className="Course_cardicon">
               {item && <QuizUpdate item={item} fetchCourse={fetchCourse} />}
             </div>
-          </div> 
-          {Course && item.questions && <QuestionList questions={item.questions} Course={Course} quizId={item.id} fetchQuestions={fetchCourse} /> }
-        </div> 
+          </div>
+          {Course && item.questions && <QuestionList questions={item.questions} Course={Course} quizId={item.id} fetchQuestions={fetchCourse} />}
+        </div>
       ))}
 
-  <div className="Course_card_info"style={{alignItems:"center"}}>
-  <div className="Course_cardicon" style={{width:'60%'}}>
-  {!showMore && Course && Course.EpisodeQuiz && Course.EpisodeQuiz.length > initialCount && (
- <button className='Open_button'  onClick={handleShowMore}>Show More</button>)}
- </div></div>
+      <div className="Course_card_info" style={{ alignItems: "center" }}>
+        <div className="Course_cardicon" style={{ width: '60%' }}>
+          {!showMore && Course && Course.EpisodeQuiz && Course.EpisodeQuiz.length > initialCount && (
+            <button className='Open_button' onClick={handleShowMore}>Show More</button>)}
+        </div></div>
 
- </div>
-  
+    </div>
+
   );
 }

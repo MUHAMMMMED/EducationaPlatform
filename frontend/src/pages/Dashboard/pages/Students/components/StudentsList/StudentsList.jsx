@@ -1,4 +1,4 @@
- 
+
 import React, { useEffect, useState } from 'react';
 import { FaDownload, FaUserGraduate } from "react-icons/fa";
 import Config from '../../../../../../config';
@@ -44,26 +44,26 @@ export default function StudentsList() {
         'T': 'Teacher',
         'M': 'Manager'
     };
- 
+
     // Function to download data
     const downloadData = async () => {
-        	try {
-        	 
-        		const response = await AxiosInstance.get(`${Config.baseURL}/dashboard/api/download_users/`, {
-        			responseType: 'blob' // Set response type to blob
-        		});
-        		const url = window.URL.createObjectURL(new Blob([response.data]));
-        		const link = document.createElement('a');
-        		link.href = url;
-        		link.setAttribute('download', 'Users.csv');
-        		document.body.appendChild(link);
-        		link.click();
-        		link.parentNode.removeChild(link);
-        	} catch (error) {
-            
-        	}
-        };
-     
+        try {
+
+            const response = await AxiosInstance.get(`${Config.baseURL}/dashboard/download_users/`, {
+                responseType: 'blob' // Set response type to blob
+            });
+            const url = window.URL.createObjectURL(new Blob([response.data]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'Users.csv');
+            document.body.appendChild(link);
+            link.click();
+            link.parentNode.removeChild(link);
+        } catch (error) {
+
+        }
+    };
+
 
     return (
         <div className='section_StudentsList'>
@@ -77,14 +77,14 @@ export default function StudentsList() {
                                 <input type="text" className='Search' style={{ marginLeft: '5px' }} onChange={handleEmail} placeholder="Email.." />
                                 <input type="date" className='Search' style={{ marginLeft: '5px' }} onChange={handleStartDate} />
                                 <input type="date" className='Search' style={{ marginLeft: '5px' }} onChange={handleEndDate} />
-                                <div   class="FaDow" onClick={downloadData} style={{ marginLeft: '5px' }}><FaDownload /> </div>
+                                <div class="FaDow" onClick={downloadData} style={{ marginLeft: '5px' }}><FaDownload /> </div>
                             </div>
                         </div>
                     </header>
                     <table class="projects-table">
                         <thead>
                             <tr>
-                                 <th>Date</th>
+                                <th>Date</th>
                                 <th> Phone  </th>
                                 <th>Email</th>
                                 <th>Student</th>
@@ -100,12 +100,12 @@ export default function StudentsList() {
                                     <td><p>{user.phone}</p><p></p></td>
                                     <td><p>{user.email}</p><p></p></td>
                                     <td class="member">
-                                    <figure style={{ textAlign:'left' }}><img alt="Student" src={studentImg} />  </figure>
-                                    <div class="member-info" style={{ textAlign: 'left' }}>
-                                    <p>{user.user_full_name}</p><p></p></div>  </td>
+                                        <figure style={{ textAlign: 'left' }}><img alt="Student" src={studentImg} />  </figure>
+                                        <div class="member-info" style={{ textAlign: 'left' }}>
+                                            <p>{user.user_full_name}</p><p></p></div>  </td>
                                     <td><p>{userTypeMap[user.user_type]}</p></td>
                                     <td><UpdateUserTyp Id={user.id} fetchUser={fetchUser} /></td>
-                                    <td>{user&&<UserUpdateForm user={user} fetchUser={fetchUser} />}</td>
+                                    <td>{user && <UserUpdateForm user={user} fetchUser={fetchUser} />}</td>
 
                                 </tr>
                             ))}

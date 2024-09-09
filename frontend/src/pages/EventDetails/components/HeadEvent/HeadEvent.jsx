@@ -1,9 +1,9 @@
- 
+
 import React from 'react';
 import { MdOutlineAccessTime, MdOutlineDateRange } from 'react-icons/md';
 import Event from './Event.webp';
 import './styles.css';
- 
+
 export default function HeadEvent({ event }) {
   // Function to format the date
   const formatDate = (dateStr) => {
@@ -28,8 +28,8 @@ export default function HeadEvent({ event }) {
 
   return (
     <>
-           
-<div className="header-single-envent" style={{backgroundImage: `url(${Event})` }}> 
+
+      <div className="header-single-envent" style={{ backgroundImage: `url(${Event})` }}>
 
         <div className="envent_container">
           <div className="entry-title">{event.title}</div>

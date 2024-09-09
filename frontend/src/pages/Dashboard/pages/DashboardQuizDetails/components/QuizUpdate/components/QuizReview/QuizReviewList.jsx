@@ -33,32 +33,32 @@ export default function QuizReviewList({ quiz, fetchQuiz }) {
             {quiz && quiz.id && <QuizReviewCreate quiz={quiz} fetchQuiz={fetchQuiz} />}
           </div>
         </div>
-   
 
-      {quiz.review && quiz.review.slice(0, displayCount).map((item) => (
-        <div className="CourseCard" key={item.id} style={{ width: '100%', marginLeft: '0', marginTop: '1', border: '1px solid #ddd' }}>
-          <div className="Course_card_content">
-            <div className="Course_card_info">
-              <div style={{ float: 'left', width: '65px' }}><span className='onLine-icon'><CiImageOn /></span></div>
-              <div style={{ float: 'left' }}>
-                <p className="Course_card_title">
-                  {item.image && <img src={`${Config.baseURL}${item.image}`} width={'100%'} alt="Review" />}
-                </p>
+
+        {quiz.review && quiz.review.slice(0, displayCount).map((item) => (
+          <div className="CourseCard" key={item.id} style={{ width: '100%', marginLeft: '0', marginTop: '1', border: '1px solid #ddd' }}>
+            <div className="Course_card_content">
+              <div className="Course_card_info">
+                <div style={{ float: 'left', width: '65px' }}><span className='onLine-icon'><CiImageOn /></span></div>
+                <div style={{ float: 'left' }}>
+                  <p className="Course_card_title">
+                    {item.image && <img src={`${Config.baseURL}${item.image}`} width={'100%'} alt="Review" />}
+                  </p>
+                </div>
+              </div>
+              <div className="Course_cardicon">
+                {item && item.id && <QuizReviewDelete item={item} fetchQuiz={fetchQuiz} />}
               </div>
             </div>
-            <div className="Course_cardicon">
-              {item && item.id && <QuizReviewDelete item={item} fetchQuiz={fetchQuiz} />}
-            </div>
           </div>
-        </div>
-      ))}
+        ))}
 
- 
-<div className="Course_card_info"style={{alignItems:"center"}}>
-  <div className="Course_cardicon" style={{width:'60%'}}>
-  {quiz.review && quiz.review.length > displayCount && ( <button className='Open_button' onClick={handleDisplayMore}>Load More</button> )}
- </div></div>   
- </div>
+
+        <div className="Course_card_info" style={{ alignItems: "center" }}>
+          <div className="Course_cardicon" style={{ width: '60%' }}>
+            {quiz.review && quiz.review.length > displayCount && (<button className='Open_button' onClick={handleDisplayMore}>Load More</button>)}
+          </div></div>
+      </div>
     </>
   );
 }

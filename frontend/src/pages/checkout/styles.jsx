@@ -1,21 +1,20 @@
 import styled from "@emotion/styled";
-import theme from "../../desing-system/config";
- 
- 
-export const CouponWrapper = styled ("div")`
+
+
+export const CouponWrapper = styled("div")`
    label:CouponWrapper;
    float: left;
    width:100%; 
    margin-bottom: 20px; 
    margin-top: 30px;
 `;
- 
-export const DIVInput = styled ("div")`
+
+export const DIVInput = styled("div")`
 label:DIVInput;
 float: left;
  width:65%; 
 `;
-export const CouponInput = styled ("input")`
+export const CouponInput = styled("input")`
    label:CouponInput;
    float: left;
    padding: 10px;
@@ -24,13 +23,13 @@ export const CouponInput = styled ("input")`
     width:100%; 
 `;
 
-export const Form = styled ("form")`
+export const Form = styled("form")`
    label:Form;
     width:100%; 
 `;
 
- 
-export const DIVButton = styled ("div")`
+
+export const DIVButton = styled("div")`
 label:DIVButton;
 float: left;
  width:30%; 
@@ -39,7 +38,7 @@ float: left;
 
 `;
 
-export const CouponButton = styled ("button")`
+export const CouponButton = styled("button")`
 label:CouponButton;
 float: left;
 padding: 15px 15px;
@@ -55,7 +54,7 @@ font-size: 13px;
 font-weight: 500;
 `;
 
-export const Bay = styled ("button")`
+export const Bay = styled("button")`
 label:Bay;
 float: left;
 padding: 13px 10px;
@@ -69,8 +68,8 @@ font-size: 13px;
 font-weight: 500;
 `;
 
- 
-export const Error = styled ("P")`
+
+export const Error = styled("P")`
 label:Error;
 float: left;
 padding: 13px 10px;
@@ -79,8 +78,8 @@ color: #fff;
 width:100%; 
 font-size: 13px;
  `;
- 
-export const Success = styled ("P")`
+
+export const Success = styled("P")`
 label:Success;
 float: left;
 padding: 13px 10px;

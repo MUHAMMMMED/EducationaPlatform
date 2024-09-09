@@ -5,14 +5,12 @@ import AxiosInstance from '../../../../../../../../desing-system/Authentication/
 export default function SectionsCreate({ Course, fetchCourse }) {
   const [showModalSectionCreate, setShowModalSectionCreate] = useState(false);
   const [formData, setFormData] = useState({
-    courseId: Course.id ,
+    courseId: Course.id,
     title: '',
     description: '',
-    section_number: '', 
-   
+    section_number: '',
+
   });
- 
-  
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,12 +24,12 @@ export default function SectionsCreate({ Course, fetchCourse }) {
       setShowModalSectionCreate(false);
       fetchCourse();
       // Clear the form fields after successful submission
-      setFormData({  courseId:Course.id ,title: '', description: '', section_number: '',   });
-        
-       
-       
+      setFormData({ courseId: Course.id, title: '', description: '', section_number: '', });
+
+
+
     } catch (error) {
-     
+
     }
   };
 
@@ -39,7 +37,7 @@ export default function SectionsCreate({ Course, fetchCourse }) {
     setShowModalSectionCreate(false);
   };
 
- 
+
   if (Course === null) {
     fetchCourse();
   }
@@ -57,12 +55,12 @@ export default function SectionsCreate({ Course, fetchCourse }) {
             </div>
             <div className="form-container-half"  >
               <label className='label' htmlFor="section_number">Section Number:</label>
-              <input type="number" name="section_number" value={formData.section_number} onChange={handleChange}  />
-            </div> </div> 
- 
-              <label className='label' htmlFor="description" style={{ width: '100%' }}>Description:</label>
-              <input type="text" name="description" value={formData.description} onChange={handleChange}   placeholder="description" />
- 
+              <input type="number" name="section_number" value={formData.section_number} onChange={handleChange} />
+            </div> </div>
+
+          <label className='label' htmlFor="description" style={{ width: '100%' }}>Description:</label>
+          <input type="text" name="description" value={formData.description} onChange={handleChange} placeholder="description" />
+
           {/* Form buttons */}
           <div className="FOrmContainer">
             <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>

@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
-import theme from "../../../../config";
- 
+
 export const Categorytitle = styled("div")`
   label: Categorytitle;
   float: left;
@@ -147,4 +146,3 @@ label: BtnPrimary;
 
 
 
- 

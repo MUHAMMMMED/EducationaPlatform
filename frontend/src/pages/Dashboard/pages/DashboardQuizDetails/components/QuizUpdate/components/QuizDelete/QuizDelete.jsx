@@ -1,4 +1,3 @@
- 
 
 import React, { useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
@@ -9,19 +8,19 @@ import AxiosInstance from '../../../../../../../../desing-system/Authentication/
 const QuizDelete = ({ quiz }) => {
   const navigate = useNavigate();
   const [showModalDelete, setShowModalDelete] = useState(false);
- 
- 
-    const deleteCourse = async () => {
-      try {
-   
-        await AxiosInstance.delete(`${Config.baseURL}/Quiz/exam_operations/${quiz.id}/`)
-        navigate('/dashboard_Quiz');
 
-      } catch (error) {
-        console.error('Error deleting Quiz:', error);
-      }
-    };
-   
+
+  const deleteCourse = async () => {
+    try {
+
+      await AxiosInstance.delete(`${Config.baseURL}/Quiz/exam_operations/${quiz.id}/`)
+      navigate('/dashboard_Quiz');
+
+    } catch (error) {
+      console.error('Error deleting Quiz:', error);
+    }
+  };
+
   const handleCloseModal = () => {
     setShowModalDelete(false);
   };

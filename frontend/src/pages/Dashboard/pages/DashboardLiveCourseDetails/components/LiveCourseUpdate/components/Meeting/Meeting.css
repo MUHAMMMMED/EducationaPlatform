@@ -1,28 +1,43 @@
-.Meeting-container{
+.Meeting-container {
     width: 60%;
     float: left;
     margin-left: 20%;
-    @media (max-width: 1200px) {  width: 80%;  margin-left: 10%; }
-}
- 
-.Meeting-header  {width: 100%; font-size: 18px; font-weight: 500 }
 
-.Meeting-header-flex{  padding: 20px; display: flex;  justify-content: space-between;  }
-   
+    @media (max-width: 1200px) {
+        width: 80%;
+        margin-left: 10%;
+    }
+}
+
+.Meeting-header {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500
+}
+
+.Meeting-header-flex {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
 .meeting-card {
     border: 1px solid rgba(48, 146, 85, 0.2);
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 30px;
-    width:100%; 
+    width: 100%;
     float: left;
     margin-left: 0%;
-  }
-.meeting-card:hover {  background-color: #eefbf2;  }
- 
-.meeting-info-M{
+}
+
+.meeting-card:hover {
+    background-color: #eefbf2;
+}
+
+.meeting-info-M {
     float: left;
-    padding: 12px 15px ;
+    padding: 12px 15px;
     border-radius: 50px;
     font-size: 18px;
     font-weight: 700;
@@ -31,50 +46,84 @@
     color: #58a58f;
     background-color: #eefbf2;
 }
- 
-.meeting-info-T{
+
+.meeting-info-T {
     float: left;
     margin-left: 5px;
     margin-top: 12px;
-    font-size:18px;
-    @media (max-width: 1200px) {font-size:15px;    margin-left: 4px;    }  }
- 
- .created{font-size: 13px;padding: 2px;     margin-top: 12px;   @media (max-width: 1200px) {font-size:10px;   }}
+    font-size: 18px;
 
-.meeting-info-D{ float: left;width: 100%;  margin-bottom: 20px;  }     
- 
-.info-D{
+    @media (max-width: 1200px) {
+        font-size: 15px;
+        margin-left: 4px;
+    }
+}
+
+.created {
+    font-size: 13px;
+    padding: 2px;
+    margin-top: 12px;
+
+    @media (max-width: 1200px) {
+        font-size: 10px;
+    }
+}
+
+.meeting-info-D {
     float: left;
-    width: 24%; 
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.info-D {
+    float: left;
+    width: 24%;
     padding-top: 25px;
     text-align: left;
-    margin-left: 10px;    font-size:18px;
-    @media (max-width: 1200px) { width:80%;  margin-left: 3%; font-size:14px; }
+    margin-left: 10px;
+    font-size: 18px;
+
+    @media (max-width: 1200px) {
+        width: 80%;
+        margin-left: 3%;
+        font-size: 14px;
+    }
 }
- 
-.info-D span{
+
+.info-D span {
     border-radius: 50px;
-    padding: 3px 5px ;
+    padding: 3px 5px;
     border: 1px solid rgba(48, 146, 85, 0.2);
     color: #58a58f;
     margin-right: 2px;
     background-color: #eefbf2;
 }
-.meeting-info h3 { margin-top: 0;  }
-.meeting-card-button{ float: left;  width: 100%;   }
 
-.button-group {    
-   width: 40%;
+.meeting-info h3 {
+    margin-top: 0;
+}
+
+.meeting-card-button {
+    float: left;
+    width: 100%;
+}
+
+.button-group {
+    width: 40%;
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     margin-left: 8px;
-    @media (max-width: 1200px) { width:99%;  margin-left:  0%; }
-  }
-  
-.Group-But{ 
+
+    @media (max-width: 1200px) {
+        width: 99%;
+        margin-left: 0%;
+    }
+}
+
+.Group-But {
     Position: relative;
-    background-color: #eefbf2;   
+    background-color: #eefbf2;
     color: #58a58f;
     padding: 8px 13px;
     margin: 0;
@@ -82,20 +131,44 @@
     border-radius: 2px;
     cursor: pointer;
     font-size: 13px;
-    @media (max-width: 1200px) {    padding: 7px 5px; } }
-    
-.But-update{ width: 30%;     @media (max-width: 1200px) {   width: 36%; } }
 
-.But-delete{ width: 30%;     @media (max-width: 1200px) {   width: 25%;} } 
- 
-.But-update:hover {  color:#ffffff;  border: 1px solid#1da29d; background-color:#1da29d;  }
-   
- .But-delete:hover { color:#ffffff; border: 1px solid#e71506; background-color:#e71506;  }
-    
-.But-create{
+    @media (max-width: 1200px) {
+        padding: 7px 5px;
+    }
+}
+
+.But-update {
+    width: 30%;
+
+    @media (max-width: 1200px) {
+        width: 36%;
+    }
+}
+
+.But-delete {
+    width: 30%;
+
+    @media (max-width: 1200px) {
+        width: 25%;
+    }
+}
+
+.But-update:hover {
+    color: #ffffff;
+    border: 1px solid#1da29d;
+    background-color: #1da29d;
+}
+
+.But-delete:hover {
+    color: #ffffff;
+    border: 1px solid#e71506;
+    background-color: #e71506;
+}
+
+.But-create {
 
     Position: relative;
-    background-color: #eefbf2;   
+    background-color: #eefbf2;
     color: #58a58f;
     padding: 8px 13px;
     margin: 0;
@@ -105,16 +178,18 @@
     font-size: 13px;
 
 }
-.But-create:hover {
-    color:#ffffff;
-    border: 1px solid#1da29d;
-    background-color:#1da29d;
-  }
 
- .Active{
+.But-create:hover {
+    color: #ffffff;
+    border: 1px solid#1da29d;
+    background-color: #1da29d;
+}
+
+.Active {
     margin-left: 15px;
-    color:#1da29d;
+    color: #1da29d;
     border: 1px solid rgba(48, 146, 85, 0.2);
     border-radius: 5px;
-    padding: 5px;  font-size: 13px;
- }
+    padding: 5px;
+    font-size: 13px;
+}

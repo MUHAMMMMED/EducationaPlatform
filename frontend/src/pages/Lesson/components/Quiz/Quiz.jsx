@@ -5,9 +5,9 @@ import img from './Quiz.jpg';
 import lose from './lose.mp3';
 import { Button, Buttonqiuz, CenterBut, Con, Container, H2, Iframe, Img, Index, LI, SPan, UL, Video } from './styles';
 import win from './win.mp3';
- 
- 
-export default function Quiz({ data  }) {
+
+
+export default function Quiz({ data }) {
   const [index, setIndex] = useState(0);
   const [question, setQuestion] = useState(null);
   const [lock, setLock] = useState(false);
@@ -24,7 +24,7 @@ export default function Quiz({ data  }) {
   }, []);
 
   useEffect(() => {
-    if (data&& data.exam && data.exam.questions && data.exam.questions.length > 0) {
+    if (data && data.exam && data.exam.questions && data.exam.questions.length > 0) {
       setQuestion(data.exam.questions[index]);
     }
   }, [index, data]);
@@ -59,7 +59,7 @@ export default function Quiz({ data  }) {
       setIndex(nextIndex);
       setLock(false);
       setResult(false);
-      
+
       optionRefs.current.forEach((ref) => {
         ref.classList.remove('correct', 'wrong', 'question_p');
       });
@@ -76,7 +76,7 @@ export default function Quiz({ data  }) {
     <>
       {result ? (
         <CenterBut>
-          <Buttonqiuz onClick={handleLock}><span  style={{ margin: ' 5px' }}>Start Quiz</span></Buttonqiuz>
+          <Buttonqiuz onClick={handleLock}><span style={{ margin: ' 5px' }}>Start Quiz</span></Buttonqiuz>
         </CenterBut>
       ) : (
         <Container style={{ backgroundImage: `url(${img})` }}>
@@ -87,7 +87,7 @@ export default function Quiz({ data  }) {
               </div>
               <>
                 <Con>
-                  {question.question_content &&   <H2>{index + 1}. {question.question_content}</H2> }
+                  {question.question_content && <H2>{index + 1}. {question.question_content}</H2>}
                   {question.question_image && <Img src={`${Config.baseURL}${question.question_image}`} />}
                   {question.question_video && <Video autoPlay><source src={`${Config.baseURL}${question.question_video}`} type="video/mp4" /><source src="mov_bbb.ogg" type="video/ogg" /></Video>}
                   {question.question_video_youtube && <Iframe title="Quiz Video" src={`https://www.youtube.com/embed/${question.question_video_youtube}?autoplay=1&mute=1`} />}

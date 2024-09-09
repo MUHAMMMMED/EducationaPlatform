@@ -29,7 +29,7 @@ export default function QuizCategories() {
       });
       setCategories(response.data);
     } catch (error) {
-      setError(error.response.data.error  || "You do not have permission to access this data.");
+      setError(error.response.data.error || "You do not have permission to access this data.");
     } finally {
       setLoading(false);
     }

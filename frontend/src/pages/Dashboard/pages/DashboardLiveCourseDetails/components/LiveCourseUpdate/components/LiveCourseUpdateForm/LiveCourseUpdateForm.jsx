@@ -1,10 +1,10 @@
- 
+
 import React, { useEffect, useState } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
- 
+
 export default function LiveCourseUpdateForm({ liveCourses }) {
- 
+
   const [formData, setFormData] = useState({
     active: false,
     level: '',
@@ -19,49 +19,49 @@ export default function LiveCourseUpdateForm({ liveCourses }) {
     waitingDate: '',
     time: '',
     author: '',
- 
+
   });
 
   useEffect(() => {
     setFormData({
-      active: liveCourses.active  ,
-      level: liveCourses.level  ,
-      category: liveCourses.category  ,
-      card_image: liveCourses.card_image ,
-      title: liveCourses.title  ,
-      description: liveCourses.description ,
-      price: liveCourses.price ,
-      discount: liveCourses.discount  ,
-      join_telegram: liveCourses.join_telegram ,
-      join_whatsapp: liveCourses.join_whatsapp ,
-      waitingDate: liveCourses.waitingDate ,
-      time: liveCourses.time ,
-      author: liveCourses.author ,
- 
+      active: liveCourses.active,
+      level: liveCourses.level,
+      category: liveCourses.category,
+      card_image: liveCourses.card_image,
+      title: liveCourses.title,
+      description: liveCourses.description,
+      price: liveCourses.price,
+      discount: liveCourses.discount,
+      join_telegram: liveCourses.join_telegram,
+      join_whatsapp: liveCourses.join_whatsapp,
+      waitingDate: liveCourses.waitingDate,
+      time: liveCourses.time,
+      author: liveCourses.author,
+
 
     });
   }, [liveCourses]);
 
- 
-const handlecard_image = (e) => {
+
+  const handlecard_image = (e) => {
     const file = e.target.files[0];
     // Ensure filename does not exceed 100 characters
     const truncatedFilename = file.name.length > 100 ? file.name.substring(0, 100) : file.name;
     const truncatedFile = new File([file], truncatedFilename, { type: file.type });
     setFormData({ ...formData, card_image: truncatedFile });
   };
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
- 
- 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const formDataToSend = new FormData();
-  
+
       // Append all form data to FormData
       Object.entries(formData).forEach(([key, value]) => {
         // Handle card_image separately as a file
@@ -74,7 +74,7 @@ const handlecard_image = (e) => {
           formDataToSend.append(key, value);
         }
       });
-  
+
       await AxiosInstance.put(`${Config.baseURL}/LiveCourses/live-courses/${liveCourses.id}/`, formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -82,10 +82,10 @@ const handlecard_image = (e) => {
       });
       setShowModal(false);
     } catch (error) {
- 
+
     }
   };
- 
+
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => {
     setShowModal(false);
@@ -111,10 +111,10 @@ const handlecard_image = (e) => {
           {/* Other form inputs */}
           <div className="FOrm-container">
             <div className="form-container-half">
-              <label className='label'>Price: <input type="number" name="price" value={formData.price} onChange={handleChange}  style={{width:'100%'}}/></label>
+              <label className='label'>Price: <input type="number" name="price" value={formData.price} onChange={handleChange} style={{ width: '100%' }} /></label>
             </div>
             <div className="form-container-half">
-              <label className='label'> Discount: <input type="number" name="discount" value={formData.discount} onChange={handleChange} style={{width:'100%'}}/></label>
+              <label className='label'> Discount: <input type="number" name="discount" value={formData.discount} onChange={handleChange} style={{ width: '100%' }} /></label>
             </div>
           </div>
           {/* Other form inputs */}
@@ -129,10 +129,10 @@ const handlecard_image = (e) => {
           {/* Other form inputs */}
           <div className="FOrm-container">
             <div className="form-container-half">
-              <label className='label'>waiting Date: <input  type="date"  name="waitingDate" value={formData.waitingDate} onChange={handleChange} /></label>
+              <label className='label'>waiting Date: <input type="date" name="waitingDate" value={formData.waitingDate} onChange={handleChange} /></label>
             </div>
             <div className="form-container-half">
-              <label className='label'> time on waiting Date : <input type="time" name="time"value={formData.time} onChange={handleChange} /></label>
+              <label className='label'> time on waiting Date : <input type="time" name="time" value={formData.time} onChange={handleChange} /></label>
             </div>
           </div>
           {/* Other form inputs */}
@@ -140,7 +140,7 @@ const handlecard_image = (e) => {
             <div className="form-container-half">
               <label className='label'>Category:
                 <select name="category" className='form-Select' value={formData.category} onChange={handleChange}>
-                  <option value= '[]' disabled hidden >Category</option>
+                  <option value='[]' disabled hidden >Category</option>
                   {liveCourses.categories && liveCourses.categories.length > 0 && liveCourses.categories.map(cat => (
                     <option value={cat.id} key={cat.id}>{cat.title}</option>
                   ))}
@@ -150,7 +150,7 @@ const handlecard_image = (e) => {
             <div className="form-container-half">
               <label className='label'>Level:
                 <select className='form-Select' name="level" value={formData.level} onChange={handleChange}>
-                  <option value= '' disabled hidden >Select Level</option>
+                  <option value='' disabled hidden >Select Level</option>
                   <option value="Beginner">Beginner</option>
                   <option value="Intermediate">Intermediate</option>
                   <option value="Advanced">Advanced</option>
@@ -171,18 +171,18 @@ const handlecard_image = (e) => {
                 </select>
               </label>
             </div>
-       
-          <div className="form-container-half">
+
+            <div className="form-container-half">
               <label className='label'>
                 Card Image:
-         <input type="file" name="card_image"   onChange={handlecard_image} />
-         </label> </div></div>
-        <div className="FOrm-container">
- 
-    
-       <label className='label'>Active:<input type="checkbox" name="active" checked={formData.active} onChange={handleChange} /></label>
-        </div> 
-            
+                <input type="file" name="card_image" onChange={handlecard_image} />
+              </label> </div></div>
+          <div className="FOrm-container">
+
+
+            <label className='label'>Active:<input type="checkbox" name="active" checked={formData.active} onChange={handleChange} /></label>
+          </div>
+
           {/* Form buttons */}
           <div className="FOrmContainer">
             <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>

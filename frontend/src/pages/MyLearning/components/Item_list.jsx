@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { Link } from 'react-router-dom';
 import SwiperCore from 'swiper';
 import 'swiper/css';
@@ -31,33 +30,32 @@ export default function ItemList() {
   }, []);
 
   return (
-<div className='Event_area'>
+    <div className='Event_area'>
 
-<div class="Event_widget-containe">
-<div class="Even-widget-heading"> <h2 class="Event_heading-Title  "> Explore more courses and Quizzes.</h2> </div>
-<div class="Event_widget-p"> Expand your knowledge and enhance your skills in various fields </div>		
-</div>	
+      <div class="Event_widget-containe">
+        <div class="Even-widget-heading"> <h2 class="Event_heading-Title  "> Explore more courses and Quizzes.</h2> </div>
+        <div class="Event_widget-p"> Expand your knowledge and enhance your skills in various fields </div>
+      </div>
 
- 
-<div class="Event_widget_BUT	">
-<Link to={`/AllCourses`} > <div className='Even_widget_btn' >Show More</div> </Link>
-</div>		
-     
-<div style={{width:'100%',float:'left'}}>
- <Swiper autoplay={{ delay: 2500 }} loop spaceBetween={50} slidesPerView={window.innerWidth > 1200 ? 3 : 1}>
-         
- {data.courses && data.courses.map(item => (
- <SwiperSlide> <CoursesCard key={item.id} course={item} /> </SwiperSlide>    ))}
 
- {data.live_courses&&data.live_courses.map(item => (  
- <SwiperSlide><LiveCoursesCard key={item.id} course={item} /></SwiperSlide> ))}  
+      <div class="Event_widget_BUT	">
+        <Link to={`/AllCourses`} > <div className='Even_widget_btn' >Show More</div> </Link>
+      </div>
 
- {data.exams &&data.exams.map(item => (
- <SwiperSlide> <ExamCard key={item.id} exam={item} /> </SwiperSlide> ))}
-     
- </Swiper></div> </div>
+      <div style={{ width: '100%', float: 'left' }}>
+        <Swiper autoplay={{ delay: 2500 }} loop spaceBetween={50} slidesPerView={window.innerWidth > 1200 ? 3 : 1}>
+
+          {data.courses && data.courses.map(item => (
+            <SwiperSlide> <CoursesCard key={item.id} course={item} /> </SwiperSlide>))}
+
+          {data.live_courses && data.live_courses.map(item => (
+            <SwiperSlide><LiveCoursesCard key={item.id} course={item} /></SwiperSlide>))}
+
+          {data.exams && data.exams.map(item => (
+            <SwiperSlide> <ExamCard key={item.id} exam={item} /> </SwiperSlide>))}
+
+        </Swiper></div> </div>
   );
 }
 
 
- 

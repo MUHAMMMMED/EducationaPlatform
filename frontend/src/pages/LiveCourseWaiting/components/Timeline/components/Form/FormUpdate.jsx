@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Config from '../../../../../../config';
 import './Form.css';
 
-const FormUpdate = ({ course_id, item_id,fetchCourse}) => {
+const FormUpdate = ({ course_id, item_id, fetchCourse }) => {
 
   const [showModalEdit, setShowModalEdit] = useState(false);
   const [showModalDelete, setShowModalDelete] = useState(false);
@@ -25,7 +25,7 @@ const FormUpdate = ({ course_id, item_id,fetchCourse}) => {
     Lesson_link: '',
     complete: false,
   });
- 
+
   useEffect(() => {
     const fetchTimeline = async () => {
       try {
@@ -106,10 +106,10 @@ const FormUpdate = ({ course_id, item_id,fetchCourse}) => {
         <form className="modal-content animate" onSubmit={handleSubmit} onClick={(e) => e.stopPropagation()}>
           <h2 style={{ textAlign: 'center', padding: '15px' }}>Edit Item {item_id}</h2>
 
-      
-      
+
+
           <div className="form-container">
-            <input type="text" placeholder="Title: " name="title" value={formData.title} onChange={handleChange}  />
+            <input type="text" placeholder="Title: " name="title" value={formData.title} onChange={handleChange} />
           </div>
 
           <div className="form-container">
@@ -150,13 +150,13 @@ const FormUpdate = ({ course_id, item_id,fetchCourse}) => {
                 type="text"
                 name="Course_Coupon"
                 placeholder="Course Coupon: "
-                value={formData.Course_Coupon} onChange={handleChange} 
+                value={formData.Course_Coupon} onChange={handleChange}
               />
             </div>
           </div>
           <div className="FOrm-container">
             <div className="form-container-half">
-              <textarea name="join_Quiz" placeholder="Join Quiz:"value={formData.join_Quiz} onChange={handleChange} />
+              <textarea name="join_Quiz" placeholder="Join Quiz:" value={formData.join_Quiz} onChange={handleChange} />
             </div>
 
             <div className="form-container-half">
@@ -174,19 +174,19 @@ const FormUpdate = ({ course_id, item_id,fetchCourse}) => {
             </div>
 
             <div className="form-container-half">
-              <input type="time" name="time" placeholder=" Time:"value={formData.time} onChange={handleChange} />
+              <input type="time" name="time" placeholder=" Time:" value={formData.time} onChange={handleChange} />
             </div>
           </div>
 
           <div className="form-container">
-            <textarea name="Lesson_link" placeholder="Lesson Link: "value={formData.Lesson_link} onChange={handleChange} />
+            <textarea name="Lesson_link" placeholder="Lesson Link: " value={formData.Lesson_link} onChange={handleChange} />
           </div>
 
           <div style={{ padding: '5px' }} className="FOrmContainer">
             <div>
               <div className="label">Index</div>
               <div className="checkbox-container">
-                <input type="number"   name="index" id="index"  value={formData.index} onChange={handleChange}  />
+                <input type="number" name="index" id="index" value={formData.index} onChange={handleChange} />
               </div>
             </div>
 
@@ -194,7 +194,7 @@ const FormUpdate = ({ course_id, item_id,fetchCourse}) => {
               <div className="label">Active</div>
               <div className="checkbox-container">
                 <label className="switch">
-                  <input type="checkbox" name="active"  checked={formData.active} onChange={handleChange}/>
+                  <input type="checkbox" name="active" checked={formData.active} onChange={handleChange} />
                   <span className="slider"></span>
                 </label>
               </div>

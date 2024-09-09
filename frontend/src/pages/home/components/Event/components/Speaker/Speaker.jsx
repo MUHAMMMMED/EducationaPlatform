@@ -39,4 +39,3 @@ const Speaker = ({ eventId }) => {
 };
 
 export default Speaker;
- 

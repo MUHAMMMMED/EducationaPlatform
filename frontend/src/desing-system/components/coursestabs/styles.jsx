@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 import theme from "../../config";
- 
-export const LI = styled ("li")`
-   label:LI;
+
+export const LI = styled("li")`
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
@@ -14,8 +13,7 @@ export const LI = styled ("li")`
 `;
 
 
-export const Button = styled ("button")`
-   label:Button;
+export const Button = styled("button")`
     height: 60px;
     border: 1px solid rgba(48, 146, 85, 0.2);
     border-radius: 10px;

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
- 
-export const HeadRow = styled ("div")`
+
+export const HeadRow = styled("div")`
     label:HeadRow;
     width:100%;
     float:right;
@@ -11,8 +11,8 @@ export const HeadRow = styled ("div")`
     padding-top: 0px;
     @media (max-width: 1200px) {}
     `;
-  
-export const HeadRowCenter = styled ("div")`
+
+export const HeadRowCenter = styled("div")`
         label:HeadRowCenter;
         width:100%;
         float:right;
@@ -21,36 +21,36 @@ export const HeadRowCenter = styled ("div")`
         background:#fff;
  
     `;
-  
 
-    
-        
-    
-export const HeaderInfo = styled ("div")`
+
+
+
+
+export const HeaderInfo = styled("div")`
         label:HeaderInfo;
         color: #ffffff; 
         padding: 20px; 
         text-align: center;
  
         `;
-    
-        
-export const HeaderLogo = styled ("div")`
+
+
+export const HeaderLogo = styled("div")`
         label:HeaderLogo;
         margin-bottom: 20px;  
   
         `;
 
-export const HeaderLogoImg = styled ("img")`
+export const HeaderLogoImg = styled("img")`
         label:HeaderLogo;
         max-height: 100px;
  
         `;
-      
- 
 
 
-export const Title = styled ("h2")`
+
+
+export const Title = styled("h2")`
 label:Title;
 padding-top: 30px;
 font-size: 3rem;
@@ -66,8 +66,8 @@ text-align: center!important;
  
  }
 `;
- 
-export const H3 = styled ("H4")`
+
+export const H3 = styled("H4")`
 label:H3;
 font-weight: 600!important;
 font-size:  1rem;
@@ -77,7 +77,7 @@ font-size:  1rem;
    line-height: 2; /* Adjust as needed */
 }
 `;
-export const Iframe = styled ("iframe")`
+export const Iframe = styled("iframe")`
 label:Iframe;
 width:95%;
 margin-left:2.5%;
@@ -91,7 +91,7 @@ height:655px;
 
 
 
-export const SomeText = styled ("div")`
+export const SomeText = styled("div")`
 label:SomeText;
 margin-bottom: 15px;
 padding: 4px 12px;

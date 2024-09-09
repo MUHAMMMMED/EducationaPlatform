@@ -37,14 +37,14 @@ function DownTimer({ date, time }) {
   return (
     <>
       {timeRemaining.expired ? (
-        <> 
-                <section className="section_DOWnn" style={{height:'50px'}}></section>
+        <>
+          <section className="section_DOWnn" style={{ height: '50px' }}></section>
 
-        
+
         </>
       ) : (
         <section className="section_DOWnn">
-           <div className="deals_countdown_DowN">
+          <div className="deals_countdown_DowN">
             <ul className="countdown_DowN unordered_lisT">
               <>
                 <li className="li">

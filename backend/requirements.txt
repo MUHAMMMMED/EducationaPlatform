@@ -20,4 +20,6 @@ stripe==9.7.0
 typing_extensions==4.11.0
 tzdata==2023.4
 urllib3==2.2.1
-gunicorn
+gunicorn==20.1.0
+psycopg2-binary==2.9.7
+python-decouple==3.8

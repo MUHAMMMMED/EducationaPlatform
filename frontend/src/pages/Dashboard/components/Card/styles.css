@@ -1,55 +1,53 @@
- 
-.sectionCard {
-  float: left;
-  width: 100%;
-  @media (max-width: 768px) {
- 
-}}
- 
-.Card_list{
-  float: left;
-  background-color:#ffffff;
-  height:140px;
-  width: 30%;
-  margin-top: 30px;
-  margin-right: 3.1%;
-  border-radius: 5px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  @media (max-width: 768px) {
-    width: 100%;
-}}
-.Card_row{
-  float: left;
-  width:40%;
-}
-.Card_row1{
-  float: left;
-  width:60%;
-}
- .icon_Fi{
-  float: left;
-  margin-top: 35px;
-  margin-left: 30px;
-  padding: 15px  20px  15px 20px ;
-  border-radius: 50%;
-  background-color: #eefbf2;
-  font-size: 25px;
-  font-weight: 700;
+ .sectionCard {
+   float: left;
+   width: 100%;
+
+   @media (max-width: 768px) {}
  }
 
- .Card_number{
-  margin-top: 20px;
-  font-size: 40px;
-  text-align: left;
+ .Card_list {
+   float: left;
+   background-color: #ffffff;
+   height: 140px;
+   width: 30%;
+   margin-top: 30px;
+   margin-right: 3.1%;
+   border-radius: 5px;
+   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+   @media (max-width: 768px) {
+     width: 100%;
+   }
  }
 
-.Card_text{
-  font-size: 20px;
-  text-align: left;
-}
- 
+ .Card_row {
+   float: left;
+   width: 40%;
+ }
 
+ .Card_row1 {
+   float: left;
+   width: 60%;
+ }
 
+ .icon_Fi {
+   float: left;
+   margin-top: 35px;
+   margin-left: 30px;
+   padding: 15px 20px 15px 20px;
+   border-radius: 50%;
+   background-color: #eefbf2;
+   font-size: 25px;
+   font-weight: 700;
+ }
 
+ .Card_number {
+   margin-top: 20px;
+   font-size: 40px;
+   text-align: left;
+ }
 
-
+ .Card_text {
+   font-size: 20px;
+   text-align: left;
+ }

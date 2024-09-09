@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
- 
-export const Container = styled ("div")`
+
+export const Container = styled("div")`
     label:Container;
     width:70%;
     margin: 0 auto;
@@ -37,9 +37,9 @@ export const Container = styled ("div")`
 
        }
     `;
- 
-    
- export const Head = styled ("div")`
+
+
+export const Head = styled("div")`
     label:Head;
     width: 100%;
     margin:0px; 
@@ -49,21 +49,21 @@ export const Container = styled ("div")`
     border-radius: 10px 10px  0px  0px ;
   
     color: #fff;
-    `; 
-    
+    `;
 
-    export const Row = styled ("div")`
+
+export const Row = styled("div")`
     label:Head;
     width: 70%;
     float:left;
   
     padding-left:15px;
 
-    `; 
-   
+    `;
 
-   
-    export const H4 = styled ("h4")`
+
+
+export const H4 = styled("h4")`
        label:H4;
        font-size: 17px;
        font-weight: 500; 
@@ -73,8 +73,8 @@ export const Container = styled ("div")`
         }
 
     
-       `; 
- export const Time = styled ("p")`
+       `;
+export const Time = styled("p")`
    label:Time;
    margin-top:25px; 
    font-size: 18px;
@@ -85,19 +85,19 @@ export const Container = styled ("div")`
 
      }
      
-`; 
+`;
 
- export const HR = styled ("div")`
+export const HR = styled("div")`
     label:HR;
     height:1px;
     border: none;
     background: #707070; 
     margin-top:0px; 
 
- `; 
+ `;
 
- 
- export const Ques = styled ("div")`
+
+export const Ques = styled("div")`
     label:Ques;
     width:80%;
     margin: auto;
@@ -106,14 +106,14 @@ export const Container = styled ("div")`
       width:98%;
       margin: auto;
      }
- `; 
+ `;
 
 
 
 
 
 
- export const H2 = styled ("h2")`
+export const H2 = styled("h2")`
     label:H2;
     height:2px;
     font-size: 22px;
@@ -128,10 +128,10 @@ export const Container = styled ("div")`
 
 
        }
- `; 
+ `;
 
- 
- export const Iframe = styled ("iframe")`
+
+export const Iframe = styled("iframe")`
     label:Iframe;
     width:100%;
     height:455px;
@@ -143,30 +143,30 @@ export const Container = styled ("div")`
         height:300px;
       
        }
- `; 
- export const Video = styled ("video")`
+ `;
+export const Video = styled("video")`
     label:Video;
     width:100%;
     margin-bottom: 50px; 
       
-       }
- `; 
+    
+ `;
 
- export const Img = styled ("img")`
+export const Img = styled("img")`
     label:Img;
     width:100%;
     margin: auto;
-       }
- `; 
- export const UL = styled ("ul")`
+      
+ `;
+export const UL = styled("ul")`
     label:UL;
     width:95%;
     margin: auto;
     padding:0px;
 
 
- `; 
- export const LI = styled ("li")`
+ `;
+export const LI = styled("li")`
     label:LI;
     float:right;
     margin:0px; 
@@ -190,10 +190,10 @@ export const Container = styled ("div")`
         margin-bottom: 10px; 
       
        }
- `; 
+ `;
 
 
- export const  LIButton = styled ("div")`
+export const LIButton = styled("div")`
     label:LIButton;
     width:94%;
     margin: auto;
@@ -206,10 +206,10 @@ export const Container = styled ("div")`
       margin-right:3.5%; 
      
        }
- `; 
+ `;
 
 
- export const Button = styled ("button")`
+export const Button = styled("button")`
    label:Button;
    margin: auto; 
    width: 100%;
@@ -228,22 +228,22 @@ export const Container = styled ("div")`
 
 
    }
-`; 
+`;
 
-export const Span = styled ("div")`
+export const Span = styled("div")`
 label:Span;
 margin-top:10px; 
-`; 
+`;
 
-export const Index = styled ("div")`
+export const Index = styled("div")`
 label:Index;
 width: 100%;
 margin: auto; 
 font-size:18px;
 text-align: center;
 padding-bottom: 15px; 
-`; 
-export const Result = styled ("div")`
+`;
+export const Result = styled("div")`
 label:Result;
 width: 90%;
 margin: auto; 
@@ -257,8 +257,8 @@ text-align: center;
 
   }
 
-`; 
-export const BUtton = styled ("button")`
+`;
+export const BUtton = styled("button")`
 label:Button;
 margin: auto; 
 width: 100%;

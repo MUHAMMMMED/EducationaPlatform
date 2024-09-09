@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
 
-const QuizReviewCreate = ({ quiz , fetchQuiz }) => {
+const QuizReviewCreate = ({ quiz, fetchQuiz }) => {
   const [showModalReviewCreate, setShowModalReviewCreate] = useState(false);
 
   const [formData, setFormData] = useState({
     exam: quiz.id,
-    image: null,  
+    image: null,
   });
 
   const handleChange = (e) => {
@@ -33,14 +33,14 @@ const QuizReviewCreate = ({ quiz , fetchQuiz }) => {
 
       // Fetch reviews again to update the list
       fetchQuiz();
-      setShowModalReviewCreate(false); 
+      setShowModalReviewCreate(false);
     } catch (error) {
       console.error('Error creating review:', error);
     }
   };
-  
-  const handleCloseModal = () => { 
-    setShowModalReviewCreate(false);  
+
+  const handleCloseModal = () => {
+    setShowModalReviewCreate(false);
   };
 
   return (
@@ -55,7 +55,7 @@ const QuizReviewCreate = ({ quiz , fetchQuiz }) => {
               <input type="file" name="image" onChange={handleFileChange} accept="image/*" required />
             </div>
           </div><br /><br />
-  
+
           {/* Form buttons */}
           <div className="FOrmContainer">
             <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>

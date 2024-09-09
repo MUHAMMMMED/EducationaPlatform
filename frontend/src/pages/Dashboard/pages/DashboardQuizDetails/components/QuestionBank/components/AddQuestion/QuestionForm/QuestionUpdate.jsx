@@ -16,7 +16,7 @@ const QuestionUpdate = ({ Item, data, fetchQuestions }) => {
     question_image: null,
     question_video_youtube: Item.question_video_youtube,
     question_video: Item.question_video,
-   
+
   });
   const [showModalAddQuestionUpdate, setShowModalAddQuestionUpdate] = useState(false);
   const [error, setError] = useState('');
@@ -36,7 +36,7 @@ const QuestionUpdate = ({ Item, data, fetchQuestions }) => {
     }
   };
 
- 
+
 
 
   const handleSubmit = async (e) => {
@@ -84,7 +84,7 @@ const QuestionUpdate = ({ Item, data, fetchQuestions }) => {
   };
 
   return (
-    
+
     <div>
       <div style={{ float: 'left', width: '65px', marginRight: '17px' }} onClick={() => setShowModalAddQuestionUpdate(true)}>
         <span className='onLine-icon'><GrUpdate /></span>
@@ -165,9 +165,9 @@ const QuestionUpdate = ({ Item, data, fetchQuestions }) => {
               </label>
             </div>
           </div>
- 
-              <br/> <br/> <br/>
-          
+
+          <br /> <br /> <br />
+
 
           <div className="FOrmContainer">
             <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>

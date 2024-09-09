@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
- export const ContainerLesson = styled ("div")`
+export const ContainerLesson = styled("div")`
  label:CardWrapper;
  justify-content: space-between;
  flex-wrap: wrap;
@@ -14,17 +14,17 @@ import styled from "@emotion/styled";
 
  }
  `;
- 
- 
- 
- 
- export const CardWrapper = styled ("div")`
+
+
+
+
+export const CardWrapper = styled("div")`
  label:CardWrapper;
  display: flex;
  justify-content: space-between;
  flex-wrap: wrap;
  font-family: 'DGBaysan', sans-serif;
- max-width: 1200px 
+ max-width: 1200px ;
  margin: auto;
  padding-top:30px;
  border-radius: 50px 50px  0px  0px;
@@ -37,8 +37,8 @@ import styled from "@emotion/styled";
  }
  `;
 
- 
-export const Video = styled ("video")`
+
+export const Video = styled("video")`
 label:Video;
 width:100%;
 height: 745px;
@@ -50,10 +50,10 @@ margin-top: 1px;
 
   
   }
-`; 
- 
- 
- export const Banner = styled ("iframe")`
+`;
+
+
+export const Banner = styled("iframe")`
  label:Banner;
  width:100%;
  height: 745px;
@@ -65,7 +65,7 @@ margin-top: 1px;
 
  }
  `;
- export const Title = styled ("h2")`
+export const Title = styled("h2")`
  label:Title;
  font-size: 25px;
  font-weight: 500;
@@ -83,9 +83,9 @@ margin-top: 1px;
 
  }
 `;
- 
 
- export const Content = styled ("div")`
+
+export const Content = styled("div")`
  label:CardWrapper;
  display: flex;
  justify-content: space-between;
@@ -105,7 +105,7 @@ margin-top: 1px;
  }
  `;
 
- export const ContentCenter = styled ("div")`
+export const ContentCenter = styled("div")`
  label:CardWrapper;
  display: flex;
  justify-content: space-between;
@@ -119,8 +119,8 @@ margin-top: 1px;
  }
  `;
 
- 
- export const Centerright  = styled ("div")`
+
+export const Centerright = styled("div")`
  label:Centerright;
  width: 100%;
  margin-right: 50px;
@@ -132,9 +132,9 @@ margin-top: 1px;
 
    }
  `;
- 
- 
- export const Centerleft  = styled ("div")`
+
+
+export const Centerleft = styled("div")`
  label:Centerleft;
  width: 100%;
  margin-left:50px;
@@ -146,8 +146,8 @@ margin-top: 1px;
 
    }
  `;
-  
- export const NButton = styled ("button")`
+
+export const NButton = styled("button")`
  label:NButton;
  padding:10px ;
  width: 150px;
@@ -168,9 +168,9 @@ margin-top: 1px;
   display:block;
 
  }
- `; 
- 
-export const INdex = styled ("button")`
+ `;
+
+export const INdex = styled("button")`
 label:INdex;
 padding:7px 20px;
 background:  #fff;

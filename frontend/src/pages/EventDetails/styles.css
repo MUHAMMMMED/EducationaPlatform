@@ -1,23 +1,24 @@
  .Event {
-  float: left;
-  width: 90%;
-  margin-left: 5%;
-  padding-bottom: 150px;
-  }
+   float: left;
+   width: 90%;
+   margin-left: 5%;
+   padding-bottom: 150px;
+ }
 
-  .entry-content{
-    float: left;
-    width: 100%;
-  }
+ .entry-content {
+   float: left;
+   width: 100%;
+ }
 
-  .Event_DownTimer{
-    margin-top: 10px;
-    float: left;
-    width: 50%;
-    margin-left: 25%;
-    @media (max-width: 1200px) {
-      width: 90%;
-      margin-left: 5%;
-     }
-  
-  }
+ .Event_DownTimer {
+   margin-top: 10px;
+   float: left;
+   width: 50%;
+   margin-left: 25%;
+
+   @media (max-width: 1200px) {
+     width: 90%;
+     margin-left: 5%;
+   }
+
+ }

@@ -1,57 +1,163 @@
-import React, { useEffect, useState } from 'react';
+// // import { useContext, useEffect } from "react";
+// // import { useNavigate } from "react-router-dom";
+// // import { UserContext } from '../../desing-system/Authentication/UserProvider';
+
+// // const Redirection = () => {
+// //   const navigate = useNavigate();
+// //   const { userData } = useContext(UserContext);
+
+// //   useEffect(() => {
+// //     if (!userData) {
+// //       refrsh this page
+// //       return;
+// //     }
+// //     switch (userData.user_type) {
+// //       case 'S':
+// //         navigate('/MyLearning');
+// //         break;
+// //       case 'T':
+// //         navigate('/Teacher_Dashboard');
+// //         break;
+// //       case 'M':
+// //         navigate('/dashboard');
+// //         break;
+// //       default:
+// //         navigate('/');
+// //         break;
+// //     }
+// //   }, [userData, navigate]);
+
+// //   return null;
+// // };
+
+// // export default Redirection;
+
+// import { useContext, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { UserContext } from '../../desing-system/Authentication/UserProvider';
+
+// const Redirection = () => {
+//   const navigate = useNavigate();
+//   const { userData } = useContext(UserContext);
+
+
+//     // useEffect to handle component mount and fetch exam data
+//     useEffect(() => {
+//       const fetchData = async () => {
+//           try {
+//               // Check if the page has already been refreshed
+//               const hasRefreshed = localStorage.getItem('hasRefreshed');
+//               if (!hasRefreshed) {
+//                   // Set the refresh flag to avoid multiple reloads
+//                   localStorage.setItem('hasRefreshed', 'true');
+//                   window.location.reload(); // Reload the page if user data isn't available
+//                   return;
+//               }
+//               // Clear the refresh flag after successful data load
+//               localStorage.removeItem('hasRefreshed');
+
+
+//           } catch (error) {
+//               console.error('Error fetching data:', error);
+//               setError('Error fetching data.'); // Set error message in case of failure
+//           } finally {
+//               setLoading(false); // Stop loading after data is fetched
+//           }
+//       };
+
+//   }, [ , navigate]); // Rerun the effect if examId or navigate changes
+
+
+
+
+
+
+
+
+
+//   useEffect(() => {
+//     if (!userData) {
+//       // window.location.reload(); // Refresh the page if userData is not available
+//       return;
+//     }
+
+//     switch (userData.user_type) {
+//       case 'S':
+//         navigate('/MyLearning');
+//         break;
+//       case 'T':
+//         navigate('/Teacher_Dashboard');
+//         break;
+//       case 'M':
+//         navigate('/dashboard');
+//         break;
+//       default:
+//         navigate('/');
+//         break;
+//     }
+//   }, [userData, navigate]);
+
+//   return null;
+// };
+
+// export default Redirection;
+
+
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import AxiosInstance from '../../desing-system/Authentication/AxiosInstance';
-import Loading from '../../desing-system/components/Loading';
+import { UserContext } from '../../desing-system/Authentication/UserProvider'; // Importing UserContext for user data
 
 const Redirection = () => {
-  const navigate = useNavigate();
-  const [userData, setUserData] = useState(null);
-  const [loading, setLoading] = useState(true);
- 
+  const navigate = useNavigate(); // Hook to handle navigation
+  const { userData } = useContext(UserContext); // Getting user data from UserContext
+
+  // useEffect to handle page reload logic
   useEffect(() => {
-    const fetchUserData = async () => {
+    const fetchData = async () => {
       try {
-        const res = await AxiosInstance.get('/get-something/');
-        setUserData(res.data);
+        // Check if the page has already been refreshed
+        const hasRefreshed = localStorage.getItem('hasRefreshed');
+        if (!hasRefreshed) {
+          // Set the refresh flag to avoid multiple reloads
+          localStorage.setItem('hasRefreshed', 'true');
+          window.location.reload(); // Reload the page if userData is not available
+          return;
+        }
+        // Clear the refresh flag after successful data load
+        localStorage.removeItem('hasRefreshed');
       } catch (error) {
-    
-      } finally {
-        setLoading(false);
+        console.error('Error fetching data:', error); // Log any errors during fetching
       }
     };
- 
-    fetchUserData();
-  }, []);
- 
-  useEffect(() => {
-    if (loading) return;
 
+    fetchData(); // Call fetchData to handle page refresh logic
+  }, [navigate]); // This effect depends on the navigate function
+
+  // useEffect to handle user redirection based on their role
+  useEffect(() => {
     if (!userData) {
-        navigate('/');
+      // If userData is not available, don't redirect yet
       return;
     }
 
+    // Switch case to handle redirection based on user type
     switch (userData.user_type) {
-      case 'S':
+      case 'S': // If the user is a student
         navigate('/MyLearning');
         break;
-      case 'T':
+      case 'T': // If the user is a teacher
         navigate('/Teacher_Dashboard');
         break;
-      case 'M':
+      case 'M': // If the user is a manager or admin
         navigate('/dashboard');
         break;
-      default:
+      default: // Redirect to home for any other user type
         navigate('/');
         break;
     }
-  }, [userData, loading, navigate]);
+  }, [userData, navigate]); // Effect depends on userData and navigate
 
-  if (loading) {
-    return <Loading />;
-  }
- 
-  return null;  
+  return null; // The component doesn't render anything
 };
 
 export default Redirection;

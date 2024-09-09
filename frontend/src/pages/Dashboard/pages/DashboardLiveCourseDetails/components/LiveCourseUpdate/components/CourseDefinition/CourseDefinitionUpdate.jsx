@@ -1,4 +1,4 @@
- 
+
 import React, { useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { GrUpdate } from "react-icons/gr";
@@ -24,7 +24,7 @@ export default function CourseDefinitionUpdate({ definition, fetchCourse }) {
       setShowModalDefinitionUpdate(false);
       fetchCourse();
     } catch (error) {
- 
+
     }
   };
 
@@ -33,7 +33,7 @@ export default function CourseDefinitionUpdate({ definition, fetchCourse }) {
       await AxiosInstance.delete(`${Config.baseURL}/LiveCourses/course-definitions/${definition.id}/`);
       fetchCourse();
     } catch (error) {
- 
+
     }
   };
   const handleCloseModal = () => {
@@ -42,13 +42,13 @@ export default function CourseDefinitionUpdate({ definition, fetchCourse }) {
 
   return (
     <>
- 
-   
-      <div style={{ float: 'left', width: '65px',  marginRight:'17px'}}onClick={() => setShowModalDefinitionUpdate(true)} >
-      <span className='onLine-icon'><GrUpdate  /></span></div>
-     <div style={{ float: 'left', width: '65px' }}>
-     <span className='onLine-icon' onClick={handleDelete}><AiOutlineDelete /></span></div>
- 
+
+
+      <div style={{ float: 'left', width: '65px', marginRight: '17px' }} onClick={() => setShowModalDefinitionUpdate(true)} >
+        <span className='onLine-icon'><GrUpdate /></span></div>
+      <div style={{ float: 'left', width: '65px' }}>
+        <span className='onLine-icon' onClick={handleDelete}><AiOutlineDelete /></span></div>
+
       <div className={`modal ${showModalDefinitionUpdate ? 'show' : ''}`}>
         <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
           <h2 style={{ textAlign: 'center', padding: '15px' }}>Definition Update</h2>

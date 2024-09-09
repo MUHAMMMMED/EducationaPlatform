@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-  
-export const CoursesTabsMenu = styled ("div")`
+
+export const CoursesTabsMenu = styled("div")`
    label:CoursesTabsMenu;
    border-radius: 10px;
    margin-top: 0px;
@@ -11,7 +11,7 @@ export const CoursesTabsMenu = styled ("div")`
 
 
 
-export const UL = styled ("ul")`
+export const UL = styled("ul")`
 label:UL;
 position: relative;
 width:100%;
@@ -24,7 +24,7 @@ box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.07);
 `;
 
 
-export const LI = styled ("li")`
+export const LI = styled("li")`
    label:LI;
    display: flex;
    font-family: 'DGBaysan', sans-serif;
@@ -47,9 +47,9 @@ export const LI = styled ("li")`
 
    `;
 
-    
- 
-export const WorkIcon  = styled ("div")`
+
+
+export const WorkIcon = styled("div")`
 label:WorkIcon;
 width: 65px;
 height: 65px;
@@ -71,7 +71,7 @@ border: 1px solid #fff;
 }
 
 `;
-export const P = styled ("P")`
+export const P = styled("P")`
    label:P;
    font-size: 18px;
    font-weight: 700;
@@ -81,8 +81,8 @@ export const P = styled ("P")`
    &:hover { color: #fff;
    } 
    `;
-   
-   export const Samp = styled ("samp")`
+
+export const Samp = styled("samp")`
    label:Samp;
    font-size: 15px;
    font-weight: 600;

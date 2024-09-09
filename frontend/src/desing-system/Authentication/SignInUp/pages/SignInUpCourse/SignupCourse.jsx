@@ -1,4 +1,4 @@
- 
+
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,7 +10,7 @@ import '../../styles.css';
 import Head from './Head';
 
 export default function SignupLiveCourse() {
-    const { course_uuid:courseId } = useParams();
+    const { course_uuid: courseId } = useParams();
 
     const navigate = useNavigate();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));

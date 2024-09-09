@@ -1,82 +1,82 @@
-/* Footer.css */
-
 .footer {
-    float: left;
-   
-    background-color:#ffffff;
-    border: 1px solid #dce5e2;
-    color: rgb(88, 165, 143); 
-    padding: 10px 0;
-    width:100%; 
-    padding-bottom: 40px;
-    border-radius: 20px  20px   0px   0px ;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-    z-index: 1200;
+  float: left;
+  background-color: #ffffff;
+  border: 1px solid #dce5e2;
+  color: rgb(88, 165, 143);
+  padding: 10px 0;
+  width: 100%;
+  padding-bottom: 40px;
+  border-radius: 20px 20px 0px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  z-index: 1200;
 
-    @media (max-width: 768px) {
-      padding-bottom: 70px;
+  @media (max-width: 768px) {
+    padding-bottom: 70px;
 
-      }
- }
-  .contaIner {
-    width:100%; 
-    margin: 0 auto;
-    text-align: center;
   }
-  
-  .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .footer-section {
-    flex: 1;
-    margin: 20px;
-    margin-left: 0%;
+}
 
-    @media (max-width: 768px) {
-    flex:none;
+.contaIner {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 20px;
+  margin-left: 0%;
+
+  @media (max-width: 768px) {
+    flex: none;
     margin: 0px;
     margin-top: 10px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     float: left;
     width: 90%;
     margin-left: 5%;
-    } }
-  
-  .footer-section h2 {
-    color: rgb(88, 165, 143); 
   }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  ul li {
-    margin-bottom: 10px;
-  }
-  
-  .social-icons a {
-    color: rgb(88, 165, 143); 
-    font-size: 20px;
-    margin-right: 10px;
-    margin-top: 10px;
-  }
-  
-  .social-icons a:hover {
-    color: rgb(88, 165, 143); 
-  }
-  .copywright-section {
-    background-color: rgb(88, 165, 143);
-    color:  #fff; 
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  .copywright-section p {
-    color:  #fff; 
-    font-weight: 700;
-    margin: 0;
-  }
+}
+
+.footer-section h2 {
+  color: rgb(88, 165, 143);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: rgb(88, 165, 143);
+  font-size: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.social-icons a:hover {
+  color: rgb(88, 165, 143);
+}
+
+.copywright-section {
+  background-color: rgb(88, 165, 143);
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.copywright-section p {
+  color: #fff;
+  font-weight: 700;
+  margin: 0;
+}

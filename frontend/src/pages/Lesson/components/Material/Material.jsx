@@ -6,9 +6,9 @@ export default function Material({ Link }) {
   return (
     <div>
       <LinkContainer>
-       <MaterialLink href= {Link.material_link}target="_blank"  > Go to Material <FaExternalLinkAlt />  </MaterialLink>
+        <MaterialLink href={Link.material_link} target="_blank"  > Go to Material <FaExternalLinkAlt />  </MaterialLink>
       </LinkContainer>
     </div>
   );
 }
- 
+

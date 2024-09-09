@@ -52,32 +52,32 @@ export default function CampaignCreate({ fetchCampaign }) {
         <div className="modal show">
           <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
             <h2 style={{ textAlign: 'center', padding: '15px' }}>Create Campaign</h2>
-            
-                <label className='label'>Campaign Name:
-                  <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder=" Campaign Name..." />
-                </label>
-               
-             
-                <label className='label'>Subject:
-                  <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="subject..."  />
-                </label>
-            
-             
-                <label className='label'>Message:
-                   <textarea name="message"  style={{height:'100px'}}value={formData.message} onChange={handleChange} placeholder="message..." />
- 
-                </label>
-          
-           
-                <label className='label'>Link:
-                  <input type="text" name="Link" value={formData.Link} onChange={handleChange}  placeholder="Link..."  />
-                </label>
-        
-    
-                <label className='label'>Button Action:
-                  <input type="text" name="button_action" value={formData.button_action} onChange={handleChange}  placeholder="Button Action..."  />
-                </label>
-             
+
+            <label className='label'>Campaign Name:
+              <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder=" Campaign Name..." />
+            </label>
+
+
+            <label className='label'>Subject:
+              <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="subject..." />
+            </label>
+
+
+            <label className='label'>Message:
+              <textarea name="message" style={{ height: '100px' }} value={formData.message} onChange={handleChange} placeholder="message..." />
+
+            </label>
+
+
+            <label className='label'>Link:
+              <input type="text" name="Link" value={formData.Link} onChange={handleChange} placeholder="Link..." />
+            </label>
+
+
+            <label className='label'>Button Action:
+              <input type="text" name="button_action" value={formData.button_action} onChange={handleChange} placeholder="Button Action..." />
+            </label>
+
             <div className="FOrmContainer">
               <div style={{ width: '78%' }}>
                 <button className="button-form" type="submit">Save</button>

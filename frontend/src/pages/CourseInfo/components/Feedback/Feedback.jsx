@@ -14,32 +14,32 @@ import {
       TestimonialContentP,
       TestimonialWrapper
 } from './styles';
- 
-export default function Feedback({data}) {
+
+export default function Feedback({ data }) {
       return (
-<Feedbackcontainer>
-<SectionTitle>
-</SectionTitle>
-<TestimonialWrapper>
-<Swiper spaceBetween={30}  slidesPerView={window.innerWidth > 768 ? 3 : 1}  loop={true} autoplay={{ delay: 3000, disableOnInteraction: false }}>
-          
-{data.map(rating => (
-<SwiperSlide key={rating.id}>
-<Singletestimonial>
-<AuthorThumb><AuthorThumbImg    alt="Student" src={studentImg} />
-<AuthorThumbSpen><FaQuoteLeft /></AuthorThumbSpen> </AuthorThumb>
-                 
-<RatingStar><RatingBar>
-{[...Array(parseInt(rating.rate_number))].map((_, index) => (<FaStar key={index} />    ))}
-</RatingBar></RatingStar>
-<TestimonialContentP><p>{rating.message}</p>
+            <Feedbackcontainer>
+                  <SectionTitle>
+                  </SectionTitle>
+                  <TestimonialWrapper>
+                        <Swiper spaceBetween={30} slidesPerView={window.innerWidth > 768 ? 3 : 1} loop={true} autoplay={{ delay: 3000, disableOnInteraction: false }}>
 
-{rating.student && rating.student.user_full_name && (
-<TestimonialContentDesignation>{rating.student.user_full_name}</TestimonialContentDesignation> )}
-</TestimonialContentP></Singletestimonial></SwiperSlide>))}
+                              {data.map(rating => (
+                                    <SwiperSlide key={rating.id}>
+                                          <Singletestimonial>
+                                                <AuthorThumb><AuthorThumbImg alt="Student" src={studentImg} />
+                                                      <AuthorThumbSpen><FaQuoteLeft /></AuthorThumbSpen> </AuthorThumb>
 
-</Swiper></TestimonialWrapper></Feedbackcontainer>
+                                                <RatingStar><RatingBar>
+                                                      {[...Array(parseInt(rating.rate_number))].map((_, index) => (<FaStar key={index} />))}
+                                                </RatingBar></RatingStar>
+                                                <TestimonialContentP><p>{rating.message}</p>
 
-);}
-    
- 
+                                                      {rating.student && rating.student.user_full_name && (
+                                                            <TestimonialContentDesignation>{rating.student.user_full_name}</TestimonialContentDesignation>)}
+                                                </TestimonialContentP></Singletestimonial></SwiperSlide>))}
+
+                        </Swiper></TestimonialWrapper></Feedbackcontainer>
+
+      );
+}
+

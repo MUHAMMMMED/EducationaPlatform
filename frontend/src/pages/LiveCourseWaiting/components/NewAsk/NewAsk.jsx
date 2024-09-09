@@ -1,4 +1,4 @@
- import React, { useState } from 'react';
+import React, { useState } from 'react';
 import Config from '../../../../config';
 import './NewAsk.css';
 
@@ -19,15 +19,15 @@ export default function NewAsk({ data, fetchCourse }) {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await AxiosInstance.post(`${Config.baseURL}/LiveCourses/ask/create/`, formData );
+      await AxiosInstance.post(`${Config.baseURL}/LiveCourses/ask/create/`, formData);
 
       fetchCourse();
       setFormData({ ...formData, content: '' });
     } catch (error) {
-    
+
     }
-  };  
- 
+  };
+
 
   return (
     <div className="contentContainer">
@@ -49,4 +49,3 @@ export default function NewAsk({ data, fetchCourse }) {
   );
 }
 
- 

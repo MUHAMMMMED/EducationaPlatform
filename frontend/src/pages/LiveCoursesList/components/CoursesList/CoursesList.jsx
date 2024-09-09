@@ -1,4 +1,4 @@
- 
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Config from '../../../../config';
@@ -27,22 +27,22 @@ export default function CoursesList({ query }) {
   if (isLoading) {
     return <Loading />;
   }
-  const showMoreCourses = () => {   setVisibleCourses(visibleCourses + 10);  };
+  const showMoreCourses = () => { setVisibleCourses(visibleCourses + 10); };
   return (
     <>
       <List>
-        {data && data.slice(0, visibleCourses).map((course) => (  
-        <LiveCoursesCard key={course.id} course={course} /> 
-         ))}
-              { data && data.length === 0  &&    <No_Available>   No courses available</No_Available>}
+        {data && data.slice(0, visibleCourses).map((course) => (
+          <LiveCoursesCard key={course.id} course={course} />
+        ))}
+        {data && data.length === 0 && <No_Available>   No courses available</No_Available>}
 
 
 
         {data && data.length > visibleCourses && (
           <ButtonWrapper> <ButtonshowMore onClick={showMoreCourses}>Show More</ButtonshowMore> </ButtonWrapper>
-            )}
+        )}
 
- 
+
       </List>
     </>
   );

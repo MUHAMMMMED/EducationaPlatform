@@ -1,9 +1,9 @@
 import React from 'react';
 import Navbar from '../desing-system/components/Navbar';
-  
+
 const layout = (props) => (
     <div>
-        <Navbar/> 
+        <Navbar />
         {props.children}
     </div>
 );

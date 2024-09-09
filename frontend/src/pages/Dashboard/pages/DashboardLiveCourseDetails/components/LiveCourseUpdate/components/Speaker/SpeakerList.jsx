@@ -1,4 +1,4 @@
- 
+
 import React from 'react';
 import { CiMicrophoneOn } from "react-icons/ci";
 import { IoMdMicrophone } from "react-icons/io";
@@ -32,7 +32,7 @@ export default function SpeakerList({ liveCourses, fetchCourse }) {
                 </div>
               </div>
               <div className="Course_cardicon">
-             {item &&item.id &&<SpeakeDelete speakerId={item.id}  fetchCourse={fetchCourse}   />} 
+                {item && item.id && <SpeakeDelete speakerId={item.id} fetchCourse={fetchCourse} />}
               </div> </div> </div>
         ))}
       </div>

@@ -3,7 +3,6 @@ import theme from "../../config";
 
 export const SingleReview = styled.div`
   background-color: #fff;
-  /* border: 1px solid #e0e0e0; */
   border-radius: 8px;
   margin: auto;
   padding: 10px;

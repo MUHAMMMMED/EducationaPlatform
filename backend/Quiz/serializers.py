@@ -9,11 +9,12 @@ class Question_categorySerializer(serializers.ModelSerializer):
         model = Question_category
         fields = '__all__'
 
+
 class ExamToCourseDetailSerializer(serializers.ModelSerializer):
      category = CategorySerializer()
      class Meta:
         model = Exam
-        fields = ['id','card_image', 'category',  'title', 'description']
+        fields = ['id','card_image', 'category',  'title', 'description','price']
  
 class ExamSerializer(serializers.ModelSerializer):
     creator = UserSerializer()
@@ -25,7 +26,7 @@ class ExamSerializer(serializers.ModelSerializer):
 
     def get_questions_count(self, obj):
         return obj.questions.count()
-     
+
 class Exam_Serializer(serializers.ModelSerializer):
     class Meta:
         model = Exam
@@ -57,7 +58,7 @@ class FrequentlyAskedSerializer(serializers.ModelSerializer):
         model = FrequentlyAsked
         fields = '__all__'
  
- 
+  
 
 class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -88,6 +89,7 @@ class ExamSubmissionSerializer(serializers.ModelSerializer):
         exclude = ['wrong_answers','user','exam']
  
 class ExamSubmissionSerializerList(serializers.ModelSerializer):
+    exam=Exam_Serializer()
     wrong_answers = QuestionSerializer(many=True)
     class Meta:
         model = ExamSubmission

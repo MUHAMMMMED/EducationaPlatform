@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import theme from "../../config";
- 
+
 
 export const SingleReview = styled.div`
   background-color: #fff;

@@ -1,32 +1,26 @@
 import styled from "@emotion/styled";
 import theme from "../../desing-system/config";
-  
 
 
+export const CardWrapper = styled("div")`
+  label: CardWrapper;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-family: 'DGBaysan', sans-serif;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 0px;
+  background-color: #000;
 
-
-
-
-
-
-export const CardWrapper = styled ("div")`
-label:CardWrapper;
-display: flex;
-justify-content: space-between;
-flex-wrap: wrap;
-font-family: 'DGBaysan', sans-serif;
-max-width: 1200px 
-margin: auto;
-margin-top:0px;
-background-color:#000; 
-@media (max-width: 768px) {
-   width:100%;
-   margin-top:5px;
-}
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 5px;
+  }
 `;
 
- 
-export const Content = styled ("div")`
+
+export const Content = styled("div")`
    label:Content;
    display: flex;
    flex-wrap: wrap;
@@ -43,8 +37,8 @@ export const Content = styled ("div")`
 
    }
 `;
- 
-export const RowInfo = styled ("div")`
+
+export const RowInfo = styled("div")`
    label:RowInfo;
 
    flex: 0 0 auto;
@@ -56,7 +50,7 @@ export const RowInfo = styled ("div")`
    }
 
 `;
-export const Banner = styled ("iframe")`
+export const Banner = styled("iframe")`
    label:Banner;
    width:100%;
    height: 745px;
@@ -65,8 +59,8 @@ export const Banner = styled ("iframe")`
       height: 405px;
    }
 `;
- 
-export const Title = styled ("h2")`
+
+export const Title = styled("h2")`
    label:Title;
    width:100%;
    font-size: 25px;
@@ -82,9 +76,9 @@ export const Title = styled ("h2")`
       font-size: 15px;
    }
 `;
- 
 
-export const InfoAuthor = styled ("div")`
+
+export const InfoAuthor = styled("div")`
    label:InfoAuthor;
    justify-content: space-between;
    display: flex;
@@ -97,7 +91,7 @@ export const InfoAuthor = styled ("div")`
       display: blank;
    }
 `;
-export const AuthorItem = styled ("div")`
+export const AuthorItem = styled("div")`
    label:AuthorItem;
     width:auto; 
    @media (max-width: 768px) {
@@ -107,7 +101,7 @@ export const AuthorItem = styled ("div")`
 `;
 
 
-export const Enroll = styled ("div")`
+export const Enroll = styled("div")`
    label:Enroll;
    font-size: 14px;
    font-weight: 400;
@@ -120,8 +114,8 @@ export const Enroll = styled ("div")`
       width: 100%; 
    }
 `;
- 
-export const Sidebar = styled ("div")`
+
+export const Sidebar = styled("div")`
 label:Sidebar;
 height: 560px;
 margin-top:0px;
@@ -135,7 +129,7 @@ width: 30%;
 `;
 
 
-export const SidebarWidget = styled ("div")`
+export const SidebarWidget = styled("div")`
 label:SidebarWidget;
 width:70%;
 float :left;
@@ -158,14 +152,14 @@ margin-top:110px;
 
 `;
 
-export const InfoPrice = styled ("div")`
+export const InfoPrice = styled("div")`
    label:InfoPrice;
    text-align: center;
     background-color: ${theme.secondary}; 
    width:100%;
    border-radius:4px;
 `;
-export const Price = styled ("span")`
+export const Price = styled("span")`
    label:Price;
    font-size: 30px;
    font-weight: 700;
@@ -174,8 +168,8 @@ export const Price = styled ("span")`
    display: block;
 
 `;
- 
-export const UL = styled ("ul")`
+
+export const UL = styled("ul")`
    label:UL;
    // border-top: 1px solid ${theme.gray};
    margin-top:5px;
@@ -219,7 +213,7 @@ export const Span = styled("span")`
    padding:15px;
 `;
 
- 
+
 
 export const InfoBtn = styled("div")`
   label: InfoBtn;
@@ -246,18 +240,18 @@ export const Button = styled("button")`
    `;
 
 
- 
- 
- 
 
-export const TabDescription = styled ("div")`
+
+
+
+export const TabDescription = styled("div")`
    label:TabDescription;
    margin-top: 25px;
    width:100%;
 `;
 
 
-export const DescriptionWrapper = styled ("div")`
+export const DescriptionWrapper = styled("div")`
    label:DescriptionWrapper;
    margin-top: 25px;
    margin-left: 50px ;
@@ -267,8 +261,8 @@ export const DescriptionWrapper = styled ("div")`
     }
 
 `;
- 
-export const P = styled ("p")`
+
+export const P = styled("p")`
    label:P;
    margin-bottom: 14px;
    margin-top:  5px;
@@ -284,8 +278,8 @@ export const P = styled ("p")`
     }
 `;
 
- 
-export const  SectionRate = styled("div")`
+
+export const SectionRate = styled("div")`
 label: SectionRate;
 border-radius: 50px 50px  0px  0px;
 background-color: rgb(92 137 141); 
@@ -304,7 +298,7 @@ padding-top:50px  ;
 
 
 
-export const  Section = styled("div")`
+export const Section = styled("div")`
 label: Section;
 border-radius: 50px 50px  0px  0px;
 background-color: rgb(92 137 141); 
@@ -339,7 +333,7 @@ padding-top:50px  ;
 
 `;
 
-export const H2 = styled ("h2")`
+export const H2 = styled("h2")`
 label:H3;
 font-size: 35px;
 font-weight: 500;

@@ -46,7 +46,7 @@ def check_coupon_code_Quiz(request):
     
     # Return a JSON response indicating the request method is not allowed
     return JsonResponse({'error': 'Invalid request method'}, status=405)
- @api_view(['POST'])
+@api_view(['POST'])
 def Free_Checkout_Exam(request, id):
     try:
         # Retrieve the user object from the request
@@ -71,13 +71,20 @@ def Free_Checkout_Exam(request, id):
         # Save the UserExam object
         user_exam.save()
         
-        # Send a confirmation email to the user
-        send_mail(
-            subject="Abo Rashad",
-            message="Thank you for your purchase!",
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[user.email]
-        )
+        # Try sending a confirmation email, skip if an error occurs
+        try:
+             # Send a confirmation email to the user
+
+            send_mail(
+                subject="Abo Rashad",  # Subject of the email
+                message=f"Thank you for your purchase!",  # Body of the email
+                from_email=settings.EMAIL_HOST_USER,  # Sender's email address
+                recipient_list=[user.email],  # Recipient's email address
+            )
+        except Exception as email_error:
+            # Log the error or handle it in any way needed, but don't stop the process
+            print(f"Email sending failed: {email_error}")
+ 
         
         # Return a success response indicating the exam enrollment was successful
         return JsonResponse({'message': 'Exam enrollment successful.'}, status=201)

@@ -1,5 +1,3 @@
- 
-
 import React, { useState } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
@@ -7,13 +5,13 @@ import AxiosInstance from '../../../../../../../../desing-system/Authentication/
 export default function QuizCreate({ Course, fetchCourse }) {
   const [showModalSectionCreate, setShowModalSectionCreate] = useState(false);
   const [formData, setFormData] = useState({
- 
-    course: Course.id ,
+
+    course: Course.id,
     title: '',
     description: '',
   });
- 
- 
+
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -26,12 +24,12 @@ export default function QuizCreate({ Course, fetchCourse }) {
       setShowModalSectionCreate(false);
       fetchCourse();
       // Clear the form fields after successful submission
-      setFormData({ course:Course.id ,title: '', description: '',   });
-        
-       
-       
+      setFormData({ course: Course.id, title: '', description: '', });
+
+
+
     } catch (error) {
-     
+
     }
   };
 
@@ -39,7 +37,7 @@ export default function QuizCreate({ Course, fetchCourse }) {
     setShowModalSectionCreate(false);
   };
 
- 
+
   if (Course === null) {
     fetchCourse();
   }
@@ -51,15 +49,15 @@ export default function QuizCreate({ Course, fetchCourse }) {
         <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
           <h2 style={{ textAlign: 'center', padding: '15px' }}>Quiz Create</h2>
           <div className="FOrm-container">
-            <div className="form-container-half"style={{ width: '100%' }} >
+            <div className="form-container-half" style={{ width: '100%' }} >
               <label className='label' htmlFor="title">Title:</label>
               <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Title" />
             </div>
-            </div> 
+          </div>
 
-              <label className='label' htmlFor="description" style={{ width: '100%' }}>Description:</label>
-              <input type="text" name="description"style={{ height: '100px' }} value={formData.description} onChange={handleChange}   placeholder="description" />
- 
+          <label className='label' htmlFor="description" style={{ width: '100%' }}>Description:</label>
+          <input type="text" name="description" style={{ height: '100px' }} value={formData.description} onChange={handleChange} placeholder="description" />
+
           {/* Form buttons */}
           <div className="FOrmContainer">
             <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>

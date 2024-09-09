@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Speaker from '../Speaker/Speaker';
 import './DownTimer.css'; // Import CSS file
 
-function DownTimer({ date, time ,eventId}) {
+function DownTimer({ date, time, eventId }) {
   const countDownDate = date && time ? new Date(`${date} ${time}`).getTime() : 0;
   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
 
@@ -38,12 +38,12 @@ function DownTimer({ date, time ,eventId}) {
   return (
     <>
       {timeRemaining.expired ? (
-        <> 
-            <Speaker eventId={eventId}/>
+        <>
+          <Speaker eventId={eventId} />
         </>
       ) : (
         <section className="section_DOWnn">
-           <div className="deals_countdown_DowN">
+          <div className="deals_countdown_DowN">
             <ul className="countdown_DowN unordered_lisT">
               <>
                 <li className="li">

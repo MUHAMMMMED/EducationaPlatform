@@ -1,7 +1,7 @@
 
 import styled from "@emotion/styled";
-                                                                                                    
-export const Supporterscontainer = styled ("div")`
+
+export const Supporterscontainer = styled("div")`
    label:Supporterscontainer;
    width: 100%;
    float: left;
@@ -13,10 +13,10 @@ export const Supporterscontainer = styled ("div")`
 `;
 
 
- 
 
 
-export const SectionTitle = styled ("div")`
+
+export const SectionTitle = styled("div")`
    label:SectionTitle;
    width: 100%;
    margin: 0 auto;
@@ -27,7 +27,7 @@ export const SectionTitle = styled ("div")`
    `;
 
 
-export const SubTitle = styled ("h5")`
+export const SubTitle = styled("h5")`
    label:SubTitle;
    font-size: 20px;
    font-weight: 500;
@@ -39,7 +39,7 @@ export const SubTitle = styled ("h5")`
 `;
 
 
-export const MainTitle  = styled ("h2")`
+export const MainTitle = styled("h2")`
    label:MainTitle;
    font-size: 35px;
    font-weight: 500;
@@ -50,7 +50,7 @@ export const MainTitle  = styled ("h2")`
 
 `;
 
- 
+
 export const ImageSlider = styled.div`
   position: relative;
   margin: 0px auto;
@@ -69,7 +69,7 @@ export const ImageSlider = styled.div`
 
 
 
-export const SlickSlideImg  = styled.img`
+export const SlickSlideImg = styled.img`
 width: 70%;
 height: auto;
 margin-left: 20%;

@@ -8,7 +8,7 @@ const SlideCreate = ({ fetchDate }) => {
   const [formData, setFormData] = useState({
     top_slider_web: null,
     top_slider_mobile: null,
-    active: false,
+    is_active: false,
   });
 
   const handleChange = (e) => {
@@ -28,7 +28,7 @@ const SlideCreate = ({ fetchDate }) => {
       const formDataToSend = new FormData();
       formDataToSend.append('top_slider_web', formData.top_slider_web);
       formDataToSend.append('top_slider_mobile', formData.top_slider_mobile);
-      formDataToSend.append('active', formData.active);
+      formDataToSend.append('is_active', formData.is_active);
 
       await AxiosInstance.post(`${Config.baseURL}/home/slide/`, formDataToSend, {
         headers: {
@@ -56,7 +56,7 @@ const SlideCreate = ({ fetchDate }) => {
 
 
 
-      
+
       <div className={`modal ${showModalSlideCreate ? 'show' : ''}`}>
         <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
           <h2 style={{ textAlign: 'center', padding: '15px' }}>Create Slide</h2>
@@ -74,7 +74,7 @@ const SlideCreate = ({ fetchDate }) => {
           <div className="FOrm-container">
             <label className="label">
               Active:
-              <input type="checkbox" name="active" checked={formData.active} onChange={handleChange} />
+              <input type="checkbox" name="is_active" checked={formData.is_active} onChange={handleChange} />
             </label>
           </div>
 

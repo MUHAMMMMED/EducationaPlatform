@@ -7,21 +7,17 @@ import AxiosInstance from '../../../../../../desing-system/Authentication/AxiosI
 const EventDelete = ({ event }) => {
   const navigate = useNavigate();
   const [showModalDelete, setShowModalDelete] = useState(false);
- 
- 
-    const deleteCourse = async () => {
-      try {
-   
 
-        
-        await AxiosInstance.delete(`${Config.baseURL}/Event/events/${event.id}/`)
-        navigate('/events_list');
+  const deleteCourse = async () => {
+    try {
+      await AxiosInstance.delete(`${Config.baseURL}/Event/events/${event.id}/`)
+      navigate('/events_list');
 
-      } catch (error) {
-        console.error('Error deleting event :', error);
-      }
-    };
-   
+    } catch (error) {
+      console.error('Error deleting event :', error);
+    }
+  };
+
   const handleCloseModal = () => {
     setShowModalDelete(false);
   };

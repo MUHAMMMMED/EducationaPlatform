@@ -11,11 +11,11 @@ import Details from './components/Details/Details';
 import { Banner, CardWrapper, Centerleft, Centerright, ContainerLesson, Content, ContentCenter, INdex, NButton, Title, Video } from './styles';
 
 export default function Lesson() {
-  const {course_uuid, episode_uuid } = useParams();
+  const { course_uuid, episode_uuid } = useParams();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);  
- 
+  const [error, setError] = useState(null);
+
   const fetchData = async () => {
     try {
       const response = await AxiosInstance.get(`${Config.baseURL}/Courses/episode/${course_uuid}/${episode_uuid}/`);
@@ -38,7 +38,7 @@ export default function Lesson() {
   if (error) {
     return <ErrorPage head="Error Occurred" error={error} />;
   }
- 
+
   const tabData = [{ title: '', content: <Details data={data} /> }];
   const enrolled = data?.is_enrolled;
 
@@ -62,32 +62,32 @@ export default function Lesson() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '10px' }}>
               <div>
                 <Centerleft>
-                {data?.Serial&&
-                 <Link to={`/Lesson/${data?.Course?.course_uuid}/${data?.Serial[0].previous_serial}`}>  
-                  <NButton> <span style={{ margin: '-5px',display:'block' }}> Previous Lesson </span> </NButton>
-                 </Link>  }
-                  </Centerleft> </div> <div>
-             
+                  {data?.Serial &&
+                    <Link to={`/Lesson/${data?.Course?.course_uuid}/${data?.Serial[0].previous_serial}`}>
+                      <NButton> <span style={{ margin: '-5px', display: 'block' }}> Previous Lesson </span> </NButton>
+                    </Link>}
+                </Centerleft> </div> <div>
+
                 <Centerright>
-                  {data?.Serial&&
-                  <Link to={`/Lesson/${data?.Course?.course_uuid}/${data?.Serial[1].next_serial}`}>
-                  <NButton><span style={{ margin: '-5px',display:'block' }}> Next Lesson </span></NButton>
-                   </Link> }
-                  </Centerright>
+                  {data?.Serial &&
+                    <Link to={`/Lesson/${data?.Course?.course_uuid}/${data?.Serial[1].next_serial}`}>
+                      <NButton><span style={{ margin: '-5px', display: 'block' }}> Next Lesson </span></NButton>
+                    </Link>}
+                </Centerright>
               </div></div>
           )}
           <CardWrapper>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '10px', width: '100%', padding: '0', marginTop: '-40px' }}>
               <div>
                 <Centerleft><INdex> {data?.serial_number} of {data?.episodes_count} Lesson </INdex>  </Centerleft>
-            </div></div>
+              </div></div>
             <Tabs tabs={tabData} />
             <Content><ContentCenter>
-            <Accordion quiz={data.Course?.exam} items={data?.Course} UserCourse={data?.is_enrolled} />
+              <Accordion quiz={data.Course?.exam} items={data?.Course} UserCourse={data?.is_enrolled} />
 
             </ContentCenter></Content>
             <Content><ContentCenter>
-            <Review   userCourse={data?.is_enrolled} rates={data?.rates} fetchCourse={fetchData} courseId={data?.Course?.course_uuid} />  
+              <Review userCourse={data?.is_enrolled} rates={data?.rates} fetchCourse={fetchData} courseId={data?.Course?.course_uuid} />
             </ContentCenter></Content>
           </CardWrapper>
         </ContainerLesson>

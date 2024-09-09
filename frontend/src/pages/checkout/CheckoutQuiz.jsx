@@ -1,4 +1,9 @@
- 
+
+
+
+
+
+
 import React, { useState } from 'react';
 import Config from '../../config';
 import AxiosInstance from '../../desing-system/Authentication/AxiosInstance';
@@ -9,13 +14,13 @@ import './styles.css';
 const CheckoutQuiz = ({ Id, name, price, Img }) => {
     const [couponCode, setCouponCode] = useState('');
     const [discountedPrice, setDiscountedPrice] = useState(price);
-    const [discount, setDiscount  ] = useState(0);
+    const [discount, setDiscount] = useState(0);
     const [error, setError] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const convertToCents = (price) => Math.round(parseFloat(price) * 100);
-    const url_Type='Quiz'
+    const url_Type = 'Quiz'
     const Items = [
-        { id: Id, price: convertToCents(discountedPrice), name, img: `${Config.baseURL}${Img}`,discount,url_Type  },
+        { id: Id, price: convertToCents(discountedPrice), name, img: `${Config.baseURL}${Img}`, discount, url_Type },
     ];
 
     const handleSubmit = async (event) => {
@@ -27,7 +32,6 @@ const CheckoutQuiz = ({ Id, name, price, Img }) => {
                     'Content-Type': 'application/json'
                 }
             });
-
             const data = await response.data;
             if (data.url) {
                 window.location.href = data.url;
@@ -73,39 +77,39 @@ const CheckoutQuiz = ({ Id, name, price, Img }) => {
     };
 
     return (
+
         <section>
             {discountedPrice < 1 ? (
-<FreeCheckoutExam  Id={Id}  />
+                <FreeCheckoutExam Id={Id} />
+            ) : (
+                <>
+                    <CouponWrapper>
+                        <DIVInput>
+                            <CouponInput
+                                type="text"
+                                placeholder="Enter coupon code"
+                                value={couponCode}
+                                onChange={(e) => setCouponCode(e.target.value)} />
+                        </DIVInput>
 
-      ) : (
-        <> 
-            <CouponWrapper>
-                <DIVInput>
-                    <CouponInput
-                        type="text"
-                        placeholder="Enter coupon code"
-                        value={couponCode}
-                        onChange={(e) => setCouponCode(e.target.value)} />
-                </DIVInput>
- 
-                <DIVButton>
-                    <CouponButton onClick={handleApplyCoupon}>Apply</CouponButton>
-                </DIVButton>
-                {error && <Error>{error}</Error>}
-                {successMessage && <Success>{successMessage}</Success>}
-            </CouponWrapper>
-            <Form onSubmit={handleSubmit}>
-                <Bay type='submit'>
-                    Pay $ {discountedPrice}
-                </Bay>
-            </Form></>)}
-        </section>       
-      
+                        <DIVButton>
+                            <CouponButton onClick={handleApplyCoupon}>Apply</CouponButton>
+                        </DIVButton>
+                        {error && <Error>{error}</Error>}
+                        {successMessage && <Success>{successMessage}</Success>}
+                    </CouponWrapper>
+                    <Form onSubmit={handleSubmit}>
+                        <Bay type='submit'>
+                            Pay $ {discountedPrice}
+                        </Bay>
+                    </Form></>)}
+
+        </section>
+
     );
 };
 
 export default CheckoutQuiz;
- 
- 
 
- 
+
+

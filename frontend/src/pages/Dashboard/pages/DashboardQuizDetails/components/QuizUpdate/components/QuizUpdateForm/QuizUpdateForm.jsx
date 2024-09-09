@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
- 
+
 export default function QuizUpdateForm({ quiz, fetchQuiz }) {
- 
+
   const [formData, setFormData] = useState({
     level: quiz.level,
     title: quiz.title,
     description: quiz.description,
     price: quiz.price,
     discount: quiz.discount,
-    creator: quiz.creator, 
+    creator: quiz.creator,
     time_to_answer: quiz.time_to_answer,
     WrongAnswers: quiz.WrongAnswers,
     tries: quiz.tries,
@@ -19,9 +19,8 @@ export default function QuizUpdateForm({ quiz, fetchQuiz }) {
     card_image: null,
     intro_video: quiz.intro_video,
     intro_image: null,
-    category: quiz.category, 
-    // questions:'',
-    pixal_id: quiz.pixal_id, 
+    category: quiz.category,
+    pixal_id: quiz.pixal_id,
   });
 
   const handlecard_image = (e) => {
@@ -50,8 +49,8 @@ export default function QuizUpdateForm({ quiz, fetchQuiz }) {
           formDataForSubmission.append(key, formData[key]);
         }
       }
- 
-      const response = await AxiosInstance.put(`${Config.baseURL}/Quiz/exam_operations/${quiz.id}/`, formDataForSubmission, {
+
+      await AxiosInstance.put(`${Config.baseURL}/Quiz/exam_operations/${quiz.id}/`, formDataForSubmission, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -62,7 +61,7 @@ export default function QuizUpdateForm({ quiz, fetchQuiz }) {
       console.error('Error Update exam:', error);
     }
   };
- 
+
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => {
     setShowModal(false);
@@ -77,13 +76,13 @@ export default function QuizUpdateForm({ quiz, fetchQuiz }) {
           <label className='label'>Title:<input type="text" name="title" value={formData.title} onChange={handleChange} /></label>
           <div className="FOrm-container">
             <div className="form-container-half">
-            <label className='label'> Description:<input type="text" name="description" value={formData.description} onChange={handleChange} /></label>
+              <label className='label'> Description:<input type="text" name="description" value={formData.description} onChange={handleChange} /></label>
             </div>
             <div className="form-container-half">
-            <label className='label'>Intro Video: <input type="text" name="intro_video" value={formData.intro_video} onChange={handleChange} /></label>
+              <label className='label'>Intro Video: <input type="text" name="intro_video" value={formData.intro_video} onChange={handleChange} /></label>
             </div>
           </div>
-        
+
           <div className="FOrm-container">
             <div className="form-container-half">
               <label className='label'>Card Image: <input type="file" name="card_image" onChange={handlecard_image} /></label>
@@ -131,11 +130,11 @@ export default function QuizUpdateForm({ quiz, fetchQuiz }) {
               </label>
             </div>
             <div className="form-container-half">
-            <label>Time to Answer:
-            <input type="number" name="time_to_answer" value={formData.time_to_answer} onChange={handleChange} />
-          </label>
-          </div> </div>
-             <div className="FOrm-container">
+              <label>Time to Answer:
+                <input type="number" name="time_to_answer" value={formData.time_to_answer} onChange={handleChange} />
+              </label>
+            </div> </div>
+          <div className="FOrm-container">
             <div className="form-container-half">
               <label className='label'>Tries:<input type="number" name="tries" value={formData.tries} onChange={handleChange} /></label>
             </div>
@@ -143,10 +142,10 @@ export default function QuizUpdateForm({ quiz, fetchQuiz }) {
               <label className='label'> Enroll: <input type="number" name="Enroll" value={formData.Enroll} onChange={handleChange} /></label>
             </div>
           </div>
-          
+
           <label>pixal Id:</label>
-            <input type="text" name="pixal_id" value={formData.pixal_id} onChange={handleChange} />
-    
+          <input type="text" name="pixal_id" value={formData.pixal_id} onChange={handleChange} />
+
           <div className="FOrm-container">
             <div className="form-container-half">
               <label className='label'>WrongAnswers: <input type="checkbox" name="WrongAnswers" checked={formData.WrongAnswers} onChange={handleChange} /></label>
@@ -162,7 +161,7 @@ export default function QuizUpdateForm({ quiz, fetchQuiz }) {
             <div style={{ width: '20%' }}><button className="cancel-button" onClick={handleCloseModal}>Cancel</button></div>
           </div>
         </form>
-        </div>
+      </div>
     </>
   );
 }

@@ -7,19 +7,19 @@ import AxiosInstance from '../../../../../../../../desing-system/Authentication/
 const LiveCourseDelete = ({ liveCourseId }) => {
   const navigate = useNavigate();
   const [showModalDelete, setShowModalDelete] = useState(false);
- 
- 
-    const deleteCourse = async () => {
-      try {
-   
-        await AxiosInstance.delete(`${Config.baseURL}/LiveCourses/live-courses/${liveCourseId}/`)
-        navigate('/dashboard_LiveCourse');
 
-      } catch (error) {
-        console.error('Error deleting LiveCourses:', error);
-      }
-    };
-   
+
+  const deleteCourse = async () => {
+    try {
+
+      await AxiosInstance.delete(`${Config.baseURL}/LiveCourses/live-courses/${liveCourseId}/`)
+      navigate('/dashboard_LiveCourse');
+
+    } catch (error) {
+      console.error('Error deleting LiveCourses:', error);
+    }
+  };
+
   const handleCloseModal = () => {
     setShowModalDelete(false);
   };

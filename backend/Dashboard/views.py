@@ -184,9 +184,12 @@ def dashboard(request):
     country_list=model_list(Country)
 
     # Populate data dictionary
-
-
-    data['views'] = info.views
+    
+    # Ensure 'info' is not None before accessing its attributes
+    if info is not None:
+     data['views'] = info.views
+    else:
+     data['views'] = 0  # or some default value
 
     data['students_count'] = students_count
     data['teacher_count'] = teacher_count

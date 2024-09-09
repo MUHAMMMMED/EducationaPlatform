@@ -19,14 +19,14 @@ const SpeakerCreate = ({ event, fetchEvent }) => {
   const handleFileChange = (e) => {
     setFormData({ ...formData, image: e.target.files[0] });
   };
- 
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     // Create a new FormData object
     const formDataToSend = new FormData();
-  
+
     // Append all form data to FormData
     Object.entries(formData).forEach(([key, value]) => {
       // Handle image separately as a file
@@ -39,9 +39,9 @@ const SpeakerCreate = ({ event, fetchEvent }) => {
         formDataToSend.append(key, value);
       }
     });
-  
+
     try {
-      const response = await AxiosInstance.post(
+      await AxiosInstance.post(
         `${Config.baseURL}/Event/speaker/`,
         formDataToSend, // Pass FormData directly as the request body
         {
@@ -50,7 +50,7 @@ const SpeakerCreate = ({ event, fetchEvent }) => {
           },
         }
       );
-  
+
       // Clear form data after successful submission
       setFormData({
         event: event.id,
@@ -58,7 +58,7 @@ const SpeakerCreate = ({ event, fetchEvent }) => {
         name: '',
         info: '',
       });
-  
+
       setShowModalSpeakerCreate(false);
       fetchEvent();
       // Handle any other actions after successful submission, such as showing a success message
@@ -67,7 +67,7 @@ const SpeakerCreate = ({ event, fetchEvent }) => {
       // Handle error responses, such as showing an error message to the user
     }
   };
-  
+
 
   const handleCloseModal = () => {
     setShowModalSpeakerCreate(false);
@@ -78,7 +78,7 @@ const SpeakerCreate = ({ event, fetchEvent }) => {
       <button className="Open_button" onClick={() => setShowModalSpeakerCreate(true)}>Create</button>
 
       <div className={`modal ${showModalSpeakerCreate ? 'show' : ''}`}>
-      <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
+        <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
           <h2 style={{ textAlign: 'center', padding: '15px' }}>Speaker Create</h2>
 
           <div className="FOrm-container">

@@ -1,4 +1,4 @@
- 
+
 import React, { useState } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
@@ -6,7 +6,7 @@ import AxiosInstance from '../../../../../../../../desing-system/Authentication/
 export default function FaqsCreat({ Course, fetchCourse }) {
   const [showModalfaqsCreate, setShowModalfaqsCreate] = useState(false);
   const [formData, setFormData] = useState({
-    course: Course ,
+    course: Course,
     question: '',
     answer: '',
   });
@@ -17,14 +17,14 @@ export default function FaqsCreat({ Course, fetchCourse }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {  
+    try {
       await AxiosInstance.post(`${Config.baseURL}/Courses/course-faqs/`, formData);
       setShowModalfaqsCreate(false);
       setFormData({
         course: Course.id, // Reset course ID after submission
         question: '',
         answer: '',
-      });  
+      });
       fetchCourse();
     } catch (error) {
       // Handle error

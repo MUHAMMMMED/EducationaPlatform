@@ -1,23 +1,24 @@
 import styled from "@emotion/styled";
- 
- 
-export const Card = styled ("div")`
-   label:Card;
+
+export const Card = styled("div")`
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
    font-family: 'DGBaysan', sans-serif;
-   max-width: 1200px 
+   max-width: 1200px;
    margin: auto;
-   padding:5px;
+   padding: 5px;
+
    &:hover {
-      border: 1px solid  rgb(27 127 204 / 5%);
-       background-color: rgb(27 127 204 / 5%); /* Change the background color on hover */
-    }
+      border: 1px solid rgb(27 127 204 / 5%);
+      background-color: rgb(27 127 204 / 5%); /* Change the background color on hover */
+   }
 `;
 
-export const ContentCard = styled ("div")`
-   label:ContentCard;
+
+
+
+export const ContentCard = styled("div")`
    display: flex;
    width: 100%; 
    font-size: 16px;
@@ -25,9 +26,8 @@ export const ContentCard = styled ("div")`
  
 
 `;
- 
-export const SPAN = styled ("span")`
-   label:SPAN;
+
+export const SPAN = styled("span")`
    font-size: 20px;
    width: 30px;
    color: #333;
@@ -36,9 +36,8 @@ export const SPAN = styled ("span")`
       font-size: 17px;
    }
 `;
-export const H2 = styled ("h2")`
-   label:H2;
-   font-size: 15px;
+export const H2 = styled("h2")`
+    font-size: 15px;
    font-weight: 500;
    color: #212832;
    line-height: 1.5;
@@ -50,7 +49,7 @@ export const H2 = styled ("h2")`
    }
 `;
 
-export const Minutes = styled ("div")`
+export const Minutes = styled("div")`
    label:Minutes;
    justify-content: space-between;
    display: flex;
@@ -60,12 +59,12 @@ export const Minutes = styled ("div")`
    color:#636363;
    padding:2px;
 `;
-export const DIV = styled ("div")`
+export const DIV = styled("div")`
    label:DIV;
    align-items: center; 
 `;
 
-export const StyledButton = styled ("button")`
+export const StyledButton = styled("button")`
  
   label: StyledButton;
   display: flex;
@@ -104,4 +103,3 @@ export const StyledButton = styled ("button")`
 
 
 
- 

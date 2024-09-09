@@ -61,8 +61,8 @@ def tips_filter_dash(request):
     instructor = request.GET.get('instructor')
     query = request.GET.get('query', '')
 
-    # Start with all active tips
-    tips = Tip.objects.filter(active=True)
+    # Start with all  tips
+    tips = Tip.objects.all()
 
     # Filter by category if provided
     if category:

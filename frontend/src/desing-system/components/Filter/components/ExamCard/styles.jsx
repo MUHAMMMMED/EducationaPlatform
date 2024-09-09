@@ -1,9 +1,5 @@
 import styled from "@emotion/styled";
 import theme from "../../../../config";
- 
-
-
-  
 
 export const SingleCourses = styled.div`
   label: SingleCourses;
@@ -23,27 +19,27 @@ export const SingleCourses = styled.div`
  
 `;
 
-  
- export const CoursesImages = styled ("div")`
+
+export const CoursesImages = styled("div")`
     label:CoursesImages;
     position: relative;
- `; 
- export const IMG = styled ("img")`
+ `;
+export const IMG = styled("img")`
    label:IMG;
    width: 100%;
    border-radius: 10px;
    border: 1px solid  #58a58f;
   
 
-`; 
+`;
 
- export const CoursesContent = styled ("div")`
+export const CoursesContent = styled("div")`
     label:CoursesContent;
     padding-top: 25px;
 
 
- `; 
- export const CoursesAuthor  = styled ("div")`
+ `;
+export const CoursesAuthor = styled("div")`
     label:CoursesAuthor ;
     display: -webkit-box;
     display: -webkit-flex;
@@ -57,9 +53,9 @@ export const SingleCourses = styled.div`
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    `; 
+    `;
 
-    export const AUthor = styled ("div")`
+export const AUthor = styled("div")`
     label:AUthor;
     display: -webkit-box;
     display: -webkit-flex;
@@ -69,22 +65,22 @@ export const SingleCourses = styled.div`
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
- `; 
- export const AuthorThumb = styled ("div")`
+ `;
+export const AuthorThumb = styled("div")`
  label:AuthorThumb;
 
-`; 
-export const ImgAvatar = styled ("img")`
+`;
+export const ImgAvatar = styled("img")`
 label:ImgAvatar;
 width: 50px;
 height: 50px;
 border-radius: 50%;
 border: 1px solid  #58a58f;  
-`; 
+`;
 
 
-  
-export const AuthorName = styled ("div")`
+
+export const AuthorName = styled("div")`
 label:AuthorName;
 -webkit-box-flex: 1;
 -webkit-flex: 1;
@@ -97,8 +93,8 @@ font-size: 14px;
 font-weight: 400;
 hight:100px;
 
-`; 
-export const Tag = styled ("div")`
+`;
+export const Tag = styled("div")`
 label:Tag;
 
 height: 35px;
@@ -112,8 +108,8 @@ text-align: center;
 border-radius: 5px;
 padding: 0 10px;
 font-weight: bold;
-`; 
-export const Title = styled ("h4")`
+`;
+export const Title = styled("h4")`
 label:Title;
 font-size: 15px;
 font-weight: 500;
@@ -123,8 +119,8 @@ padding-bottom: 15px;
 height: 50px;
 display: inline-block;
 line-height: 1.4;
-`; 
-export const CoursesMeta = styled ("div")`
+`;
+export const CoursesMeta = styled("div")`
 label:CoursesMeta;
 display: -webkit-box;
 display: -webkit-flex;
@@ -135,10 +131,10 @@ display: flex;
 -ms-flex-pack: justify;
 justify-content: space-between;
 padding-top: 10px;
-`; 
+`;
 
 
-export const Span = styled ("span")`
+export const Span = styled("span")`
 label:CoursesPriceReview;
 font-size: 14px;
 font-weight: 400;
@@ -146,11 +142,11 @@ color:  ${theme.balck};
 margin-right: 20px;
 display: inline-block;
 line-height: 1;
-`; 
+`;
 
- 
 
-export const CoursesPriceReview = styled ("div")`
+
+export const CoursesPriceReview = styled("div")`
 label:CoursesPriceReview;
 // background-color: #eefbf2; 
 border-radius: 5px;
@@ -165,15 +161,15 @@ font-family: 'DGBaysan', sans-serif;
 box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.07);
 
 
-`; 
+`;
 
-export const CoursesPrice = styled ("div")`
+export const CoursesPrice = styled("div")`
 label:CoursesPrice;
 white-space: nowrap;
 width:50%;  
 
-`; 
-export const SaleParice = styled ("span")`
+`;
+export const SaleParice = styled("span")`
 label:SaleParice;
 font-size: 17px;
 font-weight: 700;
@@ -181,8 +177,8 @@ color:#58a58f;
 width:100%;  
 margin-right: 10px; 
 
-`; 
-export const Oldparice = styled ("span")`
+`;
+export const Oldparice = styled("span")`
 label:Oldparice;
 font-size: 15px;
 font-weight: 500;
@@ -190,28 +186,28 @@ color: ${theme.gray};
 text-decoration: line-through;
 width:100%;  
 margin-left: 2px;
-`; 
+`;
 
-export const CoursesButton = styled ("div")`
+export const CoursesButton = styled("div")`
 label:CoursesReview;
 width:40%; 
  
-`; 
- 
-export const RatingCount = styled ("span")`
+`;
+
+export const RatingCount = styled("span")`
 label:RatingCount;
 font-size: 15px;
 font-weight: 500;
 color: #212832;
 margin-right: 2px;
-`; 
-export const RatingStar = styled ("span")`
+`;
+export const RatingStar = styled("span")`
 label:RatingStar;
 position: relative;
 
 
-`; 
-export const Button = styled ("button")`
+`;
+export const Button = styled("button")`
 label:Button;
 border-radius: 5px;
 background-color:#58a58f;
@@ -223,32 +219,32 @@ cursor: pointer;
 width:100%;  
 font-weight: 700;
 
-`; 
-export const ContainerCenter = styled ("div")`
+`;
+export const ContainerCenter = styled("div")`
 label:ContainerCenter;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;   
 
-`; 
-export const IconText = styled ("div")`
+`;
+export const IconText = styled("div")`
 label:IconText;
 display: flex;
 align-items: center;
 margin-bottom: 10px;
 
 
-`; 
-export const Icon= styled ("div")`
+`;
+export const Icon = styled("div")`
 label:Icon;
 margin-right: 10px; 
 color: #58a58f;
 
 
 
-`; 
+`;
 
-export const Last= styled ("spen")`
+export const Last = styled("spen")`
 label:Last;
 font-size: 10px;
   

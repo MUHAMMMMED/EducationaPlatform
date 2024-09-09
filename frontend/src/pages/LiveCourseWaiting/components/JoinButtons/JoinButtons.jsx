@@ -21,7 +21,7 @@ const JoinButtons = ({ data }) => {
           </a>
         )}
 
-        
+
       </div>
     </div>
   );

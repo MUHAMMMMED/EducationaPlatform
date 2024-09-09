@@ -36,7 +36,7 @@ class ApexChart_Location extends React.Component {
 
   render() {
     const { title } = this.props;
-    
+
     return (
       <div>
         <h2>{title}</h2>

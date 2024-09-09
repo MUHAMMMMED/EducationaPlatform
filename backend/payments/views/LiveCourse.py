@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from datetime import datetime
 from LiveCourses.models import LiveCourse, LiveCourseCouponCode,UserLiveCourse
 from django.core.mail import send_mail  
-
+ 
 @api_view(['POST'])
 def check_coupon_code_LiveCourse(request):
     if request.method == 'POST':
@@ -49,13 +49,13 @@ def check_coupon_code_LiveCourse(request):
 
 @api_view(['POST'])
 def Free_Checkout_LiveCourse(request, id):
+ 
     try:
         # Retrieve the user object from the request
         user = request.user
-
         # Retrieve the LiveCourse object based on the provided course ID
         course = LiveCourse.objects.get(id=id)
-
+ 
         # Retrieve or create a UserLiveCourse object for the user and course
         # Set the default status to 'W' (waiting) if a new UserLiveCourse object is created
         user_course, created = UserLiveCourse.objects.get_or_create(
@@ -63,22 +63,30 @@ def Free_Checkout_LiveCourse(request, id):
             course=course, 
             defaults={'status': 'W'}
         )
-   
+ 
         if created:
             # If a new UserLiveCourse object was created, increment the course's enrollment count
             course.Enroll += 1
             course.save()
-        
         # Save the UserLiveCourse object
         user_course.save()
+ 
 
-        # Send a thank-you email to the user
-        send_mail(
-            subject="Abo Rashad",
-            message="Thank you for your purchase!",
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[user.email]
-        )
+        # Try sending a confirmation email, skip if an error occurs
+        try:
+             # Send a confirmation email to the user
+
+            send_mail(
+                subject="Abo Rashad",  # Subject of the email
+                message=f"Thank you for your purchase!",  # Body of the email
+                from_email=settings.EMAIL_HOST_USER,  # Sender's email address
+                recipient_list=[user.email],  # Recipient's email address
+            )
+        except Exception as email_error:
+            # Log the error or handle it in any way needed, but don't stop the process
+            print(f"Email sending failed: {email_error}")
+ 
+ 
     
         # Return a success response indicating the course enrollment was successful
         return JsonResponse({'message': 'Course enrollment successful.'}, status=201)
@@ -86,3 +94,5 @@ def Free_Checkout_LiveCourse(request, id):
     except Exception as e:
         # Return an error response with the exception message if something goes wrong
         return JsonResponse({'error': str(e)}, status=400)
+    
+     

@@ -1,15 +1,15 @@
- 
+
 import React, { useState } from 'react';
 import Config from '../../../../../../config';
 import AxiosInstance from '../../../../../../desing-system/Authentication/AxiosInstance';
- 
+
 
 export default function LearnCreate({ eventId, fetchEvent }) {
   const [showModalLearnCreate, setShowModalLearnCreate] = useState(false);
   const [formData, setFormData] = useState({
-    event: eventId ,
+    event: eventId,
     title: '',
- 
+
   });
 
   const handleChange = (e) => {
@@ -18,13 +18,13 @@ export default function LearnCreate({ eventId, fetchEvent }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {  
+    try {
       await AxiosInstance.post(`${Config.baseURL}/Event/learn/`, formData);
       setShowModalLearnCreate(false);
       setFormData({
-        event: eventId ,
+        event: eventId,
         title: '',
-      });  
+      });
       fetchEvent();
     } catch (error) {
       // Handle error
@@ -48,8 +48,8 @@ export default function LearnCreate({ eventId, fetchEvent }) {
               <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="title" />
             </div>
           </div><br /><br />
-      
-       
+
+
           {/* Form buttons */}
           <div className="FOrmContainer">
             <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>

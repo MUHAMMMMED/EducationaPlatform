@@ -1,57 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=DGBaysan&family=Bodoni72&display=swap');
- 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
- 
-body{
 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    font-family: 'DGBaysan', sans-serif;
-    background-color: #fff;
-    /* background-image: linear-gradient(#d8c7ff,#19006c); #e7eef2;*/
-   }
- 
-   h1, p, .custom-class {
-     font-family: 'DGBaysan', sans-serif;
-   }
-  
-   .Container{
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-family: 'DGBaysan', sans-serif;
+  background-color: #fff;
+  /* background-image: linear-gradient(#d8c7ff,#19006c); #e7eef2;*/
+}
+
+h1,
+p,
+.custom-class {
+  font-family: 'DGBaysan', sans-serif;
+}
+
+.Container {
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 30px;
   /* padding-top: 15px; */
   /* background-color: #ff0c0c; */
-  background-color:red;
+  background-color: red;
   height: 15000px;
-  }
+}
 
-    .container{
-      max-width: 1200px;
-    margin: 0 auto;
-    /* padding: 15px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* padding: 15px;
     margin-top: 15px; */
-    /* padding-top: 125px; */
-
-    /* background-color: #fff; */
-    }
-   
+  /* padding-top: 125px; */
+  /* background-color: #fff; */
+}
 
 
-    
- /* Media query for adjusting styles based on content */
- @media (min-height: 600px) {
+
+
+/* Media query for adjusting styles based on content */
+@media (min-height: 600px) {
   /* Styles for content that exceeds a certain height */
 }
- 
+
 
 /* Styles for mobile devices */
 /* Media query for tablets and larger screens */
 @media (min-width: 768px) {
   /* Tablet styles */
 }
+
 /* Media query for tablets in landscape orientation */
 @media (min-width: 768px) and (orientation: landscape) {
   /* Tablet landscape styles */
@@ -62,8 +64,8 @@ body{
 @media (min-width: 1024px) {
   /* Desktop styles */
 }
- 
- /* Default styles for mobile devices */
+
+/* Default styles for mobile devices */
 /* Media query for tablets */
 @media (max-width: 1023px) {
   /* Tablet styles */

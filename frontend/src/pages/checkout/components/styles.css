@@ -1,74 +1,68 @@
-/* styles.css */
+ .success-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-color: #ffffff;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   border-radius: 8px;
+   margin: 0 20px;
+ }
 
- 
-.success-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  margin: 0 20px;
-}
+ .success-h1 {
+   color: #28a745;
+   font-size: 2.5rem;
+   margin-bottom: 10px;
+   animation: fadeInDown 1s ease-in-out;
+ }
 
-.success-h1 {
-  color: #28a745;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  animation: fadeInDown 1s ease-in-out;
-}
-.Cancel-h1 {
-  color: #dc3545; /* Red color to indicate cancellation */
- 
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  animation: fadeInDown 1s ease-in-out;
-}
+ .Cancel-h1 {
+   color: #dc3545;
+   /* Red color to indicate cancellation */
 
-h2 {
-  color: #333;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  animation: fadeInUp 1s ease-in-out;
-}
+   font-size: 2.5rem;
+   margin-bottom: 10px;
+   animation: fadeInDown 1s ease-in-out;
+ }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+ h2 {
+   color: #333;
+   font-size: 1.5rem;
+   margin-bottom: 20px;
+   animation: fadeInUp 1s ease-in-out;
+ }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+ @keyframes fadeInDown {
+   from {
+     opacity: 0;
+     transform: translateY(-20px);
+   }
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.25rem;
-  }
-}
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
 
+ @keyframes fadeInUp {
+   from {
+     opacity: 0;
+     transform: translateY(20px);
+   }
 
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
 
- 
- 
+ @media (max-width: 600px) {
+   h1 {
+     font-size: 2rem;
+   }
 
-
- 
+   h2 {
+     font-size: 1.25rem;
+   }
+ }

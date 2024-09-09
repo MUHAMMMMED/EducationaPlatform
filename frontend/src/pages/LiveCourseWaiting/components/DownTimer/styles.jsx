@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 
 
-export const Timer = styled ("div")`
+export const Timer = styled("div")`
         label:DefinitionRow;
         width:80%;
         margin:0 auto; 
@@ -14,9 +14,9 @@ export const Timer = styled ("div")`
 
            }
         `;
- 
-     
-export const Countdown = styled ("h2")`
+
+
+export const Countdown = styled("h2")`
         label:Countdown;
         padding-top: 30px;
         font-size: 2rem;
@@ -33,13 +33,13 @@ export const Countdown = styled ("h2")`
          }
         `;
 
- 
 
 
 
 
- 
- export const CountButton = styled.button`
+
+
+export const CountButton = styled.button`
           label: CountButton;
           background-color: #2d7586;
           color: #fff;
@@ -61,12 +61,12 @@ export const Countdown = styled ("h2")`
             width: 70%;
           }
         `;
-        
 
 
- 
 
-      export const  P = styled ("P")`
+
+
+export const P = styled("P")`
         label:PS;
         padding-top:  0px;
         font-size: 1rem;

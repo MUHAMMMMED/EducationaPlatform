@@ -23,14 +23,14 @@ import './styles.css';
 
 
 export default function LiveCourseUpdate() {
- 
+
   const { id: courseId } = useParams();
   const [liveCourses, setLiveCourses] = useState([]);
   const [showSidebar, setShowSidebar] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
- 
- 
+
+
   const fetchCourse = async () => {
     if (!courseId) return;
     try {
@@ -55,50 +55,49 @@ export default function LiveCourseUpdate() {
 
   if (error) {
     return <ErrorPage head="Error Occurred" error={error} />;
-  } 
+  }
   return (
     <>
       <Sidebar_dashboard showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
       <div className="head-flex-container">
-      <div><samp> <button className="ButtonSidebar" onClick={toggleSidebar}> = </button></samp> Dashboard </div>
-      <div> {liveCourses.title} </div>
-      <div> 
-  {liveCourses && liveCourses.id && ( <LiveCourseDelete liveCourseId={liveCourses.id} />)} 
-  
-  </div></div>     
-          
-        <div className="CourseCard">
+        <div><samp> <button className="ButtonSidebar" onClick={toggleSidebar}> = </button></samp> Dashboard </div>
+        <div> {liveCourses.title} </div>
+        <div>
+          {liveCourses && liveCourses.id && (<LiveCourseDelete liveCourseId={liveCourses.id} />)}
+
+        </div></div>
+
+      <div className="CourseCard">
         <div className="Course_card_content">
-        <div className="Course_card_info">
-        <div style={{ float: 'left', width: '65px' }}><span className='onLine-icon'><GrUpdate /></span></div>
-        <div style={{ float: 'left' }}>
-        <p className="Course_card_title">Live Course</p>
-        <p className="Course_card_amount"> </p></div> </div>
-        <div className="Course_cardicon">
-        {liveCourses &&liveCourses.id&& <LiveCourseUpdateForm liveCourses={liveCourses} /> }    
-       </div></div>  </div> 
-       {liveCourses && liveCourses.id && (  <BaseList liveCourses={liveCourses} fetchCourse={fetchCourse} />)}
- 
-       {liveCourses && liveCourses.base && liveCourses.base.id && (
-       <>
-       <CourseDefinitionList liveCourses={liveCourses} fetchCourse={fetchCourse} />
-      <LearningPathPointList liveCourses={liveCourses} fetchCourse={fetchCourse} />
-      <LiveCoursefaqsList liveCourses={liveCourses} fetchCourse={fetchCourse} />
-      <SpeakerList liveCourses={liveCourses} fetchCourse={fetchCourse} />
-      <LiveCourseRateList liveCourses={liveCourses} fetchCourse={fetchCourse} />
-      <LiveCourseReviewList liveCourses={liveCourses} fetchCourse={fetchCourse} />
+          <div className="Course_card_info">
+            <div style={{ float: 'left', width: '65px' }}><span className='onLine-icon'><GrUpdate /></span></div>
+            <div style={{ float: 'left' }}>
+              <p className="Course_card_title">Live Course</p>
+              <p className="Course_card_amount"> </p></div> </div>
+          <div className="Course_cardicon">
+            {liveCourses && liveCourses.id && <LiveCourseUpdateForm liveCourses={liveCourses} />}
+          </div></div>  </div>
+      {liveCourses && liveCourses.id && (<BaseList liveCourses={liveCourses} fetchCourse={fetchCourse} />)}
 
- 
-       {liveCourses && liveCourses.id && (  <UpdatTimelineMeetingList liveCourses={liveCourses} fetchCourse={fetchCourse} />)}
+      {liveCourses && liveCourses.base && liveCourses.base.id && (
+        <>
+          <CourseDefinitionList liveCourses={liveCourses} fetchCourse={fetchCourse} />
+          <LearningPathPointList liveCourses={liveCourses} fetchCourse={fetchCourse} />
+          <LiveCoursefaqsList liveCourses={liveCourses} fetchCourse={fetchCourse} />
+          <SpeakerList liveCourses={liveCourses} fetchCourse={fetchCourse} />
+          <LiveCourseRateList liveCourses={liveCourses} fetchCourse={fetchCourse} />
+          <LiveCourseReviewList liveCourses={liveCourses} fetchCourse={fetchCourse} />
+
+          <Meeting liveCourses={liveCourses} fetchCourse={fetchCourse} />
+
+          {liveCourses && liveCourses.timeline && <Timeline liveCourses={liveCourses} fetchCourse={fetchCourse} />}
+
+          {liveCourses && liveCourses.id && (<UpdatTimelineMeetingList liveCourses={liveCourses} fetchCourse={fetchCourse} />)}
 
 
-
-      <Meeting liveCourses={liveCourses } fetchCourse={fetchCourse} /> 
-      {liveCourses &&liveCourses.timeline&& 
-      <Timeline liveCourses={liveCourses } fetchCourse={fetchCourse} />}
-      <div style={{ float:'left', width:'100%',height:'50px'}}/>
-  </>
-)}
- </>
+          <div style={{ float: 'left', width: '100%', height: '50px' }} />
+        </>
+      )}
+    </>
   );
 }

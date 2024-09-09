@@ -1,4 +1,3 @@
- 
 import React, { useState } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
@@ -8,7 +7,7 @@ const RateCreate = ({ Course, fetchCourse }) => {
         message: '',
         rate_number: '',
         course: Course.id,
-        student: '',  
+        student: '',
     });
 
     const [showModalRateCreate, setShowModalRateCreate] = useState(false);
@@ -18,9 +17,9 @@ const RateCreate = ({ Course, fetchCourse }) => {
         setFormData({ ...formData, [name]: value });
     };
     const handleStudentSelection = (event) => {
-      setFormData({ ...formData, student: event.target.value });  
-  };
-  
+        setFormData({ ...formData, student: event.target.value });
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -29,7 +28,7 @@ const RateCreate = ({ Course, fetchCourse }) => {
             setShowModalRateCreate(false);
             fetchCourse();
         } catch (error) {
-       
+
         }
     };
 
@@ -67,7 +66,7 @@ const RateCreate = ({ Course, fetchCourse }) => {
                             <input type="number" name="rate_number" value={formData.rate_number} onChange={handleChange} placeholder="rate number 1 : 5" />
                         </div>
                     </div>
-                    <br /><br/>
+                    <br /><br />
                     <div className="FOrmContainer">
                         <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>
                         <div style={{ width: '20%' }}><button className="cancel-button" onClick={handleCloseModal}>Cancel</button></div>

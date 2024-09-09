@@ -1,62 +1,64 @@
- 
-.SideNav {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color:#58a58f;
-  overflow-x: hidden;
-  padding-top: 60px;
-  transition: 0.5s;
-  @media (max-width: 768px) {
-    height: 100%;
-    width: 200px;
+ .SideNav {
+   height: 100%;
+   width: 250px;
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   background-color: #58a58f;
+   overflow-x: hidden;
+   padding-top: 60px;
+   transition: 0.5s;
 
-  }
+   @media (max-width: 768px) {
+     height: 100%;
+     width: 200px;
+
+   }
 
 
 
-}
+ }
 
-.SideNav.Open-Link {
-  width: 250px;
-}
+ .SideNav.Open-Link {
+   width: 250px;
+ }
 
-.Nav-Link{
-  margin-top: 20px; 
- font-weight: 400;
-  padding: 10px 15px;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
-  display: block;
-  transition: 0.3s;
-  text-align: left;
-  margin-left: 5px;
-}
+ .Nav-Link {
+   margin-top: 20px;
+   font-weight: 400;
+   padding: 10px 15px;
+   text-decoration: none;
+   font-size: 20px;
+   color: white;
+   display: block;
+   transition: 0.3s;
+   text-align: left;
+   margin-left: 5px;
+ }
 
-.Nav-Link:hover {
-  /* background-color: #64cdaf; */
-  margin-left: 15px;
+ .Nav-Link:hover {
+   /* background-color: #64cdaf; */
+   margin-left: 15px;
 
-}
+ }
 
-.active {
-  background-color: #4caf50;
-}
-.ButtonSidebar{
-margin-top: -10px;
-font-size: 20px;
-margin-right: 15px;
-background-color:#58a58f;
-color: white;
-padding: 5px 8px;
-border-radius: 50px;
-}
-.iconlink{
-padding: 10px;
- 
+ .active {
+   background-color: #4caf50;
+ }
 
-}
+ .ButtonSidebar {
+   margin-top: -10px;
+   font-size: 20px;
+   margin-right: 15px;
+   background-color: #58a58f;
+   color: white;
+   padding: 5px 8px;
+   border-radius: 50px;
+ }
+
+ .iconlink {
+   padding: 10px;
+
+
+ }

@@ -1,4 +1,4 @@
- 
+
 import React, { useState } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
@@ -6,8 +6,9 @@ import AxiosInstance from '../../../../../../../../desing-system/Authentication/
 export default function Create({ fetchCategories }) {
   const [showModalCreate, setShowModalCreate] = useState(false);
   const [formData, setFormData] = useState({
- title:'', });
-  
+    title: '',
+  });
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -18,26 +19,26 @@ export default function Create({ fetchCategories }) {
       await AxiosInstance.post(`${Config.baseURL}/Query/Category/`, formData);
       // After successfully adding a new course definition, refresh the list
       setShowModalCreate(false);
-      setFormData({title: ''  });
+      setFormData({ title: '' });
       fetchCategories();
-     
+
     } catch (error) {
-     
+
     }
   };
- 
- 
+
+
   const handleCloseModal = () => {
     setShowModalCreate(false);
   };
- 
+
   return (
     <>
- 
 
-  <button onClick={() => setShowModalCreate(true)} className="Creat_button">Create New</button> 
 
- 
+      <button onClick={() => setShowModalCreate(true)} className="Creat_button">Create New</button>
+
+
       <div className={`modal ${showModalCreate ? 'show' : ''}`}>
         <form className="modal-content animate" onSubmit={handleSubmit}  >
           <h2 style={{ textAlign: 'center', padding: '15px' }}>    Create</h2>
@@ -47,7 +48,7 @@ export default function Create({ fetchCategories }) {
               <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Title" />
             </div>
           </div><br /><br />
- 
+
           {/* Form buttons */}
           <div className="FOrmContainer">
             <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>

@@ -18,15 +18,15 @@ import Courses from './pages/courses';
 import WrongAnswers from './pages/quiz/components/WrongAnswers';
 import QuizInfo from './pages/quizInfo';
 import Quizzes from './pages/quizzes';
- 
-import LiveCourses from './pages/LiveCourses/LiveCourses';
+
+import LiveCourses from './pages/LandingPageLiveCourses/LiveCourses';
 import LiveCoursesList from './pages/LiveCoursesList/LiveCoursesList';
 
 import SidebarFilter from './desing-system/components/SidebarFilter/SidebarFilter';
 import LiveCourseRoom from './pages/LiveCourseRoom/LiveCourseRoom';
 import MyLearning from './pages/MyLearning';
 import Room from './pages/Room';
- 
+
 import ErrorPage from './desing-system/components/Loading/ErrorPage';
 import Category from './pages/Category/Category';
 import Dashboard from './pages/Dashboard';
@@ -75,125 +75,120 @@ import PayQuiz from './desing-system/Authentication/SignInUp/pages/SignInUpQuiz/
 import SignInUpQuiz from './desing-system/Authentication/SignInUp/pages/SignInUpQuiz/SignInUpQuiz';
 import SignupQuiz from './desing-system/Authentication/SignInUp/pages/SignInUpQuiz/SignupQuiz';
 import EmailMarketing from './pages/Dashboard/pages/EmailMarketing/EmailMarketing';
- 
+
 import Campaign from './pages/Dashboard/pages/EmailMarketing/components/Campaign/Campaign';
 import Customer from './pages/Dashboard/pages/EmailMarketing/components/Customer/Customer';
 import Redirection from './pages/Redirection/Redirection';
 import TeacherDashboard from './pages/TeacherDashboard/TeacherDashboard';
 // import StudentsBlockList from './pages/Dashboard/pages/EventsList/components/StudentsBlock/StudentsBlockList';
- 
- 
-  
+
+
+
 const App = () => {
   return (
     <Router>
- 
-    {/* <UserProvider> */}
-    <Layout> 
-    <Routes>
-        <Route path="/" element={<Home />} />
-    
-        <Route path="/SignInUp_LiveCourse/:id" element={<SignInUpLiveCourse />} />  
-        <Route path="/Signup_LiveCourse/:id" element={<SignupLiveCourse />} />  
-        <Route path="/Login_LiveCourse/:id" element={<LoginLiveCourse />} />  
-        <Route path="/Pay_LiveCourse/:id" element={<PayLiveCourse/>} />
-        
-        <Route path="/SignInUp_Course/:course_uuid" element={<SignInUpCourse />} />
-        <Route path="/Signup_Course/:course_uuid" element={<SignupCourse />} />
-        <Route path="/Login_Course/:course_uuid" element={<LoginCourse />} />
-        <Route path="/Pay_Course/:course_uuid" element={<PayCourse />} />
- 
-        <Route path="/SignInUp_Quiz/:id" element={<SignInUpQuiz />} />
-        <Route path="/Signup_Quiz/:id" element={<SignupQuiz />} />
-        <Route path="/Login_Quiz/:id" element={<LoginQuiz />} />
-        <Route path="/Pay_Quiz/:id" element={<PayQuiz />} />
- 
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path='/otp/verify' element={<VerifyEmail/>}/>
-        <Route path='/forget-password' element={<PasswordResetRequest/>}/>
-        <Route path="/password-reset-confirm/:uid/:token" element={<ResetPassword />} />
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/SignInUp_LiveCourse/:id" element={<SignInUpLiveCourse />} />
+          <Route path="/Signup_LiveCourse/:id" element={<SignupLiveCourse />} />
+          <Route path="/Login_LiveCourse/:id" element={<LoginLiveCourse />} />
+          <Route path="/Pay_LiveCourse/:id" element={<PayLiveCourse />} />
 
-        <Route path="/Quiz/:id" element={<Quiz />} />
-        <Route path="/Quizzes" element={<Quizzes />} />
-        <Route path="/Courses" element={<Courses />} />
-    
-        <Route path="/AllCourses" element={<SidebarFilter/>} />
-       
-        <Route path="/course/:slug/:id" element={<CourseInfo />} />
-        <Route path="/Lesson/:course_uuid/:episode_uuid/" element={<Lesson />} />
-        <Route path="/MyQuizzes/:slug/:id" element={<QuizInfo />} />
-        <Route path="/WrongAnswers/:id" element={<WrongAnswers />} />
+          <Route path="/SignInUp_Course/:course_uuid" element={<SignInUpCourse />} />
+          <Route path="/Signup_Course/:course_uuid" element={<SignupCourse />} />
+          <Route path="/Login_Course/:course_uuid" element={<LoginCourse />} />
+          <Route path="/Pay_Course/:course_uuid" element={<PayCourse />} />
 
-        <Route path="/LiveCourses" element={<LiveCoursesList />} />
-        <Route path="/LiveCourse/:slug/:id" element={<LiveCourses />} />
-        <Route path="/LiveCourseRoom/:id" element={<LiveCourseRoom />} />
-        <Route path="/LiveCourseRate/:id" element={<LiveCourseRate />} />
+          <Route path="/SignInUp_Quiz/:id" element={<SignInUpQuiz />} />
+          <Route path="/Signup_Quiz/:id" element={<SignupQuiz />} />
+          <Route path="/Login_Quiz/:id" element={<LoginQuiz />} />
+          <Route path="/Pay_Quiz/:id" element={<PayQuiz />} />
 
-        <Route path="/LiveCourseWaiting/:id" element={<LiveCourseWaiting />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path='/otp/verify' element={<VerifyEmail />} />
+          <Route path='/forget-password' element={<PasswordResetRequest />} />
+          <Route path="/password-reset-confirm/:uid/:token" element={<ResetPassword />} />
 
-        <Route path="/Tricks" element={<Tricks />} />
-        {/* <Route path="/VideoConferencing" element={<VideoConferencing />} /> */}
-        <Route path="/room/:course_id/:roomId" element={<Room />} />
-        
+          <Route path="/Quiz/:id" element={<Quiz />} />
+          <Route path="/Quizzes" element={<Quizzes />} />
+          <Route path="/Courses" element={<Courses />} />
+
+          <Route path="/AllCourses" element={<SidebarFilter />} />
+
+          <Route path="/course/:slug/:id" element={<CourseInfo />} />
+          <Route path="/Lesson/:course_uuid/:episode_uuid/" element={<Lesson />} />
+          <Route path="/MyQuizzes/:slug/:id" element={<QuizInfo />} />
+          <Route path="/WrongAnswers/:id" element={<WrongAnswers />} />
+
+          <Route path="/LiveCourses" element={<LiveCoursesList />} />
+          <Route path="/LiveCourse/:slug/:id" element={<LiveCourses />} />
+          <Route path="/LiveCourseRoom/:id" element={<LiveCourseRoom />} />
+          <Route path="/LiveCourseRate/:id" element={<LiveCourseRate />} />
+
+          <Route path="/LiveCourseWaiting/:id" element={<LiveCourseWaiting />} />
+
+          <Route path="/Tricks" element={<Tricks />} />
+          {/* <Route path="/VideoConferencing" element={<VideoConferencing />} /> */}
+          <Route path="/room/:course_id/:roomId" element={<Room />} />
+
           <Route path="/success" element={<Success />} />
           <Route path="/cancel" element={<Cancel />} />
-           
-        <Route path="/Category/:id" element={<Category />} />
-        <Route path="/Redirection" element={<Redirection />} />
-        <Route path="/MyLearning" element={<MyLearning />} />
-        <Route path="/Teacher_Dashboard" element={<TeacherDashboard />} />
- 
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard_LiveCourse" element={<DashboardLiveCourse />} />
-        <Route path="/dashboard_Course" element={<DashboardCourse />} />
-        <Route path="/dashboard_Quiz" element={<DashboardQuiz />} />
 
-        <Route path="/dashboard_LiveCourse/:id" element={<DashboardLiveCoursDetailse />} />
-        <Route path="/Live_Course_Update/:id" element={<LiveCourseUpdate />} />
- 
-        <Route path="/dashboard_Course/:id" element={<DashboardCourseDetails />} />
-        <Route path="/Course_Update/:id" element={<CourseUpdate />} />
-  
-        <Route path="/dashboard_Quiz/:id" element={<DashboardQuizDetails />} />
-        <Route path="/Quiz_Update/:id" element={<QuizUpdate />} />
-        <Route path="/QuestionBank/:id" element={<QuestionBank />} />
+          <Route path="/Category/:id" element={<Category />} />
+          <Route path="/Redirection" element={<Redirection />} />
+          <Route path="/MyLearning" element={<MyLearning />} />
+          <Route path="/Teacher_Dashboard" element={<TeacherDashboard />} />
 
-        
-        <Route path="/CourseQuestionBank/:id" element={<CourseQuestionBank />} />
-        <Route path="/email_marketing" element={<EmailMarketing />} />
-        <Route path="/Campaign" element={<Campaign />} />
-        <Route path="/Customer" element={<Customer />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard_LiveCourse" element={<DashboardLiveCourse />} />
+          <Route path="/dashboard_Course" element={<DashboardCourse />} />
+          <Route path="/dashboard_Quiz" element={<DashboardQuiz />} />
 
-        <Route path="/Events" element={<EventList />} />
-        <Route path="/Event/:slug/:id" element={<EventDetails />} />
-        <Route path="/Event_Room/:id" element={<Event_Room />} />
+          <Route path="/dashboard_LiveCourse/:id" element={<DashboardLiveCoursDetailse />} />
+          <Route path="/Live_Course_Update/:id" element={<LiveCourseUpdate />} />
 
-        <Route path="/teacher" element={<Teacher />} />
-        <Route path="/manager" element={<Manager/>} />
-        <Route path="/students" element={<Students />} />
+          <Route path="/dashboard_Course/:id" element={<DashboardCourseDetails />} />
+          <Route path="/Course_Update/:id" element={<CourseUpdate />} />
 
-         <Route path="/tricks_list" element={<TricksList />} />
+          <Route path="/dashboard_Quiz/:id" element={<DashboardQuizDetails />} />
+          <Route path="/Quiz_Update/:id" element={<QuizUpdate />} />
+          <Route path="/QuestionBank/:id" element={<QuestionBank />} />
 
-         <Route path="/events_list" element={<EventsList/>} />
-         <Route path="/event_Update/:id" element={<DashboardEventDetails/>} />
-         {/* <Route path="/students_block" element={<StudentsBlockList/>} /> */}
 
-         <Route path="/categories" element={<Categories/>} />
-         <Route path="/setting" element={<Settings/>} />
+          <Route path="/CourseQuestionBank/:id" element={<CourseQuestionBank />} />
+          <Route path="/email_marketing" element={<EmailMarketing />} />
+          <Route path="/Campaign" element={<Campaign />} />
+          <Route path="/Customer" element={<Customer />} />
 
-         <Route path="/Course_Categories" element={<CourseCategories/>} />
-         <Route path="/Quiz_Categories" element={<QuizCategories/>} />
+          <Route path="/Events" element={<EventList />} />
+          <Route path="/Event/:slug/:id" element={<EventDetails />} />
+          <Route path="/Event_Room/:id" element={<Event_Room />} />
 
-         <Route path="/errorPage" element={<ErrorPage/>} />
-         <Route path="*" element={<NotFound />} />
- 
-      </Routes>
-    </Layout>
-    {/* </UserProvider> */}
-  </Router>
+          <Route path="/teacher" element={<Teacher />} />
+          <Route path="/manager" element={<Manager />} />
+          <Route path="/students" element={<Students />} />
+
+          <Route path="/tricks_list" element={<TricksList />} />
+
+          <Route path="/events_list" element={<EventsList />} />
+          <Route path="/event_Update/:id" element={<DashboardEventDetails />} />
+          {/* <Route path="/students_block" element={<StudentsBlockList/>} /> */}
+
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/setting" element={<Settings />} />
+
+          <Route path="/Course_Categories" element={<CourseCategories />} />
+          <Route path="/Quiz_Categories" element={<QuizCategories />} />
+
+          <Route path="/errorPage" element={<ErrorPage />} />
+          <Route path="*" element={<NotFound />} />
+
+        </Routes>
+      </Layout>
+    </Router>
   );
 };
 
 export default App;
- 

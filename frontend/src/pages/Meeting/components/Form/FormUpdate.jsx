@@ -2,28 +2,25 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Config from '../../../../config';
-import './Form.css';
 
-const FormUpdate = ({  item_id,fetchMeetings }) => {
+const FormUpdate = ({ item_id, fetchMeetings }) => {
   const [formData, setFormData] = useState({
     active: '',
-    type: '',  
+    type: '',
     title: '',
     student: '',
-    date: '', 
+    date: '',
     start_time: '',
     end_time: '',
     course: '',
 
-   
-        
   });
   const [showModalEdit, setShowModalEdit] = useState(false);
   const [showModalDelete, setShowModalDelete] = useState(false);
 
   const [liveCourses, setLiveCourses] = useState([]);
 
- 
+
   useEffect(() => {
     const fetchLiveCourses = async () => {
       try {
@@ -36,15 +33,15 @@ const FormUpdate = ({  item_id,fetchMeetings }) => {
     fetchLiveCourses();
   }, []);
 
- 
+
   useEffect(() => {
     const fetch_meetings_list = async () => {
       try {
         const response = await axios.get(`${Config.baseURL}/meetings/detail/${item_id}/`);
         setFormData(response.data);
-      } catch (error) { console.error('Error fetching timeline:', error);  }
-       
-    
+      } catch (error) { console.error('Error fetching timeline:', error); }
+
+
     };
 
     fetch_meetings_list();
@@ -93,7 +90,7 @@ const FormUpdate = ({  item_id,fetchMeetings }) => {
       </div> */}
 
       <button className="Group-But But-update " onClick={() => setShowModalEdit(true)} >  Edit</button>
-    <button className="Group-But But-delete " onClick={() => setShowModalDelete(true)} >Delete</button>
+      <button className="Group-But But-delete " onClick={() => setShowModalDelete(true)} >Delete</button>
 
 
 
@@ -103,8 +100,8 @@ const FormUpdate = ({  item_id,fetchMeetings }) => {
       <div className={`modal ${showModalDelete ? 'show' : ''}`} id={item_id} onClick={() => setShowModalDelete(false)}>
         <div className="modal-contentDelete animate" onClick={(e) => e.stopPropagation()}>
           <h3>
-            Are you sure you want to <strong>delete</strong> this item? <br/>
-          <p> {formData.title}</p> 
+            Are you sure you want to <strong>delete</strong> this item? <br />
+            <p> {formData.title}</p>
           </h3>
           <br />
           <div className="FOrmContainer">
@@ -115,7 +112,7 @@ const FormUpdate = ({  item_id,fetchMeetings }) => {
             </div>
             <div style={{ width: '20%' }}>
               <button className="cancel-button" onClick={() => setShowModalDelete(false)}>Cancel</button>
-              
+
             </div>
           </div>
         </div>
@@ -126,54 +123,54 @@ const FormUpdate = ({  item_id,fetchMeetings }) => {
         <form className="modal-content animate" onSubmit={handleSubmit} onClick={(e) => e.stopPropagation()}>
           <h2 style={{ textAlign: 'center', padding: '15px' }}>Edit Item  </h2>
 
-      
-   
-    <div className="FOrm-container"> 
-        <input type="text" id="title"  placeholder="title"  name="title" value={formData.title} onChange={handleChange} />
-      </div>      
-  
-      <div className="FOrm-container"> 
-      <div className="form-container-half">
-        <label htmlFor="date">عدد الطلاب</label>
-        <input type="number" id="student" name="student" value={formData.student} onChange={handleChange} />
-      </div>
-       <div className="form-container-half">
-        <label htmlFor="date">تاريخ الاجتماع:</label>
-        <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} />
-        </div>  </div>
- 
-      <div className="FOrm-container">
-      <div className="form-container-half">
-        <label htmlFor="start_time">بداية الاجتماع:</label>
-        <input type="time" id="start_time" name="start_time" value={formData.start_time} onChange={handleChange} />
-      </div>
-      <div className="form-container-half">
-        <label htmlFor="end_time">نهاية الاجتماع:</label>
-        <input type="time" id="end_time" name="end_time" value={formData.end_time} onChange={handleChange} />
-      </div>
-   </div>
-   <div className="FOrm-container">
-   <div className="form-container-half">
-    
-         <label htmlFor="type">نوع الاجتماع:</label>
-        <select  className='form-Select' id="type" name="type" value={formData.type} onChange={handleChange}>
-          <option value="All">الكل</option>
-          <option value="ByCourse">بالدورة</option>
-        </select>
-      </div>
-      {/* Course (if applicable) */}
-      <div className="form-container-half">
-        <label htmlFor="course">الدورة:</label>
 
-        <select  id="course" name="course" className='form-Select' value={formData.course} onChange={handleChange}>
-          <option value="">اختر الدورة</option>
-          {liveCourses.map(course => (
-            <option key={course.id} value={course.id}>{course.title}</option>
-          ))}
-        </select>
 
-      </div>   </div>
-  
+          <div className="FOrm-container">
+            <input type="text" id="title" placeholder="title" name="title" value={formData.title} onChange={handleChange} />
+          </div>
+
+          <div className="FOrm-container">
+            <div className="form-container-half">
+              <label htmlFor="date">عدد الطلاب</label>
+              <input type="number" id="student" name="student" value={formData.student} onChange={handleChange} />
+            </div>
+            <div className="form-container-half">
+              <label htmlFor="date">تاريخ الاجتماع:</label>
+              <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} />
+            </div>  </div>
+
+          <div className="FOrm-container">
+            <div className="form-container-half">
+              <label htmlFor="start_time">بداية الاجتماع:</label>
+              <input type="time" id="start_time" name="start_time" value={formData.start_time} onChange={handleChange} />
+            </div>
+            <div className="form-container-half">
+              <label htmlFor="end_time">نهاية الاجتماع:</label>
+              <input type="time" id="end_time" name="end_time" value={formData.end_time} onChange={handleChange} />
+            </div>
+          </div>
+          <div className="FOrm-container">
+            <div className="form-container-half">
+
+              <label htmlFor="type">نوع الاجتماع:</label>
+              <select className='form-Select' id="type" name="type" value={formData.type} onChange={handleChange}>
+                <option value="All">الكل</option>
+                <option value="ByCourse">بالدورة</option>
+              </select>
+            </div>
+            {/* Course (if applicable) */}
+            <div className="form-container-half">
+              <label htmlFor="course">الدورة:</label>
+
+              <select id="course" name="course" className='form-Select' value={formData.course} onChange={handleChange}>
+                <option value="">اختر الدورة</option>
+                {liveCourses.map(course => (
+                  <option key={course.id} value={course.id}>{course.title}</option>
+                ))}
+              </select>
+
+            </div>   </div>
+
 
           <div className="FOrmContainer">
             <div style={{ width: '78%' }}>

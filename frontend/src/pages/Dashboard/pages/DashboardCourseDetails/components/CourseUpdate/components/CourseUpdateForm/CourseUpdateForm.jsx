@@ -1,5 +1,3 @@
- 
-
 import React, { useState } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
@@ -15,19 +13,19 @@ export default function CourseUpdateForm({ Course, fetchCourse }) {
     description: Course.description,
     price: Course.price,
     discount: Course.discount,
-    author: Course.author ,
+    author: Course.author,
     intro_video: Course.intro_video,
     intro_image: null,
     Curriculum: Course.Curriculum,
     language: Course.language,
     course_length: Course.course_length,
     Enroll: Course.Enroll,
-    exam: Course?.exam?.id,
-    pixal_id: Course.pixal_id ,   
+    exam: Course.exam?.id || '',
+    pixal_id: Course.pixal_id,
 
     // course_sections:Course?.course_sections.id,
   });
-  
+
   const handlecard_image = (e) => {
     const file = e.target.files[0];
     setFormData({ ...formData, card_image: file });
@@ -54,7 +52,7 @@ export default function CourseUpdateForm({ Course, fetchCourse }) {
       setFormData({ ...formData, [name]: value });
     }
   };
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -143,7 +141,7 @@ export default function CourseUpdateForm({ Course, fetchCourse }) {
                   ))}
                 </select>
               </label>
-            </div>  
+            </div>
             <div className="form-container-half">
               <label className='label'>
                 intro video:
@@ -165,23 +163,35 @@ export default function CourseUpdateForm({ Course, fetchCourse }) {
               </label>
             </div>
           </div>
+
           <div className="FOrm-container">
-          <div className="form-container-half">
+            <div className="form-container-half">
               <label className='label'>Exam:
                 <select name="exam" className='form-Select' value={formData.exam} onChange={handleChange}>
                   <option value='' disabled hidden>Select Exam</option>
+                  {/* {Course.Exam && Course.Exam.length > 0 && Course.Exam.map(ex => (
+                    <option value={ex.id} key={ex.id}>{ex.title}</option>
+                  ))} */}
+
                   {Course.Exam && Course.Exam.length > 0 && Course.Exam.map(ex => (
-                    <option value={ex.id} key={ex.id}>{ex.title}</option>))}
-                </select></label> </div>
-    
+                    <option value={ex.id} key={ex.id}>{ex.title}</option>
+                  ))}
+
+                </select>
+              </label>
+            </div>
+
+
+
+
             <div className="form-container-half">
               <label className='label'>Enroll: <input type="number" name="Enroll" value={formData.Enroll} onChange={handleChange} /></label>
             </div>
           </div>
- 
+
           <label>pixal Id:</label>
-      <input type="text" name="pixal_id" value={formData.pixal_id} onChange={handleChange} />
-   
+          <input type="text" name="pixal_id" value={formData.pixal_id} onChange={handleChange} />
+
           <div className="FOrm-container">
             <label className='label'>Active:<input type="checkbox" name="active" checked={formData.active} onChange={handleChange} /></label>
           </div>

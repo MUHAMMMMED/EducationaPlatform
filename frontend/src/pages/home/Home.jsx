@@ -16,59 +16,55 @@ import Tricks from './components/Tricks/Tricks';
 import { ContainerHOME } from './styles';
 
 
- 
+
 const Home = () => {
- 
-        const [data, setData] = useState([]);
-        const [isLoading, setIsLoading] = useState(true);
-      
-        useEffect(() => {
-          const fetchLiveCourses = async () => {
-            try {
-              const response = await axios.get(`${Config.baseURL}/home/home/`);
-              setData(response.data);
-              
 
-            } catch (error) {
-              setIsLoading(false);
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-            } finally {
-              setIsLoading(false);
-            }
-          };
-          fetchLiveCourses();
-        }, []);
-      
-        if (isLoading) {
-          return <Loading />;
-        }
+  useEffect(() => {
+    const fetchLiveCourses = async () => {
+      try {
+        const response = await axios.get(`${Config.baseURL}/home/home/`);
+        setData(response.data);
 
- 
+
+      } catch (error) {
+        setIsLoading(false);
+
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchLiveCourses();
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+
   return (
-<div className='Container'>
-{data && data.slide  &&   (<ImageSlider slide={data.slide} /> )} 
- 
-<ContainerHOME>
- 
-<Banner/>
-<HowItWork/>
- 
-{data && data.categories &&(<CoursesTop categories={data.categories} /> )} 
- 
-{data && data.events &&(<Event events={data.events} /> )} 
- 
-{data && data.rate &&(<Feedback rate={data.rate}/>)} 
+    <div className='Container'>
+      {data && data.slide && (<ImageSlider slide={data.slide} />)}
 
-{data && data.info &&(<BecomAInstructor info={data.info}/>)} 
-{data && data.team &&(<TeamMembers team={data.team}/>)}  
+      <ContainerHOME>
 
-{data && data.supporters  &&(<Supporters supporters={data.supporters}/>)} 
-{data && data.tip&&(<Tricks tip={data.tip} />)} 
-<br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>    <br/>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-</ContainerHOME>
-<Footer/>
-</div> );
+        <Banner />
+        <HowItWork />
+
+        {data && data.categories && (<CoursesTop categories={data.categories} />)}
+        {data && data.events && (<Event events={data.events} />)}
+        {data && data.rate && (<Feedback rate={data.rate} />)}
+        {data && data.info && (<BecomAInstructor info={data.info} />)}
+        {data && data.team && (<TeamMembers team={data.team} />)}
+        {data && data.supporters && (<Supporters supporters={data.supporters} />)}
+        {data && data.tip && (<Tricks tip={data.tip} />)}
+        <br /> <br /><br /><br /> <br />    <br />    <br />    <br />    <br />    <br />    <br />    <br />    <br />    <br />    <br />    <br />    <br />    <br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </ContainerHOME>
+      <Footer />
+    </div>);
 };
 
 export default Home;

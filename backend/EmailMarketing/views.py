@@ -134,8 +134,13 @@ def send_to_inactive_customers(request):
             if stop_processing:
                 break
 
-            # Send message to the customer
-            send_message(
+
+            # Try sending a confirmation email, skip if an error occurs
+            try:
+             # Send a confirmation email to the user
+
+              # Send message to the customer
+              send_message(
                 customer.email_address,
                 customer.name,
                 campaign.Language,
@@ -143,8 +148,14 @@ def send_to_inactive_customers(request):
                 campaign.message,
                 campaign.Link,
                 campaign.button_action
-            )
-            time.sleep(5)  # Wait for 5 seconds between sending messages
+               )
+              time.sleep(5)  # Wait for 5 seconds between sending messages
+
+
+            except Exception as email_error:
+            # Log the error or handle it in any way needed, but don't stop the process
+              print(f"Email sending failed: {email_error}")
+ 
 
             # Toggle customer status between 'active' and 'inactive'
             customer.status = 'inactive' if customer.status == 'active' else 'active'

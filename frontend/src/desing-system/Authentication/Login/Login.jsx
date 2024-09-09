@@ -1,25 +1,25 @@
- 
+
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AxiosInstance from "../AxiosInstance";
 import '../styles.css';
-  
+
 const Login = () => {
   const navigate = useNavigate();
-  const [user ] = useState(JSON.parse(localStorage.getItem('user')));
+  const [user] = useState(JSON.parse(localStorage.getItem('user')));
   useEffect(() => {
     if (user) {
       navigate('/Redirection');
     }
   }, [user, navigate]);
- 
+
   const [logindata, setLogindata] = useState({
     email: "",
     password: ""
   });
-  const [errorMessage, setErrorMessage] = useState(""); 
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleOnChange = (e) => {
     setLogindata({ ...logindata, [e.target.name]: e.target.value });
@@ -40,7 +40,7 @@ const Login = () => {
         localStorage.setItem('user', JSON.stringify(user));
         toast.success('Login successful');
         await navigate('/Redirection');
- 
+
       } else {
         toast.error('Something went wrong');
       }
@@ -80,8 +80,8 @@ const Login = () => {
             </form>
           </div>
         </div>
-      </div>       <ToastContainer />
-    </div> 
+      </div>   <ToastContainer />
+    </div>
   );
 }
 

@@ -1,5 +1,3 @@
- 
- 
 import React, { useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { GrUpdate } from "react-icons/gr";
@@ -8,13 +6,13 @@ import AxiosInstance from '../../../../../../desing-system/Authentication/AxiosI
 export default function LearnUpdate({ item, fetchEvent }) {
   const [showModalLearnUpdate, setShowModalLearnpdate] = useState(false);
   const [formData, setFormData] = useState({
-    course:item.course,
-    event: item.event ,
+    course: item.course,
+    event: item.event,
     title: item.title,
- 
+
   });
-  
-  
+
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -26,7 +24,7 @@ export default function LearnUpdate({ item, fetchEvent }) {
       setShowModalLearnpdate(false);
       fetchEvent();
     } catch (error) {
-     
+
     }
   };
   const handleDelete = async () => {
@@ -34,22 +32,22 @@ export default function LearnUpdate({ item, fetchEvent }) {
       await AxiosInstance.delete(`${Config.baseURL}/Event/learn/${item.id}/`);
       fetchEvent();
     } catch (error) {
- 
+
     }
   };
- 
+
   const handleCloseModal = () => {
     setShowModalLearnpdate(false);
   };
- 
+
   return (
     <>
-      <div style={{ float: 'left', width: '65px',  marginRight:'17px'}}onClick={() => setShowModalLearnpdate(true)} >
-        <span className='onLine-icon'><GrUpdate  /></span></div>
-   
-        <div style={{ float: 'left', width: '65px' }}>
+      <div style={{ float: 'left', width: '65px', marginRight: '17px' }} onClick={() => setShowModalLearnpdate(true)} >
+        <span className='onLine-icon'><GrUpdate /></span></div>
+
+      <div style={{ float: 'left', width: '65px' }}>
         <span className='onLine-icon' onClick={handleDelete}><AiOutlineDelete /></span></div>
- 
+
       <div className={`modal ${showModalLearnUpdate ? 'show' : ''}`}>
         <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
           <h2 style={{ textAlign: 'center', padding: '15px' }}>  Learn Update</h2>
@@ -59,7 +57,7 @@ export default function LearnUpdate({ item, fetchEvent }) {
               <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="title" />
             </div>
           </div><br /><br />
-        
+
           {/* Form buttons */}
           <div className="FOrmContainer">
             <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>

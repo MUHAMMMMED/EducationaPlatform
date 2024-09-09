@@ -1,28 +1,24 @@
-import environ
 from pathlib import Path
 from datetime import timedelta
 import os
+from decouple import config
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Take environment variables from .env file
-environ.Env.read_env(BASE_DIR / '.env')
  
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = config(
+    "SECRET_KEY",
+    cast=str,
+    default="l#c66qv(=&0ktjbiuguigptw+zi%kf2xv&&x%&8da&j^m7#-kq+cw5a**"
+)
+
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = config('DEBUG', cast=bool, default=False)
+ 
+# Hosts allowed to access this Django application
+ALLOWED_HOSTS = ['*']  # Note: Change this in production to a more restrictive list
 
-
-# False if not in os.environ because of casting above
-# DEBUG = env('DEBUG')
-DEBUG =True
-
-ALLOWED_HOSTS = ['*', 'http://localhost:3000']
  
 
 INSTALLED_APPS = [
@@ -106,14 +102,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-  
+ 
 REST_FRAMEWORK={
     'NON_FIELD_ERRORS_KEY':'error',
         'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -122,19 +111,12 @@ REST_FRAMEWORK={
     )
 
 }
-
  
- 
-
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
-
-DOMAIN="http://localhost:3000"
-
- 
  
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -155,36 +137,20 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Using database-backed sessions
-SESSION_COOKIE_NAME = 'sessionid'
-SESSION_COOKIE_AGE = 1209600  # Two weeks
-SESSION_SAVE_EVERY_REQUEST = True  # Save the session to the database on every request
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-SESSION_COOKIE_SAMESITE = None
-SESSION_COOKIE_SECURE = False  # Set to True in production
+# SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Using database-backed sessions
+# SESSION_COOKIE_NAME = 'sessionid'
+# SESSION_COOKIE_AGE = 1209600  # Two weeks
+# SESSION_SAVE_EVERY_REQUEST = True  # Save the session to the database on every request
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+# SESSION_COOKIE_SAMESITE = None
+# SESSION_COOKIE_SECURE = False  # Set to True in production
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
-# TIME_ZONE = 'UTC'
 TIME_ZONE = 'Africa/Cairo'
 
 USE_I18N = True
@@ -192,31 +158,29 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
+ 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = '/app/static/'
+
+  
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/app/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+DOMAIN= os.getenv('DOMAIN')
+
+
+# Stripe settings
+STRIPE_SECRET_KEY = os.getenv('STRIPE_API_KEY')
+STRIPE_WEBHOOK_SECRET =os.getenv('STRIPE_WEBHOOK_SECRET')  
  
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'TEST@gmail.com'  # Replace with your email address
-EMAIL_HOST_PASSWORD = 'TEST'  # Replace with your email password
+EMAIL_HOST_USER = os.getenv('STRIPE_API_KEY')
+EMAIL_HOST_PASSWORD = os.getenv('STRIPE_API_KEY')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-EMAIL_PORT = 587  # Replace with the correct SMTP port
-
+EMAIL_PORT = 587   
  
-
- 
-import os
-
-# # Add your other settings here...
-
-# # Stripe settings
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'TEST')
-STRIPE_WEBHOOK_SECRET = 'TEST'
-
-
-  

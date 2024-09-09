@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 
 
-export const Coursestop = styled ("div")`
+export const Coursestop = styled("div")`
    label:Coursestop;
    display: -webkit-box;
    display: -webkit-flex;
@@ -25,7 +25,7 @@ export const Coursestop = styled ("div")`
    @media (max-width: 768px) {
       width: 100%;
       margin-left:0%;
-      display: ;
+      
       flex-wrap: wrap;
       -webkit-box-pack: initial;
       -webkit-justify-content: initial;
@@ -36,13 +36,13 @@ export const Coursestop = styled ("div")`
  
 `;
 
-export const TopTitle = styled ("div")`
+export const TopTitle = styled("div")`
    label:TopTitle;
    margin-top: 0px;
 `;
 
 
-export const MainTitle = styled ("h2")`
+export const MainTitle = styled("h2")`
    label:MainTitle;
    font-size: 30px;
    font-weight: 700;
@@ -65,8 +65,8 @@ export const MainTitle = styled ("h2")`
 
 `;
 
- 
-export const CoursesSearch = styled ("div")`
+
+export const CoursesSearch = styled("div")`
    label:CoursesSearch;
    position: relative;
     width: 500px;
@@ -77,13 +77,12 @@ export const CoursesSearch = styled ("div")`
     }
 
 `;
-
-export const SearchInput  = styled ("input")`
-   label:SearchInput;
+export const SearchInput = styled("input")`
+   label: SearchInput;
    width: 100%;
    height: 64px;
    border: 1px solid #58a58f;
-   border-radius: 10px!!important;
+   border-radius: 10px !important;
    padding: 0 30px;
    padding-right: 90px;
    outline: none;
@@ -94,13 +93,11 @@ export const SearchInput  = styled ("input")`
 
    @media (max-width: 768px) {
       height: 50px;
-      border-radius: 5px;
-
+      border-radius: 5px !important;
    }
-
 `;
- 
-export const CoursesBUtton = styled ("div")`
+
+export const CoursesBUtton = styled("div")`
    label:CoursesBUtton;
    // position: absolute;
    width: 50px;
@@ -126,6 +123,5 @@ export const CoursesBUtton = styled ("div")`
 
    }
 `;
- 
 
- 
+

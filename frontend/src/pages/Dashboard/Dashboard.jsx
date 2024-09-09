@@ -1,4 +1,4 @@
- 
+
 import React, { useEffect, useState } from 'react';
 import Config from '../../config';
 import AxiosInstance from '../../desing-system/Authentication/AxiosInstance.js';
@@ -30,15 +30,15 @@ export default function Dashboard() {
       const response = await AxiosInstance.get(`${Config.baseURL}/dashboard/dashboard`);
       setData(response.data);
     } catch (error) {
-      setError(error.response.data.error  || "You do not have permission to access this data.");
+      setError(error.response.data.error || "You do not have permission to access this data.");
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchData();  
-  }, []); 
+    fetchData();
+  }, []);
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
@@ -62,9 +62,9 @@ export default function Dashboard() {
   ];
 
   return (
- <div className='Dashboard_container'>
-          {data &&     <Sidebar_dashboard showSidebar={showSidebar} toggleSidebar={toggleSidebar} />}
-          {data &&   <div className="head-flex-container">
+    <div className='Dashboard_container'>
+      {data && <Sidebar_dashboard showSidebar={showSidebar} toggleSidebar={toggleSidebar} />}
+      {data && <div className="head-flex-container">
         <div>
           <samp>
             <button className="ButtonSidebar" onClick={toggleSidebar}>
@@ -74,20 +74,20 @@ export default function Dashboard() {
           Dashboard
         </div>
         <div>
-  
+
         </div>
-      </div> }
-      {data &&   <Views Views={data ? data.views : null} />}
-    
-      {data &&   <Card data={data} />}
-      <div style={{width: '100%', marginTop: '30px', float: 'left'}} />
-      {data &&  <Tabs style={{width: '100%'}} tabs={tabData} fetchData={fetchData} />}
-      <div style={{width: '100%', marginTop: '30px', float: 'left'}} />
-      {data &&  <DashboardCards data={data} />}
-      <div style={{width: '100%', marginTop: '30px', float: 'left'}} >
-      {data &&  <ApexChart_Location title="Location" data={data ? data.country_list : null} />}
+      </div>}
+      {data && <Views Views={data ? data.views : null} />}
+
+      {data && <Card data={data} />}
+      <div style={{ width: '100%', marginTop: '30px', float: 'left' }} />
+      {data && <Tabs style={{ width: '100%' }} tabs={tabData} fetchData={fetchData} />}
+      <div style={{ width: '100%', marginTop: '30px', float: 'left' }} />
+      {data && <DashboardCards data={data} />}
+      <div style={{ width: '100%', marginTop: '30px', float: 'left' }} >
+        {data && <ApexChart_Location title="Location" data={data ? data.country_list : null} />}
       </div>
-      <div style={{width: '100%', marginTop: '30px', float: 'left'}} />
+      <div style={{ width: '100%', marginTop: '30px', float: 'left' }} />
       {data && <CountryButton data={data} />}
     </div>
   );

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
- 
- 
- 
+
+
+
 
 export const WRapper = styled("div")`
   label:WRapper;
@@ -43,8 +43,8 @@ export const ImageWrapper = styled.div`
     margin-top:  0px;
   }
 `;
- 
-export const  Image = styled.img`
+
+export const Image = styled.img`
   padding:0px;
   height:auto; 
   margin: 0px;
@@ -58,7 +58,7 @@ export const  Image = styled.img`
   }
 `;
 
-export const  TextWrapper = styled.div`
+export const TextWrapper = styled.div`
   flex-grow: 1;
   padding:10px;
   @media (max-width: 768px) {
@@ -125,7 +125,7 @@ export const SubTitleP = styled("p")`
 `;
 
 
- 
+
 
 export const ButtonWrapper = styled.div`
   text-align: center;

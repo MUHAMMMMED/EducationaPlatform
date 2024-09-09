@@ -11,7 +11,7 @@ export default function QuizCreate({ categories, instructors }) {
     description: '',
     price: '',
     discount: '',
-    creator: '', 
+    creator: '',
     time_to_answer: 60,
     WrongAnswers: false,
     tries: '',
@@ -20,7 +20,7 @@ export default function QuizCreate({ categories, instructors }) {
     card_image: null,
     intro_video: '',
     intro_image: null,
-    category: '', // Add category field
+    category: '',
   });
 
   const handlecard_image = (e) => {
@@ -59,7 +59,7 @@ export default function QuizCreate({ categories, instructors }) {
       console.error('Error creating exam:', error);
     }
   };
- 
+
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => {
     setShowModal(false);
@@ -74,13 +74,13 @@ export default function QuizCreate({ categories, instructors }) {
           <label className='label'>Title:<input type="text" name="title" value={formData.title} onChange={handleChange} /></label>
           <div className="FOrm-container">
             <div className="form-container-half">
-            <label className='label'> Description:<input type="text" name="description" value={formData.description} onChange={handleChange} /></label>
+              <label className='label'> Description:<input type="text" name="description" value={formData.description} onChange={handleChange} /></label>
             </div>
             <div className="form-container-half">
-            <label className='label'>Intro Video: <input type="text" name="intro_video" value={formData.intro_video} onChange={handleChange} /></label>
+              <label className='label'>Intro Video: <input type="text" name="intro_video" value={formData.intro_video} onChange={handleChange} /></label>
             </div>
           </div>
-        
+
           <div className="FOrm-container">
             <div className="form-container-half">
               <label className='label'>Card Image: <input type="file" name="card_image" onChange={handlecard_image} /></label>
@@ -128,11 +128,11 @@ export default function QuizCreate({ categories, instructors }) {
               </label>
             </div>
             <div className="form-container-half">
-            <label>Time to Answer:
-            <input type="number" name="time_to_answer" value={formData.time_to_answer} onChange={handleChange} />
-          </label>
-          </div> </div>
-             <div className="FOrm-container">
+              <label>Time to Answer:
+                <input type="number" name="time_to_answer" value={formData.time_to_answer} onChange={handleChange} />
+              </label>
+            </div> </div>
+          <div className="FOrm-container">
             <div className="form-container-half">
               <label className='label'>Tries:<input type="number" name="tries" value={formData.tries} onChange={handleChange} /></label>
             </div>
@@ -153,7 +153,7 @@ export default function QuizCreate({ categories, instructors }) {
             <div style={{ width: '20%' }}><button className="cancel-button" onClick={handleCloseModal}>Cancel</button></div>
           </div>
         </form>
-        </div>
+      </div>
     </>
   );
 }

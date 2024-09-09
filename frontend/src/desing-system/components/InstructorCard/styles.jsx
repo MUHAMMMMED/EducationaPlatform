@@ -1,12 +1,11 @@
 import styled from "@emotion/styled";
 import theme from "../../config";
- 
-export const Card = styled ("div")`
+
+export const Card = styled("div")`
    label:Card;
    -ms-flex: 0 0 auto;
    flex: 0 0 auto;
    width:25%;
- 
    margin-right:20px;
 
    @media (max-width: 768px) {
@@ -15,13 +14,13 @@ export const Card = styled ("div")`
 `;
 
 
-export const SingleTeam = styled ("div")`
+export const SingleTeam = styled("div")`
    label:SingleTeam;
    margin-top: 35px;
   
 `;
- 
-export const TeamThumb = styled ("div")`
+
+export const TeamThumb = styled("div")`
    label:TeamThumb;
    -ms-flex: 0 0 auto;
    flex: 0 0 auto;
@@ -29,9 +28,9 @@ export const TeamThumb = styled ("div")`
    height: 200px;
    margin : auto;
 `;
-  
 
-export const IMG = styled ("img")`
+
+export const IMG = styled("img")`
    label:IMG;
    border-radius: 50%;
    padding: 10px;
@@ -47,14 +46,14 @@ export const IMG = styled ("img")`
 
 
 `;
- 
-export const TeamContent = styled ("div")`
+
+export const TeamContent = styled("div")`
    label:TeamContent;
    padding-top:5px;
    text-align:center;
  
 `;
-export const H4 = styled ("h4")`
+export const H4 = styled("h4")`
    label:H4;
    text-align:center;
    font-size: 15px;
@@ -69,7 +68,7 @@ export const H4 = styled ("h4")`
    }
 `;
 
-export const Designation = styled ("span")`
+export const Designation = styled("span")`
    label:Designation;
    text-align:center;
    width: 100%; 
@@ -79,7 +78,7 @@ export const Designation = styled ("span")`
    margin-top: 10px;
   
 `;
-export const P = styled ("p")`
+export const P = styled("p")`
 label:P;
 text-align:center;
 width: 100%; 

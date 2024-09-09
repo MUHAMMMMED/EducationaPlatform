@@ -7,37 +7,40 @@
   color: #973838;
   position: relative;
   /* z-index: 1; */
-  border: 1px solid hsl(163, 30%, 50%);  
-border-radius:8px;
-background-repeat: no-repeat;  
-background-size: cover;  
-@media (max-width: 1200px) {
- 
- }
+  border: 1px solid hsl(163, 30%, 50%);
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-}   
+  @media (max-width: 1200px) {}
 
-.envent_container{
- 
-  background-color:#140342; 
-  background-color: rgba(27, 60, 10, 0.4); 
+}
+
+.envent_container {
+
+  background-color: #140342;
+  background-color: rgba(27, 60, 10, 0.4);
   margin-top: -20px;
   padding: 200px;
+
   @media (max-width: 1200px) {
     padding: 30px;
 
   }
 }
-.detail-time-location{
+
+.detail-time-location {
   float: left;
   width: 70%;
   margin-left: 30%;
+
   @media (max-width: 1200px) {
     width: 90%;
     margin-left: 5%;
   }
 }
- .entry-title {
+
+.entry-title {
   float: left;
   width: 100%;
   color: #fff;
@@ -45,13 +48,14 @@ background-size: cover;
   margin: 15px 0 10px;
   text-align: center;
   font-weight: 500;
+
   @media (max-width: 1200px) {
     font-size: 20px;
-    margin: 20px 20px ;
-  
+    margin: 20px 20px;
+
   }
 }
- 
+
 .event-time {
   float: left;
   width: 35%;

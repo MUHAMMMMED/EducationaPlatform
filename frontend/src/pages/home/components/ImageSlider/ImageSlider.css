@@ -1,19 +1,18 @@
 /* ImageSlider.css */
-.Slick{ 
-    width: 100%;
- 
-margin: auto;
-margin-bottom: 50px;
+.Slick {
+  width: 100%;
+
+  margin: auto;
+  margin-bottom: 50px;
 }
 
 
-.image-slider { 
-    margin: 0px auto; 
-   
-  }
- 
-  .slickSlideImg {
-    width: 100%;
-    height: auto;
-  }
-  
+.image-slider {
+  margin: 0px auto;
+
+}
+
+.slickSlideImg {
+  width: 100%;
+  height: auto;
+}

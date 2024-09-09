@@ -10,7 +10,7 @@ import '../../styles.css';
 import Head from './Head';
 
 export default function SignupQuiz() {
-    const { id:examId } = useParams();
+    const { id: examId } = useParams();
     const navigate = useNavigate();
     const [user] = useState(JSON.parse(localStorage.getItem('user')));
 
@@ -27,7 +27,7 @@ export default function SignupQuiz() {
         password: "",
         password2: ""
     });
- 
+
 
     const [errors, setErrors] = useState({});
 
@@ -110,12 +110,12 @@ export default function SignupQuiz() {
     };
 
     const [examDetail, setExamDetail] = useState(null);
-    
+
     const fetchExamDetail = async () => {
         try {
             if (!examId) return;
             const response = await AxiosInstance.get(`${Config.baseURL}/Quiz/exam_pay/${examId}/`);
-            setExamDetail(response.data.exam_data  ); // assuming your response structure has a 'exam' key
+            setExamDetail(response.data.exam_data); // assuming your response structure has a 'exam' key
         } catch (error) {
             console.error('Error fetching exam  detail:', error);
         }
@@ -125,7 +125,7 @@ export default function SignupQuiz() {
         fetchExamDetail();
     }, [examId]);
 
-  
+
     if (!examDetail) {
         return <Loading />;
     }
@@ -133,7 +133,7 @@ export default function SignupQuiz() {
         <div className='Container'>
             <div className='flex_Container'>
                 <div className='flex_center'>
-                {examDetail&&  <Head  data={examDetail}  />}
+                    {examDetail && <Head data={examDetail} />}
                     <div className='SigRow1'>
                         <div className='Row1'>
                             <div className="login-form">

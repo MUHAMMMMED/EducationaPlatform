@@ -104,8 +104,8 @@ export default function RunCampaign() {
               <button type="button" onClick={handleStop} disabled={loading} className="Stop_button">Stop</button>
             </div>
             <div className="Course_card_info">
-              {dataCampaign.customers_count && ( <div className='customers'><PiStudentLight /> : {dataCampaign.customers_count}  </div> )}
-         
+              {dataCampaign.customers_count && (<div className='customers'><PiStudentLight /> : {dataCampaign.customers_count}  </div>)}
+
             </div>
           </div>
         </form>
@@ -119,8 +119,8 @@ export default function RunCampaign() {
             <div className='Load'>Loading...</div>
           </div>
         )}
-        {dataCampaign.message && (  <div className="Course_card_info">  <GrCompliance /> {dataCampaign.message} </div> )}
-     </div>
+        {dataCampaign.message && (<div className="Course_card_info">  <GrCompliance /> {dataCampaign.message} </div>)}
+      </div>
     </div>
   );
 }

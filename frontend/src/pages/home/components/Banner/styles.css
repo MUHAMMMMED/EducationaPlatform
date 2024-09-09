@@ -1,22 +1,24 @@
-.Banner_area{
+.Banner_area {
   float: left;
   width: 100%;
   margin-top: 0px;
   margin-bottom: 50px;
- padding-top: 10px;
+  padding-top: 10px;
+
   @media (max-width: 1200px) {
     width: 100%;
     display: block;
 
   }
- 
+
 
 }
 
-.card_banner{
-  width:576px;
+.card_banner {
+  width: 576px;
   border: 1px solid #58a58f;
   border-radius: 8px;
+
   @media (max-width: 1200px) {
     width: 90%;
     height: auto;
@@ -24,24 +26,25 @@
     margin-top: 15px;
   }
 }
- 
+
 
 .banner__title {
   font-size: 26px;
   margin-bottom: 30px;
-  font-family: Hind,sans-serif;
+  font-family: Hind, sans-serif;
   color: #0e1133;
   margin-top: 0;
   line-height: 1.2;
   transition: all .3s ease-out 0s;
 
-  @media (max-width:1200) { 
-     font-size: 10px;   
+  @media (max-width:1200) {
+    font-size: 10px;
 
-    } } 
+  }
+}
 
- 
- 
+
+
 .banner__item {
   position: relative;
   margin-bottom: 40px;
@@ -51,61 +54,64 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 4px;
+
   @media (max-width:1200) {
     padding: 20px 20px;
- }
+  }
 }
 
 .banner__content {
   position: relative;
   float: left;
-  height: 100%; width:60%;
+  height: 100%;
+  width: 60%;
+
   @media (min-width: 768px) {
-    width:50%;
- 
-     }
+    width: 50%;
+
+  }
 }
+
 .banner__thumb img {
   width: 40%;
   float: left;
 
 }
- 
 
-  .e-btn {
-    text-decoration: none;
-    color: inherit;
-    outline: none;
-    border: none;
-    display: inline-block;
-    padding: 0px;
-    line-height: 40px;
-    text-align: center;
-    padding: 0 25px;
-    color: #fff;
-    background: #58a58f;
-    border-radius: 4px;
-    font-weight: 400;
-    font-size: 14px;
 
-    @media (max-width:780) {
-      font-size: 11px;
-      padding: 0 10px;
-    }
-   
-  }
-  .banner__item span {
-    border: 1px solid #58a58f;
-    font-size: 14px;
-    font-weight: 500;
-    color:#58a58f;
-    background:#fff;
-    display: inline-block;
-    line-height: 22px;
-    padding: 0 14px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    text-transform: capitalize;
+.e-btn {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  display: inline-block;
+  padding: 0px;
+  line-height: 40px;
+  text-align: center;
+  padding: 0 25px;
+  color: #fff;
+  background: #58a58f;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 14px;
+
+  @media (max-width:780) {
+    font-size: 11px;
+    padding: 0 10px;
   }
 
+}
 
+.banner__item span {
+  border: 1px solid #58a58f;
+  font-size: 14px;
+  font-weight: 500;
+  color: #58a58f;
+  background: #fff;
+  display: inline-block;
+  line-height: 22px;
+  padding: 0 14px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}

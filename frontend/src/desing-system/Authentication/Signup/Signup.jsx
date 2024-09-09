@@ -89,7 +89,7 @@ const Signup = () => {
                     navigate('/Redirection');
                 }
             }
-     
+
         } catch (error) {
             console.error('Error during signup:', error);
             // Update the toast to error

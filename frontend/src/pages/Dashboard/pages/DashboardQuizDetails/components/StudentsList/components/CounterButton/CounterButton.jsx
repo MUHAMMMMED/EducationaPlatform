@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
 import './CounterButton.css';
- 
+
 const CounterButton = ({ Id, tries, fetchUser }) => {
   const [count, setCount] = useState(tries);
 
@@ -31,11 +31,11 @@ const CounterButton = ({ Id, tries, fetchUser }) => {
 
   return (
     <div className="counter-container">
-    <div className="counter ">
+      <div className="counter ">
 
-      <button className="counter-button" onClick={decrement}>-</button>
-      <span className="counter-value">{count}</span>
-      <button className="counter-button" onClick={increment}>+</button>
+        <button className="counter-button" onClick={decrement}>-</button>
+        <span className="counter-value">{count}</span>
+        <button className="counter-button" onClick={increment}>+</button>
 
       </div></div>
   );

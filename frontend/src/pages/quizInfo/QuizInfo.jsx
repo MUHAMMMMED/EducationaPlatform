@@ -1,4 +1,4 @@
- 
+
 import React, { useEffect, useState } from 'react';
 import { BiListOl } from "react-icons/bi";
 import { CgTime } from "react-icons/cg";
@@ -29,7 +29,7 @@ export default function QuizInfo() {
       if (!examId) return;
       const response = await AxiosInstance.get(`${Config.baseURL}/Quiz/exam/${examId}/`);
 
-      
+
       setExamDetails(response.data);
     } catch (error) {
       setError(error.response?.data?.message || "The Quiz is not available");
@@ -37,11 +37,11 @@ export default function QuizInfo() {
       setLoading(false);
     }
   };
-  
+
   useEffect(() => {
     fetchExamDetail();
   }, [examId]);
-  
+
 
 
   // Google Tag Manager 
@@ -64,7 +64,7 @@ export default function QuizInfo() {
     }
   }, [examDetails.pixel_id]);
   // End Google Tag Manager
-   
+
 
   if (loading) {
     return <Loading />;
@@ -73,37 +73,28 @@ export default function QuizInfo() {
     return <ErrorPage head="Error Occurred" error={error} />;
   }
 
-  
 
 
 
-
-
-
-
-
-
-
-  
   return (
- <div className='Container'>
- <div className='container'>
-<CardWrapper>
- 
-  <>
-  {examDetails.intro_video ? (
- <Banner src={`https://www.youtube.com/embed/${examDetails.intro_video}?autoplay=1&mute=1`}></Banner>
-          ) : (
-    examDetails.intro_image  && (
-      <img
-        style={{ width: "100%" }}
-        src={`${Config.baseURL}${examDetails.intro_image}`}
-        alt="Intro Image"
-      />
-    )
-  )}
-</>
-  
+    <div className='Container'>
+      <div className='container'>
+        <CardWrapper>
+
+          <>
+            {examDetails.intro_video ? (
+              <Banner src={`https://www.youtube.com/embed/${examDetails.intro_video}?autoplay=1&mute=1`}></Banner>
+            ) : (
+              examDetails.intro_image && (
+                <img
+                  style={{ width: "100%" }}
+                  src={`${Config.baseURL}${examDetails.intro_image}`}
+                  alt="Intro Image"
+                />
+              )
+            )}
+          </>
+
           <Title>{examDetails.title}</Title>
           <Content>
             <RowInfo>
@@ -121,29 +112,29 @@ export default function QuizInfo() {
             <Sidebar>
               <SidebarWidget>
                 {examDetails && examDetails.is_enrolled === false && (<InfoPrice> <Price>
-                
-                  {examDetails.price <1 ? "Free" : `$${examDetails.price}`}
-                  </Price> </InfoPrice>)}
+
+                  {examDetails.price < 1 ? "Free" : `$${examDetails.price}`}
+                </Price> </InfoPrice>)}
                 <div ><UL>
                   {/* <LI> <Span><FaUserTie /></Span> <Strong>Instructor</Strong> <span>{examDetails.creator.user_full_name}</span></LI> */}
                   <LI><Span> <FaUserGraduate /></Span><Strong>Total</Strong> <span>{examDetails.Enroll} Enrolled</span></LI>
                   <LI><Span><BiListOl /></Span><Strong> Total :</Strong> <span>{examDetails.questions_count} Questions  </span></LI>
                   <LI><Span><CgTime /> </Span><Strong>Duration :</Strong> <span>{examDetails.time_to_answer} mins</span></LI>
                   <LI><Span><PiTimer /> </Span><Strong>   Tries :</Strong> <span>{examDetails.tries} times</span></LI>
-                  <LI><Span> <IoIosSync /></Span><Strong>Last Updated</Strong> <span>{examDetails.updated}</span></LI>
+                  <LI><Span> <IoIosSync /></Span><Strong> Updated</Strong> <span>{examDetails.updated}</span></LI>
                 </UL>
                 </div>
                 <>
                   {examDetails && examDetails.is_enrolled === 'login' ? (
 
-                  <Link to={`/SignInUp_Quiz/${examDetails.id}`}><Button>Login</Button> </Link>
+                    <Link to={`/SignInUp_Quiz/${examDetails.id}`}><Button>Login</Button> </Link>
 
-                ) : (
+                  ) : (
                     <>
                       {examDetails && examDetails.is_enrolled === false ? (
-                         <CheckoutQuiz  Id={examDetails.id}  name={examDetails.title}  price={examDetails.price} Img={examDetails.card_image} />
+                        <CheckoutQuiz Id={examDetails.id} name={examDetails.title} price={examDetails.price} Img={examDetails.card_image} />
 
-) : (
+                      ) : (
                         <>
                           <Link to={`/Quiz/${examId}`}><Button>Go To Quiz</Button> </Link>
                         </>)}
@@ -157,20 +148,17 @@ export default function QuizInfo() {
           </Content>
         </CardWrapper>
       </div>
- 
-<Footer/>
+
+      <Footer />
 
 
+      {/* <!-- Google Tag Manager (noscript) --> */}
+      <noscript>
+        <iframe src={`https://www.googletagmanager.com/ns.html?id=${examDetails?.pixel_id}`}
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      </noscript>
+      {/* <!-- End Google Tag Manager (noscript) --> */}
 
-
-
-{/* <!-- Google Tag Manager (noscript) --> */}
-<noscript>
-  <iframe src={`https://www.googletagmanager.com/ns.html?id=${examDetails?.pixel_id}`}
-  height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-{/* <!-- End Google Tag Manager (noscript) --> */}
-
-      </div>
+    </div>
   )
 }

@@ -1,4 +1,3 @@
-// ApexChart_Location.jsx
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 
@@ -47,4 +46,3 @@ class ApexChart extends React.Component {
 
 export default ApexChart;
 
- 

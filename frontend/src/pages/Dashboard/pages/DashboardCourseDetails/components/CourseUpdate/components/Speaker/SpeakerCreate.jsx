@@ -1,15 +1,15 @@
-  
+
 import React, { useEffect, useState } from 'react';
 import Config from '../../../../../../../../config';
 import AxiosInstance from '../../../../../../../../desing-system/Authentication/AxiosInstance';
-  
-const SpeakerCreate = ({Course,fetchCourse}) => {
+
+const SpeakerCreate = ({ Course, fetchCourse }) => {
   const [formData, setFormData] = useState({
-    course:Course.id,
-    teacher: '',  
+    course: Course.id,
+    teacher: '',
     description: '',
   });
- 
+
   const [results, setResults] = useState([]);
   const [showModalSpeakerCreate, setShowModalSpeakerCreate] = useState(false);
 
@@ -40,12 +40,12 @@ const SpeakerCreate = ({Course,fetchCourse}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await AxiosInstance.post(`${Config.baseURL}/Courses/speaker/`, formData);
-  
+      await AxiosInstance.post(`${Config.baseURL}/Courses/speaker/`, formData);
+
       // Clear form data after successful submission
-      setFormData({ course:Course.id,teacher: '',description: '', }); 
-         
-        
+      setFormData({ course: Course.id, teacher: '', description: '', });
+
+
       setShowModalSpeakerCreate(false);
       fetchCourse();
       // Handle any other actions after successful submission, such as showing a success message
@@ -60,8 +60,8 @@ const SpeakerCreate = ({Course,fetchCourse}) => {
 
   return (
     <>
- 
-      <button className="Open_button" onClick={() => setShowModalSpeakerCreate(true)}>Create</button> 
+
+      <button className="Open_button" onClick={() => setShowModalSpeakerCreate(true)}>Create</button>
 
       <div className={`modal ${showModalSpeakerCreate ? 'show' : ''}`}>
         <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
@@ -69,17 +69,17 @@ const SpeakerCreate = ({Course,fetchCourse}) => {
           <div className="FOrm-container">
             <div className="form-container-half" style={{ width: '100%' }}>
               <label className='label' htmlFor="Teacher">Teacher:</label>
-              <select className="Action-Box" style={{ width: '98%',marginTop:'5px' }}onChange={handleInstructorsSelection} value={formData.Teacher}>
-                <option value=''>Select Teacher</option>          
+              <select className="Action-Box" style={{ width: '98%', marginTop: '5px' }} onChange={handleInstructorsSelection} value={formData.Teacher}>
+                <option value=''>Select Teacher</option>
                 {results.instructors && results.instructors.map(inst => (
-                <option value={inst.id} key={inst.id}>{inst.user_full_name}</option>))} </select>
-  
+                  <option value={inst.id} key={inst.id}>{inst.user_full_name}</option>))} </select>
+
             </div>
           </div><br /><br />
           <div className="FOrm-container">
             <div className="form-container-half" style={{ width: '100%' }}>
               <label className='label' htmlFor="description">description:</label>
-              <textarea name="description" value={formData.description} onChange={handleChange} placeholder="description..."/> 
+              <textarea name="description" value={formData.description} onChange={handleChange} placeholder="description..." />
             </div>
           </div><br /><br />
           {/* Form buttons */}

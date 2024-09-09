@@ -53,7 +53,7 @@ function DownTimer({ date, time, join_meeting, join_meeting_link, courseId, room
                   //     <samp className="live-text">Join Now</samp>
                   //   </button>
                   // </a>
-                   <></>        
+                  <></>
 
                 ) : (
                   <a href={join_meeting_link} className="no-underline" target="_blank" rel="noopener">

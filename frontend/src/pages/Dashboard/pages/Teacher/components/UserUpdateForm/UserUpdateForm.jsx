@@ -1,4 +1,4 @@
- 
+
 import React, { useState } from 'react';
 import Config from '../../../../../../config';
 import AxiosInstance from '../../../../../../desing-system/Authentication/AxiosInstance';
@@ -33,7 +33,7 @@ export default function UserUpdateForm({ user, fetchUser }) {
     }
 
     try {
-      await AxiosInstance.put(`${Config.baseURL}/dashboard/api/users/update/${user.id}/`, formDataToSend, {
+      await AxiosInstance.put(`${Config.baseURL}/dashboard/users/update/${user.id}/`, formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -108,16 +108,16 @@ export default function UserUpdateForm({ user, fetchUser }) {
               <label className='label'>Width Image:
                 <input type="file" name="width_image" onChange={handleFileChange} />
               </label>
-              <span style={{float:'left',color:'#000',width:'100%',padding:'15px',textAlign:'center'}}>Width Image </span>
-              
+              <span style={{ float: 'left', color: '#000', width: '100%', padding: '15px', textAlign: 'center' }}>Width Image </span>
+
               {user.width_image && <img src={`${Config.baseURL}${user.width_image}`} width={'100%'} alt="Width" />}
             </div>
             <div className="form-container-half">
               <label className='label'>Height Image:
                 <input type="file" name="height_image" onChange={handleFileChange} />
               </label>
-              
-              <span style={{float:'left',color:'#000',width:'100%',padding:'15px',textAlign:'center'}}>Height Image </span>
+
+              <span style={{ float: 'left', color: '#000', width: '100%', padding: '15px', textAlign: 'center' }}>Height Image </span>
 
               {user.height_image && <img src={`${Config.baseURL}${user.height_image}`} width={'100%'} alt="Height" />}
             </div>

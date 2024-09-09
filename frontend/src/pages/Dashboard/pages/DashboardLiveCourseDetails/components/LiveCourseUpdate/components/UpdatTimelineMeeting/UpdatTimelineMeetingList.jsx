@@ -2,11 +2,11 @@ import React from 'react';
 import { IoCreateOutline } from "react-icons/io5";
 import UpdatTimelineMeetingForm from './UpdatTimelineMeetingForm';
 
-export default function UpdatTimelineMeetingList({liveCourses,fetchCourse}) {
+export default function UpdatTimelineMeetingList({ liveCourses, fetchCourse }) {
   return (
     <>
-     
-    <div className="CourseCard">
+
+      <div className="CourseCard">
         <div className="Course_card_content">
           <div className="Course_card_info">
             <div style={{ float: 'left', width: '65px' }}><span className='onLine-icon'><IoCreateOutline /></span></div>
@@ -17,17 +17,17 @@ export default function UpdatTimelineMeetingList({liveCourses,fetchCourse}) {
           </div>
           <div className="Course_cardicon">
             {liveCourses && liveCourses.base && liveCourses.base.id ? (
-              <UpdatTimelineMeetingForm base={liveCourses.base}  timeline={liveCourses.timeline} fetchCourse={fetchCourse} />
+              <UpdatTimelineMeetingForm base={liveCourses.base} timeline={liveCourses.timeline} fetchCourse={fetchCourse} />
             ) : (
               liveCourses && liveCourses.id ? (
-                   <></>
+                <></>
               ) : null
             )}
           </div>
         </div>
-      </div> 
-     
-    
+      </div>
+
+
     </>
   )
 }

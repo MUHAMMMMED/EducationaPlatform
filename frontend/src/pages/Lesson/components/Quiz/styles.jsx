@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-export const Container = styled ("div")`
+export const Container = styled("div")`
 
 margin: 0 auto;
 margin-top:10px; 
@@ -9,28 +9,27 @@ flex-direction: column;
 gap: 20px;
 border-radius:  0px;
 box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-
 font-family: 'Poppins', sans-serif;
- border: 1px solid #fff;
+border: 1px solid #fff;
 padding:3px;
 border-radius: 8px;
-   background-repeat: no-repeat 
-   background-position: center 
-   width:  100%;
-   height:  50%;
-   opacity:3; 
+background-repeat: no-repeat ;
+background-position: center ;
+width:  100%;
+height:  50%;
+opacity:3; 
  
 @media (max-width: 768px) {
     width:  98%;
     box-shadow:none;
 
+  
    }
- 
  
 `;
 
 
-export const Con  = styled ("div")`
+export const Con = styled("div")`
 label:Con;
 padding:0px;
 padding-top:5px;
@@ -52,7 +51,7 @@ color: #fff;
 
 
 
-export const Containerq = styled ("div")`
+export const Containerq = styled("div")`
     label:Container;
     width:80%;
     margin: 0 auto;
@@ -88,9 +87,9 @@ export const Containerq = styled ("div")`
 
        }
     `;
- 
-    
-export const Head = styled ("div")`
+
+
+export const Head = styled("div")`
     label:Head;
     width: 100%;
     margin:0px; 
@@ -98,26 +97,26 @@ export const Head = styled ("div")`
     border-radius: 10px;
     border-radius: 10px 10px  0px  0px ;
     color: #fff;
-    `; 
-    
+    `;
 
-export const Row = styled ("div")`
+
+export const Row = styled("div")`
     label:Head;
     width: 70%;
     float:left;
     padding-left:15px;
 
-    `; 
-   
-export const H4 = styled ("h4")`
+    `;
+
+export const H4 = styled("h4")`
        label:H4;
        margin-top:12px; 
        font-size: 15px;
        font-weight: 500; 
        @media (max-width: 768px) { font-size: 13px; }
         
-       `; 
- export const Time = styled ("p")`
+       `;
+export const Time = styled("p")`
    label:Time;
    margin-top:14px; 
    font-size: 16px;
@@ -128,19 +127,19 @@ export const H4 = styled ("h4")`
 
      }
      
-`; 
+`;
 
- export const HR = styled ("div")`
+export const HR = styled("div")`
     label:HR;
     height:1px;
     border: none;
    //  background: #707070; 
     margin-top:0px; 
 
- `; 
+ `;
 
- 
- export const Ques = styled ("div")`
+
+export const Ques = styled("div")`
     label:Ques;
     width:80%;
     margin: auto;
@@ -149,14 +148,14 @@ export const H4 = styled ("h4")`
       width:98%;
       margin: auto;
      }
- `; 
+ `;
 
 
 
 
 
 
- export const H2 = styled ("h2")`
+export const H2 = styled("h2")`
     label:H2;
     width:99%;
     font-size: 22px;
@@ -181,10 +180,10 @@ export const H4 = styled ("h4")`
 
 
        }
- `; 
+ `;
 
- 
- export const Iframe = styled ("iframe")`
+
+export const Iframe = styled("iframe")`
     label:Iframe;
     width:99%;
     margin: auto;
@@ -198,8 +197,8 @@ export const H4 = styled ("h4")`
         height:250px;
         margin-bottom: 10px; 
        }
- `; 
- export const Video = styled ("video")`
+ `;
+export const Video = styled("video")`
     label:Video;
     width:99%;
     margin-bottom: 50px; 
@@ -209,10 +208,10 @@ export const H4 = styled ("h4")`
      }
 
 
-       }
- `; 
+ 
+ `;
 
- export const Img = styled ("img")`
+export const Img = styled("img")`
     label:Img;
     width:99%;
     margin: auto;
@@ -222,17 +221,17 @@ export const H4 = styled ("h4")`
     @media (max-width: 768px) {
       margin-bottom: 10px; 
      }
-       }
- `; 
- export const UL = styled ("ul")`
+   
+ `;
+export const UL = styled("ul")`
     label:UL;
     width:100%;
     margin: auto;
     padding:0px;
 
 
- `; 
- export const LI = styled ("button")`
+ `;
+export const LI = styled("button")`
     label:LI;
     float:left;
     margin:0px; 
@@ -258,10 +257,10 @@ export const H4 = styled ("h4")`
         margin-bottom: 10px; 
       
        }
- `; 
+ `;
 
 
- export const  LIButton = styled ("div")`
+export const LIButton = styled("div")`
     label:LIButton;
     width:90%;
     margin: auto;
@@ -274,10 +273,10 @@ export const H4 = styled ("h4")`
       margin-right:3.5%; 
      
        }
- `; 
+ `;
 
 
- export const Button = styled ("button")`
+export const Button = styled("button")`
    label:Button;
    margin: auto; 
    width: 99%;
@@ -296,9 +295,9 @@ export const H4 = styled ("h4")`
     height:46px;
  
    }
-`; 
+`;
 
-export const SPan = styled ("spen")`
+export const SPan = styled("spen")`
 label:SPan;
 float:left;
 font-weight: 700; 
@@ -309,17 +308,17 @@ background:#d1ae20;
 color: #fff;
 
  
-`; 
+`;
 
-export const Index = styled ("div")`
+export const Index = styled("div")`
 label:Index;
 width: 100%;
 margin: auto; 
 font-size:18px;
 text-align: center;
 padding-bottom: 15px; 
-`; 
-export const Result = styled ("div")`
+`;
+export const Result = styled("div")`
 label:Result;
 width: 90%;
 margin: auto; 
@@ -333,8 +332,8 @@ text-align: center;
 
   }
 
-`; 
-export const BUtton = styled ("button")`
+`;
+export const BUtton = styled("button")`
 label:Button;
 margin: auto; 
 width: 100%;
@@ -350,12 +349,12 @@ cursor:pointer;
  font-size: 17px;
  
 }
-`; 
+`;
 
 
- 
 
-export const CenterBut  = styled ("div")`
+
+export const CenterBut = styled("div")`
 label:Con;
 padding:0px;
 width: 20%;
@@ -371,7 +370,7 @@ margin: 0 auto;
 
 
 
-export const NButton = styled ("button")`
+export const NButton = styled("button")`
 label:NButton;
 
 width: 100%;
@@ -395,9 +394,9 @@ border: none;
  
  
 }
-`; 
- 
-export const Buttonqiuz = styled ("button")`
+`;
+
+export const Buttonqiuz = styled("button")`
 label:Buttonqiuz;
 
 width: 100%;
@@ -423,10 +422,10 @@ margin-bottom:  0px;
  margin-bottom: -250px; 
  
 }
-`; 
- 
+`;
 
-export const Refresh = styled ("button")`
+
+export const Refresh = styled("button")`
 label:Refresh;
 
 padding:4px  20px ;

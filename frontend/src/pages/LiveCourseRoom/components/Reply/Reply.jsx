@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
- 
+
 import Config from '../../../../config';
 import AxiosInstance from '../../../../desing-system/Authentication/AxiosInstance';
-export default function Reply({ ItemId, fetchCourse, course ,is_author}) {
+export default function Reply({ ItemId, fetchCourse, course, is_author }) {
   const [formData, setFormData] = useState({
     course: course,
     parent_comment: ItemId,
@@ -26,7 +26,7 @@ export default function Reply({ ItemId, fetchCourse, course ,is_author}) {
       console.error('Error creating reply:', error);
     }
   };
- 
+
   const handleDelete = async () => {
     try {
       await AxiosInstance.delete(`${Config.baseURL}/LiveCourses/ask/delete/${ItemId}/`);
@@ -52,9 +52,9 @@ export default function Reply({ ItemId, fetchCourse, course ,is_author}) {
         </div>
       </form>
       <div className="post-buttoncontener">
-        <br/>
-        {is_author ===  true  &&  <button className="post-button" onClick={handleDelete}>Delete</button>  }
-       </div> 
+        <br />
+        {is_author === true && <button className="post-button" onClick={handleDelete}>Delete</button>}
+      </div>
     </>
   );
 }

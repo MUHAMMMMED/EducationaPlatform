@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 
 
-export const Coursestop = styled ("div")`
+export const Coursestop = styled("div")`
    label:Coursestop;
    float:left;
    margin-bottom:  37px;
@@ -17,14 +17,12 @@ export const Coursestop = styled ("div")`
    @media (max-width: 768px) {
       margin-left:5%;
       width: 90%;
-
-    
-  
+ 
     }
  
 `;
 
-export const TopTitle = styled ("div")`
+export const TopTitle = styled("div")`
    label:TopTitle;
    margin-top: 15px;
    float:left;
@@ -38,7 +36,7 @@ export const TopTitle = styled ("div")`
 `;
 
 
-export const MainTitle = styled ("h2")`
+export const MainTitle = styled("h2")`
    label:MainTitle;
    font-size: 30px;
    font-weight: 700;
@@ -60,8 +58,8 @@ export const MainTitle = styled ("h2")`
 
 `;
 
- 
-export const CoursesSearch = styled ("div")`
+
+export const CoursesSearch = styled("div")`
    label:CoursesSearch;
    position: relative;
     width: 50%;
@@ -72,13 +70,12 @@ export const CoursesSearch = styled ("div")`
     }
 
 `;
-
-export const SearchInput  = styled ("input")`
-   label:SearchInput;
+export const SearchInput = styled("input")`
+   label: SearchInput;
    width: 100%;
    height: 64px;
    border: 1px solid #58a58f;
-   border-radius: 15px!!important;
+   border-radius: 10px !important;
    padding: 0 30px;
    padding-right: 90px;
    outline: none;
@@ -89,36 +86,32 @@ export const SearchInput  = styled ("input")`
    @media (max-width: 768px) {
       height: 50px;
       border-radius: 5px;
-
    }
-
 `;
- 
-export const CourseSButton = styled ("p")`
+
+export const CourseSButton = styled("p")`
    label:CourseSButton;
    position: absolute;
    width: 50px;
    height: 50px;
    line-height: 54px;
    text-align: center;
-   border-radius: 10px;
+   border-radius: 8px;
    background-color: rgba(48, 146, 85, 0.2);
- 
    border: 0;
-   top: 12px;
+   top: 16px;
    right: 7px;
    font-size: 16px;
    color:#58a58f;
    @media (max-width: 768px) {
       width: 40px;
       height: 40px;
-      top: 10px;
+      top: 5px;
       right: 5px;
       border-radius: 5px;
       font-size: 16px;
 
    }
 `;
- 
 
- 
+

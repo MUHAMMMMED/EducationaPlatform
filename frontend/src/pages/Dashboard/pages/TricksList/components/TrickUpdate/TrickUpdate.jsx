@@ -1,4 +1,3 @@
- 
 import React, { useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { GrUpdate } from "react-icons/gr";
@@ -13,7 +12,7 @@ export default function TrickUpdate({ tip, fetchTricks, categories, instructors 
     Image: tip.Image,
     title: tip.title,
     content: tip.content,
-    author:tip.author.id,
+    author: tip.author.id,
   });
 
   const handleImage = (e) => {
@@ -22,8 +21,11 @@ export default function TrickUpdate({ tip, fetchTricks, categories, instructors 
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value,
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -65,76 +67,64 @@ export default function TrickUpdate({ tip, fetchTricks, categories, instructors 
 
   return (
     <>
-      <div style={{ float: 'left', width: '65px',  marginRight:'17px'}} onClick={() => setShowModalTrickUpdate(true)}>
-        <span className='onLine-icon'><GrUpdate  /></span>
+      <div style={{ float: 'left', width: '65px', marginRight: '17px' }} onClick={() => setShowModalTrickUpdate(true)}>
+        <span className='onLine-icon'><GrUpdate /></span>
       </div>
       <div style={{ float: 'left', width: '65px' }}>
         <span className='onLine-icon' onClick={handleDelete}><AiOutlineDelete /></span>
       </div>
 
-      <div className={`modal ${showModalTrickUpdate ? 'show' : ''}`}>
-        <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
-          <h2 style={{ textAlign: 'center', padding: '15px' }}>Trick Update</h2>
-          <label className='label'>Title:<input type="text" name="title" value={formData.title} onChange={handleChange} /></label>
+      {showModalTrickUpdate && (
+        <div className="modal show">
+          <form className="modal-content animate" onSubmit={handleSubmit} encType="multipart/form-data">
+            <h2 style={{ textAlign: 'center', padding: '15px' }}>Trick Update</h2>
+            <label className='label'>Title:<input type="text" name="title" value={formData.title} onChange={handleChange} /></label>
 
-          <div className="FOrm-container">
-            <div className="form-container-half" style={{ width: '100%' }}>
-              <label>Content :</label>
-              <textarea name="content" value={formData.content}  style={{height:'200px'}} onChange={handleChange} />
+            <div className="FOrm-container">
+              <div className="form-container-half" style={{ width: '100%' }}>
+                <label>Content :</label>
+                <textarea name="content" value={formData.content} style={{ height: '200px' }} onChange={handleChange} />
+              </div>
             </div>
-          </div>
 
-          <label className='label'>
-            Image:
-            <input type="file" name="Image" onChange={handleImage} />
-          </label>
-             
+            <label className='label'>
+              Image:
+              <input type="file" name="Image" onChange={handleImage} />
+            </label>
+            {tip.Image && <img src={`${Config.baseURL}${tip.Image}`} style={{ objectFit: 'cover', width: '100%' }} alt={tip.title} />}
 
-          {tip.Image && <img src={`${Config.baseURL}${tip.Image}`}  style={{objectFit: 'cover',width:'100%'}} alt={tip.title} />}
-        
+            <div className="FOrm-container">
+              <div className="form-container-half">
+                <label className='label'>Category:
+                  <select name="category" className='form-Select' value={formData.category} onChange={handleChange}>
+                    <option value='' disabled hidden>Select Category</option>
+                    {categories.map(cat => (<option value={cat.id} key={cat.id}>{cat.title}</option>))}
+                  </select>
+                </label>
+              </div>
+              <div className="form-container-half">
+                <label className='label'>Author:
+                  <select name="author" className='form-Select' value={formData.author} onChange={handleChange}>
+                    <option value='' disabled hidden>Select Author</option>
+                    {instructors.map(inst => (<option value={inst.id} key={inst.id}>{inst.user_full_name}</option>))}
+                  </select>
+                </label>
+              </div>
+            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <div className="FOrm-container">
-            <div className="form-container-half">
-              <label className='label'>Category: 
-                <select name="category" className='form-Select' value={formData.category} onChange={handleChange}>
-                  <option value='' disabled hidden>Select Category</option>
-                  {categories.map(cat => (<option value={cat.id} key={cat.id}>{cat.title}</option>))}
-                </select>
+            <div className="FOrm-container">
+              <label className='label'>Active:
+                <input type="checkbox" name="active" checked={formData.active} onChange={handleChange} />
               </label>
             </div>
-            <div className="form-container-half">
-              <label className='label'>Author: 
-                <select name="author" className='form-Select' value={formData.author} onChange={handleChange}>
-                  <option value='' disabled hidden>Select Author</option>
-                  {instructors.map(inst => (<option value={inst.id} key={inst.id}>{inst.user_full_name}</option>))}
-                </select>
-              </label>
+
+            <div className="FOrmContainer">
+              <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>
+              <div style={{ width: '20%' }}><button className="cancel-button" type="button" onClick={handleCloseModal}>Cancel</button></div>
             </div>
-          </div>
-
-          <div className="FOrm-container">
-            <label className='label'>Active:<input type="checkbox" name="active" checked={formData.active} onChange={handleChange} /></label>
-          </div>
-
-          <div className="FOrmContainer">
-            <div style={{ width: '78%' }}><button className="button-form" type="submit">Save</button></div>
-            <div style={{ width: '20%' }}><button className="cancel-button" onClick={handleCloseModal}>Cancel</button></div>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
+      )}
     </>
   );
 }
