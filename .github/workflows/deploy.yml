@@ -28,13 +28,14 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # Step 4: Build and push the backend Docker image
-      - name: Build and Push Backend Docker Image
+      # Step 4: Build and push the backendeducation Docker image
+      - name: Build and Push backendeducation Docker Image
         env:
-          REPOSITORY: backendeducation  # Correct repository name
+          REPOSITORY: backendeducation  
           IMAGE_TAG: latest
+
         run: |
-          cd backend
+          # cd backend
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
           if [ $? -ne 0 ]; then
             echo "Backend Docker image build failed"
@@ -49,7 +50,7 @@ jobs:
       # Step 5: Build and push the frontend Docker image
       - name: Build and Push Frontend Docker Image
         env:
-          REPOSITORY: frontendeducationa  # Correct repository name
+          REPOSITORY: frontendeducationa  
           IMAGE_TAG: latest
         run: |
           cd frontend
@@ -63,3 +64,5 @@ jobs:
             echo "Frontend Docker image push failed"
             exit 1
           fi
+
+ 
