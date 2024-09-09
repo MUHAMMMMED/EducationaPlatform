@@ -17,7 +17,7 @@ jobs:
       - name: Check out the code
         uses: actions/checkout@v4
 
-      # Step 2: Set up Docker Buildx, which is required for advanced Docker builds
+      # Step 2: Set up Docker Buildx (optional step, if using buildx)
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -29,25 +29,37 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # Step 4: Build and push the backend Docker image
-      - name: Build and Push backendeducation Docker image
+      - name: Build and Push Backend Docker Image
         env:
-          REPOSITORY: backendeducation  # Corrected repository for backendeducation
+          REPOSITORY: backendeducation  # Correct repository name
           IMAGE_TAG: latest
         run: |
           cd backend
-          docker build -t ${{secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
- 
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
+          if [ $? -ne 0 ]; then
+            echo "Backend Docker image build failed"
+            exit 1
+          fi
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG
- 
- 
+          if [ $? -ne 0 ]; then
+            echo "Backend Docker image push failed"
+            exit 1
+          fi
+
       # Step 5: Build and push the frontend Docker image
-      - name: Build and Push frontendeducationa Docker image
+      - name: Build and Push Frontend Docker Image
         env:
-          REPOSITORY: frontendeducationa  # Corrected repository for frontendeducationa
+          REPOSITORY: frontendeducationa  # Correct repository name
           IMAGE_TAG: latest
         run: |
           cd frontend
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
-     
+          if [ $? -ne 0 ]; then
+            echo "Frontend Docker image build failed"
+            exit 1
+          fi
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG
-       
+          if [ $? -ne 0 ]; then
+            echo "Frontend Docker image push failed"
+            exit 1
+          fi
