@@ -28,23 +28,23 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # Step 4: Build and push the backend Docker image
-      - name: Build and Push backend Docker image
-        env:
-          REPOSITORY: backendeducation  # Corrected repository for backendeducation
-          IMAGE_TAG: latest
-        run: |
-          cd backend
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
-          if [ $? -ne 0 ]; then
-            echo "Backend Docker image build failed"
-            exit 1
-          fi
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG
-          if [ $? -ne 0 ]; then
-            echo "Backend Docker image push failed"
-            exit 1
-          fi
+      # # Step 4: Build and push the backend Docker image
+      # - name: Build and Push backend Docker image
+      #   env:
+      #     REPOSITORY: backendeducation  # Corrected repository for backendeducation
+      #     IMAGE_TAG: latest
+      #   run: |
+      #     cd backend
+      #     docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
+      #     if [ $? -ne 0 ]; then
+      #       echo "Backend Docker image build failed"
+      #       exit 1
+      #     fi
+      #     docker push ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG
+      #     if [ $? -ne 0 ]; then
+      #       echo "Backend Docker image push failed"
+      #       exit 1
+      #     fi
 
       # Step 5: Build and push the frontend Docker image
       - name: Build and Push frontend Docker image
