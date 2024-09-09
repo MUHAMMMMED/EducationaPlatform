@@ -45,40 +45,38 @@ jobs:
 
       # Step 5: Build and push the backend Docker image
       - name: Build and Push backend Docker image
-        env:
-          REPOSITORY: backendeducation
-          IMAGE_TAG: latest
+ 
         run: |
           # Build the Docker image for the backend service
           cd backend
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG .
+          docker build -t mohamedeg/backendeducation:latest
           if [ $? -ne 0 ]; then
             echo "Backend Docker image build failed"
             exit 1
           fi
           # Push the backend Docker image to Docker Hub
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG
+          docker push  mohamedeg/backendeducation:latest
           if [ $? -ne 0 ]; then
             echo "Backend Docker image push failed"
             exit 1
           fi
         # This step builds the Docker image for the backend service and pushes it to Docker Hub
 
+ 
+
       # Step 6: Build and push the frontend Docker image
       - name: Build and Push frontend Docker image
-        env:
-          REPOSITORY: frontendeducationa
-          IMAGE_TAG: latest
+ 
         run: |
           # Build the Docker image for the frontend service
           cd frontend
-          docker build  -t ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG . 
+          docker build  -t  mohamedeg/frontendeducationa:latest
           if [ $? -ne 0 ]; then
             echo "Frontend Docker image build failed"
             exit 1
           fi
           # Push the frontend Docker image to Docker Hub
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG
+          docker push  mohamedeg/frontendeducationa:latest
           if [ $? -ne 0 ]; then
             echo "Frontend Docker image push failed"
             exit 1
