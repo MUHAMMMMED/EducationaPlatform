@@ -19,20 +19,25 @@ Key Features:
 	•	Programming Languages:
 	•	Python (Backend)
 	•	JavaScript (Frontend)
+ 
 	•	Frameworks and Libraries:
 	•	Django (Web Framework)
 	•	Django REST Framework (API Development)
 	•	React (Frontend)
 	•	Celery (Task Queue)
+ 
 	•	Databases:
 	•	PostgreSQL (Relational Database)
 	•	Redis (In-memory Data Store for Caching and Task Queuing)
+ 
 	•	Tools and Platforms:
 	•	Git (Version Control)
 	•	GitHub Actions (CI/CD Pipeline)
 	•	Docker (Containerization)
 	•	Nginx (Web Server and Reverse Proxy)
+ 
 	•	Payment Processing:
 	•	Stripe (Secure Payment Integration)
+ 
 	•	Cloud Services:
 	•	DigitalOcean (Hosting and Cloud Infrastructure)
