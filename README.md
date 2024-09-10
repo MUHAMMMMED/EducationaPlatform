@@ -15,8 +15,23 @@ Key Features:
 	•	Independent Tests: Standalone assessments designed to gauge knowledge beyond specific courses.
 	•	Student Rankings: A ranking system to highlight top-performing students based on assessment results.
 	•	Landing Pages: Customizable pages for course promotion and user acquisition.
+	•	Course Reports Dashboard:
+	•	Payment Reports: Detailed reports on payments received for each course.
+	•	Student Status: Overview of student progress, attendance, and engagement.
+	•	Order Aggregation: Information on where student orders are concentrated.
+	•	Monthly and Annual Reports: Summarized performance and financial reports on a monthly and yearly basis.
+	•	Google Tag Manager Integration: Enables advanced tracking and analytics for ad qualification and optimization,
+                allowing for effective campaign management and targeted advertising.
 
-	•	Programming Languages:
+       •     User Types:
+
+	        •       Admin: Full access to manage the platform, oversee content, handle user management, and generate comprehensive reports.
+	        •	Instructor: Access to create and manage courses, interact with students, and track their performance and engagement.
+        	•	Student: Ability to enroll in courses, participate in interactive sessions, complete assessments, and track personal progress.
+
+Technologies Used:
+ 
+        •	Programming Languages:
 	•	Python (Backend)
 	•	JavaScript (Frontend)
  
@@ -40,4 +55,4 @@ Key Features:
 	•	Stripe (Secure Payment Integration)
  
 	•	Cloud Services:
-	•	DigitalOcean (Hosting and Cloud Infrastructure)
+	•	DigitalOcean (Hosting and Cloud Infrastructure) on an Ubuntu server
