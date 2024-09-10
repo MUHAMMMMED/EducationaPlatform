@@ -20,6 +20,7 @@ Key Features:
 	•	Student Status: Overview of student progress, attendance, and engagement.
 	•	Order Aggregation: Information on where student orders are concentrated.
 	•	Monthly and Annual Reports: Summarized performance and financial reports on a monthly and yearly basis.
+ 	•	Email Marketing: Facilitates the creation and management of promotional campaigns to engage users and drive conversions.
 	•	Google Tag Manager Integration: Enables advanced tracking and analytics for ad qualification and optimization,
                 allowing for effective campaign management and targeted advertising.
 
