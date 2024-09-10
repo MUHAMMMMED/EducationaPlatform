@@ -32,7 +32,7 @@ Key Features:
 
 Technologies Used:
  
-         •	Programming Languages:
+	 •	Programming Languages:
 	 •	Python (Backend)
 	 •	JavaScript (Frontend)
  
