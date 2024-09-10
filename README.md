@@ -24,11 +24,11 @@ Key Features:
 	•	Google Tag Manager Integration: Enables advanced tracking and analytics for ad qualification and optimization,
                 allowing for effective campaign management and targeted advertising.
 
-       •     User Types:
+       •        User Types:
 
-	        •       Admin: Full access to manage the platform, oversee content, handle user management, and generate comprehensive reports.
-	        •	Instructor: Access to create and manage courses, interact with students, and track their performance and engagement.
-        	•	Student: Ability to enroll in courses, participate in interactive sessions, complete assessments, and track personal progress.
+	         •       Admin: Full access to manage the platform, oversee content, handle user management, and generate comprehensive reports.
+	         •	Instructor: Access to create and manage courses, interact with students, and track their performance and engagement.
+        	 •	Student: Ability to enroll in courses, participate in interactive sessions, complete assessments, and track personal progress.
 
 Technologies Used:
  
