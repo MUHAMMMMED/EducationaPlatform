@@ -1,16 +1,19 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from django.core.mail import EmailMessage
-from django.template.loader import render_to_string
-from django.conf import settings
-from datetime import datetime
 import time
 from .models import*
 from .serializers import *
 from accounts.models import User
 from accounts.serializers import User_Serializer 
-   
+from .tasks import send_message_task
+import time
+  
+ 
+
+
+
+
 def check_permissions(request):
     """
     Check if the user is authenticated and has permission to access the data.
@@ -96,7 +99,12 @@ def campaign_data(request):
 
  
 
- 
+
+
+
+
+
+
  
  
  
@@ -140,7 +148,10 @@ def send_to_inactive_customers(request):
              # Send a confirmation email to the user
 
               # Send message to the customer
-              send_message(
+              
+             # Call Celery task to send email
+              send_message_task.delay(
+ 
                 customer.email_address,
                 customer.name,
                 campaign.Language,
@@ -148,6 +159,8 @@ def send_to_inactive_customers(request):
                 campaign.message,
                 campaign.Link,
                 campaign.button_action
+ 
+
                )
               time.sleep(5)  # Wait for 5 seconds between sending messages
 
@@ -172,35 +185,6 @@ def send_to_inactive_customers(request):
 
     # Return the response with the data
     return Response(data, status=status.HTTP_200_OK)
-
-
-def send_message(email, name, Language, subject, message, Link, button_action):
-    # Format the current date
-    current_date = datetime.now().strftime('%B %d, %Y')  # Format the date as needed
-    # Render the email body using a template
-    email_body = render_to_string('Promotion.html', {
-        'name': name,
-        'subject': subject,
-        'Language': Language,
-        'message': message,
-        'Link': Link,
-        'button_action': button_action,
-        'current_date': current_date,   
-        'current_year': datetime.now().year
-    })
-
-    from_email = settings.EMAIL_HOST_USER  # Get the email host user from settings
-
-    try:
-        # Create and send the email
-        d_email = EmailMessage(subject=subject, body=email_body, from_email=from_email, to=[email])
-        d_email.content_subtype = 'html'
-        d_email.send()
-        # print(f"Email sent to {email}")  # Uncomment for debugging
-    except Exception as e:
-        # print(f"Failed to send email to {email}: {e}")  # Uncomment for debugging
-        pass
-
 
  
  
