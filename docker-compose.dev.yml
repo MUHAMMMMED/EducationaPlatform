@@ -18,11 +18,7 @@ services:
     container_name: redis
     ports:
       - "6379:6379"   
-
-
-
  
-
   backend:
     build:
       context: ./backend
@@ -47,7 +43,9 @@ services:
     depends_on:
       - backend
       - redis
- 
+    env_file:
+     - ./.env  
+      
   stripe:
     image: stripe/stripe-cli:v1.21.2  
     container_name: stripe

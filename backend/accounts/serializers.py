@@ -160,7 +160,7 @@ class LoginSerializer(serializers.ModelSerializer):
 class VerifyUserEmailSerializer(serializers.Serializer):
     otp = serializers.CharField()
   
-
+   
 class PasswordResetRequestSerializer(serializers.Serializer):
     email = serializers.EmailField(max_length=255)
 
@@ -173,23 +173,19 @@ class PasswordResetRequestSerializer(serializers.Serializer):
             user = User.objects.get(email=email)
             uidb64 = urlsafe_base64_encode(smart_bytes(user.id))
             token = PasswordResetTokenGenerator().make_token(user)
-            # request = self.context.get('request')
-            # current_site = get_current_site(request).domain
             current_site = settings.DOMAIN
 
             abslink = f"http://{current_site}/password-reset-confirm/{uidb64}/{token}"
 
-            # Prepare context for the email template
             context = {
                 'first_name': user.first_name,
                 'abslink': abslink,
                 'current_site': current_site,
                 'current_year': timezone.now().year,
             }
-            
-            # Render the email body with the HTML template
+
             email_body = render_to_string('Email_Verification.html', context)
-            
+
             email_subject = "Reset your Password"
             email = EmailMessage(
                 email_subject,
@@ -197,13 +193,20 @@ class PasswordResetRequestSerializer(serializers.Serializer):
                 to=[user.email]
             )
 
-            # Ensure the email is sent with HTML content type
-            email.content_subtype = "html"
-            email.send(fail_silently=False)
-        
+            email.content_subtype = "html"  # Send as HTML
+
+            try:
+                email.send(fail_silently=False)
+            except Exception as e:
+                logger.error(f"Error sending email: {e}")
+                raise serializers.ValidationError("Failed to send reset email. Please try again later.")
+
         return super().validate(attrs)
 
- 
+
+
+
+
 
     
 class SetNewPasswordSerializer(serializers.Serializer):

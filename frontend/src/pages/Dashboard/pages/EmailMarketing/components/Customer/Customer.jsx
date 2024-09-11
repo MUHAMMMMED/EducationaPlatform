@@ -22,11 +22,11 @@ const Customer = () => {
 
 
   return (
-    <div className='Dashboard_container'>
+    <div div className='Dashboard_container' >
       <Sidebar_dashboard showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
       <StudentsList />
 
-    </div>
+    </div >
   );
 };
 

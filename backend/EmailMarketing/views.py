@@ -6,7 +6,7 @@ from .models import*
 from .serializers import *
 from accounts.models import User
 from accounts.serializers import User_Serializer 
-from .tasks import send_message_task
+from EmailMarketing.tasks import send_message_task
 import time
   
  
@@ -159,8 +159,6 @@ def send_to_inactive_customers(request):
                 campaign.message,
                 campaign.Link,
                 campaign.button_action
- 
-
                )
               time.sleep(5)  # Wait for 5 seconds between sending messages
 

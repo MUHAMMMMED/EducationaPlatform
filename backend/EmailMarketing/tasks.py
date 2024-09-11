@@ -5,7 +5,7 @@ from datetime import datetime
 from django.conf import settings
  
 @shared_task
-def send_message(email, name, Language, subject, message, Link, button_action):
+def send_message_task(email, name, Language, subject, message, Link, button_action):
     # Format the current date
     current_date = datetime.now().strftime('%B %d, %Y')  # Format the date as needed
     # Render the email body using a template
