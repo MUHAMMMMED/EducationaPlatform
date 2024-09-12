@@ -65,9 +65,8 @@ MIDDLEWARE = [
  
 CORS_ALLOW_ALL_ORIGINS=True
 CORS_ALLOW_CREDENTIALS=True
-CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000",
-]
+CSRF_TRUSTED_ORIGINS = ["https://aborashad.com" ]
+ 
  
  
 ROOT_URLCONF = 'project.urls'
