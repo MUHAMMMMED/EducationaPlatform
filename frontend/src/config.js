@@ -1,8 +1,8 @@
 const Config = {
-  baseURL: 'http://localhost:8000/api'
+  baseURL: 'https://www.aborashad.com/api'
 };
 
-export default Config; 
+export default Config;
 
 
 
@@ -17,7 +17,7 @@ export default Config;
 // export default Config;
 
 // const Config = {
-//   baseURL: process.env.REACT_APP_BASE_URL  
+//   baseURL: process.env.REACT_APP_BASE_URL
 // };
 
 // export default Config;
