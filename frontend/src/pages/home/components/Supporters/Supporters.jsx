@@ -16,7 +16,7 @@ export default function Supporters({ supporters }) {
           <MainTitle> Our Key<span style={{ color: "#58a58f" }}> Supporters</span></MainTitle>   </SectionTitle>
         <ImageSlider>
           <Swiper spaceBetween={50} slidesPerView={window.innerWidth > 768 ? 6 : 3} loop={true} autoplay={{ delay: 1000, disableOnInteraction: false }}  >
-            {supporters.map((item, index) => (<SwiperSlide key={index}><SlickSlideImg src={`${Config.baseURL}/${item.image}`} alt={`Image ${item.title}`} /> </SwiperSlide>))}
+            {supporters.map((item, index) => (<SwiperSlide key={index}><SlickSlideImg src={`${Config.mediaURL}/${item.image}`} alt={`Image ${item.title}`} /> </SwiperSlide>))}
           </Swiper>
         </ImageSlider>
 

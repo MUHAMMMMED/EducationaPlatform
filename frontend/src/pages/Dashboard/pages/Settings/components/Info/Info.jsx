@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { BsInfoCircle } from "react-icons/bs";
 import CreateInfo from './components/Form/CreateInfo';

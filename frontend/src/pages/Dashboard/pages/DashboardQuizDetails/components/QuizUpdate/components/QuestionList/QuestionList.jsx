@@ -44,7 +44,7 @@ const QuestionList = ({ quiz, fetchQuiz }) => {
               {item.question_content && (<p className="question-content">  {item.question_content}</p>)}
               {item.question_image && (
                 <img style={{ width: "100%", border: '1px solid #d1ae20 ', borderRadius: ' 10px' }} src={`${Config.baseURL}${item.question_image}`} />)}
-              {item.question_video && (<video autoPlay> <source src={`${Config.baseURL}${item.question_video}`} type="video/mp4" />
+              {item.question_video && (<video autoPlay> <source src={`${Config.mediaURL}${item.question_video}`} type="video/mp4" />
                 <source src="mov_bbb.ogg" type="video/ogg" /></video>)}
               {item.question_video_youtube && (
                 <iframe title="Quiz Video" width="100%" height="415" style={{ border: '1px solid #d1ae20 ', borderRadius: ' 10px' }} src={`https://www.youtube.com/embed/${item.question_video_youtube}?autoplay=1&mute=1`}></iframe>)}

@@ -110,7 +110,7 @@ export default function UserUpdateForm({ user, fetchUser }) {
               </label>
               <span style={{ float: 'left', color: '#000', width: '100%', padding: '15px', textAlign: 'center' }}>Width Image </span>
 
-              {user.width_image && <img src={`${Config.baseURL}${user.width_image}`} width={'100%'} alt="Width" />}
+              {user.width_image && <img src={`${Config.mediaURL}${user.width_image}`} width={'100%'} alt="Width" />}
             </div>
             <div className="form-container-half">
               <label className='label'>Height Image:
@@ -119,7 +119,7 @@ export default function UserUpdateForm({ user, fetchUser }) {
 
               <span style={{ float: 'left', color: '#000', width: '100%', padding: '15px', textAlign: 'center' }}>Height Image </span>
 
-              {user.height_image && <img src={`${Config.baseURL}${user.height_image}`} width={'100%'} alt="Height" />}
+              {user.height_image && <img src={`${Config.mediaURL}${user.height_image}`} width={'100%'} alt="Height" />}
             </div>
           </div>
           <div className="FOrmContainer">

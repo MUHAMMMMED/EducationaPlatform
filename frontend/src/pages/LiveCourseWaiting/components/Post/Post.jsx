@@ -15,8 +15,8 @@ export default function Post({ data, fetchCourse, is_author }) {
         <div className='frame__container' key={item.id}>
           <div className="frame__headline">
 
-            {item.student.width_image ? (
-              <img className="headline__image" alt="Teacher" src={`${Config.baseURL}${item.student.width_image}`} />
+            {item?.student?.width_image ? (
+              <img className="headline__image" alt="Teacher" src={`${Config.mediaURL}${item?.student?.width_image}`} />
             ) : (
               <img className="headline__image" alt="Student" src={studentImg} style={{ border: '1px solid #ced0d4' }} />
             )}
@@ -30,19 +30,19 @@ export default function Post({ data, fetchCourse, is_author }) {
             <p className="frame__text--small">{item.content}</p>
           </div>
           <div className="replies">
-            {data && item.parent_comment_answrs && item.parent_comment_answrs.map(answr => (
+            {data && item?.parent_comment_answrs && item?.parent_comment_answrs.map(answr => (
               <div className="reply" key={answr.id}>
                 <div className="frame__headline">
 
-                  {answr.Teacher.width_image ? (
-                    <img className="headline__image" alt="Teacher" src={`${Config.baseURL}${answr.Teacher.width_image}`} />
+                  {answr?.Teacher?.width_image ? (
+                    <img className="headline__image" alt="Teacher" src={`${Config.mediaURL}${answr?.Teacher?.width_image}`} />
                   ) : (
                     <img className="headline__image" alt="Student" src={studentImg} style={{ border: '1px solid #ced0d4' }} />
                   )}
 
                   <div className="frame__column">
                     <p className="headline__subtitle"></p>
-                    <p className="headline__title" style={{ paddingTop: '10px', color: '#58a58f' }}>{answr.Teacher.user_full_name} </p>
+                    <p className="headline__title" style={{ paddingTop: '10px', color: '#58a58f' }}>{answr?.Teacher?.user_full_name} </p>
                   </div></div>
                 <p className="frame__text--small">{answr.content}</p>
                 <div className="post-buttoncontener">

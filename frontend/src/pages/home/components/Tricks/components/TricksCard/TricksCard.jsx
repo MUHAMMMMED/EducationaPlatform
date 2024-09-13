@@ -23,11 +23,11 @@ const TricksCard = ({ tip }) => {
           <WRapper style={{ marginBottom: '15px' }} key={index}>
 
             <ImageWrapper>
-              <Image src={`${Config.baseURL}/${item.Image}`} alt={item.title} />
+              <Image src={`${Config.mediaURL}/${item.Image}`} alt={item.title} />
             </ImageWrapper>
             <TextWrapper>
               <div className="post-header">
-                <img src={`${Config.baseURL}${item.author.width_image}`} alt="Author" className="author-image" />
+                <img src={`${Config.mediaURL}${item.author.width_image}`} alt="Author" className="author-image" />
                 <div className="author-name">{item.author.user_full_name}</div> </div>
 
               <MainTitle>{item.title}</MainTitle>

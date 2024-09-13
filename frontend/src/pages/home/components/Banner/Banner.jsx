@@ -16,7 +16,7 @@ export default function Banner() {
               <div className="banner__content"><span>new</span>
                 <h3 className="banner__title">Online Courses   <br />  </h3>
                 <Link to={'/courses'} className="e-btn"> Find Out More </Link>  </div>
-              <div className="banner__thumb">  <img src={Online} alt="Online" /> </div>
+              <div className="banner__thumb">  <img src={Online} className='banner__thumb_img' alt="Online" /> </div>
             </div></div>
         </SwiperSlide>
 
@@ -28,7 +28,7 @@ export default function Banner() {
                 <h3 className="banner__title">Courses Live  <br /></h3>
                 <Link to={'/LiveCourses'} className="e-btn"> Find Out More </Link>  </div>
               <div className="banner__thumb">
-                <img src={Courses} alt="Courses" />
+                <img src={Courses} className='banner__thumb_img' alt="Courses" />
               </div></div></div>
         </SwiperSlide>
 
@@ -40,7 +40,7 @@ export default function Banner() {
                 <h3 className="banner__title">Quizzes  <br />  </h3>
                 <Link to={'/Quizzes'} className="e-btn"> Find Out More </Link>  </div>
               <div className="banner__thumb">
-                <img src={Quiz} alt="Quiz" />
+                <img src={Quiz} className='banner__thumb_img' alt="Quiz" />
               </div></div></div>
         </SwiperSlide>
 

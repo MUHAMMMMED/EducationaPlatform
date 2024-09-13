@@ -103,7 +103,7 @@ export default function TeacherList() {
                                     <td class="member">
                                         <figure style={{ textAlign: 'left' }}>
 
-                                            {user.image && <img alt="Student" src={`${Config.baseURL}${user.image}`} />}
+                                            {user.image && <img alt="Student" src={`${Config.mediaURL}${user.image}`} />}
 
                                         </figure>
                                         <div class="member-info" style={{ textAlign: 'left' }}>

@@ -33,7 +33,7 @@ export default function LiveCourseReviewList({ liveCourses, fetchCourse }) {
               <div className="Course_card_info">
                 <div style={{ float: 'left', width: '65px' }}><span className='onLine-icon'><CiImageOn /></span></div>
                 <div style={{ float: 'left' }}><p className="Course_card_title">
-                  {item.image && <img src={`${Config.baseURL}${item.image}`} width={'100%'} alt="Review" />} </p>
+                  {item.image && <img src={`${Config.mediaURL}${item.image}`} width={'100%'} alt="Review" />} </p>
                 </div></div>
               <div className="Course_cardicon">
                 {item && item.id && <LiveCourseReviewDelete item={item} fetchCourse={fetchCourse} />}

@@ -6,7 +6,7 @@ export default function Teacher({ image, name }) {
   return (
     <AUthor>
       <AuthorThumb>
-        {image && <ImgAvatar src={`${Config.baseURL}${image}`} alt="Teacher" />}
+        {image && <ImgAvatar src={`${Config.mediaURL}${image}`} alt="Teacher" />}
       </AuthorThumb>
       <AuthorName> {name}</AuthorName>
     </AUthor>

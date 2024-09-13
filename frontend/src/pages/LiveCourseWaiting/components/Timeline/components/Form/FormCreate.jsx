@@ -37,7 +37,6 @@ const FormCreate = ({ data, fetchCourse }) => {
     const handleSubmit = e => {
         e.preventDefault();
         axios.post(`${Config.baseURL}/LiveCourses/create_timeline/`, formData)
-            //  axios.post(`${Config.baseURL}/LiveCourses/api/${data.id}/timeline/`, formData)
 
 
 

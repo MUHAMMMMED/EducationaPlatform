@@ -12,8 +12,8 @@ export default function Head({ data }) {
             </div>
           </HeaderInfo>
           <HeadRowCenter>
-            {data && data.Base && data.Base.intro_Waiting_video && (
-              <Iframe src={`https://www.youtube.com/embed/${data.Base.intro_Waiting_video}?autoplay=0&mute=1`} />
+            {data && data?.Base && data?.Base?.intro_Waiting_video && (
+              <Iframe src={`https://www.youtube.com/embed/${data?.Base?.intro_Waiting_video}?autoplay=0&mute=1`} />
             )}
             <br /> <br /> <br />
           </HeadRowCenter>

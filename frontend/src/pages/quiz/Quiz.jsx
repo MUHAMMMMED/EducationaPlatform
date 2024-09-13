@@ -194,16 +194,16 @@ const QuizComponent = () => {
             {currentQuestion ? (
               <div>
                 <Ques>
-                  {currentQuestion.question_content && <H2>{currentQuestion.index}. {currentQuestion.question_content}</H2>}
-                  {currentQuestion.question_image && <Img src={`${Config.baseURL}${currentQuestion.question_image}`} />}
-                  {currentQuestion.question_video && (
+                  {currentQuestion?.question_content && <H2>{currentQuestion.index}. {currentQuestion?.question_content}</H2>}
+                  {currentQuestion?.question_image && <Img src={`${Config.mediaURL}${currentQuestion?.question_image}`} />}
+                  {currentQuestion?.question_video && (
                     <Video autoPlay>
-                      <source src={`${Config.baseURL}${currentQuestion.question_video}`} type="video/mp4" />
+                      <source src={`${Config.mediaURL}${currentQuestion?.question_video}`} type="video/mp4" />
                       <source src="mov_bbb.ogg" type="video/ogg" />
                     </Video>
                   )}
                   {currentQuestion.question_video_youtube && (
-                    <Iframe title="Quiz Video" src={`https://www.youtube.com/embed/${currentQuestion.question_video_youtube}?autoplay=1&mute=1`}></Iframe>
+                    <Iframe title="Quiz Video" src={`https://www.youtube.com/embed/${currentQuestion?.question_video_youtube}?autoplay=1&mute=1`}></Iframe>
                   )}
                 </Ques>
                 <UL>

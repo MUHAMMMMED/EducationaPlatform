@@ -38,11 +38,11 @@ const WrongAnswers = () => {
                 {submissions && submissions.wrong_answers && submissions.wrong_answers.map((answer, index) => (
                     <li key={index}>
                         {answer.question_content && (<p className="question-content">  {answer.question_content}</p>)}
-                        {answer.question_image && (
-                            <img style={{ width: "100%", border: '1px solid #d1ae20 ', borderRadius: ' 10px' }} src={`${Config.baseURL}${answer.question_image}`} />)}
-                        {answer.question_video && (<video autoPlay> <source src={`${Config.baseURL}${answer.question_video}`} type="video/mp4" />
+                        {answer?.question_image && (
+                            <img style={{ width: "100%", border: '1px solid #d1ae20 ', borderRadius: ' 10px' }} src={`${Config.mediaURL}${answer?.question_image}`} />)}
+                        {answer?.question_video && (<video autoPlay> <source src={`${Config.mediaURL}${answer?.question_video}`} type="video/mp4" />
                             <source src="mov_bbb.ogg" type="video/ogg" /></video>)}
-                        {answer.question_video_youtube && (
+                        {answer?.question_video_youtube && (
                             <iframe title="Quiz Video" width="100%" height="415" style={{ border: '1px solid #d1ae20 ', borderRadius: ' 10px' }} src={`https://www.youtube.com/embed/${answer.question_video_youtube}?autoplay=1&mute=1`}></iframe>)}
                         <br />
                         <p className='LI'> <p className={`SPan ${answer.correct_option === '1' ? 'correct-option' : ''}`}>A  </p> <samp className='samp-option'>{answer.option_A} </samp></p>

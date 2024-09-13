@@ -56,7 +56,7 @@ const FormUpdate = ({ item_id, fetchMeetings }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`${Config.baseURL}/meetings/update/${item_id}/`, formData);
+      await axios.put(`${Config.baseURL}/meetings/update/${item_id}/`, formData);
       fetchMeetings();
       setShowModalEdit(false);
     } catch (error) {
@@ -66,7 +66,7 @@ const FormUpdate = ({ item_id, fetchMeetings }) => {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.delete(`${Config.baseURL}/meetings/delete/${item_id}/`);
+      await axios.delete(`${Config.baseURL}/meetings/delete/${item_id}/`);
       fetchMeetings();
       setShowModalDelete(false);
     } catch (error) {

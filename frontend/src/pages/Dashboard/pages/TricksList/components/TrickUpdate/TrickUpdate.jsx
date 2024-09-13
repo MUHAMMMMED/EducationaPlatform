@@ -91,7 +91,7 @@ export default function TrickUpdate({ tip, fetchTricks, categories, instructors 
               Image:
               <input type="file" name="Image" onChange={handleImage} />
             </label>
-            {tip.Image && <img src={`${Config.baseURL}${tip.Image}`} style={{ objectFit: 'cover', width: '100%' }} alt={tip.title} />}
+            {tip.Image && <img src={`${Config.mediaURL}${tip.Image}`} style={{ objectFit: 'cover', width: '100%' }} alt={tip.title} />}
 
             <div className="FOrm-container">
               <div className="form-container-half">

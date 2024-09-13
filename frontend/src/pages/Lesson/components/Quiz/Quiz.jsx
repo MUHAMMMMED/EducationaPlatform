@@ -24,7 +24,7 @@ export default function Quiz({ data }) {
   }, []);
 
   useEffect(() => {
-    if (data && data.exam && data.exam.questions && data.exam.questions.length > 0) {
+    if (data && data?.exam && data?.exam?.questions && data?.exam?.questions.length > 0) {
       setQuestion(data.exam.questions[index]);
     }
   }, [index, data]);
@@ -55,7 +55,7 @@ export default function Quiz({ data }) {
 
   const handleNextQuestion = () => {
     const nextIndex = index + 1;
-    if (lock && nextIndex < data.exam.questions.length) {
+    if (lock && nextIndex < data?.exam?.questions.length) {
       setIndex(nextIndex);
       setLock(false);
       setResult(false);
@@ -88,8 +88,8 @@ export default function Quiz({ data }) {
               <>
                 <Con>
                   {question.question_content && <H2>{index + 1}. {question.question_content}</H2>}
-                  {question.question_image && <Img src={`${Config.baseURL}${question.question_image}`} />}
-                  {question.question_video && <Video autoPlay><source src={`${Config.baseURL}${question.question_video}`} type="video/mp4" /><source src="mov_bbb.ogg" type="video/ogg" /></Video>}
+                  {question.question_image && <Img src={`${Config.mediaURL}${question.question_image}`} />}
+                  {question.question_video && <Video autoPlay><source src={`${Config.mediaURL}${question.question_video}`} type="video/mp4" /><source src="mov_bbb.ogg" type="video/ogg" /></Video>}
                   {question.question_video_youtube && <Iframe title="Quiz Video" src={`https://www.youtube.com/embed/${question.question_video_youtube}?autoplay=1&mute=1`} />}
                   <UL>
                     <LI onClick={handleAnswerClick(0)} ref={(ref) => optionRefs.current[0] = ref}>

@@ -8,7 +8,7 @@ export default function CardCoursesList({ data }) {
       {data && data.related_courses && (
         <section className="cardArea">
           <div className='SectionTitle'>Courses</div>
-          {data && data.related_courses && data.related_courses.map(item => (
+          {data && data?.related_courses && data?.related_courses.map(item => (
             <div className="card" key={item.id}>
               <div className="bannerItem">
                 <div className="bannerContent">

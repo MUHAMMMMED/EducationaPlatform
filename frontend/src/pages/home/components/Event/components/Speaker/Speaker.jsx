@@ -28,7 +28,7 @@ const Speaker = ({ eventId }) => {
         {speakers.map((speaker, index) => (
           <SwiperSlide key={index}>
             <div className="post-header">
-              <img src={`${Config.baseURL}${speaker.image}`} alt="speaker" className="author-image" />
+              <img src={`${Config.mediaURL}${speaker.image}`} alt="speaker" className="author-image" />
               <div className="author-name">{speaker.name}</div>
             </div>
           </SwiperSlide>

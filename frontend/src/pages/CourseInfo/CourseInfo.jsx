@@ -89,7 +89,7 @@ function CourseInfo() {
           course.intro_image && (
             <img
               style={{ width: "100%" }}
-              src={`${Config.baseURL}${course.intro_image}`}
+              src={`${Config.mediaURL}${course.intro_image}`}
               alt="Intro Image"
             />
           )

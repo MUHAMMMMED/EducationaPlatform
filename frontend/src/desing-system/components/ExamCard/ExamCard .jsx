@@ -11,7 +11,7 @@ export default function ExamCard({ exam }) {
 
       <SingleCourses key={exam.id}>
         <CoursesImages>
-          {exam.card_image && <IMG src={`${Config.baseURL}${exam.card_image}`} alt={exam.title} />}
+          {exam.card_image && <IMG src={`${Config.mediaURL}${exam.card_image}`} alt={exam.title} />}
         </CoursesImages>
         <CoursesContent>
           <CoursesAuthor >

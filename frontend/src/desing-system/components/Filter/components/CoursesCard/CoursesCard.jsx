@@ -13,7 +13,7 @@ export default function CoursesCard({ course }) {
 
       <SingleCourses key={course.id}>
         <CoursesImages>
-          {course.card_image && <IMG src={`${Config.baseURL}${course.card_image}`} alt={course.title} />}
+          {course.card_image && <IMG src={`${Config.mediaURL}${course.card_image}`} alt={course.title} />}
         </CoursesImages>
         <CoursesContent>
           <CoursesAuthor >

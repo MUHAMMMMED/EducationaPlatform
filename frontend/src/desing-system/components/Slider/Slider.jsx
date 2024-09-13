@@ -12,7 +12,7 @@ export default function Slider({ review_images }) {
             slidesPerView={window.innerWidth > 1200 ? 3 : 1} >
             {review_images.map((image, index) => (
                 <SwiperSlide key={index}>
-                    <img className='swiper-slideImg' src={`${Config.baseURL}/${image.image}`} alt={`Review Image ${index + 1}`} />
+                    <img className='swiper-slideImg' src={`${Config.mediaURL}/${image.image}`} alt={`Review Image ${index + 1}`} />
                 </SwiperSlide>))}
         </Swiper></>
     );

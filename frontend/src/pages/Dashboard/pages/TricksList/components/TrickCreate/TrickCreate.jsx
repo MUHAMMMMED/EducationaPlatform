@@ -46,7 +46,7 @@ export default function TrickCreate({ categories, instructors, fetchTricks }) {
     });
 
     try {
-      const response = await AxiosInstance.post(
+      await AxiosInstance.post(
         `${Config.baseURL}/tips/tip/`,
         formDataToSend,
         {

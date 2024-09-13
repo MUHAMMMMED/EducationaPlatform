@@ -33,9 +33,9 @@ export default function Slide({ date, fetchDate }) {
               <div style={{ float: 'left', width: '65px' }}><span className='onLine-icon'><CiImageOn /></span></div>
               <div style={{ float: 'left' }}><p className="Course_card_title">
                 web
-                {item.top_slider_web && <img src={`${Config.baseURL}${item.top_slider_web}`} width={'100%'} alt="slide" />}
+                {item.top_slider_web && <img src={`${Config.mediaURL}${item.top_slider_web}`} width={'100%'} alt="slide" />}
                 mobile
-                {item.top_slider_mobile && <img src={`${Config.baseURL}${item.top_slider_mobile}`} width={'100%'} alt="slide" />}
+                {item.top_slider_mobile && <img src={`${Config.mediaURL}${item.top_slider_mobile}`} width={'100%'} alt="slide" />}
               </p>
               </div></div>
             <div className="Course_cardicon">

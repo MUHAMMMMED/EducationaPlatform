@@ -146,10 +146,10 @@
  }
 
 
- .error_img {
+ .error_Img {
    width: 70%;
    margin-left: 15%;
-
+   height: auto;
  }
 
  .error_head {

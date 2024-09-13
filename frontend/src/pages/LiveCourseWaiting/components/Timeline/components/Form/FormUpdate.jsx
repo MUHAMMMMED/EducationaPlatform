@@ -48,7 +48,7 @@ const FormUpdate = ({ course_id, item_id, fetchCourse }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`${Config.baseURL}/LiveCourses/timeline/${item_id}/${course_id}/`, formData);
+      await axios.put(`${Config.baseURL}/LiveCourses/timeline/${item_id}/${course_id}/`, formData);
       fetchCourse();
       setShowModalEdit(false);
     } catch (error) {
@@ -58,7 +58,7 @@ const FormUpdate = ({ course_id, item_id, fetchCourse }) => {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.delete(`${Config.baseURL}/LiveCourses/timeline/${item_id}/${course_id}/`);
+      await axios.delete(`${Config.baseURL}/LiveCourses/timeline/${item_id}/${course_id}/`);
       fetchCourse();
       setShowModalDelete(false);
     } catch (error) {

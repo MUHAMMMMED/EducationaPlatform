@@ -6,7 +6,7 @@ export default function Author({ image, name }) {
   return (
     <AUthor>
       <AuthorThumb><a href="#">
-        {image && <ImgAvatar src={`${Config.baseURL}${image}`} alt="Courses" />}</a>
+        {image && <ImgAvatar src={`${Config.mediaURL}${image}`} alt="Courses" />}</a>
       </AuthorThumb>
       <AuthorName> {name}</AuthorName>
     </AUthor>

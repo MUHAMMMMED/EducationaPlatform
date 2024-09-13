@@ -50,7 +50,7 @@ export default function TeacherDashboard() {
 
           {data && data.map(item => (
             <div key={item.id} className="Teacher_card">
-              {item.card_image && <img className="card__img" src={`${Config.baseURL}${item.card_image}`} alt={item.name} />}
+              {item.card_image && <img className="card__img" src={`${Config.mediaURL}${item.card_image}`} alt={item.name} />}
               <div className="card__content">
                 <h1 className="card__header">{item.title} </h1>
                 <Link to={`/LiveCourseRoom/${item.id}/`} className="card__link">

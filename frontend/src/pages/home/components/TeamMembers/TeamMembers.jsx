@@ -20,7 +20,7 @@ export default function TeamMembers({ team }) {
               <SingleTeam>
                 <TeamThumbCenterImg>
                   {item?.teacher?.height_image && (
-                    <TeamThumbImg src={`${Config.baseURL}/${item?.teacher?.height_image}`} alt="Instructor" />
+                    <TeamThumbImg src={`${Config.mediaURL}/${item?.teacher?.height_image}`} alt="Instructor" />
                   )}
                 </TeamThumbCenterImg>
                 <TeamContent>

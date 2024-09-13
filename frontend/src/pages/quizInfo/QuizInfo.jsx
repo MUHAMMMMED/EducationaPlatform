@@ -88,7 +88,7 @@ export default function QuizInfo() {
               examDetails.intro_image && (
                 <img
                   style={{ width: "100%" }}
-                  src={`${Config.baseURL}${examDetails.intro_image}`}
+                  src={`${Config.mediaURL}${examDetails?.intro_image}`}
                   alt="Intro Image"
                 />
               )

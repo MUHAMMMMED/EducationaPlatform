@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './DownTimer.css'; // استيراد ملف CSS
+import './DownTimer.css';
 
 function DownTimer({ date, time, join_meeting, join_meeting_link, courseId, roomId }) {
   const countDownDate = date && time ? new Date(`${date} ${time}`).getTime() : 0;

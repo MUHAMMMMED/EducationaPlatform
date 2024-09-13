@@ -33,7 +33,7 @@ export default function Supporters({ date, fetchDate }) {
               <div style={{ float: 'left', width: '65px' }}><span className='onLine-icon'><CiImageOn /></span></div>
               <div style={{ float: 'left' }}><p className="Course_card_title">
 
-                {item.image && <img src={`${Config.baseURL}${item.image}`} width={'100%'} alt="slide" />}
+                {item.image && <img src={`${Config.mediaURL}${item.image}`} width={'100%'} alt="slide" />}
               </p>
               </div></div>
 
