@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Config from '../../../../../../config';
 import AxiosInstance from '../../../../../../desing-system/Authentication/AxiosInstance';
@@ -69,10 +68,17 @@ export default function UserUpdateForm({ user, fetchUser }) {
 
   const handleFileChange = (e) => {
     const { name, files } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: files[0],
-    }));
+    const file = files[0];
+
+    // تحقق من أن الملف هو صورة قبل التحديث
+    if (file && file.type.startsWith('image/')) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: file,
+      }));
+    } else {
+      alert('Please upload a valid image file.');
+    }
   };
 
   return (
@@ -106,19 +112,16 @@ export default function UserUpdateForm({ user, fetchUser }) {
           <div className="FOrm-container">
             <div className="form-container-half">
               <label className='label'>Width Image:
-                <input type="file" name="width_image" onChange={handleFileChange} />
+                <input type="file" name="width_image" accept="image/*" onChange={handleFileChange} />
               </label>
-              <span style={{ float: 'left', color: '#000', width: '100%', padding: '15px', textAlign: 'center' }}>Width Image </span>
-
+              <span style={{ float: 'left', color: '#000', width: '100%', padding: '15px', textAlign: 'center' }}>Width Image</span>
               {user.width_image && <img src={`${Config.mediaURL}${user.width_image}`} width={'100%'} alt="Width" />}
             </div>
             <div className="form-container-half">
               <label className='label'>Height Image:
-                <input type="file" name="height_image" onChange={handleFileChange} />
+                <input type="file" name="height_image" accept="image/*" onChange={handleFileChange} />
               </label>
-
-              <span style={{ float: 'left', color: '#000', width: '100%', padding: '15px', textAlign: 'center' }}>Height Image </span>
-
+              <span style={{ float: 'left', color: '#000', width: '100%', padding: '15px', textAlign: 'center' }}>Height Image</span>
               {user.height_image && <img src={`${Config.mediaURL}${user.height_image}`} width={'100%'} alt="Height" />}
             </div>
           </div>

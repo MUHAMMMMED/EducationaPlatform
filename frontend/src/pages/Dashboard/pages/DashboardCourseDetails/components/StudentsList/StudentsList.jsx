@@ -111,7 +111,7 @@ export default function StudentsList({ Id }) {
                                 <tr key={item.id}>
                                     <td><p>  {formatDate(item.date)}  </p><p></p></td>
                                     <td><p>{item.student.email}</p><p></p></td>
-                                    <td class="member"> <figure style={{ textAlign: 'left' }}><img alt="Student" src={studentImg} /></figure>
+                                    <td class="member"> <figure style={{ textAlign: 'left' }}><img alt="Student" className='Student_img' src={studentImg} /></figure>
                                         <div class="member-info" style={{ textAlign: 'left' }}> <p>{item.student.user_full_name}</p><p></p> </div>  </td>
                                     <td><p></p><p>${item.Paid}</p></td>
                                     <td className="status" style={{ textAlign: 'left' }}>

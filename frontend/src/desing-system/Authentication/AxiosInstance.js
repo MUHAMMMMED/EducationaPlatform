@@ -2,12 +2,14 @@
 import axios from 'axios';
 import dayjs from 'dayjs';
 import jwtDecode from 'jwt-decode';
+import Config from '../../config';
+
+const baseURL = `${Config.baseURL}/Users`;
 
 // Get tokens from local storage
 let accessToken = localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')) : "";
 let refreshToken = localStorage.getItem('refresh_token') ? JSON.parse(localStorage.getItem('refresh_token')) : "";
 
-const baseURL = 'https://www.aborashad.com/api/Users';
 
 const AxiosInstance = axios.create({
    baseURL: baseURL,
