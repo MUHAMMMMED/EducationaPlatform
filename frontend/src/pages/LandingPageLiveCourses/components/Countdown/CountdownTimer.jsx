@@ -38,7 +38,7 @@ function CountdownTimer({ data }) {
             <div class="Col_Timer  ">
               <div class="col_Timer_image  ">
                 <div class="image_widget_Timer">
-                  {data.card_image && (<img src={`${Config.baseURL}/${data.card_image}`} style={{ width: "100%" }} alt=" " />)}
+                  {data.card_image && (<img src={`${Config.mediaURL}/${data.card_image}`} style={{ width: "100%" }} alt=" " />)}
                 </div></div></div>
             <div class="Col_Timer">
               <div class="content_wrap_Timer">
@@ -48,7 +48,7 @@ function CountdownTimer({ data }) {
                 </div>
                 <div class="Deals_countdowN_Timer ">
                   <ul class="CountdowN_TimeR UNordered_List">
-                    {timeRemaining.expired ? <li class="days_count" style={{ textAlign: 'center', width: "100%" }}><strong>    {data.Base.expired}</strong><span></span></li> :
+                    {timeRemaining.expired ? <li class="days_count" style={{ textAlign: 'center', width: "100%" }}><strong>    {data?.Base?.expired}</strong><span></span></li> :
                       <>
                         <li ><strong> {timeRemaining.days}</strong><span>Days</span></li>
                         <li><strong class="DAsh">:</strong></li>
@@ -58,7 +58,11 @@ function CountdownTimer({ data }) {
                         <li><strong class="DAsh">:</strong></li>
                         <li  ><strong> {timeRemaining.seconds}</strong><span>Secs</span></li>
                       </>}</ul>
-                  {data.discount && (<div class="Discount_Value"><strong>{data.discount}%</strong> <span> {data.Base.sale}</span></div>)}
+                  {data.discount && (<div class="Discount_Value"><strong>{data.discount}%</strong>
+
+                    {data.Base.sale > 0 && <span>{data.Base.sale}</span>}
+
+                  </div>)}
                 </div>
                 {!timeRemaining.expired && (
                   <div className="btn_wrap pb-0">

@@ -54,7 +54,9 @@ function DownTimer({ data }) {
               </ul>
               {data.discount && (
                 <div className="discount_Value">
-                  <strong>{data.discount}%</strong> <span>{data.Base.sale}</span>
+                  <strong>{data.discount}%</strong>
+                  {data?.Base?.sale > 0 && <span>{data.Base.sale}</span>}
+
                 </div>
               )}
             </div>
@@ -62,11 +64,11 @@ function DownTimer({ data }) {
               <div className="btn_wrap pb-0">
                 {data.is_login === true ? (
                   <Link to={`/Pay_LiveCourse/${data.id}`}>
-                    <span className="btN border_dark">{data.Base.Countdown_Button}</span>
+                    <span className="btN border_dark">{data?.Base?.Countdown_Button}</span>
                   </Link>
                 ) : (
                   <Link to={`/SignInUp_LiveCourse/${data.id}`}>
-                    <span className="btN border_dark">{data.Base.Countdown_Button}</span>
+                    <span className="btN border_dark">{data?.Base?.Countdown_Button}</span>
                   </Link>
                 )}
               </div>
