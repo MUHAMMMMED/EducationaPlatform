@@ -89,6 +89,7 @@
   text-align: center;
   width: 100%;
 
+
 }
 
 
@@ -138,7 +139,7 @@
   @media (max-width: 1200px) {
     padding: 0px;
     border-radius: 5px;
-    width: 95%;
+    width: 96%;
     margin: auto;
   }
 
@@ -150,12 +151,9 @@ ul {
 
 li {
   list-style-type: none;
-  padding: 10px;
   margin: auto;
 
-  @media (max-width: 1200px) {
-    padding: 5px;
-  }
+
 }
 
 
@@ -167,7 +165,7 @@ li {
 
   @media (max-width: 1200px) {
     padding: 0px;
-    font-size: 13px;
+    font-size: 11px;
 
   }
 
@@ -219,8 +217,16 @@ li {
 b,
 strong {
   font-weight: bolder;
+
 }
 
+.span_Days {
+  font-size: 20px;
+
+  @media (max-width: 1200px) {
+    font-size: 13px;
+  }
+}
 
 
 .Discount_Value {
@@ -238,7 +244,7 @@ strong {
 
   @media (max-width: 1200px) {
     margin-left: 8px;
-    width: 30%;
+    width: 28%;
     height: 70px;
 
   }
@@ -289,8 +295,8 @@ strong {
 
   @media (max-width: 1200px) {
     width: 90%;
-    margin-left: 5%;
-    margin-top: 10px;
+    margin: auto;
+    margin-top: 20px;
 
   }
 }

@@ -345,5 +345,12 @@ fontSize:35px;
 
 
 
+export const LISpan = styled("span")`
+  label: LISpan;
+  font-size: 14px !important;
 
+  @media (max-width: 768px) {
+    font-size: 11px !important;
+  }
+`;
 

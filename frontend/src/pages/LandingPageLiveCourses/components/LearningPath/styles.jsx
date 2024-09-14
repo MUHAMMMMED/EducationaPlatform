@@ -95,13 +95,11 @@ font-size: 18px;
 `;
 
 
-export const span_point = styled("span")`
-label:span_point;
- 
+export const SpanPoint = styled("span")`
+label:SpanPoint;
 font-size: 16px;
 @media (max-width: 768px) {
- 
-  font-size: 13px;
+  font-size: 12px;
 }
  
 `;

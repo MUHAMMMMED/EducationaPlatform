@@ -50,13 +50,13 @@ function CountdownTimer({ data }) {
                   <ul class="CountdowN_TimeR UNordered_List">
                     {timeRemaining.expired ? <li class="days_count" style={{ textAlign: 'center', width: "100%" }}><strong>    {data.Base.expired}</strong><span></span></li> :
                       <>
-                        <li ><strong> {timeRemaining.days}</strong><span>Days</span></li>
+                        <li ><strong> {timeRemaining.days}</strong><span className='span_Days'>Days</span></li>
                         <li><strong class="DAsh">:</strong></li>
-                        <li ><strong> {timeRemaining.hours}</strong><span>Hours</span></li>
+                        <li ><strong> {timeRemaining.hours}</strong><span className='span_Days'>Hours</span></li>
                         <li><strong class="DAsh">:</strong></li>
-                        <li  ><strong> {timeRemaining.minutes}</strong><span>Mins</span></li>
+                        <li  ><strong> {timeRemaining.minutes}</strong><span className='span_Days'>Mins</span></li>
                         <li><strong class="DAsh">:</strong></li>
-                        <li  ><strong> {timeRemaining.seconds}</strong><span>Secs</span></li>
+                        <li  ><strong> {timeRemaining.seconds}</strong><span className='span_Days'>Secs</span></li>
                       </>}</ul>
                   <div className="discount_Value">
                     {data.discount > 0 && (

@@ -16,7 +16,7 @@ import Question from '../../desing-system/components/Question/Question';
 import Slider from '../../desing-system/components/Slider/Slider';
 import StudentRank from '../../desing-system/components/StudentRank';
 import CheckoutQuiz from '../checkout/CheckoutQuiz';
-import { AuthorItem, Banner, Button, CardWrapper, Content, DescriptionWrapper, Enroll, H4, InfoAuthor, InfoPrice, LI, P, Price, ReviewsSection, RowInfo, Section, Sidebar, SidebarWidget, Span, Strong, TabDescription, Title, UL } from './styles';
+import { AuthorItem, Banner, Button, CardWrapper, Content, DescriptionWrapper, Enroll, H4, InfoAuthor, InfoPrice, LI, LISpan, P, Price, ReviewsSection, RowInfo, Section, Sidebar, SidebarWidget, Span, Strong, TabDescription, Title, UL } from './styles';
 export default function QuizInfo() {
 
   const { id: examId } = useParams();
@@ -117,11 +117,11 @@ export default function QuizInfo() {
                 </Price> </InfoPrice>)}
                 <div ><UL>
                   {/* <LI> <Span><FaUserTie /></Span> <Strong>Instructor</Strong> <span>{examDetails.creator.user_full_name}</span></LI> */}
-                  <LI><Span> <FaUserGraduate /></Span><Strong>Total</Strong> <span>{examDetails.Enroll} Enrolled</span></LI>
-                  <LI><Span><BiListOl /></Span><Strong> Total :</Strong> <span>{examDetails.questions_count} Questions  </span></LI>
-                  <LI><Span><CgTime /> </Span><Strong>Duration :</Strong> <span>{examDetails.time_to_answer} mins</span></LI>
-                  <LI><Span><PiTimer /> </Span><Strong>   Tries :</Strong> <span>{examDetails.tries} times</span></LI>
-                  <LI><Span> <IoIosSync /></Span><Strong> Updated</Strong> <span>{examDetails.updated}</span></LI>
+                  <LI><Span> <FaUserGraduate /></Span><Strong>Total</Strong> <LISpan>{examDetails.Enroll} Enrolled</LISpan></LI>
+                  <LI><Span><BiListOl /></Span><Strong> Total :</Strong> <LISpan>{examDetails.questions_count} Questions  </LISpan></LI>
+                  <LI><Span><CgTime /> </Span><Strong>Duration :</Strong> <LISpan>{examDetails.time_to_answer} mins</LISpan></LI>
+                  <LI><Span><PiTimer /> </Span><Strong>   Tries :</Strong> <LISpan>{examDetails.tries} times</LISpan></LI>
+                  <LI><Span> <IoIosSync /></Span><Strong> Updated</Strong> <LISpan>{examDetails.updated}</LISpan></LI>
                 </UL>
                 </div>
                 <>

@@ -42,13 +42,13 @@ function DownTimer({ data }) {
                   </p>
                 ) : (
                   <>
-                    <li><strong>{timeRemaining.days}</strong><span>Days</span></li>
+                    <li><strong>{timeRemaining.days}</strong><span className='span_Days'>Days</span></li>
                     <li><strong className="dash">:</strong></li>
-                    <li><strong>{timeRemaining.hours}</strong><span>Hours</span></li>
+                    <li><strong>{timeRemaining.hours}</strong><span className='span_Days'>Hours</span></li>
                     <li><strong className="dash">:</strong></li>
-                    <li><strong>{timeRemaining.minutes}</strong><span>Mins</span></li>
+                    <li><strong>{timeRemaining.minutes}</strong><span className='span_Days'>Mins</span></li>
                     <li><strong className="dash">:</strong></li>
-                    <li><strong>{timeRemaining.seconds}</strong><span>Secs</span></li>
+                    <li><strong>{timeRemaining.seconds}</strong><span className='span_Days'>Secs</span></li>
                   </>
                 )}
               </ul>

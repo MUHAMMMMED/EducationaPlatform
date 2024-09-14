@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Li_ar, Li_en, ROWLearningPath, TitlE, ULL } from './styles';
+import { Li_ar, Li_en, ROWLearningPath, SpanPoint, TitlE, ULL } from './styles';
 
 export default function LearningPath({ data }) {
   return (
@@ -14,7 +14,9 @@ export default function LearningPath({ data }) {
               <ULL>
                 {item.point.map((pointItem) => (
                   <Li_ar key={pointItem.id}>
-                    <span className="gradient-underline-thin">{pointItem.title} :</span> {pointItem.description}
+                    <span className="gradient-underline-thin">{pointItem.title} :</span>
+
+                    <SpanPoint >{pointItem.description}</SpanPoint>
                   </Li_ar>
                 ))}
               </ULL>
@@ -27,7 +29,7 @@ export default function LearningPath({ data }) {
                   <Li_en key={pointItem.id}>
                     <span className="gradient-underline-thin">{pointItem.title} :</span>
 
-                    <span className='span_point' >{pointItem.description}</span>
+                    <SpanPoint >{pointItem.description}</SpanPoint>
                   </Li_en>
                 ))}
               </ULL>

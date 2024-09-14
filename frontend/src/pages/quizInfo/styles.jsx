@@ -361,3 +361,12 @@ fontSize:35px;
 
 
 
+
+export const LI_Span = styled("span")`
+  label: LI_Span;
+  font-size: 14px !important;
+
+  @media (max-width: 768px) {
+    font-size: 11px !important;
+  }
+`;
