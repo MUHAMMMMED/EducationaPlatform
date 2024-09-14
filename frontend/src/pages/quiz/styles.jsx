@@ -27,6 +27,7 @@ export const Containerq = styled("div")`
         border-radius: 0px;
         border: 0px solid #686868;
         margin-top: 80px; 
+        height:  90%;
 
        }
     
@@ -37,6 +38,7 @@ export const Containerq = styled("div")`
         border-radius: 0px;
         border: 0px solid #686868;
         margin-top: 80px; 
+        height:  90%;
 
        }
     `;
