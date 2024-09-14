@@ -345,6 +345,7 @@ fontSize:35px;
 
 
 
+
 export const LISpan = styled("span")`
   label: LISpan;
   font-size: 14px !important;
@@ -353,4 +354,3 @@ export const LISpan = styled("span")`
     font-size: 11px !important;
   }
 `;
-
