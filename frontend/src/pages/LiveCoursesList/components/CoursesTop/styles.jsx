@@ -110,14 +110,14 @@ export const CoursesButton = styled("p")`
    border-radius: 8px;
    background-color: rgba(48, 146, 85, 0.2);
    border: 0;
-   top:17px !important;
+   top:13px !important;
    right: 7px;
    font-size: 16px;
    color:#58a58f;
    @media (max-width: 768px) {
       width: 40px;
       height: 40px;
-      top: 15px !important;
+      top: 10px !important;
       right: 5px;
       border-radius: 5px;
       font-size: 16px;

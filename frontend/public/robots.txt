@@ -5,4 +5,4 @@ Disallow: /login/
 
 Allow: /
 
-Sitemap: https://www.smartcardnfc.com/sitemap.xml
+Sitemap: https://www.aborashad.com/sitemap.xml
