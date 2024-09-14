@@ -21,7 +21,7 @@ import Description from './components/Description';
 import Feedback from './components/Feedback/Feedback';
 import Instructor from './components/Instructor';
 import Tabs from './components/Tabs/Tabs ';
-import { AuthorItem, Banner, Button, CardWrapper, Containerc, Enroll, H4, InfoAuthor, InfoPrice, LI, Price, ReviewsSection, RowInfo, Section, SectionRate, Sidebar, SidebarWidget, Span, Strong, Title, UL } from './styles';
+import { AuthorItem, Banner, Button, CardWrapper, Containerc, Enroll, H4, InfoAuthor, InfoPrice, LISpan, L_I, Price, ReviewsSection, RowInfo, Section, SectionRate, Sidebar, SidebarWidget, Span, Strong, Title, UL } from './styles';
 
 
 function CourseInfo() {
@@ -132,22 +132,22 @@ function CourseInfo() {
               <div><UL><div>
 
                 {course && course.course_length && (
-                  <LI><Span><CgTime /> </Span><Strong>Duration</Strong> <span>{course.course_length} hr 15 mins</span></LI>
+                  <L_I><Span><CgTime /> </Span><Strong>Duration</Strong> <LISpan>{course.course_length} hr 15 mins</LISpan></L_I>
                 )}
                 {course && course.TotalEpisodes && (
-                  <LI><Span><RxVideo /> </Span><Strong>Total</Strong> <span> {course.TotalEpisodes} Lectures  </span></LI>
+                  <L_I><Span><RxVideo /> </Span><Strong>Total</Strong> <LISpan> {course.TotalEpisodes} Lectures  </LISpan></L_I>
                 )}
                 {course && course.level && (
-                  <LI><Span><ImStatsBars2 /></Span><Strong>Level</Strong> <span>{course.level}</span></LI>
+                  <L_I><Span><ImStatsBars2 /></Span><Strong>Level</Strong> <LISpan>{course.level}</LISpan></L_I>
                 )}
                 {course && course.language && (
-                  <LI><Span><RiSpeakLine /></Span><Strong>Language</Strong> <span>{course.language}</span></LI>
+                  <L_I><Span><RiSpeakLine /></Span><Strong>Language</Strong> <LISpan>{course.language}</LISpan></L_I>
                 )}
                 {course && course.updated && (
-                  <LI><Span> <IoIosSync /></Span><Strong> Updated</Strong> <span>{course.updated}</span></LI>
+                  <L_I><Span> <IoIosSync /></Span><Strong> Updated</Strong> <LISpan>{course.updated}</LISpan></L_I>
                 )}
                 {course && course.Enroll && (
-                  <LI><Span> <FaUserGraduate /></Span><Strong>Total</Strong> <span>{course.Enroll} Enrolled</span></LI>
+                  <L_I><Span> <FaUserGraduate /></Span><Strong>Total</Strong> <LISpan>{course.Enroll} Enrolled</LISpan></L_I>
                 )}
               </div> </UL></div>
               <>

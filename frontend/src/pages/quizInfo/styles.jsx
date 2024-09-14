@@ -181,8 +181,8 @@ export const UL = styled("ul")`
       width:100%;
     }
 `;
-export const LI = styled("li")`
-  label: LI;
+export const L_I = styled("li")`
+  label: L_I;
   /* border-bottom: 1px solid  ${theme.gray}; */
   padding: 8px 0;
   display: list-item;  

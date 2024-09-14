@@ -175,8 +175,8 @@ padding: 0px ;
    width:100%;
  }
 `;
-export const LI = styled("li")`
-label: LI;
+export const L_I = styled("li")`
+label: L_I;
 /* border-bottom: 1px solid  ${theme.gray}; */
 padding: 8px 0;
 display: list-item;  
@@ -348,9 +348,9 @@ fontSize:35px;
 
 export const LISpan = styled("span")`
   label: LISpan;
-  font-size: 14px !important;
 
+  font-size: 14px!important;
   @media (max-width: 768px) {
-    font-size: 11px !important;
+    font-size: 11px!important;
   }
 `;
