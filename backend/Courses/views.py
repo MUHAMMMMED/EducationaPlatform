@@ -180,6 +180,8 @@ def CourseDetail(request, course_uuid):
 # Create a view function to retrieve episode details based on course and episode UUIDs
 @api_view(['GET'])
 def episode_detail(request, course_uuid, episode_uuid):
+    # Initialize user_courses with a default value
+    user_courses = None
     # Check if the user is authenticated
     if request.user.is_authenticated:
         user = request.user
@@ -231,11 +233,14 @@ def episode_detail(request, course_uuid, episode_uuid):
         {'previous_serial': previous_serial.episode_uuid if previous_serial else episode.episode_uuid},
         {'next_serial': next_serial.episode_uuid if next_serial else episode.episode_uuid}
     ]
-    # Get the total count of episodes in the course
-    episodes_count = len(episode_uuids)
+    # # Get the total count of episodes in the course
+    # episodes_count = len(episode_uuids) OR 0
 
+    # Get the total count of episodes in the course
+    episodes_count = len(episode_uuids) if episode_uuids else 0
     # Check if the user is enrolled in the course
-    if user_courses and user_courses.status == 'E':
+    if user_courses:
+     if user_courses and user_courses.status == 'E':
         # User is enrolled in the course
         is_enrolled = True
         # Serialize course and episode data
@@ -272,8 +277,14 @@ def episode_detail(request, course_uuid, episode_uuid):
         # Return a response indicating the episode is unavailable or requires course purchase
         return Response({'message':'The lesson is currently unavailable, or it requires purchasing the course to access all the content.'}, status=status.HTTP_404_NOT_FOUND)
                 
-
  
+
+
+
+
+
+
+
 # Define an API view to fetch the next episode based on the current episode's UUID
 @api_view(['GET'])
 def NextEpisode(request, episode_uuid):

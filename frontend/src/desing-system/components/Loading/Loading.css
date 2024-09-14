@@ -197,3 +197,9 @@
    background-color: #020100;
    /* Change background color on hover */
  }
+
+ .error_img {
+   width: 70%;
+   margin-left: 15%;
+
+ }

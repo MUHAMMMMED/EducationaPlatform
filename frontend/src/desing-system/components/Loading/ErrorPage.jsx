@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Loading.css';
@@ -17,6 +18,8 @@ export default function ErrorPage({ head, error }) {
           <div className='error_button-container' >
             <Link to={'/'}>   <button className='error_but'> back to home</button></Link>
           </div></div>
+        <br />
+        <br />
       </section>
     </main>
   );
