@@ -351,6 +351,6 @@ export const LISpan = styled("span")`
 
   font-size: 14px!important;
   @media (max-width: 768px) {
-    font-size: 11px!important;
+    font-size: 13px!important;
   }
 `;
