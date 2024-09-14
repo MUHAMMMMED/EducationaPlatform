@@ -48,28 +48,28 @@ function DownTimer({ date, time, eventId }) {
               <>
                 <li className="li">
                   <strong style={{ width: '100%' }}>{timeRemaining.days}</strong>
-                  <span style={{ width: '100%', textAlign: 'center' }}>Days</span>
+                  <span className='EventSpanDays'>Days</span>
                 </li>
                 <li>
                   <strong className="dash">:</strong>
                 </li>
                 <li className="li">
                   <strong style={{ width: '100%' }}>{timeRemaining.hours}</strong>
-                  <span style={{ width: '100%', textAlign: 'center' }}>Hours</span>
+                  <span className='EventSpanDays'>Hours</span>
                 </li>
                 <li>
                   <strong className="dash">:</strong>
                 </li>
                 <li className="li">
                   <strong style={{ width: '100%' }}>{timeRemaining.minutes}</strong>
-                  <span style={{ width: '100%', textAlign: 'center' }}>Mins</span>
+                  <span className='EventSpanDays'>Mins</span>
                 </li>
                 <li>
                   <strong className="dash">:</strong>
                 </li>
                 <li className="li">
                   <strong style={{ width: '100%' }}>{timeRemaining.seconds}</strong>
-                  <span style={{ width: '100%', textAlign: 'center' }}>Secs</span>
+                  <span className='EventSpanDays'>Secs</span>
                 </li>
               </>
             </ul>

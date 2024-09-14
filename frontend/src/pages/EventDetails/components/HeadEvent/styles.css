@@ -50,8 +50,9 @@
   font-weight: 500;
 
   @media (max-width: 1200px) {
-    font-size: 20px;
-    margin: 20px 20px;
+    font-size: 17px;
+    margin: 15px 10px;
+    text-align: center;
 
   }
 }

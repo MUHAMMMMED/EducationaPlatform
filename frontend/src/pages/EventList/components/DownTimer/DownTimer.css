@@ -94,11 +94,24 @@
    width: 18.5%;
  }
 
+ .EventSpanDays {
+   font-size: 25px;
+   width: 100%;
+   text-align: center;
+
+   @media (max-width: 785px) {
+     font-size: 13px;
+
+   }
+ }
+
+
+
+
  .div-livebutton {
    width: 250px;
    margin: auto;
 
-   @media (max-width: 1200px) {}
  }
 
  .finished {
