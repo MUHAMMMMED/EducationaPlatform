@@ -85,7 +85,7 @@ export const SearchInput = styled("input")`
 
    @media (max-width: 768px) {
       height: 50px;
-      border-radius: 3spx;
+      border-radius: 3px;
    }
 `;
 

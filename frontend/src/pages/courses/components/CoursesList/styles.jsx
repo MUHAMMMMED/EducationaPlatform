@@ -1,126 +1,61 @@
 
 import styled from "@emotion/styled";
 
-export const Coursestop = styled("div")`
-   label:Coursestop;
-   display: -webkit-box;
-   display: -webkit-flex;
-   display: -ms-flexbox;
-   display: flex;
-   -webkit-box-pack: justify;
-   -webkit-justify-content: space-between;
-   -ms-flex-pack: justify;
-   justify-content: space-between;
-   -webkit-box-align: center;
-   -webkit-align-items: center;
-   -ms-flex-align: center;
-   align-items: center;
-   margin-bottom:  37px;
-   font-family: inherit;
-   font-size: inherit;
-   line-height: inherit;
+export const List = styled("div")`
+   label:List;
+    width:100%;
+    border: 0px solid #3092552e; 
+    margin-bottom:0px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 
-   @media (max-width: 768px) {
-      width: 100%;
-      margin-left:0%;
-      flex-wrap: wrap;
-      -webkit-box-pack: initial;
-      -webkit-justify-content: initial;
-      justify-content: initial;
-    
-    }
+
+`;
+
+
+
+export const ButtonWrapper = styled.div`
+  text-align: center;
+  margin-top: 10px;
+  width:100%;
+`;
+
+export const ButtonshowMore = styled.button`
  
-`;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 500;
+    border: 1px solid  #58a58f;
+    color: #58a58f;
+    background-color:  #fff;
+    line-height: 1.8rem;
+    padding:0 2rem;
+    font-size: .9rem; 
+    margin-bottom:15px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.07);
 
-export const TopTitle = styled("div")`
-   label:TopTitle;
-   margin-top: 8px;
-    @media (max-width: 768px) {
-      margin-top: 15px;
-      width: 100%;
-
-
-    }
-`;
-
-
-export const MainTitle = styled("h2")`
-   label:MainTitle;
-   font-size: 30px;
-   font-weight: 700;
-   margin-bottom: 0;
-   line-height: 1.4;
-   margin-left: 50px;
-
-
-   @media (max-width: 768px) {
-      font-size:20px;
-      width: 100%;
-      padding:10px;
-      text-align: center;
-      margin-bottom: 5px;
-      margin-left: 15px;
-
-    }
-
-
-`;
-
-
-export const CoursesSearch = styled("div")`
-   label:CoursesSearch;
-   position: relative;
-    width: 500px;
-   margin-right: 50px;
-   @media (max-width: 768px) {
-       width: 95%;
-       margin-left: 10%;
-    }
-
-`;
-
-
-export const SearchInput = styled("input")`
-  label: SearchInput;
-  width: 100%;
-  height: 64px;
-  border: 1px solid #58a58f;
-  border-radius: 5px !important;  /* Corrected to use !important */
-  padding: 0 30px;
-  padding-right: 90px;
-  outline: none;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
- 
-  @media (max-width: 768px) {
-    height: 50px;
-    border-radius: 5px;
+  
+  &:hover {
+    background-color:   #58a58f;
+    color: #ffff; 
   }
 `;
+export const No_Available = styled.div`
+ 
+float: left;
+ margin-top: 50px;
+ width: 100%;
+ color: #58a58f;
+ padding: 30px;
+ background-color: #fff;
+ box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+ transition: 0.2s;
+ font-size: 20px;
+ border: 1px solid rgba(48, 146, 85, 0.2);
+ margin-bottom:150px;
 
-
-export const CoursesButton = styled("p")`
-   label:CoursesButton;
-   position: absolute;
-   width: 50px;
-   height: 50px;
-   line-height: 54px;
-   text-align: center;
-   border-radius: 8px;
-   background-color: rgba(48, 146, 85, 0.2);
-   border: 0;
-   top:13px !important;
-   right: 7px;
-   font-size: 16px;
-   color:#58a58f;
-   @media (max-width: 768px) {
-      width: 40px;
-      height: 40px;
-      top: 10px !important;
-      right: 5px;
-      border-radius: 5px;
-      font-size: 16px;
-
-   }
 `;

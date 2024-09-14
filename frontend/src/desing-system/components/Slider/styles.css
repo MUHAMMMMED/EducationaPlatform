@@ -6,17 +6,27 @@
   /* Set your desired height */
 }
 
+.Slider_Swiper {
+  width: 90%;
+  float: right;
+  margin-right: 5%;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    float: right;
+    margin-right: 5%;
+
+  }
+}
+
 .swiper-slideImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Adjust as needed */
 
   @media (max-width: 768px) {
     width: 90%;
     margin: auto;
   }
-
-
 
 }

@@ -27,36 +27,39 @@ export default function SliderReviews({ ratingsList }) {
 
 
     return (<>
+        <div className='Slider_Swiper'>
 
-        <Swiper autoplay={{ delay: 2500 }} loop spaceBetween={50}
-            slidesPerView={window.innerWidth > 768 ? 3 : 1}     >
+            <Swiper autoplay={{ delay: 2500 }} loop spaceBetween={50}
+                slidesPerView={window.innerWidth > 768 ? 3 : 1}     >
 
-            {ratingsList.map((rating, index) => (
-                <SwiperSlide key={index}>
-                    <SingleReview>
-                        <ReviewAuthor>
-                            <AuthorThumb>
-                                <IMG src={studentImg} alt="Author Thumb" />
-                                <i className="icofont-quote-left"></i>
-                            </AuthorThumb>
-                            <AuthorContent>
-                                <Name>{rating.user_full_name}</Name>
-                                <SPEN>
-                                    {[...Array(parseInt(rating.rate_number))].map((_, starIndex) => (
-                                        <GoStarFill key={starIndex} />
-                                    ))}
-                                </SPEN>
-                            </AuthorContent>
-                        </ReviewAuthor>
-                        <P>
-                            <SPEN> <FaQuoteLeft />-</SPEN> {rating.message}<SPEN > - <FaQuoteRight /></SPEN>
-                        </P>
-                    </SingleReview>
-                </SwiperSlide>
-            ))}
+                {ratingsList.map((rating, index) => (
+                    <SwiperSlide key={index}>
+                        <SingleReview>
+                            <ReviewAuthor>
+                                <AuthorThumb>
+                                    <IMG src={studentImg} alt="Author Thumb" />
+                                    <i className="icofont-quote-left"></i>
+                                </AuthorThumb>
+                                <AuthorContent>
+                                    <Name>{rating.user_full_name}</Name>
+                                    <SPEN>
+                                        {[...Array(parseInt(rating.rate_number))].map((_, starIndex) => (
+                                            <GoStarFill key={starIndex} />
+                                        ))}
+                                    </SPEN>
+                                </AuthorContent>
+                            </ReviewAuthor>
+                            <P>
+                                <SPEN> <FaQuoteLeft />-</SPEN> {rating.message}<SPEN > - <FaQuoteRight /></SPEN>
+                            </P>
+                        </SingleReview>
+                    </SwiperSlide>
+                ))}
 
 
-        </Swiper></>
+            </Swiper>
+        </div>
+    </>
     );
 };
 

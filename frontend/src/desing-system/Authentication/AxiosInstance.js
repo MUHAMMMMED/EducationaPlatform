@@ -10,7 +10,6 @@ const baseURL = `${Config.baseURL}/Users`;
 let accessToken = localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')) : "";
 let refreshToken = localStorage.getItem('refresh_token') ? JSON.parse(localStorage.getItem('refresh_token')) : "";
 
-
 const AxiosInstance = axios.create({
    baseURL: baseURL,
    headers: { Authorization: accessToken ? `Bearer ${accessToken}` : "" },
