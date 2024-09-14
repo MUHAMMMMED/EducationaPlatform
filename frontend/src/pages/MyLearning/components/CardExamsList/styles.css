@@ -12,10 +12,9 @@
 
   @media (max-width: 768px) {
     width: 90%;
-
     margin-left: 5%;
     margin-top: 0px;
-    display: block;
+    display: block !important;
 
   }
 
@@ -51,7 +50,7 @@
     height: auto;
     margin: auto;
     margin-top: 15px;
-    display: block;
+    display: block !important;
 
   }
 }

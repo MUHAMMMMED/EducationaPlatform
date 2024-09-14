@@ -14,8 +14,8 @@ export const Containerq = styled("div")`
     border: 2px solid #d1ae20; 
     margin-bottom: 150px; 
     border-radius: 8px;
-    background-repeat: no-repeat 
-    background-position: center 
+    background-repeat: no-repeat ;
+    background-position: center ;
     height:  50%;
     opacity:3; 
   
@@ -119,7 +119,7 @@ export const H2 = styled("h2")`
     border-radius:20px;
 
     @media (max-width: 768px) {
-        font-size: 20px;
+        font-size: 17px;
         padding-left:5px;
         margin-bottom: 10px; 
         text-align: left;
@@ -153,7 +153,7 @@ export const Video = styled("video")`
      }
 
 
-       }
+   
  `;
 
 export const Img = styled("img")`
@@ -166,7 +166,7 @@ export const Img = styled("img")`
     @media (max-width: 768px) {
       margin-bottom: 10px; 
      }
-       }
+       
  `;
 export const UL = styled("ul")`
     label:UL;
@@ -188,7 +188,6 @@ export const LI = styled("button")`
     align-items:center;
     height:auto;
     padding:3px;
-
     border: 2px solid #d1ae20; 
     border-radius: 50px;
     margin-bottom: 20px; 
@@ -196,8 +195,8 @@ export const LI = styled("button")`
     cursor:pointer;
     @media (max-width: 768px) {
         width: 99%;
-        font-size: 15px;
-        margin-bottom: 10px; 
+        font-size: 14px;
+        margin-bottom: 15px; 
       
        }
  `;

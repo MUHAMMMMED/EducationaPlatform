@@ -172,7 +172,7 @@ export const H2 = styled("h2")`
 
     @media (max-width: 768px) {
         /* Apply styles for screens up to 768px wide (typical tablet size) */
-        font-size: 20px;
+        font-size: 17px;
         padding-left:5px;
         margin-bottom: 10px; 
         text-align: left;
@@ -252,9 +252,9 @@ export const LI = styled("button")`
     @media (max-width: 768px) {
         /* Apply styles for screens up to 768px wide (typical tablet size) */
         width: 99%;
-        font-size: 15px;
+        font-size: 14px;
       //   height:40px;
-        margin-bottom: 10px; 
+        margin-bottom: 15px; 
       
        }
  `;
