@@ -3,7 +3,7 @@ import Config from '../../../../config';
 import './Quiz.css';
 import img from './Quiz.jpg';
 import lose from './lose.mp3';
-import { Button, Buttonqiuz, CenterBut, Con, Container, H2, Iframe, Img, Index, LI, SPan, UL, Video } from './styles';
+import { Button, Buttonqiuz, CenterBut, Con, Container, H2, Iframe, Img, Index, LI, SPan, UL } from './styles';
 import win from './win.mp3';
 
 
@@ -89,7 +89,7 @@ export default function Quiz({ data }) {
                 <Con>
                   {question.question_content && <H2>{index + 1}. {question.question_content}</H2>}
                   {question.question_image && <Img src={`${Config.mediaURL}${question.question_image}`} />}
-                  {question.question_video && <Video autoPlay><source src={`${Config.mediaURL}${question.question_video}`} type="video/mp4" /><source src="mov_bbb.ogg" type="video/ogg" /></Video>}
+                  {/* {question.question_video && <Video autoPlay><source src={`${Config.mediaURL}${question.question_video}`} type="video/mp4" /><source src="mov_bbb.ogg" type="video/ogg" /></Video>} */}
                   {question.question_video_youtube && <Iframe title="Quiz Video" src={`https://www.youtube.com/embed/${question.question_video_youtube}?autoplay=1&mute=1`} />}
                   <UL>
                     <LI onClick={handleAnswerClick(0)} ref={(ref) => optionRefs.current[0] = ref}>

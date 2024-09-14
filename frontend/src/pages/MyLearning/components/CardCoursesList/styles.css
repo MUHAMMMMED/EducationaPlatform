@@ -52,6 +52,7 @@
     height: auto;
     margin: auto;
     margin-top: 15px;
+    display: block;
   }
 }
 

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { GrDocumentTime, GrScorecard } from "react-icons/gr";
 import { Link, useParams } from 'react-router-dom';
 import './Quiz.css';
-import { Button, ButtonBack, Containerq, H2, H4, Head, Iframe, Img, Index, LI, LIButton, Ques, Result, Row, SPan, Time, UL, Video } from './styles';
+import { Button, ButtonBack, Containerq, H2, H4, Head, Iframe, Img, Index, LI, LIButton, Ques, Result, Row, SPan, Time, UL } from './styles';
 
 import Config from '../../config';
 import AxiosInstance from '../../desing-system/Authentication/AxiosInstance';
@@ -196,12 +196,12 @@ const QuizComponent = () => {
                 <Ques>
                   {currentQuestion?.question_content && <H2>{currentQuestion.index}. {currentQuestion?.question_content}</H2>}
                   {currentQuestion?.question_image && <Img src={`${Config.mediaURL}${currentQuestion?.question_image}`} />}
-                  {currentQuestion?.question_video && (
+                  {/* {currentQuestion?.question_video && (
                     <Video autoPlay>
                       <source src={`${Config.mediaURL}${currentQuestion?.question_video}`} type="video/mp4" />
                       <source src="mov_bbb.ogg" type="video/ogg" />
                     </Video>
-                  )}
+                  )} */}
                   {currentQuestion.question_video_youtube && (
                     <Iframe title="Quiz Video" src={`https://www.youtube.com/embed/${currentQuestion?.question_video_youtube}?autoplay=1&mute=1`}></Iframe>
                   )}
