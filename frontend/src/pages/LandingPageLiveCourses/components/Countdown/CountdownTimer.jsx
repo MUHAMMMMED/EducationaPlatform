@@ -75,11 +75,11 @@ function CountdownTimer({ data }) {
                       <div className="btn_wrap pb-0">
                         {data.is_login === true ? (
                           <Link to={`/Pay_LiveCourse/${data.id}`}>
-                            <a className="btn border_dark"  ><span>{data.Base.Countdown_Button}</span></a>
+                            <a className="bt_n border_dark"  ><span>{data.Base.Countdown_Button}</span></a>
                           </Link>
                         ) : (
                           <Link to={`/SignInUp_LiveCourse/${data.id}`}>
-                            <a className="btn border_dark"  ><span>{data.Base.Countdown_Button}</span></a>
+                            <a className="bt_n border_dark"  ><span>{data.Base.Countdown_Button}</span></a>
                           </Link>
                         )}
                       </div>

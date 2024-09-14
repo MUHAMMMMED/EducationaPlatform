@@ -292,11 +292,13 @@ strong {
   border: 1px solid transparent;
   font-size: 1rem;
   border-radius: 0.25rem;
+  margin-left: 0;
 
   @media (max-width: 1200px) {
     width: 90%;
     margin: auto;
     margin-top: 20px;
+    margin-left: 0;
 
   }
 }
