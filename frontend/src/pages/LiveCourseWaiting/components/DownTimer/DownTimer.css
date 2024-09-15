@@ -1,4 +1,4 @@
-.section_DownTimer {
+.W_section_DownTimer {
   float: left;
   padding-top: 0px;
   padding-bottom: 10px;
@@ -14,16 +14,17 @@
 
 }
 
-Room_li .container_DownTimer {
+.W_Room_li .W_container_DownTimer {
   width: 100%;
+
 }
 
-.row_DownTimer {
+.W_row_DownTimer {
 
   @media (max-width: 1200px) {}
 }
 
-.col_DownTimer {
+.W_col_DownTimer {
 
   @media (max-width: 1200px) {
     width: 100%;
@@ -32,7 +33,7 @@ Room_li .container_DownTimer {
 }
 
 
-.col_Timer_image-DownTimer {
+.W_col_Timer_image-DownTimer {
 
   width: 100%;
 
@@ -45,7 +46,7 @@ Room_li .container_DownTimer {
 
 
 
-.content_wrap_DownTimer {
+.W_content_wrap_DownTimer {
 
 
   @media (max-width: 1200px) {
@@ -58,12 +59,13 @@ Room_li .container_DownTimer {
 
 }
 
-.section_heading_wrap_DownTimer {
+.W_section_heading_wrap_DownTimer {
   margin-bottom: 40px;
+
 }
 
 
-.heading_text_DownTimer {
+.W_heading_text_DownTimer {
   margin-top: 15px;
   text-align: left;
   font-size: 30px;
@@ -84,7 +86,7 @@ Room_li .container_DownTimer {
 }
 
 
-.heading_description_DownTimer {
+.W_heading_description_DownTimer {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -99,7 +101,7 @@ Room_li .container_DownTimer {
 }
 
 
-.deals_countdown_DownTimer {
+.W_deals_countdown_DownTimer {
   display: flex;
   text-align: center;
   border-radius: 8px;
@@ -127,7 +129,7 @@ ul {
 
 
 
-.Room_li {
+.W_Room_li {
   list-style-type: none;
   justify-self: center;
   padding: 5px;
@@ -135,14 +137,14 @@ ul {
   margin: auto;
 
   @media (max-width: 1200px) {
-    padding: 2px;
-    margin-top: 2px;
+    padding: 0px;
+    margin-top: 9px;
 
   }
 }
 
 
-.dash {
+.W_dash {
   align-items: center;
   font-size: 16px;
   margin-top: -24px;
@@ -151,6 +153,7 @@ ul {
   @media (max-width: 1200px) {
     padding: 0px;
     font-size: 13px;
+    margin-top: 8px;
 
   }
 
@@ -158,7 +161,7 @@ ul {
 
 
 
-.unordered_list {
+.W_unordered_list {
   justify-content: flex-start;
   margin: 0;
   padding: 0;
@@ -170,7 +173,7 @@ ul {
 
 
 
-.countdown_DownTimer {
+.W_countdown_DownTimer {
   width: 70%;
   text-align: center;
   justify-content: center;
@@ -178,8 +181,8 @@ ul {
   border-radius: 8px;
 
   @media (max-width: 1200px) {
-    padding: 3px;
-    width: 90%;
+    padding: 0px;
+    width: 100%;
 
 
   }
@@ -187,7 +190,7 @@ ul {
 }
 
 
-.countdown_DownTimer strong {
+.W_countdown_DownTimer strong {
   display: block;
   font-size: 40px;
   font-weight: 700;
@@ -209,7 +212,7 @@ strong {
 
 
 
-.discount_value {
+.W_discount_value {
   padding: 10px;
   width: 25%;
   height: 110px;
@@ -223,24 +226,32 @@ strong {
   background-color: #58a58f;
 
   @media (max-width: 1200px) {
+    margin-top: 0;
     margin-left: 8px;
-    width: 30%;
-    height: 70px;
+    width: 25%;
+    padding: 0px;
+    height: 65px;
+
 
   }
 
 
 }
 
+.W_Room {
+  @media (max-width: 1200px) {
+    font-size: 10px;
+    margin-top: -4px;
+  }
+}
 
-
-.discount_value strong {
+.W_discount_value strong {
   font-size: 40px;
   font-weight: 500;
   line-height: 50px;
 
   @media (max-width: 1200px) {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 40px;
     ;
@@ -253,7 +264,7 @@ strong {
 
 
 
-.btn {
+.W_btn {
   margin-top: 25px;
   width: 100%;
   border: 2px solid transparent;
@@ -286,7 +297,7 @@ strong {
 
 
 
-.P {
+.W_P {
   padding-top: -5px;
   font-size: 1rem;
   text-align: center !important;

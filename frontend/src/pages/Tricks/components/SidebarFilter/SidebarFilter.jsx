@@ -128,6 +128,7 @@ function SidebarFilter() {
                     </div></div>
 
                 <div className='list'>
+                    <div style={{ width: '100%', float: 'right', height: '30px' }} />
 
                     <Post data={results} />
                 </div> </div></div>

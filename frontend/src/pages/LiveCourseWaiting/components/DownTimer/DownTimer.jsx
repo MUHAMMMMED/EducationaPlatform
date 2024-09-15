@@ -35,33 +35,29 @@ function DownTimer({ data }) {
 
     <>
       {data && data.waitingDate && (
-        <section className="section_DownTimer">
-          <div className="container_DownTimer">
-            <div className="row_DownTimer">
-              <div className="col_DownTimer">
-                <div className="deals_countdown_DownTimer">
-                  <ul className="countdown_DownTimer unordered_list">
+        <section className="W_section_DownTimer">
+          <div className="W_container_DownTimer">
+            <div className="W_row_DownTimer">
+              <div className="W_col_DownTimer">
+                <div className="W_deals_countdown_DownTimer">
+                  <ul className="W_countdown_DownTimer unordered_list">
                     {timeRemaining.expired ? (
-                      <li className="days_count"><strong>EXPIRED</strong><span></span></li>
+                      <li className="W_days_count"><strong>EXPIRED</strong><span></span></li>
                     ) : (
                       <>
 
-
-
-
-
-                        <li className="Room_li"><strong>{timeRemaining.days}</strong><span>Days</span></li>
-                        <li className="Room_li"><strong className="dash">:</strong></li>
-                        <li className="Room_li"><strong>{timeRemaining.hours}</strong><span>Hours</span></li>
-                        <li className="Room_li"><strong className="dash">:</strong></li>
-                        <li className="Room_li"><strong>{timeRemaining.minutes}</strong><span>Mins</span></li>
-                        <li className="Room_li"><strong className="dash">:</strong></li>
-                        <li className="Room_li"><strong>{timeRemaining.seconds}</strong><span>Secs</span></li>
+                        <li className="W_Room_li"><strong>{timeRemaining.days}</strong><span>Days</span></li>
+                        <li className="W_Room_li"><strong className="W_dash">:</strong></li>
+                        <li className="W_Room_li"><strong>{timeRemaining.hours}</strong><span>Hours</span></li>
+                        <li className="W_Room_li"><strong className="W_dash">:</strong></li>
+                        <li className="W_Room_li"><strong>{timeRemaining.minutes}</strong><span>Mins</span></li>
+                        <li className="W_Room_li"><strong className="W_dash">:</strong></li>
+                        <li className="W_Room_li"><strong>{timeRemaining.seconds}</strong><span>Secs</span></li>
                       </>
                     )}
                   </ul>
 
-                  <div className="discount_value"><strong>Waiting</strong> <span>Room</span></div>
+                  <div className="W_discount_value"><strong>Waiting</strong> <span className='W_Room'>Room</span></div>
 
                 </div>
               </div>

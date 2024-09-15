@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
- 
+
 
 export const Contnerqu = styled.div`
 color:#fff;  
@@ -24,13 +24,40 @@ text-align: center;
     width: 100%;
      }
 `;
- 
+
 export const H2 = styled.h2`
 color: #fff;  
 font-weight: 700;
 text-align: center;
 margin-bottom:  1rem; 
-fontSize:30px;
+font-size:30px;
 
-`;
+@media (max-width: 768px) {
+     font-size:20px;
+  }
  
+`;
+
+
+export const PQ = styled.p`
+font-size:20px;
+color:#fff;
+line-height: 2; 
+margin-top: 15px;
+@media (max-width: 768px) {
+     font-size:15px;
+  }
+ 
+`;
+export const PA = styled.p`
+font-size:17px;
+line-height: 2; 
+margin-top: 15px;
+color:#fff;
+
+@media (max-width: 768px) {
+     font-size:14px;
+
+  }
+ 
+`;

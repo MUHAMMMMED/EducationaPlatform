@@ -1,10 +1,9 @@
 
 
 import React, { useContext, useState } from 'react';
-import { BsPostcard } from "react-icons/bs"; // Icon for Tips & Tricks
 import { GoHome } from "react-icons/go"; // Icon for Home
 import { LuAirplay, LuLogIn } from "react-icons/lu"; // Icons for Courses and Login
-import { MdOutlineLiveTv, MdOutlineQuiz } from "react-icons/md"; // Icons for Live Courses and Quizzes
+import { MdOutlineEventAvailable, MdOutlineLiveTv, MdOutlineQuiz } from "react-icons/md"; // Icons for Live Courses and Quizzes
 import { Link, useNavigate } from 'react-router-dom'; // Link for navigation
 import { ToastContainer, toast } from 'react-toastify'; // Toast notifications
 import 'react-toastify/dist/ReactToastify.css'; // Toastify CSS
@@ -126,7 +125,7 @@ const Navbar = () => {
         <Link to="/Courses"><LuAirplay /><br /> Courses</Link>
         <Link to="/LiveCourses"><MdOutlineLiveTv /><br />Live Courses</Link>
         <Link to="/Quizzes"><MdOutlineQuiz /><br /> Quizzes</Link>
-        <Link to="/Tricks"><BsPostcard /><br /> Tips & Tricks</Link>
+        <Link to="/Events"><MdOutlineEventAvailable /><br />Events</Link>
         {userData ? <NavLink userData={userData} /> : <Link to="/login"><LuLogIn /><br /> Login</Link>} {/* Conditional login/logout links */}
       </div>
 

@@ -224,7 +224,8 @@
    @media (max-width:780) {
      font-size: 10px;
      width: 50%;
-     line-height: 25px;
+     line-height: 20px;
+     padding: 3px;
 
 
    }
@@ -232,11 +233,8 @@
  }
 
  .No_Available {
-
    float: left;
-
    width: 80%;
-
    color: #58a58f;
    padding: 30px;
    background-color: #fff;

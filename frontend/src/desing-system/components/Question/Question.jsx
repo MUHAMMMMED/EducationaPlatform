@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { CardList, Contnerqu, H2 } from './styles';
+import { CardList, Contnerqu, H2, PA, PQ } from './styles';
 const Question = ({ questions }) => {
   return (
     <Contnerqu>
@@ -10,8 +10,8 @@ const Question = ({ questions }) => {
       <br />
       {questions.map((item, index) => (
         <CardList key={index}>
-          <p style={{ color: "#fff", marginTop: '15px', lineHeight: '2' }}><strong>{item.question}</strong></p>
-          <p style={{ color: "#fff", marginTop: '15px', lineHeight: '2' }}>{item.answer}</p>
+          <PQ><strong>{item.question}</strong></PQ>
+          <PA>{item.answer}</PA>
 
         </CardList>
       ))}

@@ -2,14 +2,14 @@
   width: 100%;
   margin: auto;
   padding: 15px;
-  /* border: 1px solid #ddd; */
   border-radius: 8px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   margin-bottom: 50px;
 
   @media (max-width: 768px) {
     width: 100%;
     margin: auto;
+    padding: 0px;
+
   }
 }
 
@@ -30,15 +30,40 @@ h2 {
 
 
 .rating-section {
-  width: 310px !important;
-  margin: auto;
+  width: 850px !important;
   margin-bottom: 20px;
+  margin: auto;
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 250px !important;
     margin: auto;
     margin-bottom: 10px;
+    padding: 0px;
   }
+}
+
+
+.star-container {
+  width: 62px !important;
+  margin: auto !important;
+  padding-left: 2.5px !important;
+  padding-right: 2.5px !important;
+
+  @media (max-width: 768px) {
+    width: 50px !important;
+    padding-left: 2.5px !important;
+    padding-right: 2.5px !important;
+
+  }
+
+}
+
+.widget-svg {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  width: 50px !important;
+  margin: 0 !important;
+
 }
 
 .star {
@@ -51,12 +76,16 @@ h2 {
   width: 10px !important;
   font-size: 5px !important;
 
+  @media (max-width: 768px) {
+    width: 5px !important;
+    font-size: 2px !important;
+
+  }
 }
 
 
-
 .star-ratings {
-  width: 310px !important;
+  width: 850px !important;
   margin: auto !important;
 
   @media (max-width: 768px) {
@@ -70,7 +99,7 @@ h2 {
 }
 
 .custom-star-ratings {
-  width: 310px !important;
+  width: 850px !important;
   margin: auto !important;
 
   @media (max-width: 768px) {
@@ -107,11 +136,11 @@ textarea {
 .Submit-button {
   background-color: #58a58f;
   color: #fff;
-  padding: 15px 15px;
+  padding: 12px 12px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 17px;
   width: 100%;
 
   @media (max-width: 768px) {
