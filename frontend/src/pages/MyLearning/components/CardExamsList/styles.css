@@ -141,7 +141,8 @@
   border-radius: 4px;
   font-weight: 400;
   font-size: 14px;
-
+  display: block;
+  margin-bottom: 15px;
 }
 
 .bannerItem span {

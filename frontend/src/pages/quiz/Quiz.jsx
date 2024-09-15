@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { GrDocumentTime, GrScorecard } from "react-icons/gr";
 import { Link, useParams } from 'react-router-dom';
 import './Quiz.css';
-import { Button, ButtonBack, Containerq, H2, H4, Head, Iframe, Img, Index, LI, LIButton, Ques, Result, Row, SPan, Time, UL } from './styles';
+import { Button, ButtonBack, Containerq, H2, H4, Head, Iframe, Img, Index, LIButton, Q_LI, Ques, Result, Row, SPan, Time, UL } from './styles';
 
 import Config from '../../config';
 import AxiosInstance from '../../desing-system/Authentication/AxiosInstance';
@@ -207,10 +207,10 @@ const QuizComponent = () => {
                   )}
                 </Ques>
                 <UL>
-                  <LI onClick={handleAnswerClick(1)} ref={optionRefs[0]}><SPan>A</SPan><p className='question_p'>{currentQuestion.option_A}</p></LI>
-                  <LI onClick={handleAnswerClick(2)} ref={optionRefs[1]}><SPan>B</SPan><p className='question_p'>{currentQuestion.option_B}</p></LI>
-                  <LI onClick={handleAnswerClick(3)} ref={optionRefs[2]}><SPan>C</SPan><p className='question_p'>{currentQuestion.option_C}</p></LI>
-                  <LI onClick={handleAnswerClick(4)} ref={optionRefs[3]}><SPan>D</SPan><p className='question_p'>{currentQuestion.option_D}</p></LI>
+                  <Q_LI onClick={handleAnswerClick(1)} ref={optionRefs[0]}><SPan>A</SPan><p className='question_p'>{currentQuestion.option_A}</p></Q_LI>
+                  <Q_LI onClick={handleAnswerClick(2)} ref={optionRefs[1]}><SPan>B</SPan><p className='question_p'>{currentQuestion.option_B}</p></Q_LI>
+                  <Q_LI onClick={handleAnswerClick(3)} ref={optionRefs[2]}><SPan>C</SPan><p className='question_p'>{currentQuestion.option_C}</p></Q_LI>
+                  <Q_LI onClick={handleAnswerClick(4)} ref={optionRefs[3]}><SPan>D</SPan><p className='question_p'>{currentQuestion.option_D}</p></Q_LI>
                 </UL>
                 <LIButton>
                   <Button onClick={handleNextQuestion}>Next Question</Button>

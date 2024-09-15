@@ -22,12 +22,11 @@ export const Containerq = styled("div")`
 
     @media (max-width: 768px) {
         /* Apply styles for screens up to 768px wide (typical tablet size) */
-        width:  97%;
+        width: 97%;
         padding:0px;
         border-radius: 0px;
         border: 0px solid #686868;
         margin-top: 80px; 
-        height:  90%;
 
        }
     
@@ -38,7 +37,6 @@ export const Containerq = styled("div")`
         border-radius: 0px;
         border: 0px solid #686868;
         margin-top: 80px; 
-        height:  90%;
 
        }
     `;
@@ -121,7 +119,7 @@ export const H2 = styled("h2")`
     border-radius:20px;
 
     @media (max-width: 768px) {
-        font-size: 17px;
+        font-size: 20px;
         padding-left:5px;
         margin-bottom: 10px; 
         text-align: left;
@@ -155,7 +153,7 @@ export const Video = styled("video")`
      }
 
 
-   
+     
  `;
 
 export const Img = styled("img")`
@@ -179,8 +177,8 @@ export const UL = styled("ul")`
 
 
  `;
-export const LI = styled("button")`
-    label:LI;
+export const Q_LI = styled("button")`
+    label:Q_LI;
     float:left;
     margin:0px; 
     width:49%;
@@ -197,11 +195,15 @@ export const LI = styled("button")`
     cursor:pointer;
     @media (max-width: 768px) {
         width: 99%;
-        font-size: 14px;
-        margin-bottom: 15px; 
-      
+        font-size: 15px;
+        margin-bottom: 50px; 
+
        }
  `;
+
+
+
+
 
 export const LIButton = styled("div")`
     label:LIButton;

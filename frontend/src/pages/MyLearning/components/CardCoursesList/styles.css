@@ -2,7 +2,6 @@
   width: 80%;
   margin-top: 0px;
   margin-bottom: 30px;
-
   align-items: center;
   padding-top: 10px;
   flex-wrap: wrap;
@@ -52,6 +51,7 @@
     margin: auto;
     margin-top: 15px;
     display: block !important;
+
   }
 }
 
@@ -94,13 +94,16 @@
   border: none;
   color: #fff;
 
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+
+  }
 }
 
 .bannerContent {
   position: relative;
   z-index: 1;
   float: left;
-
 }
 
 .bannerThumb img {
@@ -138,7 +141,8 @@
   border-radius: 4px;
   font-weight: 400;
   font-size: 14px;
-
+  display: block;
+  margin-bottom: 15px;
 }
 
 .bannerItem span {
