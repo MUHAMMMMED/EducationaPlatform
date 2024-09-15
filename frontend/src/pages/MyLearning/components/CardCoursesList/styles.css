@@ -87,18 +87,6 @@
 
 
 
-.E-btn {
-  text-decoration: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  color: #fff;
-
-  @media (max-width: 768px) {
-    margin-bottom: 10px;
-
-  }
-}
 
 .bannerContent {
   position: relative;
@@ -130,8 +118,12 @@
 
 
 
-.E-btn {
-  display: inline-block;
+.E-BTN {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  color: #fff;
   padding: 0px;
   line-height: 40px;
   text-align: center;
@@ -143,6 +135,11 @@
   font-size: 14px;
   display: block;
   margin-bottom: 15px;
+
+  @media (max-width: 768px) {
+    display: block;
+
+  }
 }
 
 .bannerItem span {

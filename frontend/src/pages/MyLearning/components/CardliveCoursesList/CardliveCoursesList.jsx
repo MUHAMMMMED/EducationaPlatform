@@ -17,18 +17,18 @@ export default function CardliveCoursesList({ data }) {
 
                   {item.status === 'W' && (
                     <Link to={`/LiveCourseWaiting/${item.id}/`}>
-                      <button className='E-btn'>View Waiting Room</button>
+                      <button className='E-BTN'>View Waiting Room</button>
                     </Link>
                   )}
 
                   {item.status === 'L' && (
                     <Link to={`/LiveCourseRoom/${item.id}/`}>
-                      <button className='E-btn'>View Learning Room</button>
+                      <button className='E-BTN'>View Learning Room</button>
                     </Link>
                   )}
 
                   {item.status == 'F' && (<Link to={`/LiveCourseRate/${item.id}/`}>
-                    <button className='E-btn'>Rate My Course</button>
+                    <button className='E-BTN'>Rate My Course</button>
                   </Link>)}
 
                   {item.status !== 'W' && item.status !== 'L' && item.status !== 'F' && (

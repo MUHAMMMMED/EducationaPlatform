@@ -13,7 +13,7 @@ export default function CardExamsList({ data }) {
               <div className="bannerContent">
                 <span> Quiz</span>
                 <h3 className="bannerTitle"> {item.title}   </h3>
-                <Link to={`/Quiz/${item.id}/`}> <button className='E-btn'>Start Quiz </button></Link>
+                <Link to={`/Quiz/${item.id}/`}> <button className='E-BTN'>Start Quiz </button></Link>
               </div> </div></div>
         ))} </section>
     </>

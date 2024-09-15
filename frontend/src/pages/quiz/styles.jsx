@@ -196,7 +196,8 @@ export const Q_LI = styled("button")`
     @media (max-width: 768px) {
         width: 99%;
         font-size: 15px;
-        margin-bottom: 50px; 
+        margin-bottom: 25px; 
+        margin-bottom: 25px; 
 
        }
  `;

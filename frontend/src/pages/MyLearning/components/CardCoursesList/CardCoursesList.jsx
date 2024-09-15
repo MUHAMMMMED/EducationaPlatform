@@ -8,12 +8,12 @@ export default function CardCoursesList({ data }) {
       <section className="cardArea">
 
         {data.map(item => (
-          <div className="card " key={item.id}>
+          <div className="card" key={item.id}>
             <div className="bannerItem  " >
               <div className="bannerContent">
                 <span>Online Courses</span>
                 <h3 className="bannerTitle">  {item.title}   </h3>
-                <Link to={`/course/${item.title}/${item.course_uuid}`}> <button className='E-btn'>Start Learning </button></Link>
+                <Link to={`/course/${item.title}/${item.course_uuid}`}> <button className='E-BTN'>Start Learning </button></Link>
               </div> </div></div>))}
       </section>}
     </>
